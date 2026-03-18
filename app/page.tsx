@@ -21,7 +21,25 @@ export default function Home() {
         backgroundColor: "#f6f3ee",
         minHeight: "100vh",
       }}
-    >
+    ><div
+  style={{
+    width: "100%",
+    height: "420px",
+    overflow: "hidden",
+  }}
+>
+  <img
+    src="/portrait.jpg"
+    alt="Christine Béglet"
+    style={{
+      width: "100%",
+      height: "100%",
+      objectFit: "cover",
+      objectPosition: "center",
+      display: "block",
+    }}
+  />
+</div>
       <header
         style={{
           position: "sticky",
