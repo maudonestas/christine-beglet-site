@@ -139,16 +139,6 @@ export default function Home() {
               Collage contemporain
             </p>
 
-            <h1
-              style={{
-                fontSize: "clamp(2.6rem, 5vw, 4.8rem)",
-                lineHeight: 1.02,
-                margin: "0 0 22px",
-              }}
-            >
-              Un site clair et structuré pour présenter l’ensemble du travail.
-            </h1>
-
             <p
               style={{
                 fontSize: "1.1rem",
