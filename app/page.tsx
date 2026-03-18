@@ -158,11 +158,13 @@ export default function Home() {
                 margin: 0,
               }}
             >
-              Christine Béglet développe un travail autour du collage, de la
-              couleur, de l’assemblage et du fragment. Ce site a pour objectif
-              de présenter ses œuvres, son atelier, sa biographie et ses
-              expositions de manière plus lisible, plus cohérente et plus
-              professionnelle.
+              Née en 1954 dans le Sud-Ouest de la France, Christine Béglet vit et travaille à Toulouse. Diplômée de l’École Nationale Supérieure des Beaux-Arts de Toulouse, elle développe depuis les années 1990 un travail singulier autour du collage.
+  <br /><br />
+  Des milliers d’images découpées deviennent sa palette. Sans composition préalable, le tableau se construit dans un mouvement instinctif, porté par la couleur, le rythme et les tensions visuelles. Une image en appelle une autre, jusqu’à ce que l’équilibre s’impose.
+  <br /><br />
+  Ses œuvres oscillent entre abstraction et architecture. À distance, elles se donnent comme des ensembles colorés ; de près, elles révèlent un monde fragmenté, fait de villes imaginaires et de structures en transformation.
+  <br /><br />
+  Son travail est présenté en France et à l’international, notamment au Canada et en Chine.
             </p>
 
             <div
