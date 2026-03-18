@@ -129,18 +129,6 @@ export default function Home() {
           <div>
             <p
               style={{
-                textTransform: "uppercase",
-                letterSpacing: "0.18em",
-                fontSize: "0.8rem",
-                color: "#7b746c",
-                marginBottom: "14px",
-              }}
-            >
-              Collage contemporain
-            </p>
-
-            <p
-              style={{
                 fontSize: "1.1rem",
                 lineHeight: 1.7,
                 color: "#49433d",
