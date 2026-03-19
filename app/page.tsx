@@ -470,7 +470,6 @@ heroFade: {
   imgPortraitLarge: {
   width: "100%",
   aspectRatio: "7 / 10",
-  maxHeight: "320px",
   objectFit: "cover",
   display: "block",
   backgroundColor: "#e9e9e9",
@@ -479,7 +478,6 @@ heroFade: {
   imgSquareLarge: {
   width: "100%",
   aspectRatio: "1 / 1",
-  maxHeight: "280px",
   objectFit: "cover",
   display: "block",
   backgroundColor: "#e9e9e9",
