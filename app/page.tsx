@@ -33,12 +33,18 @@ export default function Home() {
 
       {/* HERO PANO */}
      <section style={styles.hero}>
-  <div style={styles.heroScroll}>
-    <img
-      src="/images/pano.jpg"
-      alt="Collage panoramique de Christine Béglet"
-      style={styles.heroImgScrollable}
-    />
+  <div style={styles.heroWrapper}>
+    <div style={styles.heroHint}>Faire glisser →</div>
+
+    <div style={styles.heroScroll}>
+      <img
+        src="/images/pano.jpg"
+        alt="Collage panoramique de Christine Béglet"
+        style={styles.heroImgScrollable}
+      />
+    </div>
+
+    <div style={styles.heroFade} />
   </div>
 </section>
 
@@ -279,6 +285,32 @@ heroImgScrollable: {
   minWidth: "1400px",
 },
 
+  heroWrapper: {
+  position: "relative",
+},
+
+heroHint: {
+  position: "absolute",
+  top: "14px",
+  right: "18px",
+  zIndex: 2,
+  backgroundColor: "rgba(255,255,255,0.75)",
+  color: "#1f1f1f",
+  padding: "6px 10px",
+  fontSize: "0.85rem",
+  lineHeight: 1.2,
+},
+
+heroFade: {
+  position: "absolute",
+  top: 0,
+  right: 0,
+  width: "80px",
+  height: "100%",
+  background:
+    "linear-gradient(to right, rgba(242,242,242,0), rgba(242,242,242,0.95))",
+  pointerEvents: "none",
+},
   sectionGray: {
     backgroundColor: "#f2f2f2",
     padding: "80px 24px",
