@@ -449,7 +449,7 @@ heroFade: {
 
   workSectionLast: {
   marginBottom: "0",
-  maxWidth: "400px",
+  maxWidth: "600px",
 },
 
   workSectionTitle: {
@@ -468,21 +468,22 @@ heroFade: {
   },
 
   imgPortraitLarge: {
-    width: "100%",
-    aspectRatio: "7 / 10",
-    objectFit: "cover",
-    display: "block",
-    backgroundColor: "#e9e9e9",
-  },
+  width: "100%",
+  aspectRatio: "7 / 10",
+  maxHeight: "320px",
+  objectFit: "cover",
+  display: "block",
+  backgroundColor: "#e9e9e9",
+},
 
   imgSquareLarge: {
-    width: "100%",
-    aspectRatio: "1 / 1",
-    objectFit: "cover",
-    display: "block",
-    backgroundColor: "#e9e9e9",
-  },
-
+  width: "100%",
+  aspectRatio: "1 / 1",
+  maxHeight: "280px",
+  objectFit: "cover",
+  display: "block",
+  backgroundColor: "#e9e9e9",
+},
   imgWideLarge: {
     width: "100%",
     height: "auto",
