@@ -160,94 +160,91 @@ export default function Home() {
         <div style={styles.container}>
           <h2 style={styles.title}>Œuvres</h2>
 
-          {/* LIGNE 1 : grands formats + formats moyens */}
-          <div style={styles.topWorksRow}>
-            {/* GRANDS FORMATS */}
-            <div style={styles.workColumn}>
-              <div style={styles.innerGrid2}>
-                <img
-                  src="/images/70-1.jpg"
-                  alt="Grand format 1"
-                  style={styles.imgPortraitCompact}
-                />
-                <img
-                  src="/images/70-2.jpg"
-                  alt="Grand format 2"
-                  style={styles.imgPortraitCompact}
-                />
-              </div>
-              <div style={styles.blockFooter}>
-                <h3 style={styles.blockTitle}>Grands formats 70x100</h3>
-                <a href="/oeuvres/grands-formats" style={styles.button}>
-                  Voir plus
-                </a>
-              </div>
+          {/* GRANDS FORMATS */}
+          <div style={styles.workSection}>
+            <h3 style={styles.workSectionTitle}>Grands formats 70x100</h3>
+            <div style={styles.innerGrid2}>
+              <img
+                src="/images/70-1.jpg"
+                alt="Grand format 1"
+                style={styles.imgPortraitLarge}
+              />
+              <img
+                src="/images/70-2.jpg"
+                alt="Grand format 2"
+                style={styles.imgPortraitLarge}
+              />
             </div>
+            <div style={styles.buttonRowLeft}>
+              <a href="/oeuvres/grands-formats" style={styles.button}>
+                Voir plus
+              </a>
+            </div>
+          </div>
 
-            {/* FORMATS MOYENS */}
-            <div style={styles.workColumn}>
-              <div style={styles.innerGrid2}>
-                <img
-                  src="/images/50-1.jpg"
-                  alt="Format moyen 1"
-                  style={styles.imgSquareCompact}
-                />
-                <img
-                  src="/images/50-2.jpg"
-                  alt="Format moyen 2"
-                  style={styles.imgSquareCompact}
-                />
-              </div>
-              <div style={styles.blockFooter}>
-                <h3 style={styles.blockTitle}>Formats moyens 50x50</h3>
-                <a href="/oeuvres/formats-moyens" style={styles.button}>
-                  Voir plus
-                </a>
-              </div>
+          {/* FORMATS MOYENS */}
+          <div style={styles.workSection}>
+            <h3 style={styles.workSectionTitle}>Formats moyens 50x50</h3>
+            <div style={styles.innerGrid2}>
+              <img
+                src="/images/50-1.jpg"
+                alt="Format moyen 1"
+                style={styles.imgSquareLarge}
+              />
+              <img
+                src="/images/50-2.jpg"
+                alt="Format moyen 2"
+                style={styles.imgSquareLarge}
+              />
+            </div>
+            <div style={styles.buttonRowLeft}>
+              <a href="/oeuvres/formats-moyens" style={styles.button}>
+                Voir plus
+              </a>
             </div>
           </div>
 
           {/* TRIPTYQUE */}
-          <div style={styles.workBlock}>
+          <div style={styles.workSection}>
+            <h3 style={styles.workSectionTitle}>Triptyque 92x195</h3>
             <img
               src="/images/triptyque.jpg"
               alt="Triptyque"
-              style={styles.imgWideCompact}
+              style={styles.imgWideLarge}
             />
-            <div style={styles.blockFooter}>
-              <h3 style={styles.blockTitle}>Triptyque 92x195</h3>
+            <div style={styles.buttonRowLeft}>
               <a href="/oeuvres/triptyque" style={styles.button}>
                 Voir plus
               </a>
             </div>
           </div>
 
-          {/* 20x20 */}
-          <div style={styles.workBlock}>
-            <div style={styles.grid20}>
+          {/* FORMATS 20x20 */}
+          <div style={styles.workSectionLast}>
+            <h3 style={styles.workSectionTitle}>Formats 20x20</h3>
+            <div style={styles.grid20TwoByTwo}>
               <img
                 src="/images/20-1.jpg"
-                alt="Collage 20x20 1"
-                style={styles.img20}
+                alt="Format 20x20 1"
+                style={styles.img20Large}
               />
               <img
                 src="/images/20-2.jpg"
-                alt="Collage 20x20 2"
-                style={styles.img20}
+                alt="Format 20x20 2"
+                style={styles.img20Large}
               />
               <img
                 src="/images/20-3.jpg"
-                alt="Collage 20x20 3"
-                style={styles.img20}
+                alt="Format 20x20 3"
+                style={styles.img20Large}
               />
               <img
                 src="/images/20-4.jpg"
-                alt="Collage 20x20 4"
-                style={styles.img20}
+                alt="Format 20x20 4"
+                style={styles.img20Large}
               />
             </div>
-            <div style={styles.blockFooter}>
-              <h3 style={styles.blockTitle}>Collages 20x20</h3>
+            <div style={styles.buttonRowLeft}>
               <a href="/oeuvres/collages-20x20" style={styles.button}>
                 Voir plus
               </a>
@@ -434,90 +431,76 @@ heroFade: {
   fontFamily: '"Helvetica Neue", Arial, sans-serif',
 },
 
-  topWorksRow: {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: "40px",
-    marginBottom: "64px",
-    alignItems: "start",
-  },
-
-  workColumn: {
-    minWidth: 0,
-  },
-
   innerGrid2: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
     gap: "16px",
   },
 
-  workBlock: {
-    marginBottom: "64px",
-  },
-
-  blockFooter: {
-    marginTop: "16px",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    gap: "20px",
-    flexWrap: "wrap",
-  },
-
-  blockTitle: {
-  margin: 0,
-  fontSize: "0.95rem",
-  fontWeight: 400,
-  letterSpacing: "0.1em",
-  textTransform: "uppercase",
-  fontFamily: '"Helvetica Neue", Arial, sans-serif',
-},
-  imgPortraitCompact: {
-    width: "100%",
-    aspectRatio: "7 / 10",
-    maxHeight: "300px",
-    objectFit: "cover",
-    display: "block",
-    backgroundColor: "#e9e9e9",
-  },
-
-  imgSquareCompact: {
-    width: "100%",
-    aspectRatio: "1 / 1",
-    maxHeight: "300px",
-    objectFit: "cover",
-    display: "block",
-    backgroundColor: "#e9e9e9",
-  },
-
-  imgWideCompact: {
-    width: "100%",
-    height: "260px",
-    objectFit: "cover",
-    display: "block",
-    backgroundColor: "#e9e9e9",
-  },
-
-  grid20: {
-    display: "grid",
-    gridTemplateColumns: "repeat(4, 1fr)",
-    gap: "16px",
-  },
-
-  img20: {
-    width: "100%",
-    aspectRatio: "1 / 1",
-    maxHeight: "180px",
-    objectFit: "cover",
-    display: "block",
-    backgroundColor: "#e9e9e9",
-  },
-
   atelierGrid: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
     gap: "20px",
+  },
+   workSection: {
+    marginBottom: "72px",
+  },
+
+  workSectionLast: {
+    marginBottom: "0",
+  },
+
+  workSectionTitle: {
+    margin: "0 0 18px 0",
+    fontSize: "0.95rem",
+    fontWeight: 400,
+    letterSpacing: "0.1em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
+  buttonRowLeft: {
+    marginTop: "18px",
+    display: "flex",
+    justifyContent: "flex-start",
+  },
+
+  imgPortraitLarge: {
+    width: "100%",
+    aspectRatio: "7 / 10",
+    objectFit: "cover",
+    display: "block",
+    backgroundColor: "#e9e9e9",
+  },
+
+  imgSquareLarge: {
+    width: "100%",
+    aspectRatio: "1 / 1",
+    objectFit: "cover",
+    display: "block",
+    backgroundColor: "#e9e9e9",
+  },
+
+  imgWideLarge: {
+    width: "100%",
+    height: "auto",
+    display: "block",
+    backgroundColor: "#e9e9e9",
+  },
+
+  grid20TwoByTwo: {
+    display: "grid",
+    gridTemplateColumns: "repeat(2, 1fr)",
+    gap: "16px",
+    maxWidth: "760px",
+  },
+
+  img20Large: {
+    width: "100%",
+    aspectRatio: "1 / 1",
+    objectFit: "cover",
+    display: "block",
+    backgroundColor: "#e9e9e9",
   },
 
   atelierImg: {
