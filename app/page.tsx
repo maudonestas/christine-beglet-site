@@ -16,7 +16,7 @@ export default function Home() {
     Œuvres
   </a>
   <a href="/atelier" style={styles.navLink}>
-    Atelier
+    L'Atelier
   </a>
   <a href="/biographie" style={styles.navLink}>
     Biographie
