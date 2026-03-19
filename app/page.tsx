@@ -151,6 +151,7 @@ export default function Home() {
     style={styles.bioImage}
   />
 </div>
+</div>
         </div>
       </section>
 
