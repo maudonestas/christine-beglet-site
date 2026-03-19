@@ -554,6 +554,7 @@ heroFade: {
   gap: "20px",
   alignItems: "flex-start",
   flexWrap: "wrap",
+  justifyContent: "center",
 },
 
 bioText: {
