@@ -292,16 +292,16 @@ const styles: Record<string, CSSProperties> = {
   },
 
   headerContent: {
-    maxWidth: "1200px",
-    margin: "0 auto",
-    padding: "22px 24px",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    gap: "24px",
-    flexWrap: "wrap",
-  },
-
+  maxWidth: "100%",
+  margin: "0",
+  padding: "22px 40px",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  gap: "24px",
+  flexWrap: "wrap",
+},
+ 
   name: {
   fontSize: "2.2rem",
   fontWeight: 300,
