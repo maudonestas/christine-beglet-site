@@ -1,9 +1,8 @@
 import type { CSSProperties } from "react";
 
 export default function Home() {
-  return (
-    <>
-      <main style={styles.main}>
+ return (
+  <main style={styles.main}>
       {/* HEADER */}
       <header style={styles.header}>
         <div style={styles.headerContent}>
@@ -35,8 +34,7 @@ export default function Home() {
       {/* HERO PANO */}
      <section style={styles.hero}>
   <div style={styles.heroWrapper}>
-   <div style={{ ...styles.heroArrow, animation: "bounce 1.5s infinite" }}>➜</div>
-
+  <div style={styles.heroArrow}>➜</div>
     <div style={styles.heroScroll}>
       <img
         src="/images/pano.jpg"
@@ -207,14 +205,6 @@ export default function Home() {
         </div>
     </section>
 </main>
-
-<style jsx>{`
-  @keyframes bounce {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(12px); }
-  }
-`}</style>
-  </>
 );
 }
 
