@@ -407,9 +407,9 @@ heroFade: {
   },
 
   text: {
-    fontSize: "1.08rem",
-    lineHeight: 1.9,
-    maxWidth: "920px",
+    fontSize: "1rem",
+    lineHeight: 1.7,
+    maxWidth: "680px",
     margin: 0,
     color: "#303030",
   },
