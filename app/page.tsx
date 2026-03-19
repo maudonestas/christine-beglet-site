@@ -500,7 +500,7 @@ heroFade: {
   img20Large: {
     width: "100%",
     aspectRatio: "1 / 1",
-    objectFit: "cover",
+    objectFit: "contain",
     display: "block",
     backgroundColor: "#e9e9e9",
   },
