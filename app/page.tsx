@@ -2,7 +2,8 @@ import type { CSSProperties } from "react";
 
 export default function Home() {
   return (
-    <main style={styles.main}>
+    <>
+      <main style={styles.main}>
       {/* HEADER */}
       <header style={styles.header}>
         <div style={styles.headerContent}>
@@ -34,7 +35,7 @@ export default function Home() {
       {/* HERO PANO */}
      <section style={styles.hero}>
   <div style={styles.heroWrapper}>
-   <div style={{ ...styles.heroArrow, ...styles.heroArrowAnimation }}>➜</div>
+   <div style={{ ...styles.heroArrow, animation: "bounce 1.5s infinite" }}>➜</div>
 
     <div style={styles.heroScroll}>
       <img
@@ -204,9 +205,17 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </section>
-    </main>
-  );
+    </section>
+</main>
+
+<style jsx>{`
+  @keyframes bounce {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(12px); }
+  }
+`}</style>
+  </>
+);
 }
 
 const styles: Record<string, CSSProperties> = {
@@ -307,8 +316,6 @@ heroArrow: {
   boxShadow: "0 2px 10px rgba(0,0,0,0.18)",
   pointerEvents: "none",
 },
-  heroArrowAnimation: {
-    animation: "bounce 1.5s infinite",
     
 heroFade: {
   position: "absolute",
@@ -460,11 +467,4 @@ heroFade: {
     backgroundColor: "transparent",
   },
 };
-<style>
-{`
-@keyframes bounce {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(10px); }
-}
-`}
-</style>
+
