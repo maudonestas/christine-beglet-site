@@ -291,11 +291,21 @@ heroImgScrollable: {
 
 heroArrow: {
   position: "absolute",
-  bottom: "14px",
-  right: "18px",
-  fontSize: "1.6rem",
-  color: "#1f1f1f",
-  opacity: 0.7,
+  bottom: "20px",
+  right: "20px",
+  width: "52px",
+  height: "52px",
+  borderRadius: "50%",
+  backgroundColor: "rgba(255, 255, 255, 0.88)",
+  color: "#111111",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  fontSize: "2rem",
+  fontWeight: 700,
+  zIndex: 3,
+  boxShadow: "0 2px 10px rgba(0,0,0,0.18)",
+  pointerEvents: "none",
 },
 
 heroFade: {
