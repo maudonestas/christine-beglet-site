@@ -34,7 +34,7 @@ export default function Home() {
       {/* HERO PANO */}
      <section style={styles.hero}>
   <div style={styles.heroWrapper}>
-   <div style={styles.heroArrow}>→</div>
+   <div style={{ ...styles.heroArrow, ...styles.heroArrowAnimation }}>➜</div>
 
     <div style={styles.heroScroll}>
       <img
@@ -296,7 +296,7 @@ heroArrow: {
   width: "52px",
   height: "52px",
   borderRadius: "50%",
-  backgroundColor: "rgba(255, 255, 255, 0.88)",
+  background: "linear-gradient(to right, rgba(255,255,255,0.6), rgba(255,255,255,1))",
   color: "#111111",
   display: "flex",
   alignItems: "center",
@@ -307,7 +307,9 @@ heroArrow: {
   boxShadow: "0 2px 10px rgba(0,0,0,0.18)",
   pointerEvents: "none",
 },
-
+  heroArrowAnimation: {
+    animation: "bounce 1.5s infinite",
+    
 heroFade: {
   position: "absolute",
   top: 0,
@@ -458,3 +460,11 @@ heroFade: {
     backgroundColor: "transparent",
   },
 };
+<style>
+{`
+@keyframes bounce {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+`}
+</style>
