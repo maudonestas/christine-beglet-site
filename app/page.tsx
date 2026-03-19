@@ -34,7 +34,7 @@ export default function Home() {
       {/* HERO PANO */}
      <section style={styles.hero}>
   <div style={styles.heroWrapper}>
-    <div style={styles.heroHint}>Faire glisser →</div>
+   <div style={styles.heroArrow}>→</div>
 
     <div style={styles.heroScroll}>
       <img
@@ -43,8 +43,7 @@ export default function Home() {
         style={styles.heroImgScrollable}
       />
     </div>
-
-    <div style={styles.heroFade} />
+    
   </div>
 </section>
 
@@ -269,13 +268,14 @@ const styles: Record<string, CSSProperties> = {
   hero: {
   width: "100%",
   backgroundColor: "#e7e7e7",
-  padding: "24px 24px 0",
+  padding: "0",
 },
 
 heroScroll: {
   overflowX: "auto",
   overflowY: "hidden",
   WebkitOverflowScrolling: "touch",
+  margin: "0",
 },
 
 heroImgScrollable: {
@@ -289,16 +289,13 @@ heroImgScrollable: {
   position: "relative",
 },
 
-heroHint: {
+heroArrow: {
   position: "absolute",
-  top: "14px",
+  bottom: "14px",
   right: "18px",
-  zIndex: 2,
-  backgroundColor: "rgba(255,255,255,0.75)",
+  fontSize: "1.6rem",
   color: "#1f1f1f",
-  padding: "6px 10px",
-  fontSize: "0.85rem",
-  lineHeight: 1.2,
+  opacity: 0.7,
 },
 
 heroFade: {
