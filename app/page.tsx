@@ -32,13 +32,15 @@ export default function Home() {
       </header>
 
       {/* HERO PANO */}
-      <section style={styles.hero}>
-        <img
-          src="/images/pano.jpg"
-          alt="Collage panoramique de Christine Béglet"
-          style={styles.heroImg}
-        />
-      </section>
+     <section style={styles.hero}>
+  <div style={styles.heroScroll}>
+    <img
+      src="/images/pano.jpg"
+      alt="Collage panoramique de Christine Béglet"
+      style={styles.heroImgScrollable}
+    />
+  </div>
+</section>
 
       {/* TEXTE */}
       <section style={styles.sectionGray}>
@@ -259,16 +261,23 @@ const styles: Record<string, CSSProperties> = {
   },
 
   hero: {
-    width: "100%",
-    backgroundColor: "#e7e7e7",
-  },
+  width: "100%",
+  backgroundColor: "#e7e7e7",
+  padding: "24px 24px 0",
+},
 
-  heroImg: {
-    width: "100%",
-    height: "68vh",
-    objectFit: "cover",
-    display: "block",
-  },
+heroScroll: {
+  overflowX: "auto",
+  overflowY: "hidden",
+  WebkitOverflowScrolling: "touch",
+},
+
+heroImgScrollable: {
+  display: "block",
+  height: "70vh",
+  width: "auto",
+  minWidth: "1400px",
+},
 
   sectionGray: {
     backgroundColor: "#f2f2f2",
