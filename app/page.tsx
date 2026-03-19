@@ -77,56 +77,59 @@ export default function Home() {
         <div style={styles.container}>
           <h2 style={styles.title}>Œuvres</h2>
 
-          {/* GRANDS FORMATS */}
-          <div style={styles.block}>
-            <div style={styles.grid2}>
-              <img
-                src="/images/70-1.jpg"
-                alt="Grand format 1"
-                style={styles.imgPortrait}
-              />
-              <img
-                src="/images/70-2.jpg"
-                alt="Grand format 2"
-                style={styles.imgPortrait}
-              />
+          {/* LIGNE 1 : grands formats + formats moyens */}
+          <div style={styles.topWorksRow}>
+            {/* GRANDS FORMATS */}
+            <div style={styles.workColumn}>
+              <div style={styles.innerGrid2}>
+                <img
+                  src="/images/70-1.jpg"
+                  alt="Grand format 1"
+                  style={styles.imgPortraitCompact}
+                />
+                <img
+                  src="/images/70-2.jpg"
+                  alt="Grand format 2"
+                  style={styles.imgPortraitCompact}
+                />
+              </div>
+              <div style={styles.blockFooter}>
+                <h3 style={styles.blockTitle}>Grands formats 70x100</h3>
+                <a href="/oeuvres/grands-formats" style={styles.button}>
+                  Voir plus
+                </a>
+              </div>
             </div>
-            <div style={styles.blockFooter}>
-              <h3 style={styles.blockTitle}>Grands formats 70x100</h3>
-              <a href="/oeuvres/grands-formats" style={styles.button}>
-                Voir plus
-              </a>
-            </div>
-          </div>
 
-          {/* FORMATS MOYENS */}
-          <div style={styles.block}>
-            <div style={styles.grid2}>
-              <img
-                src="/images/50-1.jpg"
-                alt="Format moyen 1"
-                style={styles.imgSquare}
-              />
-              <img
-                src="/images/50-2.jpg"
-                alt="Format moyen 2"
-                style={styles.imgSquare}
-              />
-            </div>
-            <div style={styles.blockFooter}>
-              <h3 style={styles.blockTitle}>Formats moyens 50x50</h3>
-              <a href="/oeuvres/formats-moyens" style={styles.button}>
-                Voir plus
-              </a>
+            {/* FORMATS MOYENS */}
+            <div style={styles.workColumn}>
+              <div style={styles.innerGrid2}>
+                <img
+                  src="/images/50-1.jpg"
+                  alt="Format moyen 1"
+                  style={styles.imgSquareCompact}
+                />
+                <img
+                  src="/images/50-2.jpg"
+                  alt="Format moyen 2"
+                  style={styles.imgSquareCompact}
+                />
+              </div>
+              <div style={styles.blockFooter}>
+                <h3 style={styles.blockTitle}>Formats moyens 50x50</h3>
+                <a href="/oeuvres/formats-moyens" style={styles.button}>
+                  Voir plus
+                </a>
+              </div>
             </div>
           </div>
 
           {/* TRIPTYQUE */}
-          <div style={styles.block}>
+          <div style={styles.workBlock}>
             <img
               src="/images/triptyque.jpg"
               alt="Triptyque"
-              style={styles.imgWide}
+              style={styles.imgWideCompact}
             />
             <div style={styles.blockFooter}>
               <h3 style={styles.blockTitle}>Triptyque 92x195</h3>
@@ -137,27 +140,27 @@ export default function Home() {
           </div>
 
           {/* 20x20 */}
-          <div style={styles.block}>
-            <div style={styles.grid4}>
+          <div style={styles.workBlock}>
+            <div style={styles.grid20}>
               <img
                 src="/images/20-1.jpg"
                 alt="Collage 20x20 1"
-                style={styles.imgSquare}
+                style={styles.img20}
               />
               <img
                 src="/images/20-2.jpg"
                 alt="Collage 20x20 2"
-                style={styles.imgSquare}
+                style={styles.img20}
               />
               <img
                 src="/images/20-3.jpg"
                 alt="Collage 20x20 3"
-                style={styles.imgSquare}
+                style={styles.img20}
               />
               <img
                 src="/images/20-4.jpg"
                 alt="Collage 20x20 4"
-                style={styles.imgSquare}
+                style={styles.img20}
               />
             </div>
             <div style={styles.blockFooter}>
@@ -175,16 +178,16 @@ export default function Home() {
         <div style={styles.container}>
           <h2 style={styles.title}>L’Atelier</h2>
 
-          <div style={styles.grid2}>
+          <div style={styles.atelierGrid}>
             <img
               src="/images/magazines.jpg"
-              alt="Magazines et matière brute"
-              style={styles.imgLandscape}
+              alt="Magazines"
+              style={styles.atelierImg}
             />
             <img
               src="/images/chaos.jpg"
-              alt="Table de travail et chaos de découpes"
-              style={styles.imgLandscape}
+              alt="Table et chaos de découpes"
+              style={styles.atelierImg}
             />
           </div>
 
@@ -211,7 +214,7 @@ const styles: Record<string, CSSProperties> = {
     position: "sticky",
     top: 0,
     backgroundColor: "#f2f2f2",
-    borderBottom: "1px solid #d9d9d9",
+    borderBottom: "1px solid #d8d8d8",
     zIndex: 100,
   },
 
@@ -257,24 +260,24 @@ const styles: Record<string, CSSProperties> = {
 
   hero: {
     width: "100%",
-    backgroundColor: "#e9e9e9",
+    backgroundColor: "#e7e7e7",
   },
 
   heroImg: {
     width: "100%",
-    height: "78vh",
+    height: "72vh",
     objectFit: "cover",
     display: "block",
   },
 
   sectionGray: {
     backgroundColor: "#f2f2f2",
-    padding: "90px 24px",
+    padding: "80px 24px",
   },
 
   sectionWhite: {
     backgroundColor: "#ffffff",
-    padding: "90px 24px",
+    padding: "80px 24px",
     borderTop: "1px solid #e3e3e3",
     borderBottom: "1px solid #e3e3e3",
   },
@@ -290,22 +293,39 @@ const styles: Record<string, CSSProperties> = {
     maxWidth: "900px",
     margin: 0,
     color: "#303030",
-    whiteSpace: "normal",
   },
 
   title: {
     fontSize: "clamp(2rem, 4vw, 3rem)",
     marginTop: 0,
-    marginBottom: "40px",
+    marginBottom: "36px",
     lineHeight: 1.1,
   },
 
-  block: {
-    marginBottom: "90px",
+  topWorksRow: {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gap: "40px",
+    marginBottom: "64px",
+    alignItems: "start",
+  },
+
+  workColumn: {
+    minWidth: 0,
+  },
+
+  innerGrid2: {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gap: "16px",
+  },
+
+  workBlock: {
+    marginBottom: "64px",
   },
 
   blockFooter: {
-    marginTop: "18px",
+    marginTop: "16px",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
@@ -315,52 +335,68 @@ const styles: Record<string, CSSProperties> = {
 
   blockTitle: {
     margin: 0,
-    fontSize: "1.35rem",
+    fontSize: "1.25rem",
     fontWeight: 600,
   },
 
-  grid2: {
+  imgPortraitCompact: {
+    width: "100%",
+    aspectRatio: "7 / 10",
+    maxHeight: "300px",
+    objectFit: "cover",
+    display: "block",
+    backgroundColor: "#e9e9e9",
+  },
+
+  imgSquareCompact: {
+    width: "100%",
+    aspectRatio: "1 / 1",
+    maxHeight: "300px",
+    objectFit: "cover",
+    display: "block",
+    backgroundColor: "#e9e9e9",
+  },
+
+  imgWideCompact: {
+    width: "100%",
+    maxHeight: "360px",
+    objectFit: "cover",
+    display: "block",
+    backgroundColor: "#e9e9e9",
+  },
+
+  grid20: {
+    display: "grid",
+    gridTemplateColumns: "repeat(4, 1fr)",
+    gap: "16px",
+  },
+
+  img20: {
+    width: "100%",
+    aspectRatio: "1 / 1",
+    maxHeight: "220px",
+    objectFit: "cover",
+    display: "block",
+    backgroundColor: "#e9e9e9",
+  },
+
+  atelierGrid: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
     gap: "20px",
   },
 
-  grid4: {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: "16px",
-  },
-
-  imgPortrait: {
-    width: "100%",
-    aspectRatio: "7 / 10",
-    objectFit: "cover",
-    display: "block",
-    backgroundColor: "#e9e9e9",
-  },
-
-  imgSquare: {
-    width: "100%",
-    aspectRatio: "1 / 1",
-    objectFit: "cover",
-    display: "block",
-    backgroundColor: "#e9e9e9",
-  },
-
-  imgLandscape: {
+  atelierImg: {
     width: "100%",
     aspectRatio: "4 / 3",
+    maxHeight: "340px",
     objectFit: "cover",
     display: "block",
     backgroundColor: "#e9e9e9",
   },
 
-  imgWide: {
-    width: "100%",
-    aspectRatio: "195 / 92",
-    objectFit: "cover",
-    display: "block",
-    backgroundColor: "#e9e9e9",
+  atelierFooter: {
+    marginTop: "20px",
   },
 
   button: {
@@ -372,9 +408,5 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "0.95rem",
     lineHeight: 1.2,
     backgroundColor: "transparent",
-  },
-
-  atelierFooter: {
-    marginTop: "20px",
   },
 };
