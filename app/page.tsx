@@ -24,12 +24,15 @@ export default function Home() {
   <a href="/expositions" style={styles.navLink}>
     Expositions
   </a>
+  <a href="/presse" style={styles.navLink}>
+  Presse
+</a>  
   <a href="/contact" style={styles.navLink}>
     Contact
   </a>
 
   <a
-    href="https://instagram.com/"
+    href="https://www.instagram.com/christine.beglet/"
     target="_blank"
     rel="noreferrer"
     style={styles.instagramLink}
@@ -62,6 +65,35 @@ export default function Home() {
       </defs>
     </svg>
   </a>
+           <a
+  href="https://www.facebook.com/christine.beglet"
+  target="_blank"
+  rel="noreferrer"
+  style={styles.instagramLink}
+  aria-label="Facebook"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+  >
+    <rect
+      x="2"
+      y="2"
+      width="20"
+      height="20"
+      rx="5"
+      stroke="#1877F2"
+      strokeWidth="2"
+    />
+    <path
+      d="M13.2 20V12.9H15.6L16 10.2H13.2V8.5C13.2 7.7 13.5 7.1 14.6 7.1H16.1V4.7C15.8 4.7 14.9 4.6 13.8 4.6C11.5 4.6 10 6 10 8.6V10.2H7.8V12.9H10V20H13.2Z"
+      fill="#1877F2"
+    />
+  </svg>
+</a>è
 </nav>
         </div>
       </header>
