@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 export default function Home() {
   return (
     <main style={styles.main}>
@@ -118,7 +119,7 @@ export default function Home() {
   );
 }
 
-const styles = {
+const styles: Record<string, CSSProperties> = {
   main: {
     fontFamily: "Arial, Helvetica, sans-serif",
     backgroundColor: "#f6f3ee",
