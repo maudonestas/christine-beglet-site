@@ -93,7 +93,7 @@ export default function Home() {
       fill="#1877F2"
     />
   </svg>
-</a>è
+</a>
 </nav>
         </div>
       </header>
