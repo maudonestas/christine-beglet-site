@@ -449,7 +449,7 @@ heroFade: {
 
   workSectionLast: {
   marginBottom: "0",
-  maxWidth: "900px",
+  maxWidth: "700px",
 },
 
   workSectionTitle: {
