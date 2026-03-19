@@ -144,12 +144,12 @@ export default function Home() {
     </p>
   </div>
 
+  <div style={styles.bioImageWrapper}>
   <img
     src="/images/atelier-portrait.jpg"
     alt="Christine Béglet dans son atelier"
     style={styles.bioImage}
   />
-
 </div>
         </div>
       </section>
@@ -564,6 +564,13 @@ bioImage: {
   width: "320px",
   height: "auto",
   objectFit: "cover",
+  margin: "0 auto",
+  display: "block",
+},
+  bioImageWrapper: {
+  flex: 1,
+  display: "flex",
+  justifyContent: "center",
 },
 };
 
