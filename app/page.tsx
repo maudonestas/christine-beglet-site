@@ -551,7 +551,7 @@ heroFade: {
 },
  bioBlock: {
   display: "flex",
-  gap: "8px",
+  gap: "12px",
   alignItems: "flex-start",
   flexWrap: "wrap",
   justifyContent: "center",
@@ -570,7 +570,7 @@ bioImage: {
   display: "block",
 },
   bioImageWrapper: {
-  flex: "0 0 360px",
+  flex: "0 0 240px",
   display: "flex",
   justifyContent: "center",
 },
