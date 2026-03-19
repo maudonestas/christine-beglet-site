@@ -443,12 +443,14 @@ heroFade: {
     gap: "20px",
   },
    workSection: {
-    marginBottom: "72px",
-  },
+  marginBottom: "72px",
+  maxWidth: "900px",
+},
 
   workSectionLast: {
-    marginBottom: "0",
-  },
+  marginBottom: "0",
+  maxWidth: "900px",
+},
 
   workSectionTitle: {
     margin: "0 0 18px 0",
