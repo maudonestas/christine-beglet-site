@@ -12,75 +12,189 @@ export default function Home() {
           </div>
 
           <nav style={styles.nav}>
-            <a href="#" style={styles.navLink}>Œuvres</a>
-            <a href="#" style={styles.navLink}>Atelier</a>
-            <a href="#" style={styles.navLink}>Biographie</a>
-            <a href="#" style={styles.navLink}>Expositions</a>
-            <a href="#" style={styles.navLink}>Contact</a>
+            <a href="/oeuvres" style={styles.navLink}>
+              Œuvres
+            </a>
+            <a href="/atelier" style={styles.navLink}>
+              Atelier
+            </a>
+            <a href="/biographie" style={styles.navLink}>
+              Biographie
+            </a>
+            <a href="/expositions" style={styles.navLink}>
+              Expositions
+            </a>
+            <a href="/contact" style={styles.navLink}>
+              Contact
+            </a>
           </nav>
         </div>
       </header>
+
+      {/* HERO PANO */}
+      <section style={styles.hero}>
+        <img
+          src="/images/pano.jpg"
+          alt="Collage panoramique de Christine Béglet"
+          style={styles.heroImg}
+        />
+      </section>
 
       {/* TEXTE */}
       <section style={styles.sectionGray}>
         <div style={styles.container}>
           <p style={styles.text}>
-            Née en 1954 dans le Sud-Ouest de la France, Christine Béglet vit et travaille à Toulouse...
+            Née en 1954 dans le Sud-Ouest de la France, Christine Béglet vit et
+            travaille à Toulouse. Diplômée de l’École Nationale Supérieure des
+            Beaux-Arts de Toulouse, elle développe depuis les années 1990 un
+            travail singulier autour du collage.
+            <br />
+            <br />
+            Des milliers d’images découpées, fragmentées, morcelées deviennent
+            les pigments de sa palette avec laquelle elle compose son collage.
+            <br />
+            Elle ne structure pas au préalable son tableau, du chaos de ses
+            images accumulées tout s’enchaine rapidement dans une sorte de
+            frénésie, sans composition préalable, l’harmonie s’impose, elle se
+            laisse guider par la couleur en simple metteur en scène d’un monde
+            parallèle.
+            <br />
+            <br />
+            Ses œuvres oscillent entre abstraction et architecture. À distance,
+            elles se donnent comme des ensembles colorés ; de près, elles
+            révèlent un monde fragmenté, fait de villes imaginaires et de
+            structures en transformation.
+            <br />
+            <br />
+            Son travail est présenté en France et à l’international, notamment
+            au Canada et en Chine.
           </p>
         </div>
       </section>
 
-      {/* OEUVRES */}
+      {/* ŒUVRES */}
       <section style={styles.sectionWhite}>
         <div style={styles.container}>
           <h2 style={styles.title}>Œuvres</h2>
 
-          {/* ligne 1 */}
-          <div style={styles.row}>
-            <div style={styles.block}>
-              <div style={styles.grid2}>
-                <img src="/images/70-1.jpg" style={styles.imgTall}/>
-                <img src="/images/70-2.jpg" style={styles.imgTall}/>
+          {/* LIGNE 1 : grands formats + formats moyens */}
+          <div style={styles.topWorksRow}>
+            {/* GRANDS FORMATS */}
+            <div style={styles.workColumn}>
+              <div style={styles.innerGrid2}>
+                <img
+                  src="/images/70-1.jpg"
+                  alt="Grand format 1"
+                  style={styles.imgPortraitCompact}
+                />
+                <img
+                  src="/images/70-2.jpg"
+                  alt="Grand format 2"
+                  style={styles.imgPortraitCompact}
+                />
               </div>
-              <div style={styles.footer}>
-                <span>Grands formats 70x100</span>
-                <button style={styles.btn}>Voir plus</button>
+              <div style={styles.blockFooter}>
+                <h3 style={styles.blockTitle}>Grands formats 70x100</h3>
+                <a href="/oeuvres/grands-formats" style={styles.button}>
+                  Voir plus
+                </a>
               </div>
             </div>
 
-            <div style={styles.block}>
-              <div style={styles.grid2}>
-                <img src="/images/50-1.jpg" style={styles.imgSquare}/>
-                <img src="/images/50-2.jpg" style={styles.imgSquare}/>
+            {/* FORMATS MOYENS */}
+            <div style={styles.workColumn}>
+              <div style={styles.innerGrid2}>
+                <img
+                  src="/images/50-1.jpg"
+                  alt="Format moyen 1"
+                  style={styles.imgSquareCompact}
+                />
+                <img
+                  src="/images/50-2.jpg"
+                  alt="Format moyen 2"
+                  style={styles.imgSquareCompact}
+                />
               </div>
-              <div style={styles.footer}>
-                <span>Formats moyens 50x50</span>
-                <button style={styles.btn}>Voir plus</button>
+              <div style={styles.blockFooter}>
+                <h3 style={styles.blockTitle}>Formats moyens 50x50</h3>
+                <a href="/oeuvres/formats-moyens" style={styles.button}>
+                  Voir plus
+                </a>
               </div>
             </div>
           </div>
 
-          {/* triptyque */}
-          <div style={styles.block}>
-            <img src="/images/triptyque.jpg" style={styles.imgWide}/>
-            <div style={styles.footer}>
-              <span>Triptyque 92x195</span>
-              <button style={styles.btn}>Voir plus</button>
+          {/* TRIPTYQUE */}
+          <div style={styles.workBlock}>
+            <img
+              src="/images/triptyque.jpg"
+              alt="Triptyque"
+              style={styles.imgWideCompact}
+            />
+            <div style={styles.blockFooter}>
+              <h3 style={styles.blockTitle}>Triptyque 92x195</h3>
+              <a href="/oeuvres/triptyque" style={styles.button}>
+                Voir plus
+              </a>
             </div>
           </div>
 
           {/* 20x20 */}
-          <div style={styles.block}>
-            <div style={styles.grid4}>
-              <img src="/images/20-1.jpg" style={styles.imgSmall}/>
-              <img src="/images/20-2.jpg" style={styles.imgSmall}/>
-              <img src="/images/20-3.jpg" style={styles.imgSmall}/>
-              <img src="/images/20-4.jpg" style={styles.imgSmall}/>
+          <div style={styles.workBlock}>
+            <div style={styles.grid20}>
+              <img
+                src="/images/20-1.jpg"
+                alt="Collage 20x20 1"
+                style={styles.img20}
+              />
+              <img
+                src="/images/20-2.jpg"
+                alt="Collage 20x20 2"
+                style={styles.img20}
+              />
+              <img
+                src="/images/20-3.jpg"
+                alt="Collage 20x20 3"
+                style={styles.img20}
+              />
+              <img
+                src="/images/20-4.jpg"
+                alt="Collage 20x20 4"
+                style={styles.img20}
+              />
             </div>
-            <div style={styles.footer}>
-              <span>Collages 20x20</span>
-              <button style={styles.btn}>Voir plus</button>
+            <div style={styles.blockFooter}>
+              <h3 style={styles.blockTitle}>Collages 20x20</h3>
+              <a href="/oeuvres/collages-20x20" style={styles.button}>
+                Voir plus
+              </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ATELIER */}
+      <section style={styles.sectionGray}>
+        <div style={styles.container}>
+          <h2 style={styles.title}>L’Atelier</h2>
+
+          <div style={styles.atelierGrid}>
+            <img
+              src="/images/magazines.jpg"
+              alt="Magazines"
+              style={styles.atelierImg}
+            />
+            <img
+              src="/images/chaos.jpg"
+              alt="Table et chaos de découpes"
+              style={styles.atelierImg}
+            />
+          </div>
+
+          <div style={styles.atelierFooter}>
+            <a href="/atelier" style={styles.button}>
+              Voir l’atelier
+            </a>
           </div>
         </div>
       </section>
@@ -89,56 +203,210 @@ export default function Home() {
 }
 
 const styles: Record<string, CSSProperties> = {
-  main: { fontFamily: "Arial", background: "#f2f2f2" },
-
-  header: { borderBottom: "1px solid #ddd" },
-
-  headerContent: {
-    maxWidth: 1200,
-    margin: "0 auto",
-    padding: 20,
-    display: "flex",
-    justifyContent: "space-between",
+  main: {
+    fontFamily: "Arial, Helvetica, sans-serif",
+    backgroundColor: "#f2f2f2",
+    color: "#1f1f1f",
+    minHeight: "100vh",
   },
 
-  name: { fontWeight: 700 },
-  subtitle: { color: "#666" },
+  header: {
+    position: "sticky",
+    top: 0,
+    backgroundColor: "#f2f2f2",
+    borderBottom: "1px solid #d8d8d8",
+    zIndex: 100,
+  },
 
-  nav: { display: "flex", gap: 20 },
-  navLink: { textDecoration: "none", color: "#000" },
-
-  sectionGray: { padding: 60 },
-  sectionWhite: { padding: 60, background: "#fff" },
-
-  container: { maxWidth: 1200, margin: "0 auto" },
-
-  title: { fontSize: 40, marginBottom: 40 },
-
-  text: { lineHeight: 1.8 },
-
-  row: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40 },
-
-  block: { marginBottom: 60 },
-
-  grid2: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 },
-  grid4: { display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 10 },
-
-  imgTall: { height: 220, width: "100%", objectFit: "cover" },
-  imgSquare: { height: 220, width: "100%", objectFit: "cover" },
-  imgWide: { height: 280, width: "100%", objectFit: "cover" },
-  imgSmall: { height: 140, width: "100%", objectFit: "cover" },
-
-  footer: {
-    marginTop: 10,
+  headerContent: {
+    maxWidth: "1200px",
+    margin: "0 auto",
+    padding: "22px 24px",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    gap: "24px",
+    flexWrap: "wrap",
   },
 
-  btn: {
-    border: "1px solid black",
-    background: "transparent",
-    padding: "6px 12px",
-    cursor: "pointer",
+  name: {
+    fontSize: "1.25rem",
+    fontWeight: 700,
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    lineHeight: 1.1,
+  },
+
+  subtitle: {
+    marginTop: "4px",
+    fontSize: "1rem",
+    color: "#5f5f5f",
+    lineHeight: 1.2,
+  },
+
+  nav: {
+    display: "flex",
+    gap: "22px",
+    flexWrap: "wrap",
+    alignItems: "center",
+  },
+
+  navLink: {
+    textDecoration: "none",
+    color: "#1f1f1f",
+    fontSize: "1rem",
+    lineHeight: 1.2,
+  },
+
+  hero: {
+    width: "100%",
+    backgroundColor: "#e7e7e7",
+  },
+
+  heroImg: {
+    width: "100%",
+    height: "68vh",
+    objectFit: "cover",
+    display: "block",
+  },
+
+  sectionGray: {
+    backgroundColor: "#f2f2f2",
+    padding: "80px 24px",
+  },
+
+  sectionWhite: {
+    backgroundColor: "#ffffff",
+    padding: "80px 24px",
+    borderTop: "1px solid #e3e3e3",
+    borderBottom: "1px solid #e3e3e3",
+  },
+
+  container: {
+    maxWidth: "1200px",
+    margin: "0 auto",
+  },
+
+  text: {
+    fontSize: "1.08rem",
+    lineHeight: 1.9,
+    maxWidth: "920px",
+    margin: 0,
+    color: "#303030",
+  },
+
+  title: {
+    fontSize: "clamp(2rem, 4vw, 3rem)",
+    marginTop: 0,
+    marginBottom: "36px",
+    lineHeight: 1.1,
+  },
+
+  topWorksRow: {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gap: "40px",
+    marginBottom: "64px",
+    alignItems: "start",
+  },
+
+  workColumn: {
+    minWidth: 0,
+  },
+
+  innerGrid2: {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gap: "16px",
+  },
+
+  workBlock: {
+    marginBottom: "64px",
+  },
+
+  blockFooter: {
+    marginTop: "16px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: "20px",
+    flexWrap: "wrap",
+  },
+
+  blockTitle: {
+    margin: 0,
+    fontSize: "1.25rem",
+    fontWeight: 600,
+  },
+
+  imgPortraitCompact: {
+    width: "100%",
+    aspectRatio: "7 / 10",
+    maxHeight: "300px",
+    objectFit: "cover",
+    display: "block",
+    backgroundColor: "#e9e9e9",
+  },
+
+  imgSquareCompact: {
+    width: "100%",
+    aspectRatio: "1 / 1",
+    maxHeight: "300px",
+    objectFit: "cover",
+    display: "block",
+    backgroundColor: "#e9e9e9",
+  },
+
+  imgWideCompact: {
+    width: "100%",
+    height: "260px",
+    objectFit: "cover",
+    display: "block",
+    backgroundColor: "#e9e9e9",
+  },
+
+  grid20: {
+    display: "grid",
+    gridTemplateColumns: "repeat(4, 1fr)",
+    gap: "16px",
+  },
+
+  img20: {
+    width: "100%",
+    aspectRatio: "1 / 1",
+    maxHeight: "180px",
+    objectFit: "cover",
+    display: "block",
+    backgroundColor: "#e9e9e9",
+  },
+
+  atelierGrid: {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gap: "20px",
+  },
+
+  atelierImg: {
+    width: "100%",
+    aspectRatio: "4 / 3",
+    maxHeight: "320px",
+    objectFit: "cover",
+    display: "block",
+    backgroundColor: "#e9e9e9",
+  },
+
+  atelierFooter: {
+    marginTop: "20px",
+  },
+
+  button: {
+    display: "inline-block",
+    textDecoration: "none",
+    color: "#1f1f1f",
+    border: "1px solid #1f1f1f",
+    padding: "10px 16px",
+    fontSize: "0.95rem",
+    lineHeight: 1.2,
+    backgroundColor: "transparent",
   },
 };
