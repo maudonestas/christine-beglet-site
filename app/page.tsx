@@ -296,7 +296,7 @@ heroArrow: {
   height: "52px",
   borderRadius: "50%",
   background: "linear-gradient(to right, rgba(255,255,255,0.6), rgba(255,255,255,1))",
-  color: "#111111",
+  color: "#4a4a4a",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
