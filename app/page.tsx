@@ -12,22 +12,57 @@ export default function Home() {
           </div>
 
           <nav style={styles.nav}>
-            <a href="/oeuvres" style={styles.navLink}>
-              Œuvres
-            </a>
-            <a href="/atelier" style={styles.navLink}>
-              Atelier
-            </a>
-            <a href="/biographie" style={styles.navLink}>
-              Biographie
-            </a>
-            <a href="/expositions" style={styles.navLink}>
-              Expositions
-            </a>
-            <a href="/contact" style={styles.navLink}>
-              Contact
-            </a>
-          </nav>
+  <a href="/oeuvres" style={styles.navLink}>
+    Œuvres
+  </a>
+  <a href="/atelier" style={styles.navLink}>
+    Atelier
+  </a>
+  <a href="/biographie" style={styles.navLink}>
+    Biographie
+  </a>
+  <a href="/expositions" style={styles.navLink}>
+    Expositions
+  </a>
+  <a href="/contact" style={styles.navLink}>
+    Contact
+  </a>
+
+  <a
+    href="https://instagram.com/"
+    target="_blank"
+    rel="noreferrer"
+    style={styles.instagramLink}
+    aria-label="Instagram"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+    >
+      <rect
+        x="2"
+        y="2"
+        width="20"
+        height="20"
+        rx="5"
+        stroke="url(#ig)"
+        strokeWidth="2"
+      />
+      <circle cx="12" cy="12" r="4" stroke="url(#ig)" strokeWidth="2" />
+      <circle cx="17.5" cy="6.5" r="1" fill="url(#ig)" />
+      <defs>
+        <linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#f58529" />
+          <stop offset="50%" stopColor="#dd2a7b" />
+          <stop offset="100%" stopColor="#515bd4" />
+        </linearGradient>
+      </defs>
+    </svg>
+  </a>
+</nav>
         </div>
       </header>
 
@@ -236,19 +271,22 @@ const styles: Record<string, CSSProperties> = {
   },
 
   name: {
-    fontSize: "1.25rem",
-    fontWeight: 700,
-    letterSpacing: "0.08em",
-    textTransform: "uppercase",
-    lineHeight: 1.1,
-  },
-
+  fontSize: "2.2rem",
+  fontWeight: 300,
+  letterSpacing: "0.12em",
+  textTransform: "uppercase",
+  lineHeight: 1,
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+},
   subtitle: {
-    marginTop: "4px",
-    fontSize: "1rem",
-    color: "#5f5f5f",
-    lineHeight: 1.2,
-  },
+  marginTop: "8px",
+  fontSize: "0.9rem",
+  color: "#6a6a6a",
+  fontWeight: 300,
+  letterSpacing: "0.08em",
+  textTransform: "uppercase",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+},
 
   nav: {
     display: "flex",
@@ -258,12 +296,14 @@ const styles: Record<string, CSSProperties> = {
   },
 
   navLink: {
-    textDecoration: "none",
-    color: "#1f1f1f",
-    fontSize: "1rem",
-    lineHeight: 1.2,
-  },
-
+  textDecoration: "none",
+  color: "#4a4a4a",
+  fontSize: "0.95rem",
+  fontWeight: 300,
+  letterSpacing: "0.12em",
+  textTransform: "uppercase",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+},
   hero: {
   width: "100%",
   backgroundColor: "#e7e7e7",
@@ -343,11 +383,14 @@ heroFade: {
   },
 
   title: {
-    fontSize: "clamp(2rem, 4vw, 3rem)",
-    marginTop: 0,
-    marginBottom: "36px",
-    lineHeight: 1.1,
-  },
+  fontSize: "2rem",
+  marginTop: 0,
+  marginBottom: "32px",
+  fontWeight: 300,
+  letterSpacing: "0.12em",
+  textTransform: "uppercase",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+},
 
   topWorksRow: {
     display: "grid",
@@ -381,11 +424,13 @@ heroFade: {
   },
 
   blockTitle: {
-    margin: 0,
-    fontSize: "1.25rem",
-    fontWeight: 600,
-  },
-
+  margin: 0,
+  fontSize: "0.95rem",
+  fontWeight: 400,
+  letterSpacing: "0.1em",
+  textTransform: "uppercase",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+},
   imgPortraitCompact: {
     width: "100%",
     aspectRatio: "7 / 10",
@@ -456,5 +501,11 @@ heroFade: {
     lineHeight: 1.2,
     backgroundColor: "transparent",
   },
+
+ instagramLink: {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+},
 };
 
