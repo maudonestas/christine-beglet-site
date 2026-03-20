@@ -455,28 +455,28 @@ heroFade: {
   },
 
   workCardSolo: {
-  width: "360px",
+  width: "420px",
   marginBottom: "56px",
 },
   workFrame: {
-  width: "360px",
-  height: "480px",
-  background: "linear-gradient(180deg, #f3f3f3 0%, #ededed 100%)",
+  width: "420px",
+  height: "520px",
+  background: "linear-gradient(135deg, #f1f1f1 0%, #ececec 55%, #f2f2f2 100%)",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
 },
    
    imgGrandSingle: {
-  width: "250px",
-  height: "360px",
+  width: "235px",
+  height: "340px",
   objectFit: "contain",
   display: "block",
 },
 
   imgSquareSingle: {
-  width: "250px",
-  height: "250px",
+  width: "225px",
+  height: "225px",
   objectFit: "contain",
   display: "block",
 },
