@@ -157,7 +157,6 @@ useEffect(() => {
       {/* HERO PANO */}
      <section style={styles.hero}>
   <div style={styles.heroWrapper}>
-  <div style={styles.heroArrow}>➜</div>
     <div ref={heroScrollRef} style={styles.heroScroll}>
       <img
         src="/images/pano.jpg"
@@ -421,25 +420,6 @@ heroImgScrollable: {
 
   heroWrapper: {
   position: "relative",
-},
-
-heroArrow: {
-  position: "absolute",
-  bottom: "20px",
-  right: "20px",
-  width: "52px",
-  height: "52px",
-  borderRadius: "50%",
-  background: "linear-gradient(to right, rgba(255,255,255,0.6), rgba(255,255,255,1))",
-  color: "#4a4a4a",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  fontSize: "2rem",
-  fontWeight: 700,
-  zIndex: 3,
-  boxShadow: "0 2px 10px rgba(0,0,0,0.18)",
-  pointerEvents: "none",
 },
     
 heroFade: {
