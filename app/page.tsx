@@ -1,6 +1,38 @@
+import { useEffect, useRef } from "react";
 import type { CSSProperties } from "react";
 
 export default function Home() {
+   const heroScrollRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const el = heroScrollRef.current;
+    if (!el) return;
+
+    const maxScroll = el.scrollWidth - el.clientWidth;
+    if (maxScroll <= 0) return;
+
+    const duration = 5000;
+    const start = performance.now();
+
+    const animate = (time: number) => {
+      const progress = Math.min((time - start) / duration, 1);
+
+      const eased =
+        1 - Math.pow(1 - progress, 3);
+
+      el.scrollTo({
+        left: maxScroll * eased,
+        behavior: "auto",
+      });
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, []);
+ 
  return (
   <main style={styles.main}>
       {/* HEADER */}
@@ -102,7 +134,7 @@ export default function Home() {
      <section style={styles.hero}>
   <div style={styles.heroWrapper}>
   <div style={styles.heroArrow}>➜</div>
-    <div style={styles.heroScroll}>
+    <div ref={heroScrollRef} style={styles.heroScroll}>
       <img
         src="/images/pano.jpg"
         alt="Collage panoramique de Christine Béglet"
