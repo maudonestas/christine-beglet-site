@@ -311,6 +311,7 @@ useEffect(() => {
     </div>
   </div>
 </div>
+   </div>
       </section>
 
       {/* ATELIER */}
