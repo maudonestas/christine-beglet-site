@@ -516,11 +516,11 @@ heroFade: {
   },
   atelierGrid: {
   display: "grid",
-  gridTemplateColumns: "1fr 1fr",
-  gap: "24px",
-  alignItems: "center",
+  gridTemplateColumns: "auto auto", // 🔑 pas 1fr 1fr
+  gap: "32px",
+  justifyContent: "start", // 🔑 aligne à gauche
   marginTop: "32px",
-  marginBottom: "32px",
+  marginBottom: "24px",
 },
 
   workSectionTitle: {
@@ -534,11 +534,11 @@ heroFade: {
 
 
   atelierImg: {
-  width: "100%",
-  height: "320px",
+  width: "300px",     // 🔑 taille contrôlée (augmente si besoin)
+  height: "300px",
   objectFit: "contain",
   display: "block",
-},
+}
   atelierFooter: {
     marginTop: "20px",
   },
