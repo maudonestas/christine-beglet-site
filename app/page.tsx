@@ -319,7 +319,7 @@ useEffect(() => {
 const styles: Record<string, CSSProperties> = {
   main: {
   fontFamily: "Arial, Helvetica, sans-serif",
-  backgroundColor: "#ffffff",
+  backgroundColor: "#f2f2f2",
   color: "#1f1f1f",
   minHeight: "100vh",
 },
@@ -378,7 +378,7 @@ const styles: Record<string, CSSProperties> = {
 },
   hero: {
   width: "100%",
-  backgroundColor: "#ffffff",
+  backgroundColor: "#f2f2f2",
   padding: "0",
 },
    
@@ -411,15 +411,13 @@ heroFade: {
   pointerEvents: "none",
 },
   sectionGray: {
-  backgroundColor: "#ffffff",
+  backgroundColor: "#f2f2f2",
   padding: "80px 24px",
 },
    
   sectionWhite: {
-  backgroundColor: "#f2f2f2",
+  backgroundColor: "#ffffff",
   padding: "80px 24px",
-  borderTop: "1px solid #e3e3e3",
-  borderBottom: "1px solid #e3e3e3",
 },
 
   container: {
