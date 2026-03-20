@@ -68,25 +68,13 @@ useEffect(() => {
           </div>
 
           <nav style={styles.nav}>
-  <a href="/oeuvres" style={styles.navLink}>
-    Œuvres
-  </a>
-  <a href="/atelier" style={styles.navLink}>
-    L'Atelier
-  </a>
-  <a href="/biographie" style={styles.navLink}>
-    Biographie
-  </a>
-  <a href="/expositions" style={styles.navLink}>
-    Expositions
-  </a>
-  <a href="/presse" style={styles.navLink}>
-  Presse
-</a>  
-  <a href="/contact" style={styles.navLink}>
-    Contact
-  </a>
-
+  <a href="#oeuvres" style={styles.navItem}>ŒUVRES</a>
+  <a href="#atelier" style={styles.navItem}>L’ATELIER</a>
+  <a href="#bio" style={styles.navItem}>BIOGRAPHIE</a>
+  <a href="#expositions" style={styles.navItem}>EXPOSITIONS</a>
+  <a href="#press" style={styles.navItem}>PRESS</a>
+  <a href="#contact" style={styles.navItem}>CONTACT</a>
+</nav>
   <a
     href="https://www.instagram.com/christine.beglet/"
     target="_blank"
@@ -361,12 +349,24 @@ const styles: Record<string, CSSProperties> = {
 },
 
   nav: {
-    display: "flex",
-    gap: "22px",
-    flexWrap: "wrap",
-    alignItems: "center",
-  },
+  display: "flex",
+  justifyContent: "center",
+  gap: "40px",
+  padding: "20px 0",
+},
 
+navItem: {
+  fontFamily: "Arial, Helvetica, sans-serif",
+  fontSize: "13px",
+  letterSpacing: "2px",
+  textDecoration: "none",
+  color: "#3a3a3a",
+  cursor: "pointer",
+  transition: "opacity 0.2s ease",
+},
+   navItemHover: {
+  opacity: 0.6,
+}
   navLink: {
   textDecoration: "none",
   color: "#4a4a4a",
