@@ -485,22 +485,28 @@ heroFade: {
 },
    
   triptychBlock: {
-  width: "900px",
-  marginBottom: "0",
+  width: "100%",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
 },
 
   triptychFrame: {
-  width: "900px",
-  height: "430px",
-  background: "linear-gradient(180deg, #f3f3f3 0%, #ededed 100%)",
+  width: "100%",
+  maxWidth: "900px",
+  height: "480px",
+  background: `
+    radial-gradient(circle at 30% 30%, #ededed 0%, #e5e5e5 40%, #dddddd 100%)
+  `,
+  boxShadow: "inset 0 0 40px rgba(0,0,0,0.03)",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
 },
 
   imgTriptychSingle: {
-  width: "760px",
-  height: "300px",
+  width: "780px",
+  height: "280px",
   objectFit: "contain",
   display: "block",
 },
