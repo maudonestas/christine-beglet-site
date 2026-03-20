@@ -100,7 +100,6 @@ useEffect(() => {
     </div>
   </div>
 </div>
-        </div>
       </header>
 
       {/* HERO PANO */}
