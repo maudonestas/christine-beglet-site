@@ -460,12 +460,6 @@ heroFade: {
 },
    
    
-  imgGrandSingle: {
-  width: "250px",
-  height: "360px",
-  objectFit: "contain",
-  display: "block",
-},
    imgGrandSingle: {
   width: "260px",
   height: "370px",
