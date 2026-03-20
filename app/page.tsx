@@ -18,9 +18,8 @@ export default function Home() {
     const animate = (time: number) => {
       const progress = Math.min((time - start) / duration, 1);
 
-      const eased =
-        1 - Math.pow(1 - progress, 3);
-
+      const eased = progress;
+       
       el.scrollTo({
         left: maxScroll * eased,
         behavior: "auto",
