@@ -423,6 +423,7 @@ heroFade: {
   container: {
     maxWidth: "1200px",
     margin: "0 auto",
+     textAlign: "left"
   },
 
   text: {
@@ -518,8 +519,9 @@ heroFade: {
   display: "grid",
   gridTemplateColumns: "auto auto",
   gap: "32px",
-  justifyContent: "start",
-  maxWidth: "700px", // 🔥 évite que ça s’étale trop
+  justifyContent: "start",   // 🔑 aligne à gauche
+  marginTop: "32px",
+  marginBottom: "24px",
 },
 
   workSectionTitle: {
@@ -533,8 +535,8 @@ heroFade: {
 
 
   atelierImg: {
-  width: "340px",     // 🔑 taille contrôlée (augmente si besoin)
-  height: "340px",
+  width: "320px",
+  height: "320px",
   objectFit: "contain",
   display: "block",
 },
