@@ -486,9 +486,7 @@ heroFade: {
    
   triptychBlock: {
   width: "100%",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
+  marginBottom: "56px",
 },
 
   triptychFrame: {
