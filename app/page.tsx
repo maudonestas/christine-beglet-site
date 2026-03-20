@@ -538,7 +538,7 @@ heroFade: {
   height: "300px",
   objectFit: "contain",
   display: "block",
-}
+},
   atelierFooter: {
     marginTop: "20px",
   },
