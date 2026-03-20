@@ -318,20 +318,18 @@ useEffect(() => {
 
 const styles: Record<string, CSSProperties> = {
   main: {
-    fontFamily: "Arial, Helvetica, sans-serif",
-    backgroundColor: "#f2f2f2",
-    color: "#1f1f1f",
-    minHeight: "100vh",
-  },
-
+  fontFamily: "Arial, Helvetica, sans-serif",
+  backgroundColor: "#ffffff",
+  color: "#1f1f1f",
+  minHeight: "100vh",
+},
   header: {
-    position: "sticky",
-    top: 0,
-    backgroundColor: "#f2f2f2",
-    borderBottom: "1px solid #d8d8d8",
-    zIndex: 100,
-  },
-
+  position: "sticky",
+  top: 0,
+  backgroundColor: "#ffffff",
+  borderBottom: "1px solid #d8d8d8",
+  zIndex: 100,
+},
   headerContent: {
   maxWidth: "100%",
   margin: "0",
@@ -379,10 +377,10 @@ const styles: Record<string, CSSProperties> = {
 },
   hero: {
   width: "100%",
-  backgroundColor: "#e7e7e7",
+  backgroundColor: "#ffffff",
   padding: "0",
 },
-
+   
 heroScroll: {
   overflowX: "auto",
   overflowY: "hidden",
@@ -412,16 +410,16 @@ heroFade: {
   pointerEvents: "none",
 },
   sectionGray: {
-    backgroundColor: "#f2f2f2",
-    padding: "80px 24px",
-  },
-
+  backgroundColor: "#ffffff",
+  padding: "80px 24px",
+},
+   
   sectionWhite: {
-    backgroundColor: "#ffffff",
-    padding: "80px 24px",
-    borderTop: "1px solid #e3e3e3",
-    borderBottom: "1px solid #e3e3e3",
-  },
+  backgroundColor: "#f2f2f2",
+  padding: "80px 24px",
+  borderTop: "1px solid #e3e3e3",
+  borderBottom: "1px solid #e3e3e3",
+},
 
   container: {
     maxWidth: "1200px",
