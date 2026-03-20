@@ -458,14 +458,20 @@ heroFade: {
   width: "360px",
   marginBottom: "56px",
 },
-   
+  workFrame: {
+  width: "360px",
+  height: "480px",
+  background: "linear-gradient(180deg, #f3f3f3 0%, #ededed 100%)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+},
    
    imgGrandSingle: {
-  width: "260px",
-  height: "370px",
+  width: "250px",
+  height: "360px",
   objectFit: "contain",
   display: "block",
-  boxShadow: "0 6px 18px rgba(0,0,0,0.05)",
 },
 
   imgSquareSingle: {
@@ -476,24 +482,25 @@ heroFade: {
 },
    
   triptychBlock: {
-    width: "100%",
-  },
+  width: "900px",
+  marginBottom: "0",
+},
 
   triptychFrame: {
-    width: "100%",
-    height: "380px",
-    backgroundColor: "#f5f5f5",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
+  width: "900px",
+  height: "430px",
+  background: "linear-gradient(180deg, #f3f3f3 0%, #ededed 100%)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+},
 
   imgTriptychSingle: {
-    width: "820px",
-    height: "350px",
-    objectFit: "contain",
-    display: "block",
-  },
+  width: "760px",
+  height: "300px",
+  objectFit: "contain",
+  display: "block",
+},
 
 
   buttonRowLeft: {
