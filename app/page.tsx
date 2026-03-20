@@ -12,7 +12,7 @@ export default function Home() {
     const maxScroll = el.scrollWidth - el.clientWidth;
     if (maxScroll <= 0) return;
 
-    const duration = 11000;
+    const duration = 16000;
     const start = performance.now();
 
     const animate = (time: number) => {
