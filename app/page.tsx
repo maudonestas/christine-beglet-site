@@ -215,42 +215,32 @@ useEffect(() => {
         <div style={styles.container}>
           <h2 style={styles.title}>Œuvres</h2>
 
-          {/* GRANDS FORMATS */}
-          <div style={styles.workSection}>
-            <h3 style={styles.workSectionTitle}>Grands formats 70x100</h3>
-            <div style={styles.innerGrid2}>
-              <img
-                src="/images/70-1.jpg"
-                alt="Grand format 1"
-                style={styles.imgPortraitLarge}
-              />
-              <img
-                src="/images/70-2.jpg"
-                alt="Grand format 2"
-                style={styles.imgPortraitLarge}
-              />
+          <div style={styles.worksTopRow}>
+            {/* GRANDS FORMATS */}
+            <div style={styles.workCard}>
+              <h3 style={styles.workSectionTitle}>Grands formats 70x100</h3>
+              <div style={styles.workFrame}>
+                <img
+                  src="/images/70-1.jpg"
+                  alt="Grand format"
+                  style={styles.imgGrandSingle}
+                />
+              </div>
+              <div style={styles.buttonRowLeft}>
+                <a href="/oeuvres/grands-formats" style={styles.button}>
+                  Voir plus
+                </a>
+              </div>
             </div>
-            <div style={styles.buttonRowLeft}>
-              <a href="/oeuvres/grands-formats" style={styles.button}>
-                Voir plus
-              </a>
-            </div>
-          </div>
 
-                   {/* FORMATS MOYENS */}
-          <div style={styles.fullWidthAlt}>
-            <div style={styles.workSection}>
+            {/* FORMATS MOYENS */}
+            <div style={styles.workCard}>
               <h3 style={styles.workSectionTitle}>Formats moyens 50x50</h3>
-              <div style={styles.innerGrid2}>
+              <div style={styles.workFrame}>
                 <img
                   src="/images/50-1.jpg"
-                  alt="Format moyen 1"
-                  style={styles.imgSquareLarge}
-                />
-                <img
-                  src="/images/50-2.jpg"
-                  alt="Format moyen 2"
-                  style={styles.imgSquareLarge}
+                  alt="Format moyen"
+                  style={styles.imgSquareSingle}
                 />
               </div>
               <div style={styles.buttonRowLeft}>
@@ -261,57 +251,40 @@ useEffect(() => {
             </div>
           </div>
 
+          {/* COLLAGES 20x20 */}
+          <div style={styles.workCardSolo}>
+            <h3 style={styles.workSectionTitle}>Collages 20x20</h3>
+            <div style={styles.workFrame}>
+              <img
+                src="/images/20-1.jpg"
+                alt="Collage 20x20"
+                style={styles.imgSquareSingle}
+              />
+            </div>
+            <div style={styles.buttonRowLeft}>
+              <a href="/oeuvres/collages-20x20" style={styles.button}>
+                Voir plus
+              </a>
+            </div>
+          </div>
+
           {/* TRIPTYQUE */}
-          <div style={styles.workSection}>
+          <div style={styles.triptychBlock}>
             <h3 style={styles.workSectionTitle}>Triptyque 92x195</h3>
-            <img
-              src="/images/triptyque.jpg"
-              alt="Triptyque"
-              style={styles.imgWideLarge}
-            />
+            <div style={styles.triptychFrame}>
+              <img
+                src="/images/triptyque.jpg"
+                alt="Triptyque"
+                style={styles.imgTriptychSingle}
+              />
+            </div>
             <div style={styles.buttonRowLeft}>
               <a href="/oeuvres/triptyque" style={styles.button}>
                 Voir plus
               </a>
             </div>
           </div>
-
-          {/* FORMATS 20x20 */}
-          <div style={styles.fullWidthAlt}>
-  <div style={styles.workSectionLast}>
-    <h3 style={styles.workSectionTitle}>Formats 20x20</h3>
-
-    <div style={styles.grid20TwoByTwo}>
-      <img
-        src="/images/20-1.jpg"
-        alt="Format 20x20 1"
-        style={styles.img20Large}
-      />
-      <img
-        src="/images/20-2.jpg"
-        alt="Format 20x20 2"
-        style={styles.img20Large}
-      />
-      <img
-        src="/images/20-3.jpg"
-        alt="Format 20x20 3"
-        style={styles.img20Large}
-      />
-      <img
-        src="/images/20-4.jpg"
-        alt="Format 20x20 4"
-        style={styles.img20Large}
-      />
-    </div>
-
-    <div style={styles.buttonRowLeft}>
-      <a href="/oeuvres/collages-20x20" style={styles.button}>
-        Voir plus
-      </a>
-    </div>
-  </div>
-</div>
-   </div>
+        </div>
       </section>
 
       {/* ATELIER */}
@@ -472,31 +445,85 @@ heroFade: {
   textTransform: "uppercase",
   fontFamily: '"Helvetica Neue", Arial, sans-serif',
 },
-
-  innerGrid2: {
+  worksTopRow: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
-    gap: "16px",
+    gap: "36px",
+    marginBottom: "56px",
+    alignItems: "start",
   },
 
+  workCard: {
+    width: "100%",
+  },
+
+  workCardSolo: {
+    width: "420px",
+    marginBottom: "56px",
+  },
+
+  workFrame: {
+    width: "100%",
+    height: "400px",
+    backgroundColor: "#f5f5f5",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  imgGrandSingle: {
+    width: "220px",
+    height: "310px",
+    objectFit: "contain",
+    display: "block",
+  },
+
+  imgSquareSingle: {
+    width: "260px",
+    height: "260px",
+    objectFit: "contain",
+    display: "block",
+  },
+
+  triptychBlock: {
+    width: "100%",
+  },
+
+  triptychFrame: {
+    width: "100%",
+    height: "380px",
+    backgroundColor: "#f5f5f5",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  imgTriptychSingle: {
+    width: "820px",
+    height: "350px",
+    objectFit: "contain",
+    display: "block",
+  },
+
+  workSectionTitle: {
+    margin: "0 0 16px 0",
+    fontSize: "0.95rem",
+    fontWeight: 400,
+    letterSpacing: "0.1em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
+  buttonRowLeft: {
+    marginTop: "18px",
+    display: "flex",
+    justifyContent: "flex-start",
+  },
   atelierGrid: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
     gap: "20px",
   },
-   workSection: {
-  maxWidth: "700px",
-  margin: "0 auto 72px auto",
-},
-   fullWidthAlt: {
-  width: "100%",
-  backgroundColor: "#f7f7f7",
-  padding: "40px 0",
-},
-  workSectionLast: {
-  marginBottom: "0",
-  maxWidth: "520px",
-},
 
   workSectionTitle: {
     margin: "0 0 18px 0",
@@ -511,44 +538,6 @@ heroFade: {
     marginTop: "18px",
     display: "flex",
     justifyContent: "flex-start",
-  },
-
-  imgPortraitLarge: {
-  width: "100%",
-  aspectRatio: "7 / 10",
-  objectFit: "contain",
-  display: "block",
-  backgroundColor: "#e9e9e9",
-},
-
-  imgSquareLarge: {
-  width: "80%",
-  aspectRatio: "1 / 1",
-  objectFit: "contain",
-  display: "block",
-  backgroundColor: "#e9e9e9",
-},
-  imgWideLarge: {
-    width: "100%",
-    height: "auto",
-    objectFit: "contain",
-    display: "block",
-    backgroundColor: "#e9e9e9",
-  },
-
-  grid20TwoByTwo: {
-    display: "grid",
-    gridTemplateColumns: "repeat(2, 1fr)",
-    gap: "16px",
-    maxWidth: "760px",
-  },
-
-  img20Large: {
-    width: "100%",
-    aspectRatio: "1 / 1",
-    objectFit: "contain",
-    display: "block",
-    backgroundColor: "#e9e9e9",
   },
 
   atelierImg: {
