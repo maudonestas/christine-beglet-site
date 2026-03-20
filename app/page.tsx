@@ -506,7 +506,6 @@ heroFade: {
   },
 
 
-
   buttonRowLeft: {
     marginTop: "18px",
     display: "flex",
@@ -527,11 +526,6 @@ heroFade: {
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
-  buttonRowLeft: {
-    marginTop: "18px",
-    display: "flex",
-    justifyContent: "flex-start",
-  },
 
   atelierImg: {
     width: "100%",
