@@ -518,12 +518,12 @@ heroFade: {
   atelierGrid: {
   display: "grid",
   gridTemplateColumns: "320px 320px",
-  gap: "32px",
+  columnGap: "32px",
+  rowGap: "0",
   justifyContent: "start",
-  marginTop: "32px",
-  marginBottom: "24px",
-  marginLeft: "0",
-  paddingLeft: "0",
+  justifyItems: "start",
+  margin: "32px 0 24px 0",
+  padding: "0",
 },
 
   workSectionTitle: {
