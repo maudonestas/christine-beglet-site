@@ -1,8 +1,10 @@
+import Header from "../components/Header";
 import type { CSSProperties } from "react";
 
 export default function OeuvresPage() {
   return (
     <main style={styles.main}>
+      <Header />
       <section style={styles.section}>
         <div style={styles.container}>
           <h1 style={styles.title}>Œuvres</h1>
