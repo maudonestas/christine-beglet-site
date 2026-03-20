@@ -326,10 +326,11 @@ const styles: Record<string, CSSProperties> = {
   header: {
   position: "sticky",
   top: 0,
-  backgroundColor: "#ffffff",
+  backgroundColor: "#f6f3ee",
   borderBottom: "1px solid #d8d8d8",
   zIndex: 100,
 },
+   
   headerContent: {
   maxWidth: "100%",
   margin: "0",
