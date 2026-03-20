@@ -457,33 +457,33 @@ heroFade: {
   },
 
   workCardSolo: {
-    width: "420px",
-    marginBottom: "56px",
-  },
-
+  width: "360px",
+  marginBottom: "56px",
+},
+   
   workFrame: {
-    width: "100%",
-    height: "400px",
-    backgroundColor: "#f5f5f5",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
+  width: "360px",
+  height: "480px",
+  backgroundColor: "#ffffff",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+},
+   
   imgGrandSingle: {
-    width: "220px",
-    height: "310px",
-    objectFit: "contain",
-    display: "block",
-  },
+  width: "250px",
+  height: "360px",
+  objectFit: "contain",
+  display: "block",
+},
 
   imgSquareSingle: {
-    width: "260px",
-    height: "260px",
-    objectFit: "contain",
-    display: "block",
-  },
-
+  width: "250px",
+  height: "250px",
+  objectFit: "contain",
+  display: "block",
+},
+   
   triptychBlock: {
     width: "100%",
   },
