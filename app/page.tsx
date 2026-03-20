@@ -218,7 +218,7 @@ useEffect(() => {
           <div style={styles.worksTopRow}>
             {/* GRANDS FORMATS */}
             <div style={styles.workCard}>
-              <h3 style={styles.workSectionTitle}>Grands formats 70x100</h3>
+              <h3 style={styles.workSectionTitle}>Grands formats</h3>
               <div style={styles.workFrame}>
                 <img
                   src="/images/70-1.jpg"
@@ -235,7 +235,7 @@ useEffect(() => {
 
             {/* FORMATS MOYENS */}
             <div style={styles.workCard}>
-              <h3 style={styles.workSectionTitle}>Formats moyens 50x50</h3>
+              <h3 style={styles.workSectionTitle}>Formats moyens</h3>
               <div style={styles.workFrame}>
                 <img
                   src="/images/50-1.jpg"
@@ -270,7 +270,7 @@ useEffect(() => {
 
           {/* TRIPTYQUE */}
           <div style={styles.triptychBlock}>
-            <h3 style={styles.workSectionTitle}>Triptyque 92x195</h3>
+            <h3 style={styles.workSectionTitle}>Triptyque</h3>
             <div style={styles.triptychFrame}>
               <img
                 src="/images/triptyque.jpg"
@@ -471,15 +471,14 @@ heroFade: {
 },
    
    imgGrandSingle: {
-  width: "235px",
-  height: "340px",
+  width: "290px",
+  height: "410px",
   objectFit: "contain",
   display: "block",
 },
-
   imgSquareSingle: {
-  width: "225px",
-  height: "225px",
+  width: "300px",
+  height: "300px",
   objectFit: "contain",
   display: "block",
 },
@@ -503,8 +502,8 @@ heroFade: {
 },
 
   imgTriptychSingle: {
-  width: "780px",
-  height: "280px",
+  width: "820px",
+  height: "300px",
   objectFit: "contain",
   display: "block",
 },
