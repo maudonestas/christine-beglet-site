@@ -5,33 +5,57 @@ import type { CSSProperties } from "react";
 export default function Home() {
    const heroScrollRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    const el = heroScrollRef.current;
-    if (!el) return;
+useEffect(() => {
+  const el = heroScrollRef.current;
+  if (!el) return;
 
-    const maxScroll = el.scrollWidth - el.clientWidth;
-    if (maxScroll <= 0) return;
+  const maxScroll = el.scrollWidth - el.clientWidth;
+  if (maxScroll <= 0) return;
 
-    const duration = 20000;
-    const start = performance.now();
+  const duration = 16000;
+  const start = performance.now();
 
-    const animate = (time: number) => {
-      const progress = Math.min((time - start) / duration, 1);
+  let frameId = 0;
+  let stoppedByUser = false;
 
-      const eased = progress;
-       
-      el.scrollTo({
-        left: maxScroll * eased,
-        behavior: "auto",
-      });
+  const stopAutoScroll = () => {
+    stoppedByUser = true;
+    cancelAnimationFrame(frameId);
+  };
 
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
-    };
+  const animate = (time: number) => {
+    if (stoppedByUser) return;
 
-    requestAnimationFrame(animate);
-  }, []);
+    const progress = Math.min((time - start) / duration, 1);
+    const eased = progress; // vitesse constante
+
+    el.scrollLeft = maxScroll * eased;
+
+    if (progress < 1) {
+      frameId = requestAnimationFrame(animate);
+    }
+  };
+
+  frameId = requestAnimationFrame(animate);
+
+  // 👉 scroll horizontal uniquement
+  const handleWheel = (e: WheelEvent) => {
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+      stopAutoScroll();
+    }
+  };
+
+  el.addEventListener("wheel", handleWheel, { passive: true });
+  el.addEventListener("touchstart", stopAutoScroll, { passive: true });
+  el.addEventListener("pointerdown", stopAutoScroll);
+
+  return () => {
+    cancelAnimationFrame(frameId);
+    el.removeEventListener("wheel", handleWheel);
+    el.removeEventListener("touchstart", stopAutoScroll);
+    el.removeEventListener("pointerdown", stopAutoScroll);
+  };
+}, []);
  
  return (
   <main style={styles.main}>
