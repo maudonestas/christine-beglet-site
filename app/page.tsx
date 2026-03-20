@@ -534,7 +534,7 @@ heroFade: {
   width: "100%",
   height: "auto",       // 🔑 essentiel
   display: "block",
-}
+},
 
   atelierFooter: {
     marginTop: "20px",
