@@ -239,7 +239,7 @@ useEffect(() => {
           </div>
 
           {/* FORMATS MOYENS */}
-          <div style={styles.workSection}>
+          <div style={styles.workSectionAlt}>
             <h3 style={styles.workSectionTitle}>Formats moyens 50x50</h3>
             <div style={styles.innerGrid2}>
               <img
@@ -276,7 +276,7 @@ useEffect(() => {
           </div>
 
           {/* FORMATS 20x20 */}
-          <div style={styles.workSectionLast}>
+          <div style={styles.workSectionAlt}>
             <h3 style={styles.workSectionTitle}>Formats 20x20</h3>
             <div style={styles.grid20TwoByTwo}>
               <img
@@ -614,6 +614,12 @@ bioImage: {
   display: "flex",
   justifyContent: "center",
   paddingLeft: "40px",
+},
+   workSectionAlt: {
+  marginBottom: "72px",
+  maxWidth: "700px",
+  backgroundColor: "#f7f7f7",
+  padding: "24px",
 },
 };
 
