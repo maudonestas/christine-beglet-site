@@ -517,11 +517,10 @@ heroFade: {
   },
   atelierGrid: {
   display: "grid",
-  gridTemplateColumns: "320px 320px",
+  gridAutoFlow: "column",
+  gridAutoColumns: "max-content",
   columnGap: "32px",
-  rowGap: "0",
   justifyContent: "start",
-  justifyItems: "start",
   margin: "32px 0 24px 0",
   padding: "0",
 },
@@ -537,9 +536,8 @@ heroFade: {
 
 
   atelierImg: {
-  width: "320px",
-  height: "320px",
-  objectFit: "contain",
+  width: "auto",
+  height: "340px",
   display: "block",
 },
   atelierFooter: {
