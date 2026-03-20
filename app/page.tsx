@@ -237,25 +237,27 @@ useEffect(() => {
             </div>
           </div>
 
-          {/* FORMATS MOYENS */}
-          <div style={styles.workSectionAlt}>
-            <h3 style={styles.workSectionTitle}>Formats moyens 50x50</h3>
-            <div style={styles.innerGrid2}>
-              <img
-                src="/images/50-1.jpg"
-                alt="Format moyen 1"
-                style={styles.imgSquareLarge}
-              />
-              <img
-                src="/images/50-2.jpg"
-                alt="Format moyen 2"
-                style={styles.imgSquareLarge}
-              />
-            </div>
-            <div style={styles.buttonRowLeft}>
-              <a href="/oeuvres/formats-moyens" style={styles.button}>
-                Voir plus
-              </a>
+                   {/* FORMATS MOYENS */}
+          <div style={styles.fullWidthAlt}>
+            <div style={styles.workSection}>
+              <h3 style={styles.workSectionTitle}>Formats moyens 50x50</h3>
+              <div style={styles.innerGrid2}>
+                <img
+                  src="/images/50-1.jpg"
+                  alt="Format moyen 1"
+                  style={styles.imgSquareLarge}
+                />
+                <img
+                  src="/images/50-2.jpg"
+                  alt="Format moyen 2"
+                  style={styles.imgSquareLarge}
+                />
+              </div>
+              <div style={styles.buttonRowLeft}>
+                <a href="/oeuvres/formats-moyens" style={styles.button}>
+                  Voir plus
+                </a>
+              </div>
             </div>
           </div>
 
@@ -275,37 +277,40 @@ useEffect(() => {
           </div>
 
           {/* FORMATS 20x20 */}
-          <div style={styles.workSectionAlt}>
-            <h3 style={styles.workSectionTitle}>Formats 20x20</h3>
-            <div style={styles.grid20TwoByTwo}>
-              <img
-                src="/images/20-1.jpg"
-                alt="Format 20x20 1"
-                style={styles.img20Large}
-              />
-              <img
-                src="/images/20-2.jpg"
-                alt="Format 20x20 2"
-                style={styles.img20Large}
-              />
-              <img
-                src="/images/20-3.jpg"
-                alt="Format 20x20 3"
-                style={styles.img20Large}
-              />
-              <img
-                src="/images/20-4.jpg"
-                alt="Format 20x20 4"
-                style={styles.img20Large}
-              />
-            </div>
-            <div style={styles.buttonRowLeft}>
-              <a href="/oeuvres/collages-20x20" style={styles.button}>
-                Voir plus
-              </a>
-            </div>
-          </div>
-        </div>
+          <div style={styles.fullWidthAlt}>
+  <div style={styles.workSectionLast}>
+    <h3 style={styles.workSectionTitle}>Formats 20x20</h3>
+
+    <div style={styles.grid20TwoByTwo}>
+      <img
+        src="/images/20-1.jpg"
+        alt="Format 20x20 1"
+        style={styles.img20Large}
+      />
+      <img
+        src="/images/20-2.jpg"
+        alt="Format 20x20 2"
+        style={styles.img20Large}
+      />
+      <img
+        src="/images/20-3.jpg"
+        alt="Format 20x20 3"
+        style={styles.img20Large}
+      />
+      <img
+        src="/images/20-4.jpg"
+        alt="Format 20x20 4"
+        style={styles.img20Large}
+      />
+    </div>
+
+    <div style={styles.buttonRowLeft}>
+      <a href="/oeuvres/collages-20x20" style={styles.button}>
+        Voir plus
+      </a>
+    </div>
+  </div>
+</div>
       </section>
 
       {/* ATELIER */}
@@ -479,10 +484,14 @@ heroFade: {
     gap: "20px",
   },
    workSection: {
-  marginBottom: "72px",
   maxWidth: "700px",
+  margin: "0 auto 72px auto",
 },
-
+   fullWidthAlt: {
+  width: "100%",
+  backgroundColor: "#f7f7f7",
+  padding: "40px 0",
+},
   workSectionLast: {
   marginBottom: "0",
   maxWidth: "520px",
@@ -594,12 +603,6 @@ bioImage: {
   display: "flex",
   justifyContent: "center",
   paddingLeft: "40px",
-},
-   workSectionAlt: {
-  marginBottom: "72px",
-  maxWidth: "700px",
-  backgroundColor: "#f7f7f7",
-  padding: "24px",
 },
 };
 
