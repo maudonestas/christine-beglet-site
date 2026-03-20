@@ -505,14 +505,7 @@ heroFade: {
     display: "block",
   },
 
-  workSectionTitle: {
-    margin: "0 0 16px 0",
-    fontSize: "0.95rem",
-    fontWeight: 400,
-    letterSpacing: "0.1em",
-    textTransform: "uppercase",
-    fontFamily: '"Helvetica Neue", Arial, sans-serif',
-  },
+
 
   buttonRowLeft: {
     marginTop: "18px",
