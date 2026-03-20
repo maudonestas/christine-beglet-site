@@ -464,6 +464,7 @@ heroFade: {
   background: `
     radial-gradient(circle at 30% 30%, #f3f3f3 0%, #eeeeee 40%, #e8e8e8 100%)
   `,
+   boxShadow: "inset 0 0 40px rgba(0,0,0,0.03)",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
