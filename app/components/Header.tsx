@@ -5,19 +5,29 @@ export default function Header() {
     <header style={styles.header}>
       <div style={styles.headerContent}>
         <div>
-          <a href="/" style={styles.nameLink}>
-            <div style={styles.name}>CHRISTINE BÉGLET</div>
-          </a>
+          <div style={styles.name}>CHRISTINE BÉGLET</div>
           <div style={styles.subtitle}>Collagiste plasticienne</div>
         </div>
 
         <nav style={styles.nav}>
-          <a href="/oeuvres" style={styles.navLink}>Œuvres</a>
-          <a href="/atelier" style={styles.navLink}>L'Atelier</a>
-          <a href="/biographie" style={styles.navLink}>Biographie</a>
-          <a href="/expositions" style={styles.navLink}>Expositions</a>
-          <a href="/presse" style={styles.navLink}>Presse</a>
-          <a href="/contact" style={styles.navLink}>Contact</a>
+          <a href="/oeuvres" style={styles.navLink}>
+            Œuvres
+          </a>
+          <a href="/atelier" style={styles.navLink}>
+            L'Atelier
+          </a>
+          <a href="/biographie" style={styles.navLink}>
+            Biographie
+          </a>
+          <a href="/expositions" style={styles.navLink}>
+            Expositions
+          </a>
+          <a href="/presse" style={styles.navLink}>
+            Presse
+          </a>
+          <a href="/contact" style={styles.navLink}>
+            Contact
+          </a>
 
           <a
             href="https://www.instagram.com/christine.beglet/"
@@ -107,11 +117,6 @@ const styles: Record<string, CSSProperties> = {
     alignItems: "center",
     gap: "24px",
     flexWrap: "wrap",
-  },
-
-  nameLink: {
-    textDecoration: "none",
-    color: "inherit",
   },
 
   name: {
