@@ -12,7 +12,7 @@ useEffect(() => {
   const maxScroll = el.scrollWidth - el.clientWidth;
   if (maxScroll <= 0) return;
 
-  const duration = 16000;
+  const duration = 22000;
   const start = performance.now();
 
   let frameId = 0;
