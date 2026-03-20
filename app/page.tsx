@@ -531,13 +531,10 @@ heroFade: {
 
 
   atelierImg: {
-    width: "100%",
-    aspectRatio: "4 / 3",
-    maxHeight: "320px",
-    objectFit: "cover",
-    display: "block",
-    backgroundColor: "#e9e9e9",
-  },
+  width: "100%",
+  height: "auto",       // 🔑 essentiel
+  display: "block",
+}
 
   atelierFooter: {
     marginTop: "20px",
