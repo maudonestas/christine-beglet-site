@@ -26,15 +26,6 @@ export default function TriptyquePage() {
               />
               <p style={styles.caption}>{triptyque.main.title}</p>
             </div>
-
-            <div style={styles.triptyqueGrid}>
-              {triptyque.parts.map((part, index) => (
-                <div key={index} style={styles.card}>
-                  <img src={part.src} alt={part.title} style={styles.image} />
-                  <p style={styles.caption}>{part.title}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -73,12 +64,12 @@ const styles: Record<string, CSSProperties> = {
     marginBottom: "60px",
   },
 
-  card: {
+  triptyqueMain: {
     display: "flex",
     flexDirection: "column",
   },
 
-  image: {
+  triptyqueMainImg: {
     width: "100%",
     height: "auto",
     display: "block",
