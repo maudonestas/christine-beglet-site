@@ -37,13 +37,13 @@ export default function OeuvresPage() {
               <h2 style={styles.cardTitle}>Triptyque</h2>
             </a>
 
-            <a href="/oeuvres/collages-20x20" style={styles.card}>
+            <a href="/oeuvres/Petits-formats" style={styles.card}>
               <img
                 src="/images/20-1.jpg"
                 alt="Collages 20x20"
                 style={styles.image}
               />
-              <h2 style={styles.cardTitle}>Collages 20x20</h2>
+              <h2 style={styles.cardTitle}>Petits formats</h2>
             </a>
           </div>
         </div>
