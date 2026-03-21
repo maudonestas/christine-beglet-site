@@ -60,8 +60,8 @@ export default function GrandsFormatsPage() {
     title: "Emmurée",
   },
   {
-    src: "/images/brouillon-de-cuture.jpg",
-    title: "Brouillon de couture",
+    src: "/images/brouillon-de-culture.jpg",
+    title: "Brouillon de culture",
   },
 ];
   return (
