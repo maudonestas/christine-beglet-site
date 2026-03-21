@@ -14,16 +14,15 @@ export default function TriptyquePage() {
 
       <section style={styles.section}>
         <div style={styles.container}>
-          <h1 style={styles.title}>Triptyque (92x195)</h1>
+          <h1 style={styles.title}>Triptyque (92 × 195)</h1>
 
           <div style={styles.block}>
             <div style={styles.triptyqueMain}>
               <img
                 src={triptyque.main.src}
-                alt={triptyque (92x195).main.title}
+                alt="Triptyque (92 × 195)"
                 style={styles.triptyqueMainImg}
               />
-              <p style={styles.caption}>{triptyque.main.title}</p>
             </div>
           </div>
         </div>
@@ -72,15 +71,5 @@ const styles: Record<string, CSSProperties> = {
     width: "100%",
     height: "auto",
     display: "block",
-  },
-
-  caption: {
-    marginTop: "10px",
-    marginBottom: 0,
-    fontSize: "0.9rem",
-    letterSpacing: "0.08em",
-    textTransform: "uppercase",
-    color: "#444",
-    fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 };
