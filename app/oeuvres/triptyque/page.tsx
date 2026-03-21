@@ -5,7 +5,7 @@ export default function TriptyquePage() {
   const triptyque = {
     main: {
       src: "/images/triptyque-195x92.jpg",
-      title: "Triptyque",
+      title: "Triptyque (92x195)",
     },
   };
 
