@@ -5,7 +5,6 @@ export default function TriptyquePage() {
   const triptyque = {
     main: {
       src: "/images/triptyque-195x92.jpg",
-      title: "Triptyque (92x195)",
     },
   };
 
@@ -15,7 +14,7 @@ export default function TriptyquePage() {
 
       <section style={styles.section}>
         <div style={styles.container}>
-          <h1 style={styles.title}>Triptyque</h1>
+          <h1 style={styles.title}>Triptyque (92x195)</h1>
 
           <div style={styles.block}>
             <div style={styles.triptyqueMain}>
