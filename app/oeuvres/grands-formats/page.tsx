@@ -2,6 +2,32 @@ import Header from "../../components/Header";
 import type { CSSProperties } from "react";
 
 export default function GrandsFormatsPage() {
+ const oeuvres70x100 = [
+  {
+    src: "/images/murs-d-histoires.jpg",
+    title: "Murs d’histoires",
+  },
+  {
+    src: "/images/deambulation-betonniere.jpg",
+    title: "Déambulation bétonnière",
+  },
+  {
+    src: "/images/pollinisation-excessive.jpg",
+    title: "Pollinisation excessive",
+  },
+  {
+    src: "/images/entre-les-murs.jpg",
+    title: "Entre les murs",
+  },
+  {
+    src: "/images/puzzle-neuronal.jpg",
+    title: "Puzzle neuronal",
+  },
+  {
+    src: "/images/les-murs-ont-des-oreilles.jpg",
+    title: "Les murs ont des oreilles",
+  },
+];
   return (
     <main style={styles.main}>
       <Header />
@@ -12,7 +38,19 @@ export default function GrandsFormatsPage() {
 
           <div style={styles.block}>
             <h2 style={styles.subtitle}>70 × 100</h2>
-            <p>Page en construction</p>
+            
+            <div style={styles.grid}>
+  {oeuvres70x100.map((oeuvre, index) => (
+    <div key={index} style={styles.card}>
+      <img
+        src={oeuvre.src}
+        alt={oeuvre.title}
+        style={styles.image}
+      />
+      <p style={styles.caption}>{oeuvre.title}</p>
+    </div>
+  ))}
+</div>
           </div>
         </div>
       </section>
@@ -58,6 +96,32 @@ const styles: Record<string, CSSProperties> = {
     fontWeight: 400,
     letterSpacing: "0.1em",
     textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+    grid: {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gap: "40px",
+  },
+
+  card: {
+    display: "flex",
+    flexDirection: "column",
+  },
+
+  image: {
+    width: "100%",
+    height: "auto",
+    display: "block",
+  },
+
+  caption: {
+    marginTop: "10px",
+    marginBottom: 0,
+    fontSize: "0.9rem",
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    color: "#444",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 };
