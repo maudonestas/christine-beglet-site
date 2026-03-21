@@ -2,6 +2,27 @@ import Header from "../../components/Header";
 import type { CSSProperties } from "react";
 
 export default function TriptyquePage() {
+  const triptyque = {
+    main: {
+      src: "/images/triptyque-195x92.jpg",
+      title: "Triptyque",
+    },
+    parts: [
+      {
+        src: "/images/triptyque-1-92x65.jpg",
+        title: "Partie 1",
+      },
+      {
+        src: "/images/triptyque-2-92x65.jpg",
+        title: "Partie 2",
+      },
+      {
+        src: "/images/triptyque-3-92x65.jpg",
+        title: "Partie 3",
+      },
+    ],
+  };
+
   return (
     <main style={styles.main}>
       <Header />
@@ -9,7 +30,26 @@ export default function TriptyquePage() {
       <section style={styles.section}>
         <div style={styles.container}>
           <h1 style={styles.title}>Triptyque</h1>
-          <p>Page en construction</p>
+
+          <div style={styles.block}>
+            <div style={styles.triptyqueMain}>
+              <img
+                src={triptyque.main.src}
+                alt={triptyque.main.title}
+                style={styles.triptyqueMainImg}
+              />
+              <p style={styles.caption}>{triptyque.main.title}</p>
+            </div>
+
+            <div style={styles.triptyqueGrid}>
+              {triptyque.parts.map((part, index) => (
+                <div key={index} style={styles.card}>
+                  <img src={part.src} alt={part.title} style={styles.image} />
+                  <p style={styles.caption}>{part.title}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -40,6 +80,47 @@ const styles: Record<string, CSSProperties> = {
     fontWeight: 300,
     letterSpacing: "0.12em",
     textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
+  block: {
+    marginBottom: "60px",
+  },
+
+  triptyqueMain: {
+    marginBottom: "30px",
+  },
+
+  triptyqueMainImg: {
+    width: "100%",
+    height: "auto",
+    display: "block",
+  },
+
+  triptyqueGrid: {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr 1fr",
+    gap: "20px",
+  },
+
+  card: {
+    display: "flex",
+    flexDirection: "column",
+  },
+
+  image: {
+    width: "100%",
+    height: "auto",
+    display: "block",
+  },
+
+  caption: {
+    marginTop: "10px",
+    marginBottom: 0,
+    fontSize: "0.9rem",
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    color: "#444",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 };
