@@ -10,15 +10,15 @@ export default function TriptyquePage() {
     parts: [
       {
         src: "/images/triptyque-1-92x65.jpg",
-        title: "Partie 1",
+        title: "Partie 1 92x65",
       },
       {
         src: "/images/triptyque-2-92x65.jpg",
-        title: "Partie 2",
+        title: "Partie 2 92x65",
       },
       {
         src: "/images/triptyque-3-92x65.jpg",
-        title: "Partie 3",
+        title: "Partie 3 92x65",
       },
     ],
   };
