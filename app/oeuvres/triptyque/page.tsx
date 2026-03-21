@@ -20,7 +20,7 @@ export default function TriptyquePage() {
             <div style={styles.triptyqueMain}>
               <img
                 src={triptyque.main.src}
-                alt={triptyque.main.title}
+                alt={triptyque (92x195).main.title}
                 style={styles.triptyqueMainImg}
               />
               <p style={styles.caption}>{triptyque.main.title}</p>
