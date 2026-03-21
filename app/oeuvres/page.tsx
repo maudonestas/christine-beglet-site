@@ -37,7 +37,7 @@ export default function OeuvresPage() {
               <h2 style={styles.cardTitle}>Triptyque</h2>
             </a>
 
-            <a href="/oeuvres/Petits-formats" style={styles.card}>
+            <a href="/oeuvres/petits-formats" style={styles.card}>
               <img
                 src="/images/20-1.jpg"
                 alt="Collages 20x20"
