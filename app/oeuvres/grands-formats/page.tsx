@@ -28,6 +28,42 @@ export default function GrandsFormatsPage() {
     title: "Les murs ont des oreilles",
   },
 ];
+ const oeuvres90x90 = [
+  {
+    src: "/images/azimut.jpg",
+    title: "Azimut",
+  },
+  {
+    src: "/images/favelas.jpg",
+    title: "Favelas",
+  },
+  {
+    src: "/images/nuit-d-automne.jpg",
+    title: "Nuit d’automne",
+  },
+  {
+    src: "/images/recrudescence.jpg",
+    title: "Recrudescence",
+  },
+];
+ const oeuvres80x80 = [
+  {
+    src: "/images/la-bas.jpg",
+    title: "Là-bas",
+  },
+  {
+    src: "/images/casse-tete.jpg",
+    title: "Casse-tête",
+  },
+  {
+    src: "/images/emmuree.jpg",
+    title: "Emmurée",
+  },
+  {
+    src: "/images/brouillon-de-cuture.jpg",
+    title: "Brouillon de couture",
+  },
+];
   return (
     <main style={styles.main}>
       <Header />
