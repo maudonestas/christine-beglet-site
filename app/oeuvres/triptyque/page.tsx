@@ -7,7 +7,6 @@ export default function TriptyquePage() {
       src: "/images/triptyque-195x92.jpg",
       title: "Triptyque",
     },
-    ],
   };
 
   return (
