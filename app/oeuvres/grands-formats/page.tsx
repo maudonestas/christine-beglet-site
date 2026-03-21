@@ -88,6 +88,39 @@ export default function GrandsFormatsPage() {
   ))}
 </div>
           </div>
+         <div style={styles.block}>
+  <h2 style={styles.subtitle}>90 × 90</h2>
+
+  <div style={styles.grid}>
+    {oeuvres90x90.map((oeuvre, index) => (
+      <div key={index} style={styles.card}>
+        <img
+          src={oeuvre.src}
+          alt={oeuvre.title}
+          style={styles.image}
+        />
+        <p style={styles.caption}>{oeuvre.title}</p>
+      </div>
+    ))}
+  </div>
+</div>
+
+<div style={styles.block}>
+  <h2 style={styles.subtitle}>80 × 80</h2>
+
+  <div style={styles.grid}>
+    {oeuvres80x80.map((oeuvre, index) => (
+      <div key={index} style={styles.card}>
+        <img
+          src={oeuvre.src}
+          alt={oeuvre.title}
+          style={styles.image}
+        />
+        <p style={styles.caption}>{oeuvre.title}</p>
+      </div>
+    ))}
+  </div>
+</div>
         </div>
       </section>
     </main>
