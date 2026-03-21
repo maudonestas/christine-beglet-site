@@ -7,19 +7,6 @@ export default function TriptyquePage() {
       src: "/images/triptyque-195x92.jpg",
       title: "Triptyque",
     },
-    parts: [
-      {
-        src: "/images/triptyque-1-92x65.jpg",
-        title: "Partie 1 92x65",
-      },
-      {
-        src: "/images/triptyque-2-92x65.jpg",
-        title: "Partie 2 92x65",
-      },
-      {
-        src: "/images/triptyque-3-92x65.jpg",
-        title: "Partie 3 92x65",
-      },
     ],
   };
 
@@ -85,22 +72,6 @@ const styles: Record<string, CSSProperties> = {
 
   block: {
     marginBottom: "60px",
-  },
-
-  triptyqueMain: {
-    marginBottom: "30px",
-  },
-
-  triptyqueMainImg: {
-    width: "100%",
-    height: "auto",
-    display: "block",
-  },
-
-  triptyqueGrid: {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr 1fr",
-    gap: "20px",
   },
 
   card: {
