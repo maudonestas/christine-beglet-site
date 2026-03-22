@@ -112,11 +112,12 @@ const styles: Record<string, CSSProperties> = {
   },
 
   textBlock: {
-    marginBottom: "48px",
-    lineHeight: 1.7,
-    fontSize: "1rem",
-    overflow: "hidden",
-  },
+  marginBottom: "48px",
+  lineHeight: 1.7,
+  fontSize: "1rem",
+  overflow: "hidden",
+  marginTop: "-4px",
+},
 
   subtitle: {
     fontSize: "1.2rem",
