@@ -1,4 +1,4 @@
-import Header from "../components/Header";
+import Header from "../../components/Header";
 import type { CSSProperties } from "react";
 
 export default function AtelierPage() {
@@ -8,7 +8,7 @@ export default function AtelierPage() {
 
       <section style={styles.section}>
         <div style={styles.container}>
-          <h1 style={styles.title}>L&apos;Atelier</h1>
+          <h1 style={styles.title}>L’Atelier</h1>
 
           {/* Bloc 1 */}
           <div style={styles.twoColGrid}>
@@ -16,16 +16,16 @@ export default function AtelierPage() {
               <img
                 src="/images/les-magazines.jpg"
                 alt="Les magazines"
-                style={styles.imagePair}
+                style={styles.imageMedium}
               />
               <p style={styles.caption}>Les magazines</p>
             </div>
 
             <div>
               <img
-                src="/images/les-tiroirs-a-papiers.jpg"
+                src="/images/tiroirs-a-papiers.jpg"
                 alt="Les tiroirs à papiers"
-                style={styles.imagePair}
+                style={styles.imageMedium}
               />
               <p style={styles.caption}>Les tiroirs à papiers</p>
             </div>
@@ -36,18 +36,18 @@ export default function AtelierPage() {
             <img
               src="/images/decoupes-pas-colles.jpg"
               alt="Découpés, pas collés"
-              style={styles.imageSingle}
+              style={styles.imageWide}
             />
             <p style={styles.caption}>Découpés, pas collés</p>
           </div>
 
           {/* Bloc 3 */}
-          <div style={styles.twoColGrid}>
+          <div style={styles.processGrid}>
             <div>
               <img
                 src="/images/dessus-dessous.jpg"
                 alt="Dessus, dessous"
-                style={styles.imagePair}
+                style={styles.imageSmall}
               />
               <p style={styles.caption}>Dessus, dessous</p>
             </div>
@@ -56,7 +56,7 @@ export default function AtelierPage() {
               <img
                 src="/images/ca-colle.jpg"
                 alt="Ça colle"
-                style={styles.imagePair}
+                style={styles.imageLarge}
               />
               <p style={styles.caption}>Ça colle</p>
             </div>
@@ -96,11 +96,10 @@ const styles: Record<string, CSSProperties> = {
 
   title: {
     fontSize: "2rem",
-    fontWeight: 300,
-    letterSpacing: "0.08em",
+    fontWeight: 400,
     textTransform: "uppercase",
+    letterSpacing: "0.08em",
     margin: "0 0 40px 0",
-    color: "#1f1f1f",
   },
 
   twoColGrid: {
@@ -115,25 +114,51 @@ const styles: Record<string, CSSProperties> = {
     marginBottom: "56px",
   },
 
-  singleBlockEnd: {
-    marginTop: "8px",
+  processGrid: {
+    display: "grid",
+    gridTemplateColumns: "40% 60%",
+    gap: "20px",
+    marginBottom: "72px",
+    alignItems: "start",
   },
 
-  imagePair: {
+  singleBlockEnd: {
+    maxWidth: "760px",
+    margin: "0 auto",
+  },
+
+  imageMedium: {
     width: "100%",
-    height: "auto",
+    height: "340px",
+    objectFit: "cover",
     display: "block",
   },
 
-  imageSingle: {
+  imageWide: {
     width: "100%",
-    height: "auto",
+    height: "420px",
+    objectFit: "cover",
+    display: "block",
+  },
+
+  imageSmall: {
+    width: "100%",
+    height: "300px",
+    objectFit: "cover",
+    display: "block",
+  },
+
+  imageLarge: {
+    width: "100%",
+    height: "400px",
+    objectFit: "cover",
     display: "block",
   },
 
   imageEnd: {
     width: "100%",
-    height: "auto",
+    height: "360px",
+    objectFit: "cover",
     display: "block",
   },
 
@@ -141,7 +166,6 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "0.9rem",
     color: "#4f4b46",
     marginTop: "10px",
-    marginBottom: "0",
     lineHeight: 1.4,
   },
 };
