@@ -147,7 +147,7 @@ const styles: Record<string, CSSProperties> = {
   width: "100%",
   height: "360px",
   objectFit: "cover",
-  objectPosition: "center bottom",
+  objectPosition: "center 75%",
   display: "block",
 },
   imageLarge: {
