@@ -86,8 +86,8 @@ const styles: Record<string, CSSProperties> = {
   },
 
   section: {
-    padding: "56px 24px 80px",
-  },
+  padding: "80px 24px",
+},
 
   container: {
     maxWidth: "1200px",
