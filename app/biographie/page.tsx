@@ -116,7 +116,7 @@ const styles: Record<string, CSSProperties> = {
   lineHeight: 1.7,
   fontSize: "1rem",
   overflow: "hidden",
-  marginTop: "-4px",
+  marginTop: "-6px",
 },
 
   subtitle: {
