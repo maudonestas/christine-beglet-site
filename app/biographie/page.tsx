@@ -20,7 +20,7 @@ export default function BiographiePage() {
               />
             </div>
 
-            <p>
+            <p>style={styles.firstParagraph}
               Née en 1954 dans le Sud-Ouest de la France, Christine Béglet vit et travaille à Toulouse. Diplômée de l’École nationale supérieure des Beaux-Arts de Toulouse, elle développe un travail fondé sur la couleur, le rythme et les vibrations visuelles.
             </p>
 
