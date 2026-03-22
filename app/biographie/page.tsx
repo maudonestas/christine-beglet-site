@@ -107,9 +107,7 @@ const styles: Record<string, CSSProperties> = {
 
 image: {
   width: "100%",
-  aspectRatio: "4 / 5",
-  objectFit: "cover",
-  objectPosition: "45% 35%",
+  height: "auto",
   display: "block",
 },
 
