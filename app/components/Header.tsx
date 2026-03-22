@@ -1,13 +1,16 @@
+import Link from "next/link";
 import type { CSSProperties } from "react";
 
 export default function Header() {
   return (
     <header style={styles.header}>
       <div style={styles.headerContent}>
-        <div>
-          <div style={styles.name}>CHRISTINE BÉGLET</div>
-          <div style={styles.subtitle}>Collagiste plasticienne</div>
-        </div>
+        <Link href="/" style={styles.brandLink}>
+  <div>
+    <div style={styles.name}>CHRISTINE BÉGLET</div>
+    <div style={styles.subtitle}>Collagiste plasticienne</div>
+  </div>
+</Link>
 
         <nav style={styles.nav}>
           <a href="/oeuvres" style={styles.navLink}>
@@ -118,6 +121,12 @@ const styles: Record<string, CSSProperties> = {
     gap: "24px",
     flexWrap: "wrap",
   },
+
+  brandLink: {
+  textDecoration: "none",
+  color: "inherit",
+  display: "block",
+},
 
   name: {
     fontSize: "2.2rem",
