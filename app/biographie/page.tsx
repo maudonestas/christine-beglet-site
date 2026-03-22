@@ -13,7 +13,7 @@ export default function BiographiePage() {
           {/* Photo */}
           <div style={styles.imageWrapper}>
             <img
-              src="/images/portrait1.jpg"
+              src="/images/portrait2.jpg"
               alt="Christine Béglet"
               style={styles.image}
             />
