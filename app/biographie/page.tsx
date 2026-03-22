@@ -106,7 +106,7 @@ const styles: Record<string, CSSProperties> = {
 },
 
   floatImage: {
-    width: "110%",
+    width: "105%",
     height: "auto",
     display: "block",
   },
