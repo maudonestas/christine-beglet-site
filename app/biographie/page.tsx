@@ -42,27 +42,19 @@ export default function BiographiePage() {
 
           <h2 style={styles.subtitle}>Le collage comme langage</h2>
 
-          <div style={styles.textBlock}>
-            <p style={styles.text}>
-              Dans ses œuvres, des éléments architecturaux s’imposent progressivement jusqu’à structurer l’ensemble du tableau.
-            </p>
-
-            <p style={styles.text}>
-              Dix ans après avoir délaissé ses pinceaux pour le papier, les ciseaux et la colle, elle retrouve une même recherche.
-            </p>
-
-            <p style={styles.text}>
-              Ses collages échappent aux classifications et s’inscrivent dans une démarche libre et intuitive.
-            </p>
-
-            <p style={styles.text}>
-              En 2013, elle est sélectionnée à la Biennale Hors les Normes de Lyon où elle réalise un collage panoramique de cinq mètres.
-            </p>
-
-            <p style={styles.text}>
-              Ses œuvres ont été présentées en France et à l’international, notamment au Canada et en Chine.
-            </p>
-          </div>
+         <div style={styles.textBlock}>
+  <p style={styles.text}>
+    Dans ses œuvres, des éléments architecturaux s’imposent progressivement jusqu’à structurer l’ensemble du tableau.<br /><br />
+    
+    Dix ans après avoir délaissé ses pinceaux pour le papier, les ciseaux et la colle, elle retrouve une même recherche.<br /><br />
+    
+    Ses collages échappent aux classifications et s’inscrivent dans une démarche libre et intuitive.<br /><br />
+    
+    En 2013, elle est sélectionnée à la Biennale Hors les Normes de Lyon où elle réalise un collage panoramique de cinq mètres.<br /><br />
+    
+    Ses œuvres ont été présentées en France et à l’international, notamment au Canada et en Chine.
+  </p>
+</div>
         </div>
       </section>
     </main>
@@ -109,7 +101,7 @@ const styles: Record<string, CSSProperties> = {
   },
 
   textBlock: {
-    marginBottom: "24px",
+    marginBottom: "18px",
     overflow: "hidden",
   },
 
@@ -118,7 +110,6 @@ const styles: Record<string, CSSProperties> = {
   lineHeight: 1.7,
   color: "#4f4b46",
   marginTop: 0,
-  marginBottom: "12px",
   textAlign: "justify",
 },
   
