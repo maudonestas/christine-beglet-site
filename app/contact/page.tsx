@@ -81,17 +81,19 @@ const styles: { [key: string]: CSSProperties } = {
   },
 
   container: {
-    maxWidth: "820px",
-    margin: "0 auto",
-  },
-
+  maxWidth: "1200px",
+  margin: "0 auto",
+},
+  
   title: {
-    fontSize: "2.2rem",
-    fontWeight: 400,
-    letterSpacing: "0.08em",
-    textTransform: "uppercase",
-    margin: "0 0 48px 0",
-  },
+  fontSize: "2rem",
+  marginTop: 0,
+  marginBottom: "40px",
+  fontWeight: 300,
+  letterSpacing: "0.12em",
+  textTransform: "uppercase",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+},
 
   topBlock: {
     maxWidth: "680px",
@@ -99,18 +101,19 @@ const styles: { [key: string]: CSSProperties } = {
   },
 
   intro: {
-    fontSize: "1.08rem",
-    lineHeight: 1.9,
-    margin: "0 0 24px 0",
-  },
+  fontSize: "0.9rem",
+  color: "#4f4b46",
+  lineHeight: 1.6,
+  marginBottom: "24px",
+},
 
   email: {
-    fontSize: "1.05rem",
-    color: "#1f1f1f",
-    textDecoration: "none",
-    borderBottom: "1px solid #b8b1a6",
-    paddingBottom: "2px",
-  },
+  fontSize: "0.95rem",
+  color: "#1f1f1f",
+  textDecoration: "none",
+  borderBottom: "1px solid #b8b1a6",
+  paddingBottom: "2px",
+},
 
   form: {
     maxWidth: "720px",
