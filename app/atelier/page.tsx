@@ -97,7 +97,7 @@ const styles: Record<string, CSSProperties> = {
   title: {
   fontSize: "2rem",
   marginTop: 0,
-  marginBottom: "48px",
+  marginBottom: "40px",
   fontWeight: 300,
   letterSpacing: "0.12em",
   textTransform: "uppercase",
