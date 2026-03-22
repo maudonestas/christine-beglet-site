@@ -101,15 +101,16 @@ const styles: Record<string, CSSProperties> = {
   },
 
   imageWrapper: {
-    marginBottom: "40px",
-  },
+  maxWidth: "520px",
+  margin: "0 auto 40px",
+},
 
-  image: {
+image: {
   width: "100%",
-  height: "auto",
-  maxWidth: "900px",
+  aspectRatio: "4 / 5",
+  objectFit: "cover",
+  objectPosition: "45% 35%",
   display: "block",
-  margin: "0 auto",
 },
 
   textBlock: {
