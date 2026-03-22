@@ -100,10 +100,10 @@ const styles: Record<string, CSSProperties> = {
   },
 
   floatImageWrapper: {
-    float: "left",
-    width: "240px",
-    margin: "0 32px 20px 0",
-  },
+  float: "left",
+  width: "240px",
+  margin: "16px 32px 20px 0",
+},
 
   floatImage: {
     width: "100%",
