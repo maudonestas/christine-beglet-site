@@ -338,7 +338,7 @@ heroFade: {
  text: {
   fontSize: "1rem",
   lineHeight: 1.7,
-  maxWidth: "650px",
+  maxWidth: "680px",
   margin: 0,
   color: "#303030",
   textAlign: "justify",
