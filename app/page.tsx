@@ -335,13 +335,14 @@ heroFade: {
      textAlign: "left"
   },
 
-  text: {
-    fontSize: "1rem",
-    lineHeight: 1.7,
-    maxWidth: "600px",
-    margin: 0,
-    color: "#303030",
-  },
+ text: {
+  fontSize: "1rem",
+  lineHeight: 1.7,
+  maxWidth: "650px",
+  margin: 0,
+  color: "#303030",
+  textAlign: "justify",
+},
 
   title: {
   fontSize: "2rem",
