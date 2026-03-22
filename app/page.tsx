@@ -340,7 +340,7 @@ heroFade: {
   lineHeight: 1.7,
   maxWidth: "680px",
   margin: 0,
-  color: "#303030",
+  color: "#4f4b46",
   textAlign: "justify",
 },
 
