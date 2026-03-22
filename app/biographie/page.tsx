@@ -109,19 +109,19 @@ const styles: Record<string, CSSProperties> = {
   },
 
   textBlock: {
-    marginBottom: "48px",
+    marginBottom: "24px",
     overflow: "hidden",
   },
 
   text: {
-    fontSize: "1rem",
-    lineHeight: 1.7,
-    color: "#4f4b46",
-    marginTop: 0,
-    marginBottom: "18px",
-    textAlign: "justify",
-  },
-
+  fontSize: "1rem",
+  lineHeight: 1.7,
+  color: "#4f4b46",
+  marginTop: 0,
+  marginBottom: "12px",
+  textAlign: "justify",
+},
+  
   subtitle: {
     fontSize: "1.2rem",
     fontWeight: 400,
