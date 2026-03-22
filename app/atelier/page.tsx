@@ -95,12 +95,14 @@ const styles: Record<string, CSSProperties> = {
   },
 
   title: {
-    fontSize: "2rem",
-    fontWeight: 400,
-    textTransform: "uppercase",
-    letterSpacing: "0.08em",
-    margin: "0 0 40px 0",
-  },
+  fontSize: "2rem",
+  marginTop: 0,
+  marginBottom: "40px",
+  fontWeight: 300,
+  letterSpacing: "0.12em",
+  textTransform: "uppercase",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+},
 
   twoColGrid: {
     display: "grid",
@@ -142,12 +144,12 @@ const styles: Record<string, CSSProperties> = {
   },
 
   imageSmall: {
-    width: "100%",
-    height: "300px",
-    objectFit: "cover",
-    display: "block",
-  },
-
+  width: "100%",
+  height: "360px",
+  objectFit: "cover",
+  objectPosition: "center bottom",
+  display: "block",
+},
   imageLarge: {
     width: "100%",
     height: "400px",
