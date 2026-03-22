@@ -108,29 +108,26 @@ const styles: { [key: string]: CSSProperties } = {
 },
 
   email: {
-  fontSize: "0.95rem",
-  color: "#1f1f1f",
+  fontSize: "0.9rem",
+  color: "#4f4b46",
   textDecoration: "none",
-  borderBottom: "1px solid #b8b1a6",
-  paddingBottom: "2px",
 },
-
   form: {
-    maxWidth: "720px",
+    maxWidth: "520px",
   },
 
   row: {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: "24px",
-    marginBottom: "24px",
-  },
-
-  fieldGroup: {
-    display: "flex",
-    flexDirection: "column",
-    marginBottom: "24px",
-  },
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr",
+  gap: "16px",
+  marginBottom: "16px",
+},
+  
+fieldGroup: {
+  display: "flex",
+  flexDirection: "column",
+  marginBottom: "16px",
+},
 
   label: {
     fontSize: "0.92rem",
