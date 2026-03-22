@@ -133,6 +133,7 @@ const styles: Record<string, CSSProperties> = {
     width: "100%",
     height: "340px",
     objectFit: "cover",
+    objectPosition: "center 40%",
     display: "block",
   },
 
