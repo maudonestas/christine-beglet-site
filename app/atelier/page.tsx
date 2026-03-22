@@ -1,4 +1,4 @@
-import Header from "../../components/Header";
+import Header from "../components/Header";
 import type { CSSProperties } from "react";
 
 export default function AtelierPage() {
