@@ -105,10 +105,12 @@ const styles: Record<string, CSSProperties> = {
   },
 
   image: {
-    width: "100%",
-    height: "auto", // 👉 IMPORTANT : pas de crop
-    display: "block",
-  },
+  width: "100%",
+  height: "auto",
+  maxWidth: "900px",
+  display: "block",
+  margin: "0 auto",
+},
 
   textBlock: {
     marginBottom: "48px",
