@@ -8,7 +8,7 @@ export default function AtelierPage() {
 
       <section style={styles.section}>
         <div style={styles.container}>
-          <h1 style={styles.title}>L’Atelier</h1>
+          <h1 style={styles.title}>L&apos;Atelier</h1>
 
           {/* Bloc 1 */}
           <div style={styles.twoColGrid}>
@@ -16,16 +16,16 @@ export default function AtelierPage() {
               <img
                 src="/images/les-magazines.jpg"
                 alt="Les magazines"
-                style={styles.imageMedium}
+                style={styles.imagePair}
               />
               <p style={styles.caption}>Les magazines</p>
             </div>
 
             <div>
               <img
-                src="/images/tiroirs-a-papiers.jpg"
+                src="/images/les-tiroirs-a-papiers.jpg"
                 alt="Les tiroirs à papiers"
-                style={styles.imageMedium}
+                style={styles.imagePair}
               />
               <p style={styles.caption}>Les tiroirs à papiers</p>
             </div>
@@ -36,18 +36,18 @@ export default function AtelierPage() {
             <img
               src="/images/decoupes-pas-colles.jpg"
               alt="Découpés, pas collés"
-              style={styles.imageWide}
+              style={styles.imageSingle}
             />
             <p style={styles.caption}>Découpés, pas collés</p>
           </div>
 
           {/* Bloc 3 */}
-          <div style={styles.processGrid}>
+          <div style={styles.twoColGrid}>
             <div>
               <img
                 src="/images/dessus-dessous.jpg"
                 alt="Dessus, dessous"
-                style={styles.imageSmall}
+                style={styles.imagePair}
               />
               <p style={styles.caption}>Dessus, dessous</p>
             </div>
@@ -56,7 +56,7 @@ export default function AtelierPage() {
               <img
                 src="/images/ca-colle.jpg"
                 alt="Ça colle"
-                style={styles.imageLarge}
+                style={styles.imagePair}
               />
               <p style={styles.caption}>Ça colle</p>
             </div>
@@ -96,10 +96,11 @@ const styles: Record<string, CSSProperties> = {
 
   title: {
     fontSize: "2rem",
-    fontWeight: 400,
-    textTransform: "uppercase",
+    fontWeight: 300,
     letterSpacing: "0.08em",
+    textTransform: "uppercase",
     margin: "0 0 40px 0",
+    color: "#1f1f1f",
   },
 
   twoColGrid: {
@@ -114,51 +115,25 @@ const styles: Record<string, CSSProperties> = {
     marginBottom: "56px",
   },
 
-  processGrid: {
-    display: "grid",
-    gridTemplateColumns: "40% 60%",
-    gap: "20px",
-    marginBottom: "72px",
-    alignItems: "start",
-  },
-
   singleBlockEnd: {
-    maxWidth: "760px",
-    margin: "0 auto",
+    marginTop: "8px",
   },
 
-  imageMedium: {
+  imagePair: {
     width: "100%",
-    height: "340px",
-    objectFit: "cover",
+    height: "auto",
     display: "block",
   },
 
-  imageWide: {
+  imageSingle: {
     width: "100%",
-    height: "420px",
-    objectFit: "cover",
-    display: "block",
-  },
-
-  imageSmall: {
-    width: "100%",
-    height: "300px",
-    objectFit: "cover",
-    display: "block",
-  },
-
-  imageLarge: {
-    width: "100%",
-    height: "400px",
-    objectFit: "cover",
+    height: "auto",
     display: "block",
   },
 
   imageEnd: {
     width: "100%",
-    height: "360px",
-    objectFit: "cover",
+    height: "auto",
     display: "block",
   },
 
@@ -166,6 +141,7 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "0.9rem",
     color: "#4f4b46",
     marginTop: "10px",
+    marginBottom: "0",
     lineHeight: 1.4,
   },
 };
