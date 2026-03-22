@@ -10,17 +10,16 @@ export default function BiographiePage() {
         <div style={styles.container}>
           <h1 style={styles.title}>Biographie</h1>
 
-          {/* Photo */}
-          <div style={styles.imageWrapper}>
-            <img
-              src="/images/portrait.jpg"
-              alt="Christine Béglet"
-              style={styles.image}
-            />
-          </div>
-
-          {/* Texte partie 1 */}
+          {/* Texte partie 1 avec image flottante */}
           <div style={styles.textBlock}>
+            <div style={styles.floatImageWrapper}>
+              <img
+                src="/images/portrait2.jpg"
+                alt="Christine Béglet"
+                style={styles.floatImage}
+              />
+            </div>
+
             <p>
               Née en 1954 dans le Sud-Ouest de la France, Christine Béglet vit et travaille à Toulouse. Diplômée de l’École nationale supérieure des Beaux-Arts de Toulouse, elle développe un travail fondé sur la couleur, le rythme et les vibrations visuelles.
             </p>
@@ -100,13 +99,15 @@ const styles: Record<string, CSSProperties> = {
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
-  imageWrapper: {
-    marginBottom: "40px",
-  },
+  floatImageWrapper: {
+  float: "left",
+  width: "240px",
+  margin: "26px 32px 20px 0",
+},
 
-  image: {
-    width: "100%",
-    height: "auto", // 👉 IMPORTANT : pas de crop
+  floatImage: {
+    width: "105%",
+    height: "auto",
     display: "block",
   },
 
@@ -114,6 +115,7 @@ const styles: Record<string, CSSProperties> = {
     marginBottom: "48px",
     lineHeight: 1.7,
     fontSize: "1rem",
+    overflow: "hidden",
   },
 
   subtitle: {
