@@ -91,7 +91,7 @@ const styles: Record<string, CSSProperties> = {
   floatImageWrapper: {
     float: "left",
     width: "240px",
-    margin: "26px 32px 20px 0",
+    margin: "18px 32px 20px 0",
   },
 
   floatImage: {
