@@ -82,19 +82,18 @@ const styles: Record<string, CSSProperties> = {
   },
 
   pressGrid: {
-    display: "grid",
-    gridTemplateColumns: "320px 1fr",
-    gap: "32px",
-    alignItems: "start",
-    maxWidth: "980px",
-  },
+  display: "grid",
+  gridTemplateColumns: "140px 1fr",
+  gap: "28px",
+  alignItems: "start",
+  maxWidth: "900px",
+},
 
-  pressImage: {
-    width: "100%",
-    height: "420px",
-    objectFit: "cover",
-    display: "block",
-  },
+  pressLogo: {
+  width: "120px",
+  height: "auto",
+  objectFit: "contain",
+},
 
   pressText: {
     maxWidth: "620px",
