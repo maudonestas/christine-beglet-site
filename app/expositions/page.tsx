@@ -121,23 +121,18 @@ export default function ExpositionsPage() {
               <div style={styles.grid}>
                 {section.items.map((expo) => (
                   <article key={expo.title} style={styles.card}>
-                    <h3 style={styles.cardTitle}>{expo.title}</h3>
-                    <p style={styles.cardDate}>{expo.date}</p>
+                  <button
+  type="button"
+  onClick={() => openLightbox(expo.image, expo.title)}
+  style={styles.imageButton}
+>
+  <div style={styles.imageWrapper}>
+    <img src={expo.image} alt={expo.title} style={styles.image} />
+  </div>
+</button>
 
-                    <button
-                      type="button"
-                      onClick={() => openLightbox(expo.image, expo.title)}
-                      style={styles.imageButton}
-                      aria-label={`Agrandir l’image de ${expo.title}`}
-                    >
-                      <div style={styles.imageWrapper}>
-                        <img
-                          src={expo.image}
-                          alt={expo.title}
-                          style={styles.image}
-                        />
-                      </div>
-                    </button>
+<h3 style={styles.cardTitle}>{expo.title}</h3>
+<p style={styles.cardDate}>{expo.date}</p>
                   </article>
                 ))}
               </div>
