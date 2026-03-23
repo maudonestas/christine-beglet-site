@@ -88,10 +88,10 @@ const styles: Record<string, CSSProperties> = {
   },
 
   pressLogo: {
-  width: "130px",
+  width: "150px",
   height: "auto",
   objectFit: "contain",
-  marginTop: "46px",
+  marginTop: "42px",
 },
 
 articleTitle: {
