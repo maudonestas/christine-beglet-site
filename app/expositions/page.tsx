@@ -1,3 +1,5 @@
+"use client";
+
 import Header from "../components/Header";
 import type { CSSProperties } from "react";
 import { useState } from "react";
@@ -75,9 +77,7 @@ export default function ExpositionsPage() {
 
       <section style={styles.section}>
         <div style={styles.container}>
-          <h1 style={styles.pageTitle}>Expositions</h1>
-
-          <h2 style={styles.sectionTitle}>Expositions récentes</h2>
+          <h1 style={styles.title}>Expositions</h1>
 
           <div style={styles.grid}>
             {expositions.map((expo) => (
@@ -88,15 +88,11 @@ export default function ExpositionsPage() {
                   style={styles.imageButton}
                   aria-label={`Agrandir l’image de ${expo.title}`}
                 >
-                  <img
-                    src={expo.image}
-                    alt={expo.title}
-                    style={styles.image}
-                  />
+                  <img src={expo.image} alt={expo.title} style={styles.image} />
                 </button>
 
-                <h3 style={styles.cardTitle}>{expo.title}</h3>
-                <p style={styles.date}>{expo.date}</p>
+                <h2 style={styles.cardTitle}>{expo.title}</h2>
+                <p style={styles.cardDate}>{expo.date}</p>
               </article>
             ))}
           </div>
@@ -114,7 +110,10 @@ export default function ExpositionsPage() {
             ×
           </button>
 
-          <div style={styles.lightboxContent} onClick={(e) => e.stopPropagation()}>
+          <div
+            style={styles.lightboxContent}
+            onClick={(e) => e.stopPropagation()}
+          >
             <img
               src={selectedImage}
               alt={selectedTitle}
@@ -127,16 +126,16 @@ export default function ExpositionsPage() {
   );
 }
 
-const styles: { [key: string]: CSSProperties } = {
+const styles: Record<string, CSSProperties> = {
   main: {
-    backgroundColor: "#f6f3ee",
-    minHeight: "100vh",
-    color: "#1f1f1f",
     fontFamily: "Arial, Helvetica, sans-serif",
+    backgroundColor: "#f7f5f2",
+    color: "#1f1f1f",
+    minHeight: "100vh",
   },
 
   section: {
-    padding: "56px 24px 80px 24px",
+    padding: "80px 24px",
   },
 
   container: {
@@ -144,33 +143,25 @@ const styles: { [key: string]: CSSProperties } = {
     margin: "0 auto",
   },
 
-  pageTitle: {
-    fontSize: "42px",
-    fontWeight: 400,
-    margin: "0 0 36px 0",
-    letterSpacing: "0.02em",
+  title: {
+    fontSize: "2rem",
+    marginTop: 0,
+    marginBottom: "40px",
+    fontWeight: 300,
+    letterSpacing: "0.12em",
     textTransform: "uppercase",
-  },
-
-  sectionTitle: {
-    fontSize: "18px",
-    fontWeight: 400,
-    margin: "0 0 32px 0",
-    letterSpacing: "0.04em",
-    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
   grid: {
     display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
+    gridTemplateColumns: "1fr 1fr 1fr",
     gap: "40px 32px",
     alignItems: "start",
   },
 
   card: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "flex-start",
+    display: "block",
   },
 
   imageButton: {
@@ -180,7 +171,7 @@ const styles: { [key: string]: CSSProperties } = {
     margin: 0,
     cursor: "pointer",
     width: "100%",
-    textAlign: "left",
+    display: "block",
   },
 
   image: {
@@ -190,16 +181,21 @@ const styles: { [key: string]: CSSProperties } = {
   },
 
   cardTitle: {
-    fontSize: "18px",
+    marginTop: "14px",
+    marginBottom: "6px",
+    fontSize: "0.95rem",
     fontWeight: 400,
-    lineHeight: 1.4,
-    margin: "14px 0 8px 0",
+    letterSpacing: "0.1em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    lineHeight: 1.5,
   },
 
-  date: {
-    fontSize: "16px",
-    lineHeight: 1.6,
+  cardDate: {
     margin: 0,
+    fontSize: "0.95rem",
+    fontWeight: 400,
+    lineHeight: 1.6,
     color: "#4a4a4a",
   },
 
