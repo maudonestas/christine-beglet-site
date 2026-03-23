@@ -10,35 +10,43 @@ export default function PressePage() {
         <div style={styles.container}>
           <h1 style={styles.title}>Presse</h1>
 
-          <div style={styles.pressBlock}>
-            <div style={styles.pressMeta}>
-              <p style={styles.media}>La Dépêche du Midi</p>
-              <p style={styles.date}>16 mars 2026</p>
+          <div style={styles.pressGrid}>
+            <div>
+              <img
+                src="/images/presse-ladepeche-2026.jpg"
+                alt="Article La Dépêche du Midi"
+                style={styles.pressImage}
+              />
             </div>
 
-            <a
-              href="https://www.ladepeche.fr/2026/03/16/art-un-duo-feminin-habille-le-printemps-13274751.php"
-              target="_blank"
-              rel="noreferrer"
-              style={styles.articleTitle}
-            >
-              Pamiers. Art + : un duo féminin habille le printemps
-            </a>
+            <div style={styles.pressText}>
+              <p style={styles.media}>La Dépêche du Midi</p>
+              <p style={styles.date}>16 mars 2026</p>
 
-            <p style={styles.excerpt}>
-              Sans exposition depuis fin janvier, la galerie des Carmes ouvre sa
-              saison 2026 avec un duo féminin réunissant Christine Béglet,
-              collagiste toulousaine, et Sylvie Hébrard, sculptrice.
-            </p>
+              <a
+                href="https://www.ladepeche.fr/2026/03/16/art-un-duo-feminin-habille-le-printemps-13274751.php"
+                target="_blank"
+                rel="noreferrer"
+                style={styles.articleTitle}
+              >
+                Pamiers. Art + : un duo féminin habille le printemps
+              </a>
 
-            <a
-              href="https://www.ladepeche.fr/2026/03/16/art-un-duo-feminin-habille-le-printemps-13274751.php"
-              target="_blank"
-              rel="noreferrer"
-              style={styles.readMore}
-            >
-              Lire l’article
-            </a>
+              <p style={styles.excerpt}>
+                Sans exposition depuis fin janvier, la galerie des Carmes ouvre sa
+                saison 2026 avec un duo féminin réunissant Christine Béglet,
+                collagiste toulousaine, et Sylvie Hébrard, sculptrice.
+              </p>
+
+              <a
+                href="https://www.ladepeche.fr/2026/03/16/art-un-duo-feminin-habille-le-printemps-13274751.php"
+                target="_blank"
+                rel="noreferrer"
+                style={styles.readMore}
+              >
+                Lire l’article
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -73,14 +81,23 @@ const styles: Record<string, CSSProperties> = {
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
-  pressBlock: {
-    maxWidth: "760px",
-    borderTop: "1px solid #d8d2c8",
-    paddingTop: "24px",
+  pressGrid: {
+    display: "grid",
+    gridTemplateColumns: "320px 1fr",
+    gap: "32px",
+    alignItems: "start",
+    maxWidth: "980px",
   },
 
-  pressMeta: {
-    marginBottom: "14px",
+  pressImage: {
+    width: "100%",
+    height: "420px",
+    objectFit: "cover",
+    display: "block",
+  },
+
+  pressText: {
+    maxWidth: "620px",
   },
 
   media: {
@@ -93,7 +110,7 @@ const styles: Record<string, CSSProperties> = {
   date: {
     fontSize: "0.9rem",
     color: "#7a746d",
-    margin: "4px 0 0 0",
+    margin: "4px 0 16px 0",
     lineHeight: 1.4,
   },
 
@@ -111,7 +128,6 @@ const styles: Record<string, CSSProperties> = {
     color: "#3f3a34",
     lineHeight: 1.75,
     margin: "0 0 18px 0",
-    maxWidth: "680px",
   },
 
   readMore: {
