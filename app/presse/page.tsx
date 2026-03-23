@@ -120,16 +120,6 @@ articleTitle: {
     margin: "4px 0 16px 0",
     lineHeight: 1.4,
   },
-
-  articleTitle: {
-    display: "inline-block",
-    fontSize: "1.35rem",
-    lineHeight: 1.45,
-    color: "#1f1f1f",
-    textDecoration: "none",
-    marginBottom: "18px",
-  },
-
   excerpt: {
     fontSize: "1rem",
     color: "#3f3a34",
