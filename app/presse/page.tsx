@@ -33,7 +33,7 @@ const articles = [
   },
   {
     media: "Chroniquart",
-    date: "s.d.",
+    date: "25 janvier 2016",
     title: "Christine Beglet, collagiste.",
     url: "https://www.chroniquart.net/cbeglet.html",
     logo: "/images/image-chroniquart.jpg",
