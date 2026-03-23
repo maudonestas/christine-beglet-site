@@ -6,58 +6,93 @@ import { useState } from "react";
 
 export default function ExpositionsPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [selectedTitle, setSelectedTitle] = useState<string>("");
+  const [selectedTitle, setSelectedTitle] = useState("");
 
-  const expositions = [
+  const expositionsParAnnee = [
     {
-      title: "L’Espace d’art Contemporain, Les Carmes – Pamiers",
-      date: "7 mars — 28 mars 2026",
-      image: "/images/l-espace-d-art-contemporain.jpg",
+      year: "2026",
+      items: [
+        {
+          title: "L’Espace d’art Contemporain, Les Carmes – Pamiers",
+          date: "7 mars — 28 mars 2026",
+          image: "/images/l-espace-d-art-contemporain.jpg",
+        },
+      ],
     },
     {
-      title: "#11 Biennale Hors Normes, Lyon",
-      date: "19 septembre — 10 octobre 2025",
-      image: "/images/biennale-hors-normes-lyon.jpg",
+      year: "2025",
+      items: [
+        {
+          title: "#11 Biennale Hors Normes, Lyon",
+          date: "19 septembre — 10 octobre 2025",
+          image: "/images/biennale-hors-normes-lyon.jpg",
+        },
+      ],
     },
     {
-      title: "Les Essar[t]s, Bram",
-      date: "30 juin — 17 septembre 2023",
-      image: "/images/les-essarts.jpg",
+      year: "2023",
+      items: [
+        {
+          title: "Les Essar[t]s, Bram",
+          date: "30 juin — 17 septembre 2023",
+          image: "/images/les-essarts.jpg",
+        },
+      ],
     },
     {
-      title: "L’Art Caché, Albas",
-      date: "9–10 juillet 2022",
-      image: "/images/l-art-cache.jpg",
+      year: "2022",
+      items: [
+        {
+          title: "L’Art Caché, Albas",
+          date: "9–10 juillet 2022",
+          image: "/images/l-art-cache.jpg",
+        },
+      ],
     },
     {
-      title: "Biennale d’Art Contemporain du Thymerais",
-      date: "2–17 octobre 2021",
-      image: "/images/biennale-art-contemporain-du-thymerais.jpg",
+      year: "2021",
+      items: [
+        {
+          title: "Biennale d’Art Contemporain du Thymerais",
+          date: "2–17 octobre 2021",
+          image: "/images/biennale-art-contemporain-du-thymerais.jpg",
+        },
+        {
+          title: "ARTCITÉ, Fontenay-sous-Bois",
+          date: "16 septembre — 16 octobre 2021",
+          image: "/images/art-cite-2021.jpg",
+        },
+        {
+          title: "Lille Art Up, Foire d’Art Contemporain, Lille Grand Palais",
+          date: "24–27 juin 2021",
+          image: "/images/lille-art-up-2021.jpg",
+        },
+        {
+          title: "Exposition Internationale, Art Contemporain Fanjeaux",
+          date: "19 juin — 19 septembre 2021",
+          image: "/images/art-contemporain-fanjeaux.jpg",
+        },
+      ],
     },
     {
-      title: "ARTCITÉ, Fontenay-sous-Bois",
-      date: "16 septembre — 16 octobre 2021",
-      image: "/images/art-cite-2021.jpg",
+      year: "2020",
+      items: [
+        {
+          title: "Atelier Contempora, Ribérac",
+          date: "15 septembre — 15 octobre 2020",
+          image: "/images/atelier-contempora.jpg",
+        },
+      ],
     },
     {
-      title: "Lille Art Up, Foire d’Art Contemporain, Lille Grand Palais",
-      date: "24–27 juin 2021",
-      image: "/images/lille-art-up-2021.jpg",
-    },
-    {
-      title: "Exposition Internationale, Art Contemporain Fanjeaux",
-      date: "19 juin — 19 septembre 2021",
-      image: "/images/art-contemporain-fanjeaux.jpg",
-    },
-    {
-      title: "Atelier Contempora, Ribérac",
-      date: "15 septembre — 15 octobre 2020",
-      image: "/images/atelier-contempora.jpg",
-    },
-    {
-      title: "Galerie 21, Toulouse",
-      date: "décembre 2019",
-      image: "/images/Galerie21.jpg",
+      year: "2019",
+      items: [
+        {
+          title: "Galerie 21, Toulouse",
+          date: "décembre 2019",
+          image: "/images/Galerie21.jpg",
+        },
+      ],
     },
   ];
 
@@ -79,23 +114,29 @@ export default function ExpositionsPage() {
         <div style={styles.container}>
           <h1 style={styles.title}>Expositions</h1>
 
-          <div style={styles.grid}>
-            {expositions.map((expo) => (
-              <article key={expo.title} style={styles.card}>
-                <button
-                  type="button"
-                  onClick={() => openLightbox(expo.image, expo.title)}
-                  style={styles.imageButton}
-                  aria-label={`Agrandir l’image de ${expo.title}`}
-                >
-                  <img src={expo.image} alt={expo.title} style={styles.image} />
-                </button>
+          {expositionsParAnnee.map((section) => (
+            <div key={section.year} style={styles.yearBlock}>
+              <h2 style={styles.yearTitle}>{section.year}</h2>
 
-                <h2 style={styles.cardTitle}>{expo.title}</h2>
-                <p style={styles.cardDate}>{expo.date}</p>
-              </article>
-            ))}
-          </div>
+              <div style={styles.grid}>
+                {section.items.map((expo) => (
+                  <article key={expo.title} style={styles.card}>
+                    <button
+                      type="button"
+                      onClick={() => openLightbox(expo.image, expo.title)}
+                      style={styles.imageButton}
+                      aria-label={`Agrandir l’image de ${expo.title}`}
+                    >
+                      <img src={expo.image} alt={expo.title} style={styles.image} />
+                    </button>
+
+                    <h3 style={styles.cardTitle}>{expo.title}</h3>
+                    <p style={styles.cardDate}>{expo.date}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -146,8 +187,22 @@ const styles: Record<string, CSSProperties> = {
   title: {
     fontSize: "2rem",
     marginTop: 0,
-    marginBottom: "40px",
+    marginBottom: "48px",
     fontWeight: 300,
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
+  yearBlock: {
+    marginBottom: "56px",
+  },
+
+  yearTitle: {
+    fontSize: "1rem",
+    marginTop: 0,
+    marginBottom: "22px",
+    fontWeight: 400,
     letterSpacing: "0.12em",
     textTransform: "uppercase",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
@@ -155,8 +210,8 @@ const styles: Record<string, CSSProperties> = {
 
   grid: {
     display: "grid",
-    gridTemplateColumns: "1fr 1fr 1fr",
-    gap: "40px 32px",
+    gridTemplateColumns: "repeat(4, 1fr)",
+    gap: "34px 24px",
     alignItems: "start",
   },
 
@@ -181,21 +236,20 @@ const styles: Record<string, CSSProperties> = {
   },
 
   cardTitle: {
-    marginTop: "14px",
+    marginTop: "12px",
     marginBottom: "6px",
-    fontSize: "0.95rem",
+    fontSize: "0.82rem",
     fontWeight: 400,
-    letterSpacing: "0.1em",
+    letterSpacing: "0.08em",
     textTransform: "uppercase",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
-    lineHeight: 1.5,
+    lineHeight: 1.45,
   },
 
   cardDate: {
     margin: 0,
-    fontSize: "0.95rem",
-    fontWeight: 400,
-    lineHeight: 1.6,
+    fontSize: "0.88rem",
+    lineHeight: 1.5,
     color: "#4a4a4a",
   },
 
