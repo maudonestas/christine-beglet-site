@@ -42,13 +42,13 @@ export default function BiographiePage() {
 
           <h2 style={styles.subtitle}>Le collage comme langage</h2>
 
-         <div style={styles.textBlock}>
-  <p style={styles.text}>
-    Dans ses œuvres, des éléments architecturaux s’imposent progressivement jusqu’à structurer l’ensemble du tableau.<br /><br />
-    Dix ans après avoir délaissé ses pinceaux pour le papier, les ciseaux et la colle, elle retrouve une même recherche.<br /><br />
-    Ses collages échappent aux classifications et s’inscrivent dans une démarche libre et intuitive.<br /><br />
-    En 2013, elle est sélectionnée à la Biennale Hors les Normes de Lyon où elle réalise un collage panoramique de cinq mètres.<br /><br />
-    Ses œuvres ont été présentées en France et à l’international, notamment au Canada et en Chine.
+<div style={styles.textBlockTight}>
+  <p style={styles.textTight}>
+    Dans ses œuvres, des éléments architecturaux s’imposent progressivement jusqu’à structurer l’ensemble du tableau.<br />
+    Dix ans après avoir délaissé ses pinceaux pour le papier, les ciseaux et la colle, elle retrouve une même recherche : celle d’une écriture fondée sur la couleur, le rythme et la fragmentation.<br />
+    Ses collages échappent aux classifications. Ils s’inscrivent dans une démarche libre et intuitive, où abstraction et figuration se mêlent pour faire émerger des paysages urbains imaginaires.<br />
+    En 2013, elle est sélectionnée à la 5e Biennale Hors les Normes de Lyon, où elle réalise un collage panoramique de cinq mètres de long. À distance, l’œuvre apparaît abstraite ; en s’en approchant, elle révèle une architecture complexe faite de fragments de villes, de gratte-ciels et de constructions hybrides.<br />
+    Ses œuvres ont été présentées dans de nombreuses expositions en France et à l’international, notamment au Canada et en Chine, dans des galeries, salons et institutions culturelles.
   </p>
 </div>
         </div>
@@ -96,25 +96,40 @@ const styles: Record<string, CSSProperties> = {
     display: "block",
   },
 
-  textBlock: {
-    marginBottom: "18px",
-    overflow: "hidden",
-  },
+textBlock: {
+  marginBottom: "28px",
+  overflow: "hidden",
+},
 
-  text: {
+textBlockTight: {
+  marginBottom: 0,
+  overflow: "hidden",
+},
+
+text: {
   fontSize: "1rem",
   lineHeight: 1.7,
   color: "#4f4b46",
   marginTop: 0,
+  marginBottom: "12px",
   textAlign: "justify",
 },
-  
-  subtitle: {
-    fontSize: "1.2rem",
-    fontWeight: 400,
-    marginBottom: "24px",
-    letterSpacing: "0.08em",
-    textTransform: "uppercase",
-    fontFamily: '"Helvetica Neue", Arial, sans-serif',
-  },
+
+textTight: {
+  fontSize: "1rem",
+  lineHeight: 1.7,
+  color: "#4f4b46",
+  margin: 0,
+  textAlign: "justify",
+},
+
+subtitle: {
+  fontSize: "1.2rem",
+  fontWeight: 400,
+  marginTop: 0,
+  marginBottom: "14px",
+  letterSpacing: "0.08em",
+  textTransform: "uppercase",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+},
 };
