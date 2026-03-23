@@ -84,9 +84,8 @@ const styles: Record<string, CSSProperties> = {
   pressGrid: {
   display: "grid",
   gridTemplateColumns: "140px 1fr",
-  gap: "28px",
-  alignItems: "start",
-  maxWidth: "900px",
+  gap: "32px",
+  alignItems: "center",
 },
 
   pressLogo: {
