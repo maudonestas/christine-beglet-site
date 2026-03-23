@@ -88,15 +88,15 @@ const styles: Record<string, CSSProperties> = {
   alignItems: "center",
 },
 
-  pressLogo: {
+pressLogo: {
   width: "120px",
   height: "auto",
   objectFit: "contain",
 },
 
-  pressText: {
-    maxWidth: "620px",
-  },
+pressText: {
+  maxWidth: "600px",
+},
 
   media: {
     fontSize: "0.9rem",
