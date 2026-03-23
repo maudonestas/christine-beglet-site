@@ -223,7 +223,7 @@ const styles: Record<string, CSSProperties> = {
   },
 
   cardTitle: {
-    marginTop: 0,
+    marginTop: 16px,
     marginBottom: "6px",
     fontSize: "0.82rem",
     fontWeight: 400,
@@ -251,14 +251,14 @@ const styles: Record<string, CSSProperties> = {
   },
 
   imageWrapper: {
-    width: "100%",
-    height: "320px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#f7f5f2",
-    overflow: "hidden",
-  },
+  width: "100%",
+  height: "320px",
+  display: "flex",
+  alignItems: "flex-start",
+  justifyContent: "flex-start",
+  backgroundColor: "#f7f5f2",
+  overflow: "hidden",
+},
 
   image: {
     maxWidth: "100%",
