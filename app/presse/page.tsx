@@ -88,11 +88,20 @@ const styles: Record<string, CSSProperties> = {
   },
 
   pressLogo: {
-    width: "120px",
-    height: "auto",
-    objectFit: "contain",
-    marginTop: "56px",
-  },
+  width: "130px",
+  height: "auto",
+  objectFit: "contain",
+  marginTop: "46px",
+},
+
+articleTitle: {
+  display: "inline-block",
+  fontSize: "1.45rem",
+  lineHeight: 1.45,
+  color: "#1f1f1f",
+  textDecoration: "none",
+  marginBottom: "18px",
+},
 
   pressText: {
     maxWidth: "620px",
