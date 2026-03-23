@@ -15,7 +15,7 @@ const articles = [
       "Sans exposition depuis fin janvier, la galerie des Carmes ouvre sa saison 2026 avec un duo féminin réunissant Christine Béglet, collagiste toulousaine, et Sylvie Hébrard, sculptrice.",
   },
     {
-  media: "Chroniquart",
+  media: "Le Chroniquart",
   date: "25 janvier 2016",
   title: "Christine Beglet, collagiste.",
   url: "https://www.chroniquart.net/cbeglet.html",
