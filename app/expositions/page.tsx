@@ -223,7 +223,7 @@ const styles: Record<string, CSSProperties> = {
   },
 
   cardTitle: {
-    marginTop: 16px,
+    marginTop: "16px",
     marginBottom: "6px",
     fontSize: "0.82rem",
     fontWeight: 400,
