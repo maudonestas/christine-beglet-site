@@ -121,17 +121,23 @@ export default function ExpositionsPage() {
               <div style={styles.grid}>
                 {section.items.map((expo) => (
                   <article key={expo.title} style={styles.card}>
+                    <h3 style={styles.cardTitle}>{expo.title}</h3>
+                    <p style={styles.cardDate}>{expo.date}</p>
+
                     <button
                       type="button"
                       onClick={() => openLightbox(expo.image, expo.title)}
                       style={styles.imageButton}
                       aria-label={`Agrandir l’image de ${expo.title}`}
                     >
-                      <img src={expo.image} alt={expo.title} style={styles.image} />
+                      <div style={styles.imageWrapper}>
+                        <img
+                          src={expo.image}
+                          alt={expo.title}
+                          style={styles.image}
+                        />
+                      </div>
                     </button>
-
-                    <h3 style={styles.cardTitle}>{expo.title}</h3>
-                    <p style={styles.cardDate}>{expo.date}</p>
                   </article>
                 ))}
               </div>
@@ -216,7 +222,27 @@ const styles: Record<string, CSSProperties> = {
   },
 
   card: {
-    display: "block",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start",
+  },
+
+  cardTitle: {
+    marginTop: 0,
+    marginBottom: "6px",
+    fontSize: "0.82rem",
+    fontWeight: 400,
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    lineHeight: 1.45,
+  },
+
+  cardDate: {
+    margin: "0 0 14px 0",
+    fontSize: "0.88rem",
+    lineHeight: 1.5,
+    color: "#4a4a4a",
   },
 
   imageButton: {
@@ -229,28 +255,23 @@ const styles: Record<string, CSSProperties> = {
     display: "block",
   },
 
-  image: {
+  imageWrapper: {
     width: "100%",
+    height: "320px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#f7f5f2",
+    overflow: "hidden",
+  },
+
+  image: {
+    maxWidth: "100%",
+    maxHeight: "100%",
+    width: "auto",
     height: "auto",
     display: "block",
-  },
-
-  cardTitle: {
-    marginTop: "12px",
-    marginBottom: "6px",
-    fontSize: "0.82rem",
-    fontWeight: 400,
-    letterSpacing: "0.08em",
-    textTransform: "uppercase",
-    fontFamily: '"Helvetica Neue", Arial, sans-serif',
-    lineHeight: 1.45,
-  },
-
-  cardDate: {
-    margin: 0,
-    fontSize: "0.88rem",
-    lineHeight: 1.5,
-    color: "#4a4a4a",
+    objectFit: "contain",
   },
 
   lightboxOverlay: {
@@ -278,6 +299,7 @@ const styles: Record<string, CSSProperties> = {
     width: "auto",
     height: "auto",
     display: "block",
+    objectFit: "contain",
   },
 
   closeButton: {
