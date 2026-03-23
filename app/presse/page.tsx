@@ -7,7 +7,7 @@ const articles = [
     date: "16 mars 2026",
     title: "Pamiers. Art + : un duo féminin habille le printemps",
     url: "https://www.ladepeche.fr/2026/03/16/art-un-duo-feminin-habille-le-printemps-13274751.php",
-    logo: "/images/logo-ladepeche.png",
+    logo: "/images/presse-ladepeche-2026.jpg",
     excerpt:
       "Sans exposition depuis fin janvier, la galerie des Carmes ouvre sa saison 2026 avec un duo féminin réunissant Christine Béglet, collagiste toulousaine, et Sylvie Hébrard, sculptrice.",
   },
@@ -23,7 +23,7 @@ const articles = [
     date: "8 juin 2000",
     title: "Une détourneuse retourneuse d’images",
     url: "https://www.ladepeche.fr/article/2000/06/08/76119-une-detourneuse-retourneuse-d-images.html",
-    logo: "/images/logo-ladepeche.png",
+    logo: "/images/presse-ladepeche-2026.jpg",
     excerpt:
       "Le collage n'est pas simplement un assemblage d'images. Entre les mains de Christine Béglet, il devient œuvre d'art.",
   },
