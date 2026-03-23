@@ -36,7 +36,7 @@ const articles = [
     date: "s.d.",
     title: "Christine Beglet, collagiste.",
     url: "https://www.chroniquart.net/cbeglet.html",
-    logo: "/images/logo-chroniquart.png",
+    logo: "/images/image-chroniquart.jpg",
   },
 ];
 
