@@ -12,7 +12,7 @@ export default function PressePage() {
 
           <div style={styles.pressGrid}>
             <img
-              src="/images/logo-ladepeche.png"
+              src="/images/presse-ladepeche-2026.jpg"
               alt="La Dépêche du Midi"
               style={styles.pressLogo}
             />
