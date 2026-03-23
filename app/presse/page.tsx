@@ -15,12 +15,24 @@ const articles = [
       "Sans exposition depuis fin janvier, la galerie des Carmes ouvre sa saison 2026 avec un duo féminin réunissant Christine Béglet, collagiste toulousaine, et Sylvie Hébrard, sculptrice.",
   },
   {
+    media: "Chroniquart",
+    date: "25 janvier 2016",
+    title: "Christine Beglet, collagiste.",
+    image: "/images/image-chroniquart.jpg",
+  },
+  {
+    media: "Le Progrès",
+    date: "2013",
+    title: "Christine Beglet a reçu le P’tikon d’or",
+    image: "/images/article-leprogres-2013.jpg",
+  },
+  {
     media: "La Galerie des Nanas",
     date: "19 juillet 2012",
     title: "Christine Béglet, une première résidente… obsédée par les résidences !!",
     image: "/images/article-residence-des-nanas.jpg",
     excerpt:
-  "Dès le lever du jour, l'artiste Christine Béglet, armée d'une énorme théière, descend de sa chambre du troisième vers la salle Gorilla de la galerie pour s'attaquer à une masse de magazines savamment triturés.",
+      "Dès le lever du jour, l'artiste Christine Béglet, armée d'une énorme théière, descend de sa chambre du troisième vers la salle Gorilla de la galerie pour s'attaquer à une masse de magazines savamment triturés.",
   },
   {
     media: "La Dépêche du Midi",
@@ -30,13 +42,6 @@ const articles = [
     logo: "/images/presse-ladepeche-2026.jpg",
     excerpt:
       "Le collage n'est pas simplement un assemblage d'images. Entre les mains de Christine Béglet, il devient œuvre d'art.",
-  },
-  {
-    media: "Chroniquart",
-    date: "25 janvier 2016",
-    title: "Christine Beglet, collagiste.",
-    url: "https://www.chroniquart.net/cbeglet.html",
-    logo: "/images/image-chroniquart.jpg",
   },
 ];
 
@@ -55,14 +60,14 @@ export default function PressePage() {
             {articles.map((article, index) => (
               <div key={index} style={styles.pressGrid}>
                 <div>
-               {article.image ? (
-  <img
-    src={article.image}
-    alt={article.title}
-    style={styles.archiveImage}
-    onClick={() => setSelectedImage(article.image)}
-  />
-) : (
+                  {article.image ? (
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      style={styles.archiveImage}
+                      onClick={() => setSelectedImage(article.image!)}
+                    />
+                  ) : (
                     <img
                       src={article.logo}
                       alt={article.media}
@@ -76,26 +81,24 @@ export default function PressePage() {
                   <p style={styles.date}>{article.date}</p>
 
                   {article.url ? (
-  <a
-    href={article.url}
-    target="_blank"
-    rel="noreferrer"
-    style={styles.articleTitle}
-  >
-    {article.title}
-  </a>
-) : article.image ? (
-  <div
-    style={{ ...styles.articleTitle, cursor: "pointer" }}
-    onClick={() => setSelectedImage(article.image!)}
-  >
-    {article.title}
-  </div>
-) : (
-  <div style={styles.articleTitle}>
-    {article.title}
-  </div>
-)}
+                    <a
+                      href={article.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      style={styles.articleTitle}
+                    >
+                      {article.title}
+                    </a>
+                  ) : article.image ? (
+                    <div
+                      style={{ ...styles.articleTitle, cursor: "pointer" }}
+                      onClick={() => setSelectedImage(article.image!)}
+                    >
+                      {article.title}
+                    </div>
+                  ) : (
+                    <div style={styles.articleTitle}>{article.title}</div>
+                  )}
 
                   {article.excerpt && (
                     <p style={styles.excerpt}>{article.excerpt}</p>
@@ -117,15 +120,16 @@ export default function PressePage() {
           </div>
         </div>
       </section>
-    {selectedImage && (
-  <div style={styles.overlay} onClick={() => setSelectedImage(null)}>
-    <img
-      src={selectedImage}
-      alt="Aperçu de l’article"
-      style={styles.fullImage}
-    />
-  </div>
-)}
+
+      {selectedImage && (
+        <div style={styles.overlay} onClick={() => setSelectedImage(null)}>
+          <img
+            src={selectedImage}
+            alt="Aperçu de l’article"
+            style={styles.fullImage}
+          />
+        </div>
+      )}
     </main>
   );
 }
@@ -178,13 +182,14 @@ const styles: Record<string, CSSProperties> = {
   },
 
   archiveImage: {
-  width: "150px",
-  height: "200px",
-  objectFit: "cover",
-  objectPosition: "left top",
-  border: "1px solid #d8d2c8",
-  cursor: "pointer",
-},
+    width: "150px",
+    height: "200px",
+    objectFit: "cover",
+    objectPosition: "left top",
+    border: "1px solid #d8d2c8",
+    cursor: "pointer",
+    display: "block",
+  },
 
   pressText: {
     maxWidth: "620px",
@@ -228,24 +233,26 @@ const styles: Record<string, CSSProperties> = {
     borderBottom: "1px solid #b9b1a6",
     paddingBottom: "2px",
   },
-  overlay: {
-  position: "fixed",
-  top: 0,
-  left: 0,
-  width: "100vw",
-  height: "100vh",
-  backgroundColor: "rgba(0, 0, 0, 0.82)",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  zIndex: 1000,
-  padding: "24px",
-},
 
-fullImage: {
-  maxWidth: "90vw",
-  maxHeight: "90vh",
-  objectFit: "contain",
-  display: "block",
-},
+  overlay: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    width: "100vw",
+    height: "100vh",
+    backgroundColor: "rgba(0, 0, 0, 0.82)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: 1000,
+    padding: "24px",
+    cursor: "pointer",
+  },
+
+  fullImage: {
+    maxWidth: "90vw",
+    maxHeight: "90vh",
+    objectFit: "contain",
+    display: "block",
+  },
 };
