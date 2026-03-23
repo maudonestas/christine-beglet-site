@@ -19,7 +19,7 @@ const articles = [
   date: "25 janvier 2016",
   title: "Christine Beglet, collagiste.",
   url: "https://www.chroniquart.net/cbeglet.html",
-  logo: "/images/logo-chroniquart.png",
+  logo: "/images/image-chroniquart.jpg",
 },
   {
     media: "Le Progrès",
