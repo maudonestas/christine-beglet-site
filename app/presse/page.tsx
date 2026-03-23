@@ -16,7 +16,8 @@ const articles = [
     date: "19 juillet 2012",
     title: "Christine Béglet, une première résidente… obsédée par les résidences !!",
     image: "/images/article-residence-des-nanas.jpg",
-    excerpt: "Article d’archive conservé sous forme d’image.",
+    excerpt:
+  "Dès le lever du jour, l'artiste Christine Béglet, armée d'une énorme théière, descend de sa chambre du troisième vers la salle Gorilla de la galerie pour s'attaquer à une masse de magazines savamment triturés.",
   },
   {
     media: "La Dépêche du Midi",
