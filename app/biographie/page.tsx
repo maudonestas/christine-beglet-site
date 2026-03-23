@@ -74,6 +74,9 @@ export default function BiographiePage() {
             <p style={styles.text}>
               À l’inverse du phénomène observé dans les Nymphéas de Monet, la vision panoramique, d’abord abstraite, se révèle figurative lorsqu’on s’en approche : fragments de maisons, gratte-ciels, châteaux, bâtiments d’« anarchitecture ».
             </p>
+            <p style={styles.text}>
+            Ses œuvres ont été présentées dans de nombreuses expositions en France et à l’international, notamment au Canada et en Chine, dans des galeries, salons et institutions culturelles.
+            </p>
           </div>
         </div>
       </section>
