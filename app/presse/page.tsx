@@ -11,42 +11,11 @@ export default function PressePage() {
           <h1 style={styles.title}>Presse</h1>
 
           <div style={styles.pressGrid}>
-            <div style={styles.pressGrid}>
-  <img
-    src="/images/logo-ladepeche.png"
-    alt="La Dépêche du Midi"
-    style={styles.pressLogo}
-  />
-
-  <div style={styles.pressText}>
-    <p style={styles.media}>La Dépêche du Midi</p>
-    <p style={styles.date}>16 mars 2026</p>
-
-    <a
-      href="https://www.ladepeche.fr/2026/03/16/art-un-duo-feminin-habille-le-printemps-13274751.php"
-      target="_blank"
-      rel="noreferrer"
-      style={styles.articleTitle}
-    >
-      Pamiers. Art + : un duo féminin habille le printemps
-    </a>
-
-    <p style={styles.excerpt}>
-      Sans exposition depuis fin janvier, la galerie des Carmes ouvre sa
-      saison 2026 avec un duo féminin réunissant Christine Béglet,
-      collagiste toulousaine, et Sylvie Hébrard, sculptrice.
-    </p>
-
-    <a
-      href="https://www.ladepeche.fr/2026/03/16/art-un-duo-feminin-habille-le-printemps-13274751.php"
-      target="_blank"
-      rel="noreferrer"
-      style={styles.readMore}
-    >
-      Lire l’article
-    </a>
-  </div>
-</div>
+            <img
+              src="/images/logo-ladepeche.png"
+              alt="La Dépêche du Midi"
+              style={styles.pressLogo}
+            />
 
             <div style={styles.pressText}>
               <p style={styles.media}>La Dépêche du Midi</p>
@@ -111,21 +80,23 @@ const styles: Record<string, CSSProperties> = {
   },
 
   pressGrid: {
-  display: "grid",
-  gridTemplateColumns: "140px 1fr",
-  gap: "32px",
-  alignItems: "center",
-},
+    display: "grid",
+    gridTemplateColumns: "140px 1fr",
+    gap: "32px",
+    alignItems: "start",
+    maxWidth: "900px",
+  },
 
-pressLogo: {
-  width: "120px",
-  height: "auto",
-  objectFit: "contain",
-},
+  pressLogo: {
+    width: "120px",
+    height: "auto",
+    objectFit: "contain",
+    marginTop: "56px",
+  },
 
-pressText: {
-  maxWidth: "600px",
-},
+  pressText: {
+    maxWidth: "620px",
+  },
 
   media: {
     fontSize: "0.9rem",
