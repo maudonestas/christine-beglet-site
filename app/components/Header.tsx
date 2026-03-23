@@ -1,7 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import type { CSSProperties } from "react";
+import { useState } from "react";
 
 export default function Header() {
+  const [oeuvresOpen, setOeuvresOpen] = useState(false);
+  const [artisteOpen, setArtisteOpen] = useState(false);
+
   return (
     <header style={styles.header}>
       <div style={styles.headerContent}>
@@ -13,42 +19,54 @@ export default function Header() {
         </Link>
 
         <nav style={styles.nav}>
-          <div style={styles.dropdown}>
+          <div
+            style={styles.dropdown}
+            onMouseEnter={() => setOeuvresOpen(true)}
+            onMouseLeave={() => setOeuvresOpen(false)}
+          >
             <a href="/oeuvres" style={styles.navLink}>
               Les Œuvres
             </a>
-            <div style={styles.dropdownMenu}>
-              <a href="/oeuvres/grands-formats" style={styles.dropdownLink}>
-                Grands formats
-              </a>
-              <a href="/oeuvres/formats-moyens" style={styles.dropdownLink}>
-                Formats moyens
-              </a>
-              <a href="/oeuvres/petits-formats" style={styles.dropdownLink}>
-                Petits formats
-              </a>
-              <a href="/oeuvres/triptyque" style={styles.dropdownLink}>
-                Triptyque
-              </a>
-            </div>
+            {oeuvresOpen && (
+              <div style={styles.dropdownMenu}>
+                <a href="/oeuvres/grands-formats" style={styles.dropdownLink}>
+                  Grands formats
+                </a>
+                <a href="/oeuvres/formats-moyens" style={styles.dropdownLink}>
+                  Formats moyens
+                </a>
+                <a href="/oeuvres/petits-formats" style={styles.dropdownLink}>
+                  Petits formats
+                </a>
+                <a href="/oeuvres/triptyque" style={styles.dropdownLink}>
+                  Triptyque
+                </a>
+              </div>
+            )}
           </div>
 
           <a href="/atelier" style={styles.navLink}>
             L'Atelier
           </a>
 
-          <div style={styles.dropdown}>
+          <div
+            style={styles.dropdown}
+            onMouseEnter={() => setArtisteOpen(true)}
+            onMouseLeave={() => setArtisteOpen(false)}
+          >
             <a href="/biographie" style={styles.navLink}>
               L'Artiste
             </a>
-            <div style={styles.dropdownMenu}>
-              <a href="/biographie" style={styles.dropdownLink}>
-                Biographie
-              </a>
-              <a href="/presse" style={styles.dropdownLink}>
-                On en parle
-              </a>
-            </div>
+            {artisteOpen && (
+              <div style={styles.dropdownMenu}>
+                <a href="/biographie" style={styles.dropdownLink}>
+                  Biographie
+                </a>
+                <a href="/presse" style={styles.dropdownLink}>
+                  On en parle
+                </a>
+              </div>
+            )}
           </div>
 
           <a href="/expositions" style={styles.navLink}>
@@ -125,16 +143,6 @@ export default function Header() {
           </a>
         </nav>
       </div>
-
-      <style jsx>{`
-        .dropdown:hover .dropdown-menu {
-          display: block;
-        }
-
-        .dropdown-menu a:hover {
-          background-color: #e9e9e9;
-        }
-      `}</style>
     </header>
   );
 }
@@ -205,10 +213,10 @@ const styles: Record<string, CSSProperties> = {
     letterSpacing: "0.12em",
     textTransform: "uppercase",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    cursor: "pointer",
   },
 
   dropdownMenu: {
-    display: "none",
     position: "absolute",
     top: "100%",
     left: 0,
@@ -227,7 +235,6 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "0.9rem",
     fontWeight: 300,
     letterSpacing: "0.08em",
-    textTransform: "none",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
     whiteSpace: "nowrap",
   },
