@@ -125,6 +125,16 @@ export default function Header() {
           </a>
         </nav>
       </div>
+
+      <style jsx>{`
+        .dropdown:hover .dropdown-menu {
+          display: block;
+        }
+
+        .dropdown-menu a:hover {
+          background-color: #e9e9e9;
+        }
+      `}</style>
     </header>
   );
 }
