@@ -19,14 +19,14 @@ export default function PetitsFormatsPage() {
   "/images/35x35-immobile.jpg",
   "/images/35x35-archiduc.jpg",
   "/images/35x35-a-vendre-70m2.jpg",
-  "/images/35x35-5.jpg",
-  "/images/35x35-6.jpg",
-  "/images/35x35-7.jpg",
-  "/images/35x35-8.jpg",
-  "/images/35x35-9.jpg",
-  "/images/35x35-10.jpg",
-  "/images/35x35-11.jpg",
-  "/images/35x35-12.jpg",
+  "/images/35X35-5.jpg",
+  "/images/35X35-6.jpg",
+  "/images/35X35-7.jpg",
+  "/images/35X35-8.jpg",
+  "/images/35X35-9.jpg",
+  "/images/35X35-10.jpg",
+  "/images/35X35-11.jpg",
+  "/images/35X35-12.jpg",
 ];
   return (
     <main style={styles.main}>
