@@ -122,20 +122,20 @@ const styles: Record<string, CSSProperties> = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  padding: "20px", // moins de marge
+  padding: "0",
   zIndex: 9999,
 },
 
   lightboxScroll: {
-  maxWidth: "100vw",
-  maxHeight: "95vh",
+  width: "100vw",
+  height: "100vh",
   overflowX: "auto",
   overflowY: "hidden",
 },
 
  lightboxImg: {
   display: "block",
-  width: "2400px", // augmente ici
+  width: "3200px", // augmente ici
   maxWidth: "none",
   height: "auto",
 },
