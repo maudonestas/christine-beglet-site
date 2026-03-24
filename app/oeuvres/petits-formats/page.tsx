@@ -3,17 +3,17 @@ import type { CSSProperties } from "react";
 
 export default function PetitsFormatsPage() {
   const oeuvres20x20 = [
-  "/images/20x20-1.jpg",
-  "/images/20x20-2.jpg",
-  "/images/20x20-3.jpg",
-  "/images/20x20-4.jpg",
-  "/images/20x20-5.jpg",
-  "/images/20x20-6.jpg",
-  "/images/20x20-7.jpg",
-  "/images/20x20-8.jpg",
-  "/images/20x20-9.jpg",
-  "/images/20x20-10.jpg",
-];
+    "/images/20x20-1.jpg",
+    "/images/20x20-2.jpg",
+    "/images/20x20-3.jpg",
+    "/images/20x20-4.jpg",
+    "/images/20x20-5.jpg",
+    "/images/20x20-6.jpg",
+    "/images/20x20-7.jpg",
+    "/images/20x20-8.jpg",
+    "/images/20x20-9.jpg",
+    "/images/20x20-10.jpg",
+  ];
 
   return (
     <main style={styles.main}>
@@ -23,26 +23,22 @@ export default function PetitsFormatsPage() {
         <div style={styles.container}>
           <h1 style={styles.title}>Petits formats</h1>
 
-          {/* 20x20 */}
           <div style={styles.block}>
-  <h2 style={styles.subtitle}>20x20</h2>
+            <h2 style={styles.subtitle}>20x20</h2>
 
-  <p style={{ color: "red", fontSize: "28px" }}>TEST IMAGE</p>
+            <div style={styles.grid}>
+              {oeuvres20x20.map((src, index) => (
+                <div key={index} style={styles.item}>
+                  <img
+                    src={src}
+                    alt={`Collage 20x20 ${index + 1}`}
+                    style={styles.image}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
 
-  <img
-    src="/images/20x20-1.jpg"
-    alt="test"
-    style={{
-      width: "300px",
-      height: "300px",
-      objectFit: "cover",
-      display: "block",
-      border: "4px solid red",
-    }}
-  />
-</div>
-
-          {/* 35x35 → on fera après */}
           <div style={styles.block}>
             <h2 style={styles.subtitle}>35x35</h2>
           </div>
@@ -105,7 +101,8 @@ const styles: Record<string, CSSProperties> = {
 
   image: {
     width: "100%",
-    height: "auto",
+    aspectRatio: "1 / 1",
+    objectFit: "cover",
     display: "block",
   },
 };
