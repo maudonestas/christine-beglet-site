@@ -57,10 +57,11 @@ useEffect(() => {
     el.removeEventListener("pointerdown", stopAutoScroll);
   };
 }, []);
- const oeuvreCategories = [
+const oeuvreCategories = [
   {
     title: "Grands formats",
     href: "/oeuvres/grands-formats",
+    type: "grid",
     images: [
       "/images/70-1.jpg",
       "/images/70-2.jpg",
@@ -70,6 +71,7 @@ useEffect(() => {
   {
     title: "Formats moyens",
     href: "/oeuvres/formats-moyens",
+    type: "grid",
     images: [
       "/images/mal-de-mer.jpg",
       "/images/propagation-instantanee.jpg",
@@ -79,6 +81,7 @@ useEffect(() => {
   {
     title: "Petits formats",
     href: "/oeuvres/petits-formats",
+    type: "grid",
     images: [
       "/images/20x20-1.jpg",
       "/images/20x20-2.jpg",
@@ -88,20 +91,14 @@ useEffect(() => {
   {
     title: "Triptyque",
     href: "/oeuvres/triptyque",
-    images: [
-      "/images/triptyque.jpg",
-      "/images/triptyque.jpg",
-      "/images/triptyque.jpg",
-    ],
+    type: "single",
+    images: ["/images/triptyque.jpg"],
   },
   {
     title: "Panoramique",
     href: "/oeuvres/panoramique",
-    images: [
-      "/images/pano.jpg",
-      "/images/pano.jpg",
-      "/images/pano.jpg",
-    ],
+    type: "single",
+    images: ["/images/pano.jpg"],
   },
 ];
  return (
@@ -171,17 +168,27 @@ autres dans un écho singulier.
         <div key={category.title} style={styles.workCardNew}>
           <h3 style={styles.workSectionTitle}>{category.title}</h3>
 
-          <div style={styles.previewGrid}>
-            {category.images.map((image, index) => (
-              <div key={index} style={styles.previewFrame}>
-                <img
-                  src={image}
-                  alt={`${category.title} aperçu ${index + 1}`}
-                  style={styles.previewImg}
-                />
-              </div>
-            ))}
-          </div>
+          {category.type === "grid" ? (
+  <div style={styles.previewGrid}>
+    {category.images.map((image, index) => (
+      <div key={index} style={styles.previewFrame}>
+        <img
+          src={image}
+          alt={`${category.title} aperçu ${index + 1}`}
+          style={styles.previewImg}
+        />
+      </div>
+    ))}
+  </div>
+) : (
+  <div style={styles.previewSingleFrame}>
+    <img
+      src={category.images[0]}
+      alt={category.title}
+      style={styles.previewSingleImg}
+    />
+  </div>
+)}
 
           <div style={styles.buttonRowLeft}>
             <a href={category.href} style={styles.button}>
@@ -526,6 +533,25 @@ previewImg: {
   width: "100%",
   height: "100%",
   objectFit: "cover",
+  display: "block",
+},
+   previewSingleFrame: {
+  width: "100%",
+  height: "220px",
+  background: `
+    radial-gradient(circle at 30% 30%, #ededed 0%, #e5e5e5 40%, #dddddd 100%)
+  `,
+  boxShadow: "inset 0 0 40px rgba(0,0,0,0.03)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  overflow: "hidden",
+},
+
+previewSingleImg: {
+  width: "100%",
+  height: "100%",
+  objectFit: "contain",
   display: "block",
 },
 };
