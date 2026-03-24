@@ -174,9 +174,9 @@ export default function Home() {
                 style={{
                   ...styles.workCardNew,
                   ...(category.type === "single" ||
-                  category.type === "mosaic-large-row"
-                    ? styles.workCardFull
-                    : {}),
+category.type === "mosaic-portrait"
+  ? styles.workCardFull
+  : {}),
                 }}
               >
                 <h3 style={styles.workSectionTitle}>{category.title}</h3>
@@ -521,31 +521,13 @@ const styles: Record<string, CSSProperties> = {
     gridColumn: "1 / -1",
   },
 
-  largePortraitRow: {
-    display: "grid",
-    gridTemplateColumns: "repeat(3, max-content)",
-    gap: "24px",
-    justifyContent: "start",
-    alignItems: "start",
-  },
-
-  largePortraitFrame: {
-    width: "260px",
-    height: "360px",
-    overflow: "hidden",
-    backgroundColor: "transparent",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
-  largePortraitImg: {
-    width: "100%",
-    height: "100%",
-    objectFit: "contain",
-    objectPosition: "center",
-    display: "block",
-  },
+mosaicLargePortraitImg: {
+  width: "100%",
+  height: "100%",
+  objectFit: "contain",
+  objectPosition: "left center",
+  display: "block",
+},
 
   mosaicGrid: {
     display: "grid",
