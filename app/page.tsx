@@ -84,27 +84,23 @@ useEffect(() => {
   
   <div style={styles.bioText}>
     <p style={styles.text}>
-      Née en 1954 dans le Sud-Ouest de la France, Christine Béglet vit et
-      travaille à Toulouse. Diplômée de l’École Nationale Supérieure des
-      Beaux-Arts de Toulouse, elle développe depuis les années 1990 un
-      travail singulier autour du collage.
+      Née en 1954 dans le Sud-Ouest de la France, Christine Béglet vit et travaille à Toulouse.
+Diplômée de l’École Nationale Supérieure des Beaux-Arts de Toulouse, elle développe
+depuis les années 1990 un travail singulier autour du collage.
       <br /><br />
-      Des milliers d’images découpées, fragmentées, morcelées deviennent
-      les pigments de sa palette avec laquelle elle compose son collage.
+      Le moindre fragment, le moindre petit bout de papier, maisons, bâtiments découpés par
+centaines, fragmentés, morcelés, vont devenir les touches de couleurs, les pigments de
+sa palette avec laquelle elle compose son collage.
+Elle ne structure pas au préalable mon tableau, du chaos de ses images accumulées tout
+s’enchaine rapidement dans une sorte de frénésie, l’harmonie s’impose, elle se laisse
+guider par la couleur en simple metteur en scène d’un monde parallèle.
+     <br />
+      Ses collages sont des histoires silencieuses à la recherche d’un équilibre entre chaos et
+harmonie, morcèlement et unité, entre l’insignifiant et l’essentiel.
+Elle recompose sa réalité à partir de petits bouts, de petits riens où la moindre des
+choses serait de ne rien en dire, juste laisser voir pour une communication vers les
+autres dans un écho singulier.
       <br />
-      Elle ne structure pas au préalable son tableau, du chaos de ses
-      images accumulées tout s’enchaine rapidement dans une sorte de
-      frénésie, sans composition préalable, l’harmonie s’impose, elle se
-      laisse guider par la couleur en simple metteur en scène d’un monde
-      parallèle.
-      <br /><br />
-      Ses œuvres oscillent entre abstraction et architecture. À distance,
-      elles se donnent comme des ensembles colorés ; de près, elles
-      révèlent un monde fragmenté, fait de villes imaginaires et de
-      structures en transformation.
-      <br /><br />
-      Son travail est présenté en France et à l’international, notamment
-      au Canada et en Chine.
     </p>
   </div>
 
