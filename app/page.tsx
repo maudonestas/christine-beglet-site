@@ -61,13 +61,13 @@ export default function Home() {
     {
       title: "Grands formats",
       href: "/oeuvres/grands-formats",
-      type: "grid",
-      images: ["/images/70-1.jpg", "/images/70-2.jpg", "/images/puzzle-neuronal.jpg"],
+      type: "mosaic",
+      images: ["/images/70-1.jpg", "/images/70-2.jpg", "/images/70-3.jpg"],
     },
     {
       title: "Formats moyens",
       href: "/oeuvres/formats-moyens",
-      type: "grid",
+      type: "mosaic",
       images: [
         "/images/mal-de-mer.jpg",
         "/images/propagation-instantanee.jpg",
@@ -77,7 +77,7 @@ export default function Home() {
     {
       title: "Petits formats",
       href: "/oeuvres/petits-formats",
-      type: "grid",
+      type: "mosaic",
       images: [
         "/images/20x20-1.jpg",
         "/images/20x20-2.jpg",
@@ -100,7 +100,6 @@ export default function Home() {
 
   return (
     <main style={styles.main}>
-      {/* HEADER */}
       <Header />
 
       {/* HERO PANO */}
@@ -175,17 +174,33 @@ export default function Home() {
               >
                 <h3 style={styles.workSectionTitle}>{category.title}</h3>
 
-                {category.type === "grid" ? (
-                  <div style={styles.previewGrid}>
-                    {category.images.map((image, index) => (
-                      <div key={index} style={styles.previewFrame}>
+                {category.type === "mosaic" ? (
+                  <div style={styles.mosaicGrid}>
+                    <div style={styles.mosaicLargeFrame}>
+                      <img
+                        src={category.images[0]}
+                        alt={`${category.title} aperçu 1`}
+                        style={styles.mosaicLargeImg}
+                      />
+                    </div>
+
+                    <div style={styles.mosaicRightColumn}>
+                      <div style={styles.mosaicSmallFrame}>
                         <img
-                          src={image}
-                          alt={`${category.title} aperçu ${index + 1}`}
-                          style={styles.previewImg}
+                          src={category.images[1]}
+                          alt={`${category.title} aperçu 2`}
+                          style={styles.mosaicSmallImg}
                         />
                       </div>
-                    ))}
+
+                      <div style={styles.mosaicSmallFrame}>
+                        <img
+                          src={category.images[2]}
+                          alt={`${category.title} aperçu 3`}
+                          style={styles.mosaicSmallImg}
+                        />
+                      </div>
+                    </div>
                   </div>
                 ) : (
                   <div style={styles.previewSingleFrame}>
@@ -409,19 +424,20 @@ const styles: Record<string, CSSProperties> = {
     marginTop: "20px",
   },
 
- button: {
-  display: "inline-block",
-  textDecoration: "none",
-  color: "#2f2a26",
-  border: "1px solid #c9c1b8",
-  padding: "9px 16px",
-  fontSize: "0.72rem",
-  lineHeight: 1.2,
-  letterSpacing: "0.14em",
-  textTransform: "uppercase",
-  backgroundColor: "#f7f5f2",
-  transition: "all 0.2s ease",
-},
+  button: {
+    display: "inline-block",
+    textDecoration: "none",
+    color: "#2f2a26",
+    border: "1px solid #c9c1b8",
+    padding: "9px 16px",
+    fontSize: "0.72rem",
+    lineHeight: 1.2,
+    letterSpacing: "0.14em",
+    textTransform: "uppercase",
+    backgroundColor: "#f7f5f2",
+    transition: "all 0.2s ease",
+  },
+
   instagramLink: {
     display: "flex",
     alignItems: "center",
@@ -470,23 +486,41 @@ const styles: Record<string, CSSProperties> = {
     gridColumn: "1 / -1",
   },
 
-  previewGrid: {
+  mosaicGrid: {
     display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
+    gridTemplateColumns: "2fr 1fr",
+    gap: "14px",
+    alignItems: "stretch",
+  },
+
+  mosaicLargeFrame: {
+    width: "100%",
+    height: "360px",
+    overflow: "hidden",
+    backgroundColor: "transparent",
+  },
+
+  mosaicLargeImg: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    display: "block",
+  },
+
+  mosaicRightColumn: {
+    display: "grid",
+    gridTemplateRows: "1fr 1fr",
     gap: "14px",
   },
 
-  previewFrame: {
+  mosaicSmallFrame: {
     width: "100%",
-    aspectRatio: "1 / 1",
-    backgroundColor: "transparent",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    height: "173px",
     overflow: "hidden",
+    backgroundColor: "transparent",
   },
 
-  previewImg: {
+  mosaicSmallImg: {
     width: "100%",
     height: "100%",
     objectFit: "cover",
@@ -502,13 +536,13 @@ const styles: Record<string, CSSProperties> = {
   },
 
   previewSingleImg: {
-  width: "820px",
-  height: "220px",
-  objectFit: "contain",
-  objectPosition: "left center",
-  display: "block",
-},
-  
+    width: "820px",
+    height: "220px",
+    objectFit: "contain",
+    objectPosition: "left center",
+    display: "block",
+  },
+
   previewPanoImg: {
     width: "920px",
     height: "220px",
