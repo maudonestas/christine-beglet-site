@@ -61,8 +61,12 @@ export default function Home() {
     {
       title: "Grands formats",
       href: "/oeuvres/grands-formats",
-      type: "mosaic",
-      images: ["/images/70-1.jpg", "/images/70-2.jpg", "/images/puzzle-neuronal.jpg"],
+      type: "mosaic-large-row",
+      images: [
+        "/images/70-1.jpg",
+        "/images/70-2.jpg",
+        "/images/puzzle-neuronal.jpg",
+      ],
     },
     {
       title: "Formats moyens",
@@ -169,12 +173,27 @@ export default function Home() {
                 key={category.title}
                 style={{
                   ...styles.workCardNew,
-                  ...(category.type === "single" ? styles.workCardFull : {}),
+                  ...(category.type === "single" ||
+                  category.type === "mosaic-large-row"
+                    ? styles.workCardFull
+                    : {}),
                 }}
               >
                 <h3 style={styles.workSectionTitle}>{category.title}</h3>
 
-                {category.type === "mosaic" ? (
+                {category.type === "mosaic-large-row" ? (
+                  <div style={styles.largePortraitRow}>
+                    {category.images.map((image, index) => (
+                      <div key={index} style={styles.largePortraitFrame}>
+                        <img
+                          src={image}
+                          alt={`${category.title} aperçu ${index + 1}`}
+                          style={styles.largePortraitImg}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ) : category.type === "mosaic" ? (
                   <div style={styles.mosaicGrid}>
                     <div style={styles.mosaicLargeFrame}>
                       <img
@@ -484,6 +503,32 @@ const styles: Record<string, CSSProperties> = {
 
   workCardFull: {
     gridColumn: "1 / -1",
+  },
+
+  largePortraitRow: {
+    display: "grid",
+    gridTemplateColumns: "repeat(3, max-content)",
+    gap: "24px",
+    justifyContent: "start",
+    alignItems: "start",
+  },
+
+  largePortraitFrame: {
+    width: "260px",
+    height: "360px",
+    overflow: "hidden",
+    backgroundColor: "transparent",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  largePortraitImg: {
+    width: "100%",
+    height: "100%",
+    objectFit: "contain",
+    objectPosition: "center",
+    display: "block",
   },
 
   mosaicGrid: {
