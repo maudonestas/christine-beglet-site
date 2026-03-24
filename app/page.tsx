@@ -94,7 +94,7 @@ sa palette avec laquelle elle compose son collage.
 Elle ne structure pas au préalable mon tableau, du chaos de ses images accumulées tout
 s’enchaine rapidement dans une sorte de frénésie, l’harmonie s’impose, elle se laisse
 guider par la couleur en simple metteur en scène d’un monde parallèle.
-     <br />
+     <br /><br />
       Ses collages sont des histoires silencieuses à la recherche d’un équilibre entre chaos et
 harmonie, morcèlement et unité, entre l’insignifiant et l’essentiel.
 Elle recompose sa réalité à partir de petits bouts, de petits riens où la moindre des
