@@ -3,17 +3,17 @@ import type { CSSProperties } from "react";
 
 export default function PetitsFormatsPage() {
   const oeuvres20x20 = [
-    "/images/20x20-1.jpg",
-    "/images/20x20-4.jpg",
-    "/images/20x20-5.jpg",
-    "/images/20x20-6.jpg",
-    "/images/20x20-7.jpg",
-    "/images/20x20-8.jpg",
-    "/images/20x20-9.jpg",
-    "/images/20x20-10.jpg",
-    "/images/20x20-11.jpg",
-    "/images/20x20-12.jpg",
-  ];
+  "/images/20x20-1.jpg",
+  "/images/20x20-2.jpg",
+  "/images/20x20-3.jpg",
+  "/images/20x20-4.jpg",
+  "/images/20x20-5.jpg",
+  "/images/20x20-6.jpg",
+  "/images/20x20-7.jpg",
+  "/images/20x20-8.jpg",
+  "/images/20x20-9.jpg",
+  "/images/20x20-10.jpg",
+];
 
   return (
     <main style={styles.main}>
