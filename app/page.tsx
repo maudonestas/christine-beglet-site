@@ -544,7 +544,7 @@ const styles: Record<string, CSSProperties> = {
   },
 
   previewPanoImg: {
-    width: "920px",
+    width: "1100px",
     height: "360px",
     objectFit: "cover",
     objectPosition: "center",
