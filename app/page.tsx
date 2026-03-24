@@ -158,7 +158,7 @@ autres dans un écho singulier.
 
           {/* COLLAGES 20x20 */}
           <div style={styles.workCardSolo}>
-            <h3 style={styles.workSectionTitle}>Collages 20x20</h3>
+            <h3 style={styles.workSectionTitle}>Petits formats</h3>
             <div style={styles.workFrame}>
               <img
                 src="/images/20-1.jpg"
