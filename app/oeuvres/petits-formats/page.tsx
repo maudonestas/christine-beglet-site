@@ -99,10 +99,9 @@ const styles: Record<string, CSSProperties> = {
     width: "100%",
   },
 
-  image: {
-    width: "100%",
-    aspectRatio: "1 / 1",
-    objectFit: "cover",
-    display: "block",
-  },
+ image: {
+  width: "100%",
+  height: "auto",
+  display: "block",
+}
 };
