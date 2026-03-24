@@ -15,20 +15,19 @@ export default function PetitsFormatsPage() {
     "/images/20x20-10.jpg",
   ];
  const oeuvres35x35 = [
-  { src: "/images/35x35-immoral.jpg", title: "Immoral" },
-  { src: "/images/35x35-immobile.jpg", title: "Immobile" },
-  { src: "/images/35x35-archiduc.jpg", title: "Archiduc" },
-  { src: "/images/35x35-a-vendre-70m2.jpg", title: "À vendre – 70m²" },
-  { src: "/images/35x35-5.jpg", title: null },
-  { src: "/images/35x35-6.jpg", title: null },
-  { src: "/images/35x35-7.jpg", title: null },
-  { src: "/images/35x35-8.jpg", title: null },
-  { src: "/images/35x35-9.jpg", title: null },
-  { src: "/images/35x35-10.jpg", title: null },
-  { src: "/images/35x35-11.jpg", title: null },
-  { src: "/images/35x35-12.jpg", title: null },
+  "/images/35x35-immoral.jpg",
+  "/images/35x35-immobile.jpg",
+  "/images/35x35-archiduc.jpg",
+  "/images/35x35-a-vendre-70m2.jpg",
+  "/images/35x35-5.jpg",
+  "/images/35x35-6.jpg",
+  "/images/35x35-7.jpg",
+  "/images/35x35-8.jpg",
+  "/images/35x35-9.jpg",
+  "/images/35x35-10.jpg",
+  "/images/35x35-11.jpg",
+  "/images/35x35-12.jpg",
 ];
-
   return (
     <main style={styles.main}>
       <Header />
@@ -57,12 +56,9 @@ export default function PetitsFormatsPage() {
   <h2 style={styles.subtitle}>35x35</h2>
 
   <div style={styles.grid}>
-    {oeuvres35x35.map((item, index) => (
+    {oeuvres35x35.map((src, index) => (
       <div key={index} style={styles.item}>
-        <img src={item.src} alt={item.title} style={styles.image} />
-        {item.title && (
-          <p style={styles.caption}>{item.title}</p>
-        )}
+        <img src={src} alt="" style={styles.image} />
       </div>
     ))}
   </div>
