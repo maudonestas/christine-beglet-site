@@ -14,12 +14,12 @@ export default function PetitsFormatsPage() {
           <h1 style={styles.title}>Petits formats</h1>
 
           <div style={styles.block}>
-            <h2 style={styles.subtitle}>20 × 20</h2>
+            <h2 style={styles.subtitle}>20X20</h2>
             <p>À compléter</p>
           </div>
 
           <div style={styles.block}>
-            <h2 style={styles.subtitle}>35 × 35</h2>
+            <h2 style={styles.subtitle}>35X35</h2>
             <p>À compléter</p>
           </div>
         </div>
