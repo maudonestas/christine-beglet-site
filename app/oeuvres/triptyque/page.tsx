@@ -14,7 +14,7 @@ export default function TriptyquePage() {
 
       <section style={styles.section}>
         <div style={styles.container}>
-          <h1 style={styles.title}>Triptyque (92 × 195)</h1>
+          <h1 style={styles.title}>Triptyque 92X195 </h1>
 
           <div style={styles.block}>
             <div style={styles.triptyqueMain}>
