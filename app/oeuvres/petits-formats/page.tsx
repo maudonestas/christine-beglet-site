@@ -14,6 +14,20 @@ export default function PetitsFormatsPage() {
     "/images/20x20-9.jpg",
     "/images/20x20-10.jpg",
   ];
+ const oeuvres35x35 = [
+  { src: "/images/35x35-immoral.jpg", title: "Immoral" },
+  { src: "/images/35x35-immobile.jpg", title: "Immobile" },
+  { src: "/images/35x35-archiduc.jpg", title: "Archiduc" },
+  { src: "/images/35x35-a-vendre-70m2.jpg", title: "À vendre – 70m²" },
+  { src: "/images/35x35-5.jpg", title: null },
+  { src: "/images/35x35-6.jpg", title: null },
+  { src: "/images/35x35-7.jpg", title: null },
+  { src: "/images/35x35-8.jpg", title: null },
+  { src: "/images/35x35-9.jpg", title: null },
+  { src: "/images/35x35-10.jpg", title: null },
+  { src: "/images/35x35-11.jpg", title: null },
+  { src: "/images/35x35-12.jpg", title: null },
+];
 
   return (
     <main style={styles.main}>
@@ -39,9 +53,20 @@ export default function PetitsFormatsPage() {
             </div>
           </div>
 
-          <div style={styles.block}>
-            <h2 style={styles.subtitle}>35x35</h2>
-          </div>
+         <div style={styles.block}>
+  <h2 style={styles.subtitle}>35x35</h2>
+
+  <div style={styles.grid}>
+    {oeuvres35x35.map((item, index) => (
+      <div key={index} style={styles.item}>
+        <img src={item.src} alt={item.title} style={styles.image} />
+        {item.title && (
+          <p style={styles.caption}>{item.title}</p>
+        )}
+      </div>
+    ))}
+  </div>
+</div>
         </div>
       </section>
     </main>
