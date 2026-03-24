@@ -1,7 +1,12 @@
+"use client";
+
+import { useState } from "react";
 import Header from "../../components/Header";
 import type { CSSProperties } from "react";
 
 export default function PanoramiquePage() {
+  const [isZoomed, setIsZoomed] = useState(false);
+
   const panoramique = {
     main: {
       src: "/images/pano.jpg",
@@ -18,18 +23,40 @@ export default function PanoramiquePage() {
           <p style={styles.subtitle}>35×150</p>
 
           <div style={styles.block}>
-            <div style={styles.panoFrame}>
-              <div style={styles.panoScroll}>
-                <img
-                  src={panoramique.main.src}
-                  alt="Panoramique (35×150)"
-                  style={styles.panoMainImg}
-                />
-              </div>
+            <div style={styles.panoMain}>
+              <img
+                src={panoramique.main.src}
+                alt="Panoramique (35×150)"
+                style={styles.panoMainImg}
+                onClick={() => setIsZoomed(true)}
+              />
             </div>
           </div>
         </div>
       </section>
+
+      {isZoomed && (
+        <div style={styles.lightbox} onClick={() => setIsZoomed(false)}>
+          <button
+            style={styles.closeButton}
+            onClick={() => setIsZoomed(false)}
+            aria-label="Fermer l’image"
+          >
+            ×
+          </button>
+
+          <div
+            style={styles.lightboxScroll}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={panoramique.main.src}
+              alt="Panoramique (35×150) agrandi"
+              style={styles.lightboxImg}
+            />
+          </div>
+        </div>
+      )}
     </main>
   );
 }
@@ -76,21 +103,54 @@ const styles: Record<string, CSSProperties> = {
     marginBottom: "60px",
   },
 
-  panoFrame: {
-    overflow: "hidden",
-    width: "100%",
+  panoMain: {
+    display: "flex",
+    flexDirection: "column",
   },
 
-  panoScroll: {
+  panoMainImg: {
+    width: "100%",
+    height: "auto",
+    display: "block",
+    cursor: "zoom-in",
+  },
+
+  lightbox: {
+    position: "fixed",
+    inset: 0,
+    backgroundColor: "rgba(0, 0, 0, 0.88)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "40px",
+    zIndex: 9999,
+  },
+
+  lightboxScroll: {
+    maxWidth: "95vw",
+    maxHeight: "90vh",
     overflowX: "auto",
     overflowY: "hidden",
     WebkitOverflowScrolling: "touch",
   },
 
-  panoMainImg: {
+  lightboxImg: {
     display: "block",
     width: "1800px",
     maxWidth: "none",
     height: "auto",
+  },
+
+  closeButton: {
+    position: "absolute",
+    top: "20px",
+    right: "28px",
+    background: "transparent",
+    border: "none",
+    color: "#fff",
+    fontSize: "2.5rem",
+    cursor: "pointer",
+    lineHeight: 1,
+    zIndex: 10000,
   },
 };
