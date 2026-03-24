@@ -225,10 +225,12 @@ const styles: Record<string, CSSProperties> = {
 
   title: {
     fontSize: "2rem",
+    marginTop: 0,
     marginBottom: "40px",
     fontWeight: 300,
     letterSpacing: "0.12em",
     textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
   block: {
@@ -236,10 +238,13 @@ const styles: Record<string, CSSProperties> = {
   },
 
   subtitle: {
+    marginTop: 0,
     marginBottom: "20px",
     fontSize: "0.95rem",
+    fontWeight: 400,
     letterSpacing: "0.1em",
     textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
   grid: {
@@ -258,19 +263,23 @@ const styles: Record<string, CSSProperties> = {
     background: "transparent",
     padding: 0,
     cursor: "zoom-in",
+    textAlign: "left",
   },
 
   image: {
     width: "100%",
     height: "auto",
+    display: "block",
   },
 
   caption: {
     marginTop: "10px",
+    marginBottom: 0,
     fontSize: "0.9rem",
     letterSpacing: "0.08em",
     textTransform: "uppercase",
     color: "#444",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
   overlay: {
@@ -332,8 +341,13 @@ const styles: Record<string, CSSProperties> = {
   },
 
   lightboxCaption: {
-    color: "#fff",
     marginTop: "12px",
+    marginBottom: 0,
+    fontSize: "0.9rem",
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    color: "#fff",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
   thumbs: {
