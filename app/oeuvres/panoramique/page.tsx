@@ -130,8 +130,8 @@ const styles: Record<string, CSSProperties> = {
 },
   
   lightboxScroll: {
-  width: "100vw",
-  height: "100vh",
+  maxWidth: "100%",
+  maxHeight: "100%",
   overflowX: "auto",
   overflowY: "hidden",
 },
