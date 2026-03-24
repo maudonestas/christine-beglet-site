@@ -14,7 +14,8 @@ export default function TriptyquePage() {
 
       <section style={styles.section}>
         <div style={styles.container}>
-          <h1 style={styles.title}>Triptyque 92X195 </h1>
+         <h1 style={styles.title}>Triptyque</h1>
+<p style={styles.subtitle}>92 × 195 cm</p>
 
           <div style={styles.block}>
             <div style={styles.triptyqueMain}>
@@ -57,6 +58,16 @@ const styles: Record<string, CSSProperties> = {
     textTransform: "uppercase",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
+  subtitle: {
+  fontSize: "1rem", // moitié environ de 2rem
+  marginTop: "-24px",
+  marginBottom: "40px",
+  fontWeight: 300,
+  letterSpacing: "0.08em",
+  textTransform: "uppercase",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  color: "#555",
+},
 
   block: {
     marginBottom: "60px",
