@@ -14,7 +14,7 @@ export default function Header() {
         <Link href="/" style={styles.brandLink}>
           <div>
             <div style={styles.name}>CHRISTINE BÉGLET</div>
-            <div style={styles.subtitle}>Collagiste plasticienne</div>
+            <div style={styles.subtitle}>Collagiste</div>
           </div>
         </Link>
 
