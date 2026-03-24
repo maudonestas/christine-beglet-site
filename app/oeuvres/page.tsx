@@ -45,6 +45,18 @@ export default function OeuvresPage() {
               />
               <h2 style={styles.cardTitle}>Petits formats</h2>
             </a>
+
+            <a href="/oeuvres/panoramique" style={styles.cardLink}>
+  <div style={styles.card}>
+    <img
+      src="/images/pano.jpg"
+      alt="Panoramique"
+      style={styles.cardImg}
+    />
+    <h2 style={styles.cardTitle}>Panoramique</h2>
+    <p style={styles.cardSubtitle}>35×150</p>
+  </div>
+</a>
           </div>
         </div>
       </section>
