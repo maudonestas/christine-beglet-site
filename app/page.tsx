@@ -409,17 +409,17 @@ const styles: Record<string, CSSProperties> = {
     marginTop: "20px",
   },
 
-  button: {
+ button: {
   display: "inline-block",
   textDecoration: "none",
-  color: "#2f2a26",
-  border: "1px solid #c9c1b8",
-  padding: "12px 20px",
-  fontSize: "0.78rem",
+  color: "#1f1f1f",
+  border: "1.5px solid #1f1f1f",
+  padding: "10px 18px",
+  fontSize: "0.8rem",
   lineHeight: 1.2,
-  letterSpacing: "0.14em",
+  letterSpacing: "0.12em",
   textTransform: "uppercase",
-  backgroundColor: "#f7f5f2",
+  backgroundColor: "transparent",
   transition: "all 0.2s ease",
 },
   instagramLink: {
