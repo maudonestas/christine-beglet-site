@@ -500,13 +500,13 @@ const styles: Record<string, CSSProperties> = {
   },
 
   previewSingleImg: {
-    width: "820px",
-    height: "220px",
-    objectFit: "cover",
-    objectPosition: "center",
-    display: "block",
-  },
-
+  width: "820px",
+  height: "220px",
+  objectFit: "contain",
+  objectPosition: "left center",
+  display: "block",
+},
+  
   previewPanoImg: {
     width: "920px",
     height: "220px",
