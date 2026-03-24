@@ -122,10 +122,13 @@ const styles: Record<string, CSSProperties> = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  padding: "0",
+  paddingTop: "40px",
+  paddingBottom: "40px",
+  paddingLeft: "0",
+  paddingRight: "0",
   zIndex: 9999,
 },
-
+  
   lightboxScroll: {
   width: "100vw",
   height: "100vh",
