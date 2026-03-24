@@ -19,9 +19,16 @@ export default function PanoramiquePage() {
 
       <section style={styles.section}>
         <div style={styles.container}>
-          <h1 style={styles.title}>Panoramique 490x100</h1>
-          <p style={styles.subtitle}>Réalisé à partir de sept collages de 70x100</p>
+         <h1 style={styles.title}>Panoramique</h1>
 
+<p style={styles.subtitle}>
+  490<span style={styles.lowercase}>x</span>100
+</p>
+
+<p style={styles.description}>
+  Réalisé à partir de sept collages de 70
+  <span style={styles.lowercase}>x</span>100
+</p>
           <div style={styles.block}>
             <div style={styles.panoMain}>
               <img
@@ -98,6 +105,19 @@ const styles: Record<string, CSSProperties> = {
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
     color: "#555",
   },
+  lowercase: {
+  textTransform: "none",
+},
+
+description: {
+  fontSize: "0.95rem",
+  marginTop: "-20px",
+  marginBottom: "40px",
+  fontWeight: 300,
+  letterSpacing: "0.05em",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  color: "#666",
+},
 
   block: {
     marginBottom: "60px",
