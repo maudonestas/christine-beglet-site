@@ -115,31 +115,30 @@ const styles: Record<string, CSSProperties> = {
     cursor: "zoom-in",
   },
 
-  lightbox: {
-    position: "fixed",
-    inset: 0,
-    backgroundColor: "rgba(0, 0, 0, 0.88)",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: "40px",
-    zIndex: 9999,
-  },
+ lightbox: {
+  position: "fixed",
+  inset: 0,
+  backgroundColor: "rgba(0, 0, 0, 0.95)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  padding: "20px", // moins de marge
+  zIndex: 9999,
+},
 
   lightboxScroll: {
-    maxWidth: "95vw",
-    maxHeight: "90vh",
-    overflowX: "auto",
-    overflowY: "hidden",
-    WebkitOverflowScrolling: "touch",
-  },
+  maxWidth: "100vw",
+  maxHeight: "95vh",
+  overflowX: "auto",
+  overflowY: "hidden",
+},
 
-  lightboxImg: {
-    display: "block",
-    width: "1800px",
-    maxWidth: "none",
-    height: "auto",
-  },
+ lightboxImg: {
+  display: "block",
+  width: "2400px", // augmente ici
+  maxWidth: "none",
+  height: "auto",
+},
 
   closeButton: {
     position: "absolute",
