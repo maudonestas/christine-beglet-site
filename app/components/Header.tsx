@@ -41,6 +41,9 @@ export default function Header() {
                 <a href="/oeuvres/triptyque" style={styles.dropdownLink}>
                   Triptyque
                 </a>
+                <a href="/oeuvres/panoramique" style={styles.dropdownLink}>
+  Panoramique
+</a>
               </div>
             )}
           </div>
