@@ -194,18 +194,26 @@ category.type === "mosaic-portrait"
     <div style={styles.mosaicRightColumn}>
       <div style={styles.mosaicSmallFrame}>
         <img
-          src={category.images[1]}
-          alt={`${category.title} aperçu 2`}
-          style={styles.mosaicSmallImg}
-        />
+  src={category.images[1]}
+  alt={`${category.title} aperçu 2`}
+  style={
+    category.title === "Grands formats"
+      ? styles.mosaicSmallPortraitImg
+      : styles.mosaicSmallImg
+  }
+/>
       </div>
 
       <div style={styles.mosaicSmallFrame}>
         <img
-          src={category.images[2]}
-          alt={`${category.title} aperçu 3`}
-          style={styles.mosaicSmallImg}
-        />
+  src={category.images[2]}
+  alt={`${category.title} aperçu 3`}
+  style={
+    category.title === "Grands formats"
+      ? styles.mosaicSmallPortraitImg
+      : styles.mosaicSmallImg
+  }
+/>
       </div>
     </div>
   </div>
@@ -529,6 +537,13 @@ mosaicLargePortraitImg: {
   display: "block",
 },
 
+  mosaicSmallPortraitImg: {
+  width: "100%",
+  height: "100%",
+  objectFit: "contain",
+  objectPosition: "center",
+  display: "block",
+},
   mosaicGrid: {
     display: "grid",
     gridTemplateColumns: "2fr 1fr",
