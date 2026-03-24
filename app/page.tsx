@@ -62,7 +62,7 @@ export default function Home() {
       title: "Grands formats",
       href: "/oeuvres/grands-formats",
       type: "grid",
-      images: ["/images/70-1.jpg", "/images/70-2.jpg", "/puzzle-neuronal.jpg.jpg"],
+      images: ["/images/70-1.jpg", "/images/70-2.jpg", "/images/puzzle-neuronal.jpg"],
     },
     {
       title: "Formats moyens",
