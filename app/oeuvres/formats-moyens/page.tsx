@@ -57,7 +57,7 @@ export default function FormatsMoyensPage() {
           <h1 style={styles.title}>Formats moyens</h1>
 
           <div style={styles.block}>
-            <h2 style={styles.subtitle}>60 × 60</h2>
+            <h2 style={styles.subtitle}>60X60</h2>
 
             <div style={styles.grid}>
               {oeuvres60x60.map((oeuvre, index) => (
@@ -74,7 +74,7 @@ export default function FormatsMoyensPage() {
           </div>
 
           <div style={styles.block}>
-            <h2 style={styles.subtitle}>50 × 50</h2>
+            <h2 style={styles.subtitle}>50X50</h2>
 
             <div style={styles.grid}>
               {oeuvres50x50.map((oeuvre, index) => (
