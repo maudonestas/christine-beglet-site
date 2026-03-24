@@ -1,33 +1,78 @@
+"use client";
+
 import Link from "next/link";
 import type { CSSProperties } from "react";
+import { useState } from "react";
 
 export default function Header() {
+  const [oeuvresOpen, setOeuvresOpen] = useState(false);
+  const [artisteOpen, setArtisteOpen] = useState(false);
+
   return (
     <header style={styles.header}>
       <div style={styles.headerContent}>
         <Link href="/" style={styles.brandLink}>
-  <div>
-    <div style={styles.name}>CHRISTINE BÉGLET</div>
-    <div style={styles.subtitle}>Collagiste plasticienne</div>
-  </div>
-</Link>
+          <div>
+            <div style={styles.name}>CHRISTINE BÉGLET</div>
+            <div style={styles.subtitle}>Collagiste</div>
+          </div>
+        </Link>
 
         <nav style={styles.nav}>
-          <a href="/oeuvres" style={styles.navLink}>
-            Œuvres
-          </a>
+          <div
+            style={styles.dropdown}
+            onMouseEnter={() => setOeuvresOpen(true)}
+            onMouseLeave={() => setOeuvresOpen(false)}
+          >
+            <a href="/oeuvres" style={styles.navLink}>
+              Les Œuvres
+            </a>
+            {oeuvresOpen && (
+              <div style={styles.dropdownMenu}>
+                <a href="/oeuvres/grands-formats" style={styles.dropdownLink}>
+                  Grands formats
+                </a>
+                <a href="/oeuvres/formats-moyens" style={styles.dropdownLink}>
+                  Formats moyens
+                </a>
+                <a href="/oeuvres/petits-formats" style={styles.dropdownLink}>
+                  Petits formats
+                </a>
+                <a href="/oeuvres/triptyque" style={styles.dropdownLink}>
+                  Triptyque
+                </a>
+              </div>
+            )}
+          </div>
+
           <a href="/atelier" style={styles.navLink}>
             L'Atelier
           </a>
-          <a href="/biographie" style={styles.navLink}>
-            Biographie
-          </a>
+
+          <div
+            style={styles.dropdown}
+            onMouseEnter={() => setArtisteOpen(true)}
+            onMouseLeave={() => setArtisteOpen(false)}
+          >
+            <a href="/biographie" style={styles.navLink}>
+              L'Artiste
+            </a>
+            {artisteOpen && (
+              <div style={styles.dropdownMenu}>
+                <a href="/biographie" style={styles.dropdownLink}>
+                  Biographie
+                </a>
+                <a href="/presse" style={styles.dropdownLink}>
+                  On en parle
+                </a>
+              </div>
+            )}
+          </div>
+
           <a href="/expositions" style={styles.navLink}>
             Expositions
           </a>
-          <a href="/presse" style={styles.navLink}>
-            Presse
-          </a>
+
           <a href="/contact" style={styles.navLink}>
             Contact
           </a>
@@ -123,10 +168,10 @@ const styles: Record<string, CSSProperties> = {
   },
 
   brandLink: {
-  textDecoration: "none",
-  color: "inherit",
-  display: "block",
-},
+    textDecoration: "none",
+    color: "inherit",
+    display: "block",
+  },
 
   name: {
     fontSize: "2.2rem",
@@ -154,6 +199,12 @@ const styles: Record<string, CSSProperties> = {
     alignItems: "center",
   },
 
+  dropdown: {
+    position: "relative",
+    display: "flex",
+    alignItems: "center",
+  },
+
   navLink: {
     textDecoration: "none",
     color: "#4a4a4a",
@@ -162,6 +213,30 @@ const styles: Record<string, CSSProperties> = {
     letterSpacing: "0.12em",
     textTransform: "uppercase",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    cursor: "pointer",
+  },
+
+  dropdownMenu: {
+    position: "absolute",
+    top: "100%",
+    left: 0,
+    backgroundColor: "#f2f2f2",
+    border: "1px solid #d8d8d8",
+    minWidth: "220px",
+    padding: "10px 0",
+    zIndex: 200,
+  },
+
+  dropdownLink: {
+    display: "block",
+    padding: "8px 16px",
+    textDecoration: "none",
+    color: "#4a4a4a",
+    fontSize: "0.9rem",
+    fontWeight: 300,
+    letterSpacing: "0.08em",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    whiteSpace: "nowrap",
   },
 
   instagramLink: {
