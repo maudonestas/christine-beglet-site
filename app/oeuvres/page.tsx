@@ -5,6 +5,7 @@ export default function OeuvresPage() {
   return (
     <main style={styles.main}>
       <Header />
+
       <section style={styles.section}>
         <div style={styles.container}>
           <h1 style={styles.title}>Œuvres</h1>
@@ -40,23 +41,20 @@ export default function OeuvresPage() {
             <a href="/oeuvres/petits-formats" style={styles.card}>
               <img
                 src="/images/20-1.jpg"
-                alt="Collages 20x20"
+                alt="Petits formats"
                 style={styles.image}
               />
               <h2 style={styles.cardTitle}>Petits formats</h2>
             </a>
 
-            <a href="/oeuvres/panoramique" style={styles.cardLink}>
-  <div style={styles.card}>
-    <img
-      src="/images/pano.jpg"
-      alt="Panoramique"
-      style={styles.cardImg}
-    />
-    <h2 style={styles.cardTitle}>Panoramique</h2>
-    <p style={styles.cardSubtitle}>35×150</p>
-  </div>
-</a>
+            <a href="/oeuvres/panoramique" style={styles.card}>
+              <img
+                src="/images/pano.jpg"
+                alt="Panoramique"
+                style={styles.image}
+              />
+              <h2 style={styles.cardTitle}>Panoramique</h2>
+            </a>
           </div>
         </div>
       </section>
