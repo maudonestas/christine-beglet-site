@@ -131,7 +131,7 @@ description: {
 
   panoMainImg: {
     width: "100%",
-    maxWidth: "100%"
+    maxWidth: "100%",
     height: "auto",
     display: "block",
     cursor: "zoom-in",
