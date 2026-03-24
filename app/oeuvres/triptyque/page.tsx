@@ -138,13 +138,11 @@ const styles: Record<string, CSSProperties> = {
   },
 
   lightboxImg: {
-    display: "block",
-    width: "3200px",
-    maxWidth: "none",
-    height: "auto",
-    margin: "0 auto",
-  },
-
+  display: "block",
+  height: "85vh", // clé du problème
+  width: "auto",
+  maxWidth: "none",
+},
   closeButton: {
     position: "absolute",
     top: "20px",
