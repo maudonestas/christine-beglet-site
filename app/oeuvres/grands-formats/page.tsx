@@ -366,15 +366,15 @@ const styles: Record<string, CSSProperties> = {
   },
 
   lightboxContent: {
-    position: "relative",
-    width: "100%",
-    maxWidth: "1200px",
-    maxHeight: "90vh",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-  },
+  position: "relative",
+  width: "100%",
+  maxWidth: "1400px",
+  height: "100%",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+},
 
   closeButton: {
     position: "absolute",
@@ -390,18 +390,22 @@ const styles: Record<string, CSSProperties> = {
   },
 
   lightboxMain: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    width: "100%",
-  },
-
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  width: "100%",
+  flex: 1,
+  minHeight: 0,
+},
   lightboxImage: {
-    maxWidth: "100%",
-    maxHeight: "68vh",
-    objectFit: "contain",
-    display: "block",
-  },
+  maxWidth: "100%",
+  maxHeight: "78vh",
+  width: "auto",
+  height: "auto",
+  objectFit: "contain",
+  display: "block",
+},
 
   lightboxCaption: {
     marginTop: "16px",
