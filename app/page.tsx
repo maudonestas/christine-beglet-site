@@ -57,7 +57,53 @@ useEffect(() => {
     el.removeEventListener("pointerdown", stopAutoScroll);
   };
 }, []);
- 
+ const oeuvreCategories = [
+  {
+    title: "Grands formats",
+    href: "/oeuvres/grands-formats",
+    images: [
+      "/images/70-1.jpg",
+      "/images/70-2.jpg",
+      "/images/70-3.jpg",
+    ],
+  },
+  {
+    title: "Formats moyens",
+    href: "/oeuvres/formats-moyens",
+    images: [
+      "/images/mal-de-mer.jpg",
+      "/images/propagation-instantanee.jpg",
+      "/images/collateral.jpg",
+    ],
+  },
+  {
+    title: "Petits formats",
+    href: "/oeuvres/petits-formats",
+    images: [
+      "/images/20x20-1.jpg",
+      "/images/20x20-2.jpg",
+      "/images/35x35-immoral.jpg",
+    ],
+  },
+  {
+    title: "Triptyque",
+    href: "/oeuvres/triptyque",
+    images: [
+      "/images/triptyque.jpg",
+      "/images/triptyque.jpg",
+      "/images/triptyque.jpg",
+    ],
+  },
+  {
+    title: "Panoramique",
+    href: "/oeuvres/panoramique",
+    images: [
+      "/images/pano.jpg",
+      "/images/pano.jpg",
+      "/images/pano.jpg",
+    ],
+  },
+];
  return (
   <main style={styles.main}>
       {/* HEADER */}
@@ -115,83 +161,38 @@ autres dans un écho singulier.
         </div>
       </section>
 
-      {/* ŒUVRES */}
-      <section style={styles.sectionWhite}>
-        <div style={styles.container}>
-          <h2 style={styles.title}>Œuvres</h2>
+{/* ŒUVRES */}
+<section style={styles.sectionWhite}>
+  <div style={styles.container}>
+    <h2 style={styles.title}>Œuvres</h2>
 
-          <div style={styles.worksTopRow}>
-            {/* GRANDS FORMATS */}
-            <div style={styles.workCard}>
-              <h3 style={styles.workSectionTitle}>Grands formats</h3>
-              <div style={styles.workFrame}>
+    <div style={styles.worksGrid}>
+      {oeuvreCategories.map((category) => (
+        <div key={category.title} style={styles.workCardNew}>
+          <h3 style={styles.workSectionTitle}>{category.title}</h3>
+
+          <div style={styles.previewGrid}>
+            {category.images.map((image, index) => (
+              <div key={index} style={styles.previewFrame}>
                 <img
-                  src="/images/70-1.jpg"
-                  alt="Grand format"
-                  style={styles.imgGrandSingle}
+                  src={image}
+                  alt={`${category.title} aperçu ${index + 1}`}
+                  style={styles.previewImg}
                 />
               </div>
-              <div style={styles.buttonRowLeft}>
-                <a href="/oeuvres/grands-formats" style={styles.button}>
-                  Voir plus
-                </a>
-              </div>
-            </div>
-
-            {/* FORMATS MOYENS */}
-            <div style={styles.workCard}>
-              <h3 style={styles.workSectionTitle}>Formats moyens</h3>
-              <div style={styles.workFrame}>
-                <img
-                  src="/images/50-1.jpg"
-                  alt="Format moyen"
-                  style={styles.imgSquareSingle}
-                />
-              </div>
-              <div style={styles.buttonRowLeft}>
-                <a href="/oeuvres/formats-moyens" style={styles.button}>
-                  Voir plus
-                </a>
-              </div>
-            </div>
+            ))}
           </div>
 
-          {/* COLLAGES 20x20 */}
-          <div style={styles.workCardSolo}>
-            <h3 style={styles.workSectionTitle}>Petits formats</h3>
-            <div style={styles.workFrame}>
-              <img
-                src="/images/20-1.jpg"
-                alt="Collage 20x20"
-                style={styles.imgSquareSingle}
-              />
-            </div>
-            <div style={styles.buttonRowLeft}>
-              <a href="/oeuvres/collages-20x20" style={styles.button}>
-                Voir plus
-              </a>
-            </div>
-          </div>
-
-          {/* TRIPTYQUE */}
-          <div style={styles.triptychBlock}>
-            <h3 style={styles.workSectionTitle}>Triptyque</h3>
-            <div style={styles.triptychFrame}>
-              <img
-                src="/images/triptyque.jpg"
-                alt="Triptyque"
-                style={styles.imgTriptychSingle}
-              />
-            </div>
-            <div style={styles.buttonRowLeft}>
-              <a href="/oeuvres/triptyque" style={styles.button}>
-                Voir plus
-              </a>
-            </div>
+          <div style={styles.buttonRowLeft}>
+            <a href={category.href} style={styles.button}>
+              Voir plus
+            </a>
           </div>
         </div>
-      </section>
-
+      ))}
+    </div>
+  </div>
+</section>
       {/* ATELIER */}
       <section style={styles.sectionGray}>
         <div style={styles.container}>
@@ -490,6 +491,42 @@ bioImage: {
   display: "flex",
   justifyContent: "center",
   paddingLeft: "40px",
+},
+   worksGrid: {
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr",
+  gap: "56px 36px",
+  alignItems: "start",
+},
+
+workCardNew: {
+  width: "100%",
+},
+
+previewGrid: {
+  display: "grid",
+  gridTemplateColumns: "repeat(3, 1fr)",
+  gap: "14px",
+},
+
+previewFrame: {
+  width: "100%",
+  aspectRatio: "1 / 1",
+  background: `
+    radial-gradient(circle at 30% 30%, #ededed 0%, #e5e5e5 40%, #dddddd 100%)
+  `,
+  boxShadow: "inset 0 0 40px rgba(0,0,0,0.03)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  overflow: "hidden",
+},
+
+previewImg: {
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  display: "block",
 },
 };
 
