@@ -61,7 +61,7 @@ export default function Home() {
     {
       title: "Grands formats",
       href: "/oeuvres/grands-formats",
-      type: "mosaic-large-row",
+     type: "mosaic-portrait",
       images: [
         "/images/70-1.jpg",
         "/images/70-2.jpg",
@@ -181,19 +181,35 @@ export default function Home() {
               >
                 <h3 style={styles.workSectionTitle}>{category.title}</h3>
 
-                {category.type === "mosaic-large-row" ? (
-                  <div style={styles.largePortraitRow}>
-                    {category.images.map((image, index) => (
-                      <div key={index} style={styles.largePortraitFrame}>
-                        <img
-                          src={image}
-                          alt={`${category.title} aperçu ${index + 1}`}
-                          style={styles.largePortraitImg}
-                        />
-                      </div>
-                    ))}
-                  </div>
-                ) : category.type === "mosaic" ? (
+               {category.type === "mosaic-portrait" ? (
+  <div style={styles.mosaicGrid}>
+    <div style={styles.mosaicLargeFrame}>
+      <img
+        src={category.images[0]}
+        alt={`${category.title} aperçu 1`}
+        style={styles.mosaicLargePortraitImg}
+      />
+    </div>
+
+    <div style={styles.mosaicRightColumn}>
+      <div style={styles.mosaicSmallFrame}>
+        <img
+          src={category.images[1]}
+          alt={`${category.title} aperçu 2`}
+          style={styles.mosaicSmallImg}
+        />
+      </div>
+
+      <div style={styles.mosaicSmallFrame}>
+        <img
+          src={category.images[2]}
+          alt={`${category.title} aperçu 3`}
+          style={styles.mosaicSmallImg}
+        />
+      </div>
+    </div>
+  </div>
+) : category.type === "mosaic" ? (
                   <div style={styles.mosaicGrid}>
                     <div style={styles.mosaicLargeFrame}>
                       <img
