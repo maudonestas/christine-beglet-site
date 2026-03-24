@@ -19,8 +19,8 @@ export default function PanoramiquePage() {
 
       <section style={styles.section}>
         <div style={styles.container}>
-          <h1 style={styles.title}>Panoramique</h1>
-          <p style={styles.subtitle}>35×150</p>
+          <h1 style={styles.title}>Panoramique 490x100</h1>
+          <p style={styles.subtitle}>Réalisé à partir de sept collages de 70x100</p>
 
           <div style={styles.block}>
             <div style={styles.panoMain}>
