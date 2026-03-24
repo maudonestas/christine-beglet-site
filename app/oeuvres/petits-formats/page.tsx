@@ -25,16 +25,22 @@ export default function PetitsFormatsPage() {
 
           {/* 20x20 */}
           <div style={styles.block}>
-            <h2 style={styles.subtitle}>20x20</h2>
+  <h2 style={styles.subtitle}>20x20</h2>
 
-            <div style={styles.grid}>
-              {oeuvres20x20.map((src, index) => (
-                <div key={index} style={styles.item}>
-                  <img src={src} alt="" style={styles.image} />
-                </div>
-              ))}
-            </div>
-          </div>
+  <p style={{ color: "red", fontSize: "28px" }}>TEST IMAGE</p>
+
+  <img
+    src="/images/20x20-1.jpg"
+    alt="test"
+    style={{
+      width: "300px",
+      height: "300px",
+      objectFit: "cover",
+      display: "block",
+      border: "4px solid red",
+    }}
+  />
+</div>
 
           {/* 35x35 → on fera après */}
           <div style={styles.block}>
