@@ -121,6 +121,7 @@ description: {
 
   block: {
     marginBottom: "60px",
+    marginTop: "20px",
   },
 
   panoMain: {
@@ -130,6 +131,7 @@ description: {
 
   panoMainImg: {
     width: "100%",
+    maxWidth: "100%"
     height: "auto",
     display: "block",
     cursor: "zoom-in",
