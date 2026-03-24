@@ -444,22 +444,24 @@ const styles: Record<string, CSSProperties> = {
   },
 
   thumbnailRow: {
-    display: "flex",
-    gap: "12px",
-    overflowX: "auto",
-    maxWidth: "100%",
-    paddingTop: "8px",
-    paddingBottom: "4px",
-  },
-
+  display: "flex",
+  gap: "10px",
+  overflowX: "auto",
+  maxWidth: "100%",
+  paddingTop: "6px",
+  paddingBottom: "2px",
+},
   thumbnailButton: {
-    border: "1px solid rgba(255,255,255,0.25)",
-    background: "transparent",
-    padding: 0,
-    cursor: "pointer",
-    opacity: 0.65,
-    flex: "0 0 auto",
-  },
+  border: "1px solid rgba(255,255,255,0.25)",
+  background: "transparent",
+  padding: "2px",
+  cursor: "pointer",
+  opacity: 0.6,
+  flex: "0 0 auto",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+},
 
   thumbnailButtonActive: {
     border: "1px solid #fff",
@@ -467,9 +469,9 @@ const styles: Record<string, CSSProperties> = {
   },
 
   thumbnailImage: {
-    display: "block",
-    width: "72px",
-    height: "72px",
-    objectFit: "cover",
-  },
+  display: "block",
+  height: "45px",
+  width: "auto",
+  objectFit: "contain",
+},
 };
