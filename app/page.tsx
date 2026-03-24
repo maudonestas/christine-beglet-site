@@ -410,16 +410,18 @@ const styles: Record<string, CSSProperties> = {
   },
 
   button: {
-    display: "inline-block",
-    textDecoration: "none",
-    color: "#1f1f1f",
-    border: "1px solid #1f1f1f",
-    padding: "10px 16px",
-    fontSize: "0.95rem",
-    lineHeight: 1.2,
-    backgroundColor: "transparent",
-  },
-
+  display: "inline-block",
+  textDecoration: "none",
+  color: "#3f3a36",
+  border: "1px solid #b8afa6",
+  padding: "11px 18px",
+  fontSize: "0.82rem",
+  lineHeight: 1.2,
+  letterSpacing: "0.08em",
+  textTransform: "uppercase",
+  backgroundColor: "transparent",
+  transition: "all 0.2s ease",
+},
   instagramLink: {
     display: "flex",
     alignItems: "center",
