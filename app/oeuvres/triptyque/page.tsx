@@ -45,12 +45,16 @@ export default function TriptyquePage() {
             ×
           </button>
 
-          <img
-            src={triptyque.main.src}
-            alt="Triptyque (92 × 195) agrandi"
-            style={styles.lightboxImg}
+          <div
+            style={styles.lightboxScroll}
             onClick={(e) => e.stopPropagation()}
-          />
+          >
+            <img
+              src={triptyque.main.src}
+              alt="Triptyque (92 × 195) agrandi"
+              style={styles.lightboxImg}
+            />
+          </div>
         </div>
       )}
     </main>
@@ -77,7 +81,7 @@ const styles: Record<string, CSSProperties> = {
   title: {
     fontSize: "2rem",
     marginTop: 0,
-    marginBottom: "40px",
+    marginBottom: "8px",
     fontWeight: 300,
     letterSpacing: "0.12em",
     textTransform: "uppercase",
@@ -86,7 +90,7 @@ const styles: Record<string, CSSProperties> = {
 
   subtitle: {
     fontSize: "1rem",
-    marginTop: "-24px",
+    marginTop: 0,
     marginBottom: "40px",
     fontWeight: 300,
     letterSpacing: "0.08em",
@@ -114,20 +118,31 @@ const styles: Record<string, CSSProperties> = {
   lightbox: {
     position: "fixed",
     inset: 0,
-    backgroundColor: "rgba(0, 0, 0, 0.88)",
+    backgroundColor: "rgba(0, 0, 0, 0.95)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    padding: "40px",
+    paddingTop: "48px",
+    paddingBottom: "48px",
+    paddingLeft: "0",
+    paddingRight: "0",
     zIndex: 9999,
   },
 
+  lightboxScroll: {
+    maxWidth: "100%",
+    maxHeight: "100%",
+    overflowX: "auto",
+    overflowY: "hidden",
+    WebkitOverflowScrolling: "touch",
+  },
+
   lightboxImg: {
-    maxWidth: "95vw",
-    maxHeight: "90vh",
-    width: "auto",
-    height: "auto",
     display: "block",
+    width: "3200px",
+    maxWidth: "none",
+    height: "auto",
+    margin: "0 auto",
   },
 
   closeButton: {
@@ -140,5 +155,6 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "2.5rem",
     cursor: "pointer",
     lineHeight: 1,
+    zIndex: 10000,
   },
 };
