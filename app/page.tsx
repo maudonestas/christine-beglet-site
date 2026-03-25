@@ -61,8 +61,12 @@ export default function Home() {
     {
       title: "Grands formats",
       href: "/oeuvres/grands-formats",
-      type: "grid",
-      images: ["/images/70-1.jpg", "/images/70-2.jpg", "/images/puzzle-neuronal.jpg"],
+      type: "gridPortrait",
+      images: [
+        "/images/70-1.jpg",
+        "/images/70-2.jpg",
+        "/images/puzzle-neuronal.jpg",
+      ],
     },
     {
       title: "Formats moyens",
@@ -170,12 +174,27 @@ export default function Home() {
                 key={category.title}
                 style={{
                   ...styles.workCardNew,
-                  ...(category.type === "single" ? styles.workCardFull : {}),
+                  ...(category.type === "single" ||
+                  category.type === "gridPortrait"
+                    ? styles.workCardFull
+                    : {}),
                 }}
               >
                 <h3 style={styles.workSectionTitle}>{category.title}</h3>
 
-                {category.type === "grid" ? (
+                {category.type === "gridPortrait" ? (
+                  <div style={styles.previewGridPortrait}>
+                    {category.images.map((image, index) => (
+                      <div key={index} style={styles.previewFramePortrait}>
+                        <img
+                          src={image}
+                          alt={`${category.title} aperçu ${index + 1}`}
+                          style={styles.previewImgPortrait}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ) : category.type === "grid" ? (
                   <div style={styles.previewGrid}>
                     {category.images.map((image, index) => (
                       <div key={index} style={styles.previewFrame}>
@@ -409,19 +428,20 @@ const styles: Record<string, CSSProperties> = {
     marginTop: "20px",
   },
 
- button: {
-  display: "inline-block",
-  textDecoration: "none",
-  color: "#2f2a26",
-  border: "1px solid #c9c1b8",
-  padding: "9px 16px",
-  fontSize: "0.72rem",
-  lineHeight: 1.2,
-  letterSpacing: "0.14em",
-  textTransform: "uppercase",
-  backgroundColor: "#f7f5f2",
-  transition: "all 0.2s ease",
-},
+  button: {
+    display: "inline-block",
+    textDecoration: "none",
+    color: "#2f2a26",
+    border: "1px solid #c9c1b8",
+    padding: "9px 16px",
+    fontSize: "0.72rem",
+    lineHeight: 1.2,
+    letterSpacing: "0.14em",
+    textTransform: "uppercase",
+    backgroundColor: "#f7f5f2",
+    transition: "all 0.2s ease",
+  },
+
   instagramLink: {
     display: "flex",
     alignItems: "center",
@@ -476,9 +496,26 @@ const styles: Record<string, CSSProperties> = {
     gap: "14px",
   },
 
+  previewGridPortrait: {
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)",
+    gap: "14px",
+    maxWidth: "760px",
+  },
+
   previewFrame: {
     width: "100%",
     aspectRatio: "1 / 1",
+    backgroundColor: "transparent",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    overflow: "hidden",
+  },
+
+  previewFramePortrait: {
+    width: "100%",
+    height: "360px",
     backgroundColor: "transparent",
     display: "flex",
     alignItems: "center",
@@ -493,6 +530,13 @@ const styles: Record<string, CSSProperties> = {
     display: "block",
   },
 
+  previewImgPortrait: {
+    width: "100%",
+    height: "100%",
+    objectFit: "contain",
+    display: "block",
+  },
+
   previewSingleFrame: {
     width: "100%",
     backgroundColor: "transparent",
@@ -502,13 +546,13 @@ const styles: Record<string, CSSProperties> = {
   },
 
   previewSingleImg: {
-  width: "820px",
-  height: "220px",
-  objectFit: "contain",
-  objectPosition: "left center",
-  display: "block",
-},
-  
+    width: "820px",
+    height: "220px",
+    objectFit: "contain",
+    objectPosition: "left center",
+    display: "block",
+  },
+
   previewPanoImg: {
     width: "920px",
     height: "220px",
