@@ -21,13 +21,10 @@ export default function PanoramiquePage() {
         <div style={styles.container}>
          <h1 style={styles.title}>Panoramique</h1>
 
-<p style={styles.subtitle}>
-  490<span style={styles.lowercase}>x</span>100
-</p>
+<p style={styles.size}>490x100cm</p>
 
 <p style={styles.description}>
-  Réalisé à partir de sept collages de 70
-  <span style={styles.lowercase}>x</span>100
+  Réalisé à partir de sept collages de 70x100cm
 </p>
           <div style={styles.block}>
             <div style={styles.panoMain}>
@@ -101,7 +98,6 @@ const styles: Record<string, CSSProperties> = {
     marginBottom: "40px",
     fontWeight: 300,
     letterSpacing: "0.08em",
-    textTransform: "uppercase",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
     color: "#555",
   },
