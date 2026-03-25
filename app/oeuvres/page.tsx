@@ -202,12 +202,13 @@ const styles: Record<string, CSSProperties> = {
     gap: "20px",
   },
 
-  previewGridPortrait: {
-    display: "grid",
-    gridTemplateColumns: "repeat(3, auto)",
-    gap: "14px",
-    justifyContent: "start",
-  },
+previewGridPortrait: {
+  display: "flex",
+  gap: "14px",
+  justifyContent: "flex-start",
+  alignItems: "flex-start",
+  flexWrap: "nowrap", // ⬅️ empêche retour à la ligne
+},
 
   previewFrame: {
     width: "100%",
@@ -236,7 +237,7 @@ const styles: Record<string, CSSProperties> = {
     width: "100%",
     height: "100%",
     objectFit: "contain",
-    objectPosition: "center",
+    objectPosition: "left center",
   },
 
   previewSingleFrame: {
