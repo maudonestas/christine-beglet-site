@@ -81,7 +81,7 @@ const styles: Record<string, CSSProperties> = {
   title: {
     fontSize: "2rem",
     marginTop: 0,
-    marginBottom: "8px",
+    marginBottom: "60px",
     fontWeight: 300,
     letterSpacing: "0.12em",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
