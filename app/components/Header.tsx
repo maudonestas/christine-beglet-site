@@ -22,9 +22,6 @@ export default function Header() {
           <a href="/atelier" style={styles.navLink}>
             L'Atelier
           </a>
-          <a href="/presse" style={styles.navLink}>
-            Presse
-          </a>
           <a href="/contact" style={styles.navLink}>
             Contact
           </a>
