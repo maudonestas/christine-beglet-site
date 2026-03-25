@@ -61,7 +61,7 @@ export default function Home() {
     {
       title: "Grands formats",
       href: "/oeuvres/grands-formats",
-     type: "mosaic-portrait",
+      type: "mosaic",
       images: [
         "/images/70-1.jpg",
         "/images/70-2.jpg",
@@ -173,57 +173,22 @@ export default function Home() {
                 key={category.title}
                 style={{
                   ...styles.workCardNew,
-                  ...(category.type === "single" ||
-category.type === "mosaic-portrait"
-  ? styles.workCardFull
-  : {}),
+                  ...(category.type === "single" ? styles.workCardFull : {}),
                 }}
               >
                 <h3 style={styles.workSectionTitle}>{category.title}</h3>
 
-               {category.type === "mosaic-portrait" ? (
-  <div style={styles.mosaicGrid}>
-    <div style={styles.mosaicLargeFrame}>
-      <img
-        src={category.images[0]}
-        alt={`${category.title} aperçu 1`}
-        style={styles.mosaicLargePortraitImg}
-      />
-    </div>
-
-    <div style={styles.mosaicRightColumn}>
-      <div style={styles.mosaicSmallFrame}>
-        <img
-  src={category.images[1]}
-  alt={`${category.title} aperçu 2`}
-  style={
-    category.title === "Grands formats"
-      ? styles.mosaicSmallPortraitImg
-      : styles.mosaicSmallImg
-  }
-/>
-      </div>
-
-      <div style={styles.mosaicSmallFrame}>
-        <img
-  src={category.images[2]}
-  alt={`${category.title} aperçu 3`}
-  style={
-    category.title === "Grands formats"
-      ? styles.mosaicSmallPortraitImg
-      : styles.mosaicSmallImg
-  }
-/>
-      </div>
-    </div>
-  </div>
-) : category.type === "mosaic" ? (
+                {category.type === "mosaic" ? (
                   <div style={styles.mosaicGrid}>
                     <div style={styles.mosaicLargeFrame}>
                       <img
                         src={category.images[0]}
                         alt={`${category.title} aperçu 1`}
-                        style={styles.mosaicLargeImg}
+                        style={
+                          category.title === "Grands formats"
+                            ? styles.mosaicLargePortraitImg
+                            : styles.mosaicLargeImg
+                        }
                       />
                     </div>
 
@@ -232,7 +197,11 @@ category.type === "mosaic-portrait"
                         <img
                           src={category.images[1]}
                           alt={`${category.title} aperçu 2`}
-                          style={styles.mosaicSmallImg}
+                          style={
+                            category.title === "Grands formats"
+                              ? styles.mosaicSmallPortraitImg
+                              : styles.mosaicSmallImg
+                          }
                         />
                       </div>
 
@@ -240,7 +209,11 @@ category.type === "mosaic-portrait"
                         <img
                           src={category.images[2]}
                           alt={`${category.title} aperçu 3`}
-                          style={styles.mosaicSmallImg}
+                          style={
+                            category.title === "Grands formats"
+                              ? styles.mosaicSmallPortraitImg
+                              : styles.mosaicSmallImg
+                          }
                         />
                       </div>
                     </div>
@@ -529,21 +502,6 @@ const styles: Record<string, CSSProperties> = {
     gridColumn: "1 / -1",
   },
 
-mosaicLargePortraitImg: {
-  width: "100%",
-  height: "100%",
-  objectFit: "contain",
-  objectPosition: "left center",
-  display: "block",
-},
-
-  mosaicSmallPortraitImg: {
-  width: "100%",
-  height: "100%",
-  objectFit: "contain",
-  objectPosition: "center",
-  display: "block",
-},
   mosaicGrid: {
     display: "grid",
     gridTemplateColumns: "2fr 1fr",
@@ -565,6 +523,14 @@ mosaicLargePortraitImg: {
     display: "block",
   },
 
+  mosaicLargePortraitImg: {
+    width: "100%",
+    height: "100%",
+    objectFit: "contain",
+    objectPosition: "left center",
+    display: "block",
+  },
+
   mosaicRightColumn: {
     display: "grid",
     gridTemplateRows: "1fr 1fr",
@@ -582,6 +548,14 @@ mosaicLargePortraitImg: {
     width: "100%",
     height: "100%",
     objectFit: "cover",
+    display: "block",
+  },
+
+  mosaicSmallPortraitImg: {
+    width: "100%",
+    height: "100%",
+    objectFit: "contain",
+    objectPosition: "center",
     display: "block",
   },
 
