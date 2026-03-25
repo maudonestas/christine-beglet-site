@@ -1,6 +1,12 @@
+"use client";
+
+import { useState } from "react";
 import type { CSSProperties } from "react";
 
 export default function Header() {
+  const [galerieOpen, setGalerieOpen] = useState(false);
+  const [artisteOpen, setArtisteOpen] = useState(false);
+
   return (
     <header style={styles.header}>
       <div style={styles.headerContent}>
@@ -10,18 +16,65 @@ export default function Header() {
         </div>
 
         <nav style={styles.nav}>
-          <a href="/oeuvres" style={styles.navLink}>
-            Galerie
-          </a>
+          <div
+            style={styles.dropdown}
+            onMouseEnter={() => setGalerieOpen(true)}
+            onMouseLeave={() => setGalerieOpen(false)}
+          >
+            <a href="/oeuvres" style={styles.navLink}>
+              Galerie
+            </a>
+
+            {galerieOpen && (
+              <div style={styles.dropdownMenu}>
+                <a href="/oeuvres/grands-formats" style={styles.dropdownLink}>
+                  Grands formats
+                </a>
+                <a href="/oeuvres/formats-moyens" style={styles.dropdownLink}>
+                  Moyens formats
+                </a>
+                <a href="/oeuvres/petits-formats" style={styles.dropdownLink}>
+                  Petits formats
+                </a>
+                <a href="/oeuvres/triptyque" style={styles.dropdownLink}>
+                  Triptyque
+                </a>
+                <a href="/oeuvres/panoramique" style={styles.dropdownLink}>
+                  Panoramique
+                </a>
+              </div>
+            )}
+          </div>
+
           <a href="/expositions" style={styles.navLink}>
             Expositions
           </a>
-           <a href="/biographie" style={styles.navLink}>
-            L'Artiste
-          </a>
+
+          <div
+            style={styles.dropdown}
+            onMouseEnter={() => setArtisteOpen(true)}
+            onMouseLeave={() => setArtisteOpen(false)}
+          >
+            <a href="/biographie" style={styles.navLink}>
+              L'Artiste
+            </a>
+
+            {artisteOpen && (
+              <div style={styles.dropdownMenu}>
+                <a href="/biographie" style={styles.dropdownLink}>
+                  Biographie
+                </a>
+                <a href="/presse" style={styles.dropdownLink}>
+                  On en parle
+                </a>
+              </div>
+            )}
+          </div>
+
           <a href="/atelier" style={styles.navLink}>
             L'Atelier
           </a>
+
           <a href="/contact" style={styles.navLink}>
             Contact
           </a>
@@ -142,6 +195,12 @@ const styles: Record<string, CSSProperties> = {
     alignItems: "center",
   },
 
+  dropdown: {
+    position: "relative",
+    display: "flex",
+    alignItems: "center",
+  },
+
   navLink: {
     textDecoration: "none",
     color: "#4a4a4a",
@@ -150,6 +209,30 @@ const styles: Record<string, CSSProperties> = {
     letterSpacing: "0.12em",
     textTransform: "uppercase",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    cursor: "pointer",
+  },
+
+  dropdownMenu: {
+    position: "absolute",
+    top: "100%",
+    left: 0,
+    backgroundColor: "#f2f2f2",
+    border: "1px solid #d8d8d8",
+    minWidth: "220px",
+    padding: "8px 0",
+    zIndex: 200,
+  },
+
+  dropdownLink: {
+    display: "block",
+    padding: "8px 16px",
+    textDecoration: "none",
+    color: "#4a4a4a",
+    fontSize: "0.9rem",
+    fontWeight: 300,
+    letterSpacing: "0.04em",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    whiteSpace: "nowrap",
   },
 
   instagramLink: {
