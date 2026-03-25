@@ -521,7 +521,7 @@ const styles: Record<string, CSSProperties> = {
   gridTemplateColumns: "2fr 1fr",
   gap: "14px",
   alignItems: "stretch",
-  width: "360px",
+  width: "400px",
 },
 
   mosaicLargeFrame: {
