@@ -93,7 +93,7 @@ export default function PetitsFormatsPage() {
           <h1 style={styles.title}>Petits formats</h1>
 
           <div style={styles.block}>
-            <h2 style={styles.subtitle}>20x20</h2>
+            <h2 style={styles.subtitle}>20x20cm</h2>
 
             <div style={styles.grid}>
               {oeuvres20x20.map((oeuvre, index) => (
@@ -116,7 +116,7 @@ export default function PetitsFormatsPage() {
           </div>
 
           <div style={styles.block}>
-            <h2 style={styles.subtitle}>35x35</h2>
+            <h2 style={styles.subtitle}>35x35cm</h2>
 
             <div style={styles.grid}>
               {oeuvres35x35.map((oeuvre, index) => (
@@ -242,7 +242,6 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "0.95rem",
     fontWeight: 400,
     letterSpacing: "0.1em",
-    textTransform: "uppercase",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
