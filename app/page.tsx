@@ -530,7 +530,7 @@ const styles: Record<string, CSSProperties> = {
   height: "100%",
   objectFit: "contain",
   objectPosition: "center",
-}
+},
 
   previewSingleFrame: {
     width: "100%",
