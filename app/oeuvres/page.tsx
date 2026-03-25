@@ -51,38 +51,67 @@ export default function OeuvresPage() {
     <main style={styles.main}>
       <Header />
 
-      <section style={styles.section}>
+      <section style={styles.sectionWhite}>
         <div style={styles.container}>
           <h1 style={styles.title}>Œuvres</h1>
 
           <div style={styles.worksGrid}>
             {oeuvreCategories.map((category) => (
-              <div key={category.title} style={styles.card}>
-                <h2 style={styles.cardTitle}>{category.title}</h2>
+              <div
+                key={category.title}
+                style={{
+                  ...styles.workCardNew,
+                  ...(category.type === "single" ||
+                  category.type === "gridPortrait"
+                    ? styles.workCardFull
+                    : {}),
+                }}
+              >
+                <h2 style={styles.workSectionTitle}>{category.title}</h2>
 
-                {category.type === "gridPortrait" && (
-                  <div style={styles.gridPortrait}>
-                    {category.images.map((img, i) => (
-                      <img key={i} src={img} style={styles.imgPortrait} />
+                {category.type === "gridPortrait" ? (
+                  <div style={styles.previewGridPortrait}>
+                    {category.images.map((image, index) => (
+                      <div key={index} style={styles.previewFramePortrait}>
+                        <img
+                          src={image}
+                          alt={`${category.title} aperçu ${index + 1}`}
+                          style={styles.previewImgPortrait}
+                        />
+                      </div>
                     ))}
+                  </div>
+                ) : category.type === "grid" ? (
+                  <div style={styles.previewGrid}>
+                    {category.images.map((image, index) => (
+                      <div key={index} style={styles.previewFrame}>
+                        <img
+                          src={image}
+                          alt={`${category.title} aperçu ${index + 1}`}
+                          style={styles.previewImg}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div style={styles.previewSingleFrame}>
+                    <img
+                      src={category.images[0]}
+                      alt={category.title}
+                      style={
+                        category.title === "Panoramique"
+                          ? styles.previewPanoImg
+                          : styles.previewSingleImg
+                      }
+                    />
                   </div>
                 )}
 
-                {category.type === "grid" && (
-                  <div style={styles.gridSmall}>
-                    {category.images.map((img, i) => (
-                      <img key={i} src={img} style={styles.img} />
-                    ))}
-                  </div>
-                )}
-
-                {category.type === "single" && (
-                  <img src={category.images[0]} style={styles.imgSingle} />
-                )}
-
-                <a href={category.href} style={styles.button}>
-                  Voir plus
-                </a>
+                <div style={styles.buttonRowLeft}>
+                  <a href={category.href} style={styles.button}>
+                    Voir plus
+                  </a>
+                </div>
               </div>
             ))}
           </div>
@@ -100,41 +129,49 @@ const styles: Record<string, CSSProperties> = {
     minHeight: "100vh",
   },
 
-  section: {
+  sectionWhite: {
+    backgroundColor: "#f7f5f2",
     padding: "80px 24px",
   },
 
   container: {
     maxWidth: "1200px",
     margin: "0 auto",
+    textAlign: "left",
   },
 
   title: {
     fontSize: "2rem",
     marginTop: 0,
-    marginBottom: "40px",
+    marginBottom: "32px",
     fontWeight: 300,
     letterSpacing: "0.12em",
     textTransform: "uppercase",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
-  worksGrid: {
+  buttonRowLeft: {
+    marginTop: "18px",
     display: "flex",
-    flexDirection: "column",
-    gap: "80px",
+    justifyContent: "flex-start",
   },
 
-  card: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "20px",
+  button: {
+    display: "inline-block",
     textDecoration: "none",
-    color: "#1f1f1f",
+    color: "#2f2a26",
+    border: "1px solid #c9c1b8",
+    padding: "9px 16px",
+    fontSize: "0.72rem",
+    lineHeight: 1.2,
+    letterSpacing: "0.14em",
+    textTransform: "uppercase",
+    backgroundColor: "#f7f5f2",
+    transition: "all 0.2s ease",
   },
 
-  cardTitle: {
-    margin: 0,
+  workSectionTitle: {
+    margin: "0 0 18px 0",
     fontSize: "0.95rem",
     fontWeight: 400,
     letterSpacing: "0.1em",
@@ -142,46 +179,85 @@ const styles: Record<string, CSSProperties> = {
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
-  gridPortrait: {
+  worksGrid: {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gap: "56px 36px",
+    alignItems: "start",
+  },
+
+  workCardNew: {
+    width: "100%",
+  },
+
+  workCardFull: {
+    gridColumn: "1 / -1",
+  },
+
+  previewGrid: {
     display: "grid",
     gridTemplateColumns: "repeat(3, 1fr)",
-    gap: "10px",
+    gap: "14px",
   },
 
-  gridSmall: {
+  previewGridPortrait: {
     display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
-    gap: "10px",
+    gridTemplateColumns: "repeat(3, auto)",
+    gap: "14px",
+    justifyContent: "start",
   },
 
-  img: {
+  previewFrame: {
     width: "100%",
-    height: "200px",
+    aspectRatio: "1 / 1",
+    backgroundColor: "transparent",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    overflow: "hidden",
+  },
+
+  previewFramePortrait: {
+    width: "160px",
+    height: "220px",
+    overflow: "hidden",
+  },
+
+  previewImg: {
+    width: "100%",
+    height: "100%",
     objectFit: "cover",
     display: "block",
   },
 
-  imgPortrait: {
+  previewImgPortrait: {
     width: "100%",
-    height: "260px",
-    objectFit: "cover",
+    height: "100%",
+    objectFit: "contain",
+    objectPosition: "center",
+  },
+
+  previewSingleFrame: {
+    width: "100%",
+    backgroundColor: "transparent",
+    display: "flex",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+  },
+
+  previewSingleImg: {
+    width: "820px",
+    height: "220px",
+    objectFit: "contain",
+    objectPosition: "left center",
     display: "block",
   },
 
-  imgSingle: {
-    width: "100%",
-    height: "400px",
+  previewPanoImg: {
+    width: "920px",
+    height: "220px",
     objectFit: "cover",
+    objectPosition: "center",
     display: "block",
-  },
-
-  button: {
-    marginTop: "10px",
-    textDecoration: "none",
-    fontSize: "0.8rem",
-    letterSpacing: "0.1em",
-    textTransform: "uppercase",
-    color: "#1f1f1f",
-    fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 };
