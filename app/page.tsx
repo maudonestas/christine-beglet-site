@@ -498,9 +498,8 @@ const styles: Record<string, CSSProperties> = {
 
   previewGridPortrait: {
   display: "grid",
-  gridTemplateColumns: "repeat(3, auto)",
+  gridTemplateColumns: "repeat(3, 1fr)",
   gap: "14px",
-  justifyContent: "start",
 },
 
   previewFrame: {
@@ -513,15 +512,11 @@ const styles: Record<string, CSSProperties> = {
     overflow: "hidden",
   },
 
-  previewFramePortrait: {
-    width: "180px",
-    height: "220px",
-    backgroundColor: "transparent",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    overflow: "hidden",
-  },
+ previewFramePortrait: {
+  width: "100%",
+  height: "220px",
+  overflow: "hidden",
+}
 
   previewImg: {
     width: "100%",
@@ -531,11 +526,11 @@ const styles: Record<string, CSSProperties> = {
   },
 
   previewImgPortrait: {
-    width: "100%",
-    height: "100%",
-    objectFit: "contain",
-    display: "block",
-  },
+  width: "100%",
+  height: "100%",
+  objectFit: "contain",
+  objectPosition: "center",
+}
 
   previewSingleFrame: {
     width: "100%",
