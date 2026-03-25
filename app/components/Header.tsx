@@ -25,7 +25,7 @@ export default function Header() {
             onMouseLeave={() => setOeuvresOpen(false)}
           >
             <a href="/oeuvres" style={styles.navLink}>
-              Les Œuvres
+              Galerie
             </a>
             {oeuvresOpen && (
               <div style={styles.dropdownMenu}>
