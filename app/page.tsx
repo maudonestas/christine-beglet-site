@@ -61,44 +61,35 @@ export default function Home() {
     {
       title: "Grands formats",
       href: "/oeuvres/grands-formats",
-      type: "gridPortrait",
-      images: [
-        "/images/70-1.jpg",
-        "/images/70-2.jpg",
-        "/images/puzzle-neuronal.jpg",
-      ],
+      type: "singleCard",
+      image: "/images/70-1.jpg",
+      imageStyle: "portrait",
     },
     {
       title: "Formats moyens",
       href: "/oeuvres/formats-moyens",
-      type: "grid",
-      images: [
-        "/images/mal-de-mer.jpg",
-        "/images/propagation-instantanee.jpg",
-        "/images/collateral.jpg",
-      ],
+      type: "singleCard",
+      image: "/images/mal-de-mer.jpg",
+      imageStyle: "square",
     },
     {
       title: "Petits formats",
       href: "/oeuvres/petits-formats",
-      type: "grid",
-      images: [
-        "/images/20x20-1.jpg",
-        "/images/20x20-2.jpg",
-        "/images/35x35-immoral.jpg",
-      ],
+      type: "singleCard",
+      image: "/images/20x20-1.jpg",
+      imageStyle: "square",
     },
     {
       title: "Triptyque",
       href: "/oeuvres/triptyque",
       type: "single",
-      images: ["/images/triptyque.jpg"],
+      image: "/images/triptyque.jpg",
     },
     {
       title: "Panoramique",
       href: "/oeuvres/panoramique",
       type: "single",
-      images: ["/images/pano.jpg"],
+      image: "/images/pano.jpg",
     },
   ];
 
@@ -174,42 +165,27 @@ export default function Home() {
                 key={category.title}
                 style={{
                   ...styles.workCardNew,
-                  ...(category.type === "single" ||
-                  category.type === "gridPortrait"
-                    ? styles.workCardFull
-                    : {}),
+                  ...(category.type === "single" ? styles.workCardFull : {}),
                 }}
               >
                 <h3 style={styles.workSectionTitle}>{category.title}</h3>
 
-                {category.type === "gridPortrait" ? (
-                  <div style={styles.previewGridPortrait}>
-                    {category.images.map((image, index) => (
-                      <div key={index} style={styles.previewFramePortrait}>
-                        <img
-                          src={image}
-                          alt={`${category.title} aperçu ${index + 1}`}
-                          style={styles.previewImgPortrait}
-                        />
-                      </div>
-                    ))}
-                  </div>
-                ) : category.type === "grid" ? (
-                  <div style={styles.previewGrid}>
-                    {category.images.map((image, index) => (
-                      <div key={index} style={styles.previewFrame}>
-                        <img
-                          src={image}
-                          alt={`${category.title} aperçu ${index + 1}`}
-                          style={styles.previewImg}
-                        />
-                      </div>
-                    ))}
+                {category.type === "singleCard" ? (
+                  <div style={styles.singleCardFrame}>
+                    <img
+                      src={category.image}
+                      alt={category.title}
+                      style={
+                        category.imageStyle === "portrait"
+                          ? styles.singleCardImgPortrait
+                          : styles.singleCardImgSquare
+                      }
+                    />
                   </div>
                 ) : (
                   <div style={styles.previewSingleFrame}>
                     <img
-                      src={category.images[0]}
+                      src={category.image}
                       alt={category.title}
                       style={
                         category.title === "Panoramique"
@@ -477,7 +453,7 @@ const styles: Record<string, CSSProperties> = {
 
   worksGrid: {
     display: "grid",
-    gridTemplateColumns: "1fr 1fr",
+    gridTemplateColumns: "repeat(3, 1fr)",
     gap: "56px 36px",
     alignItems: "start",
   },
@@ -490,22 +466,9 @@ const styles: Record<string, CSSProperties> = {
     gridColumn: "1 / -1",
   },
 
-  previewGrid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
-    gap: "14px",
-  },
-
- previewGridPortrait: {
-  display: "grid",
-  gridTemplateColumns: "repeat(3, auto)",
-  gap: "14px",
-  justifyContent: "start",
-},
-
-  previewFrame: {
+  singleCardFrame: {
     width: "100%",
-    aspectRatio: "1 / 1",
+    height: "320px",
     backgroundColor: "transparent",
     display: "flex",
     alignItems: "center",
@@ -513,25 +476,19 @@ const styles: Record<string, CSSProperties> = {
     overflow: "hidden",
   },
 
- previewFramePortrait: {
-  width: "160px",
-  height: "220px",
-  overflow: "hidden",
-},
-
-  previewImg: {
+  singleCardImgPortrait: {
     width: "100%",
     height: "100%",
-    objectFit: "cover",
+    objectFit: "contain",
     display: "block",
   },
 
-  previewImgPortrait: {
-  width: "100%",
-  height: "100%",
-  objectFit: "contain",
-  objectPosition: "center",
-},
+  singleCardImgSquare: {
+    width: "100%",
+    height: "100%",
+    objectFit: "contain",
+    display: "block",
+  },
 
   previewSingleFrame: {
     width: "100%",
