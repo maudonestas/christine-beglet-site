@@ -496,10 +496,11 @@ const styles: Record<string, CSSProperties> = {
     gap: "14px",
   },
 
-  previewGridPortrait: {
+ previewGridPortrait: {
   display: "grid",
-  gridTemplateColumns: "repeat(3, 1fr)",
+  gridTemplateColumns: "repeat(3, auto)",
   gap: "14px",
+  justifyContent: "start",
 },
 
   previewFrame: {
@@ -513,7 +514,7 @@ const styles: Record<string, CSSProperties> = {
   },
 
  previewFramePortrait: {
-  width: "100%",
+  width: "160px",
   height: "220px",
   overflow: "hidden",
 },
