@@ -166,7 +166,7 @@ export default function Home() {
       {/* ŒUVRES */}
       <section style={styles.sectionWhite}>
         <div style={styles.container}>
-          <h2 style={styles.title}>Œuvres</h2>
+          <h2 style={styles.title}>Collages</h2>
 
           <div style={styles.worksGrid}>
             {oeuvreCategories.map((category) => (
