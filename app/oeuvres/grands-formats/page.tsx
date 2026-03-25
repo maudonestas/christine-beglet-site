@@ -130,7 +130,7 @@ export default function GrandsFormatsPage() {
           <h1 style={styles.title}>Grands formats</h1>
 
           <div style={styles.block}>
-            <h2 style={styles.subtitle}>70X100</h2>
+            <h2 style={styles.subtitle}>70x100cm</h2>
 
             <div style={styles.grid}>
               {oeuvres70x100.map((oeuvre, index) => (
@@ -154,7 +154,7 @@ export default function GrandsFormatsPage() {
           </div>
 
           <div style={styles.block}>
-            <h2 style={styles.subtitle}>90X90</h2>
+            <h2 style={styles.subtitle}>90x90cm</h2>
 
             <div style={styles.grid}>
               {oeuvres90x90.map((oeuvre, index) => (
@@ -178,7 +178,7 @@ export default function GrandsFormatsPage() {
           </div>
 
           <div style={styles.block}>
-            <h2 style={styles.subtitle}>80X80</h2>
+            <h2 style={styles.subtitle}>80x80cm</h2>
 
             <div style={styles.grid}>
               {oeuvres80x80.map((oeuvre, index) => (
@@ -314,7 +314,6 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "0.95rem",
     fontWeight: 400,
     letterSpacing: "0.1em",
-    textTransform: "uppercase",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
