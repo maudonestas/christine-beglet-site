@@ -51,7 +51,7 @@ export default function TriptyquePage() {
           >
             <img
               src={triptyque.main.src}
-              alt="Triptyque (92 × 195) agrandi"
+              alt="Triptyque 92×195cm agrandi"
               style={styles.lightboxImg}
             />
           </div>
