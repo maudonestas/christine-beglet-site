@@ -258,3 +258,4 @@ previewPanoImg: {
   height: "260px",
   objectFit: "cover",
 },
+  }
