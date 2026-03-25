@@ -12,7 +12,7 @@ export default function Header() {
       <div style={styles.headerContent}>
         <div>
           <div style={styles.name}>CHRISTINE BÉGLET</div>
-          <div style={styles.subtitle}>Collagiste plasticienne</div>
+          <div style={styles.subtitle}>Collage</div>
         </div>
 
         <nav style={styles.nav}>
