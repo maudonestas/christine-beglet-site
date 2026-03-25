@@ -516,7 +516,7 @@ const styles: Record<string, CSSProperties> = {
   width: "100%",
   height: "220px",
   overflow: "hidden",
-}
+},
 
   previewImg: {
     width: "100%",
