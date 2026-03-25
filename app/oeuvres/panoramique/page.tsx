@@ -19,7 +19,7 @@ export default function PanoramiquePage() {
 
       <section style={styles.section}>
         <div style={styles.container}>
-         <h1 style={styles.title}>Panoramique 490x100cm</h1>
+         <h1 style={styles.title}>PANORAMIQUE 490x100cm</h1>
 
 <p style={styles.description}>
   Réalisé à partir de sept collages de 70x100cm
@@ -86,7 +86,6 @@ const styles: Record<string, CSSProperties> = {
     marginBottom: "40px",
     fontWeight: 300,
     letterSpacing: "0.12em",
-    textTransform: "uppercase",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
