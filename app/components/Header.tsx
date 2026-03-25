@@ -11,7 +11,7 @@ export default function Header() {
 
         <nav style={styles.nav}>
           <a href="/oeuvres" style={styles.navLink}>
-            Œuvres
+            Galerie
           </a>
           <a href="/expositions" style={styles.navLink}>
             Expositions
