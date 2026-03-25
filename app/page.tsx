@@ -515,7 +515,7 @@ const styles: Record<string, CSSProperties> = {
 
   previewFramePortrait: {
     width: "100%",
-    height: "360px",
+    height: "220px",
     backgroundColor: "transparent",
     display: "flex",
     alignItems: "center",
