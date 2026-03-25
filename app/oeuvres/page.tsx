@@ -182,7 +182,7 @@ const styles: Record<string, CSSProperties> = {
   worksGrid: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
-    gap: "56px 36px",
+    gap: "80px 60px",
     alignItems: "start",
   },
 
@@ -197,7 +197,7 @@ const styles: Record<string, CSSProperties> = {
   previewGrid: {
     display: "grid",
     gridTemplateColumns: "repeat(3, 1fr)",
-    gap: "14px",
+    gap: "20px",
   },
 
   previewGridPortrait: {
@@ -218,8 +218,8 @@ const styles: Record<string, CSSProperties> = {
   },
 
   previewFramePortrait: {
-    width: "160px",
-    height: "220px",
+    width: "220px",
+    height: "300px",
     overflow: "hidden",
   },
 
@@ -246,18 +246,15 @@ const styles: Record<string, CSSProperties> = {
   },
 
   previewSingleImg: {
-    width: "820px",
-    height: "220px",
-    objectFit: "contain",
-    objectPosition: "left center",
-    display: "block",
-  },
+  width: "100%",
+  maxWidth: "1000px",
+  height: "260px",
+  objectFit: "contain",
+},
 
-  previewPanoImg: {
-    width: "920px",
-    height: "220px",
-    objectFit: "cover",
-    objectPosition: "center",
-    display: "block",
-  },
-};
+previewPanoImg: {
+  width: "100%",
+  maxWidth: "1100px",
+  height: "260px",
+  objectFit: "cover",
+},
