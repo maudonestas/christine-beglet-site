@@ -92,51 +92,96 @@ export default function OeuvresPage() {
   );
 }
 
-worksGrid: {
-  display: "flex",
-  flexDirection: "column",
-  gap: "80px",
-},
+const styles: Record<string, CSSProperties> = {
+  main: {
+    fontFamily: "Arial, Helvetica, sans-serif",
+    backgroundColor: "#f7f5f2",
+    color: "#1f1f1f",
+    minHeight: "100vh",
+  },
 
-card: {
-  display: "flex",
-  flexDirection: "column",
-  gap: "20px",
-},
+  section: {
+    padding: "80px 24px",
+  },
 
-gridPortrait: {
-  display: "grid",
-  gridTemplateColumns: "repeat(3, 1fr)",
-  gap: "10px",
-},
+  container: {
+    maxWidth: "1200px",
+    margin: "0 auto",
+  },
 
-gridSmall: {
-  display: "grid",
-  gridTemplateColumns: "repeat(3, 1fr)",
-  gap: "10px",
-},
+  title: {
+    fontSize: "2rem",
+    marginTop: 0,
+    marginBottom: "40px",
+    fontWeight: 300,
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
 
-img: {
-  width: "100%",
-  height: "200px",
-  objectFit: "cover",
-},
+  worksGrid: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "80px",
+  },
 
-imgPortrait: {
-  width: "100%",
-  height: "260px",
-  objectFit: "cover",
-},
+  card: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "20px",
+    textDecoration: "none",
+    color: "#1f1f1f",
+  },
 
-imgSingle: {
-  width: "100%",
-  height: "400px",
-  objectFit: "cover",
-},
+  cardTitle: {
+    margin: 0,
+    fontSize: "0.95rem",
+    fontWeight: 400,
+    letterSpacing: "0.1em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
 
-button: {
-  marginTop: "10px",
-  textDecoration: "none",
-  fontSize: "0.8rem",
-  letterSpacing: "0.1em",
-},
+  gridPortrait: {
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)",
+    gap: "10px",
+  },
+
+  gridSmall: {
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)",
+    gap: "10px",
+  },
+
+  img: {
+    width: "100%",
+    height: "200px",
+    objectFit: "cover",
+    display: "block",
+  },
+
+  imgPortrait: {
+    width: "100%",
+    height: "260px",
+    objectFit: "cover",
+    display: "block",
+  },
+
+  imgSingle: {
+    width: "100%",
+    height: "400px",
+    objectFit: "cover",
+    display: "block",
+  },
+
+  button: {
+    marginTop: "10px",
+    textDecoration: "none",
+    fontSize: "0.8rem",
+    letterSpacing: "0.1em",
+    textTransform: "uppercase",
+    color: "#1f1f1f",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+};
