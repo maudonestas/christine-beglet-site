@@ -204,10 +204,11 @@ const styles: Record<string, CSSProperties> = {
 
 previewGridPortrait: {
   display: "flex",
+  flexWrap: "nowrap",
   gap: "14px",
   justifyContent: "flex-start",
   alignItems: "flex-start",
-  flexWrap: "nowrap", // ⬅️ empêche retour à la ligne
+  width: "100%",
 },
 
   previewFrame: {
@@ -221,10 +222,11 @@ previewGridPortrait: {
   },
 
   previewFramePortrait: {
-    width: "220px",
-    height: "300px",
-    overflow: "hidden",
-  },
+  flex: "0 0 220px",
+  width: "220px",
+  height: "300px",
+  overflow: "hidden",
+},
 
   previewImg: {
     width: "100%",
@@ -234,11 +236,12 @@ previewGridPortrait: {
   },
 
   previewImgPortrait: {
-    width: "100%",
-    height: "100%",
-    objectFit: "contain",
-    objectPosition: "left center",
-  },
+  width: "100%",
+  height: "100%",
+  objectFit: "contain",
+  objectPosition: "left center",
+  display: "block",
+},
 
   previewSingleFrame: {
     width: "100%",
