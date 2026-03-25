@@ -11,8 +11,6 @@ export default function OeuvresPage() {
         "/images/70-1.jpg",
         "/images/70-2.jpg",
         "/images/puzzle-neuronal.jpg",
-         "/images/deambulation-betonniere.jpg",
-        "/images/les-murs-ont-des-oreilles.jpg",
       ],
     },
     {
@@ -256,6 +254,7 @@ previewGridPortrait: {
   maxWidth: "1000px",
   height: "260px",
   objectFit: "contain",
+     objectPosition: "left center",
 },
 
 previewPanoImg: {
