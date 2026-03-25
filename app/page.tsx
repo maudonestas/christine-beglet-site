@@ -538,13 +538,13 @@ const styles: Record<string, CSSProperties> = {
     display: "block",
   },
 
-  mosaicLargePortraitImg: {
-    width: "100%",
-    height: "100%",
-    objectFit: "contain",
-    objectPosition: "left center",
-    display: "block",
-  },
+mosaicLargePortraitImg: {
+  width: "100%",
+  height: "100%",
+  objectFit: "contain",
+  objectPosition: "right center",
+  display: "block",
+},
 
   mosaicRightColumn: {
     display: "grid",
