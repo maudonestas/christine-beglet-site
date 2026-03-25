@@ -11,6 +11,8 @@ export default function OeuvresPage() {
         "/images/70-1.jpg",
         "/images/70-2.jpg",
         "/images/puzzle-neuronal.jpg",
+         "/images/deambulation-betonniere.jpg",
+        "/images/les-murs-ont-des-oreilles.jpg",
       ],
     },
     {
