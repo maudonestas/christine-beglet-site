@@ -19,9 +19,7 @@ export default function PanoramiquePage() {
 
       <section style={styles.section}>
         <div style={styles.container}>
-         <h1 style={styles.title}>Panoramique</h1>
-
-<p style={styles.size}>490x100cm</p>
+         <h1 style={styles.title}>Panoramique 490x200</h1>
 
 <p style={styles.description}>
   Réalisé à partir de sept collages de 70x100cm
@@ -30,7 +28,7 @@ export default function PanoramiquePage() {
             <div style={styles.panoMain}>
               <img
                 src={panoramique.main.src}
-                alt="Panoramique (35×150)"
+                alt="Panoramique (490x100cm)"
                 style={styles.panoMainImg}
                 onClick={() => setIsZoomed(true)}
               />
