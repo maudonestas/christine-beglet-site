@@ -173,13 +173,21 @@ export default function Home() {
                 key={category.title}
                 style={{
                   ...styles.workCardNew,
-                  ...(category.type === "single" ? styles.workCardFull : {}),
+                 ...(category.type === "single" || category.title === "Grands formats"
+  ? styles.workCardFull
+  : {}),
                 }}
               >
                 <h3 style={styles.workSectionTitle}>{category.title}</h3>
 
                 {category.type === "mosaic" ? (
-                  <div style={styles.mosaicGrid}>
+                 <div
+  style={
+    category.title === "Grands formats"
+      ? styles.mosaicGridCompact
+      : styles.mosaicGrid
+  }
+>
                     <div style={styles.mosaicLargeFrame}>
                       <img
                         src={category.images[0]}
@@ -508,6 +516,13 @@ const styles: Record<string, CSSProperties> = {
     gap: "14px",
     alignItems: "stretch",
   },
+  mosaicGridCompact: {
+  display: "grid",
+  gridTemplateColumns: "2fr 1fr",
+  gap: "14px",
+  alignItems: "stretch",
+  width: "620px",
+},
 
   mosaicLargeFrame: {
     width: "100%",
