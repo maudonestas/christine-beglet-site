@@ -243,7 +243,6 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "0.95rem",
     fontWeight: 400,
     letterSpacing: "0.1em",
-    textTransform: "uppercase",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
