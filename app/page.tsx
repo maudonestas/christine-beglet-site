@@ -518,7 +518,7 @@ const styles: Record<string, CSSProperties> = {
   },
   mosaicGridCompact: {
   display: "grid",
-  gridTemplateColumns: "1.7fr 1fr",
+ gridTemplateColumns: "2fr 1fr",
   gap: "14px",
   alignItems: "stretch",
   width: "400px",
