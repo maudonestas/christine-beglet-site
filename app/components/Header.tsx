@@ -13,14 +13,14 @@ export default function Header() {
           <a href="/oeuvres" style={styles.navLink}>
             Œuvres
           </a>
-          <a href="/atelier" style={styles.navLink}>
-            L'Atelier
-          </a>
-          <a href="/biographie" style={styles.navLink}>
-            Biographie
-          </a>
           <a href="/expositions" style={styles.navLink}>
             Expositions
+          </a>
+           <a href="/biographie" style={styles.navLink}>
+            L'Artiste
+          </a>
+          <a href="/atelier" style={styles.navLink}>
+            L'Atelier
           </a>
           <a href="/presse" style={styles.navLink}>
             Presse
