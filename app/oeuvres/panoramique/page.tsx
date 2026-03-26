@@ -19,22 +19,24 @@ export default function PanoramiquePage() {
 
       <section style={styles.section}>
         <div style={styles.container}>
-         <h1 style={styles.title}>PANORAMIQUE 490x100cm</h1>
+  <h1 style={styles.title}>PANORAMIQUE</h1>
+  <p style={styles.subtitle}>490x100cm</p>
 
-<p style={styles.description}>
-  Réalisé à partir de sept collages de 70x100cm
-</p>
-          <div style={styles.block}>
-            <div style={styles.panoMain}>
-              <img
-                src={panoramique.main.src}
-                alt="Panoramique (490x100cm)"
-                style={styles.panoMainImg}
-                onClick={() => setIsZoomed(true)}
-              />
-            </div>
-          </div>
-        </div>
+  <p style={styles.description}>
+    Réalisé à partir de sept collages de 70x100cm
+  </p>
+
+  <div style={styles.block}>
+    <div style={styles.panoMain}>
+      <img
+        src={panoramique.main.src}
+        alt="Panoramique (490x100cm)"
+        style={styles.panoMainImg}
+        onClick={() => setIsZoomed(true)}
+      />
+    </div>
+  </div>
+</div>
       </section>
 
       {isZoomed && (
@@ -80,24 +82,35 @@ const styles: Record<string, CSSProperties> = {
     margin: "0 auto",
   },
 
-  title: {
-    fontSize: "2rem",
-    marginTop: 0,
-    marginBottom: "40px",
-    fontWeight: 300,
-    letterSpacing: "0.12em",
-    fontFamily: '"Helvetica Neue", Arial, sans-serif',
-  },
+ title: {
+  fontSize: "2rem",
+  marginTop: 0,
+  marginBottom: "12px",
+  fontWeight: 300,
+  letterSpacing: "0.12em",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+},
 
-  subtitle: {
-    fontSize: "1rem",
-    marginTop: 0,
-    marginBottom: "40px",
-    fontWeight: 300,
-    letterSpacing: "0.08em",
-    fontFamily: '"Helvetica Neue", Arial, sans-serif',
-    color: "#555",
-  },
+subtitle: {
+  fontSize: "1rem",
+  marginTop: 0,
+  marginBottom: "8px",
+  fontWeight: 300,
+  letterSpacing: "0.08em",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  textTransform: "none",
+  color: "#555",
+},
+
+description: {
+  fontSize: "0.95rem",
+  marginTop: 0,
+  marginBottom: "40px",
+  fontWeight: 300,
+  letterSpacing: "0.05em",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  color: "#666",
+},
   lowercase: {
   textTransform: "none",
 },
