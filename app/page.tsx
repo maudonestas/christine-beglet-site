@@ -511,7 +511,65 @@ const styles: Record<string, CSSProperties> = {
   workCardFull: {
     gridColumn: "1 / -1",
   },
+  collagesMosaic: {
+    display: "grid",
+    gridTemplateColumns: "1.5fr 1fr",
+    gap: "40px",
+    alignItems: "start",
+    marginBottom: "56px",
+  },
 
+  collageBigBlock: {
+    display: "flex",
+    flexDirection: "column",
+  },
+
+  collageBigImageWrap: {
+    width: "100%",
+    height: "520px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    overflow: "hidden",
+    backgroundColor: "transparent",
+  },
+
+  collageBigImage: {
+    width: "100%",
+    height: "100%",
+    objectFit: "contain",
+    objectPosition: "left center",
+    display: "block",
+  },
+
+  collageRightColumn: {
+    display: "grid",
+    gridTemplateRows: "1fr 1fr",
+    gap: "28px",
+  },
+
+  collageSmallBlock: {
+    display: "flex",
+    flexDirection: "column",
+  },
+
+  collageSmallImageWrap: {
+    width: "100%",
+    height: "220px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    overflow: "hidden",
+    backgroundColor: "transparent",
+  },
+
+  collageSmallImage: {
+    width: "100%",
+    height: "100%",
+    objectFit: "contain",
+    objectPosition: "left center",
+    display: "block",
+  },
   singleCardBlock: {
     display: "flex",
     flexDirection: "column",
