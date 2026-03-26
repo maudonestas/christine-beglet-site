@@ -18,21 +18,21 @@ export default function TriptyquePage() {
       <Header />
 
       <section style={styles.section}>
-        <div style={styles.container}>
-          <h1 style={styles.title}>TRIPTYQUE 92x195cm</h1>
+       <div style={styles.container}>
+  <h1 style={styles.title}>TRIPTYQUE</h1>
+  <p style={styles.subtitle}>92x195cm</p>
 
-
-          <div style={styles.block}>
-            <div style={styles.triptyqueMain}>
-              <img
-                src={triptyque.main.src}
-                alt="Triptyque (92 × 195)"
-                style={styles.triptyqueMainImg}
-                onClick={() => setIsZoomed(true)}
-              />
-            </div>
-          </div>
-        </div>
+  <div style={styles.block}>
+    <div style={styles.triptyqueMain}>
+      <img
+        src={triptyque.main.src}
+        alt="Triptyque (92 × 195)"
+        style={styles.triptyqueMainImg}
+        onClick={() => setIsZoomed(true)}
+      />
+    </div>
+  </div>
+</div>
       </section>
 
       {isZoomed && (
@@ -78,15 +78,24 @@ const styles: Record<string, CSSProperties> = {
     margin: "0 auto",
   },
 
-  title: {
-    fontSize: "2rem",
-    marginTop: 0,
-    marginBottom: "60px",
-    fontWeight: 300,
-    letterSpacing: "0.12em",
-    fontFamily: '"Helvetica Neue", Arial, sans-serif',
-  },
-  
+ title: {
+  fontSize: "2rem",
+  marginTop: 0,
+  marginBottom: "12px",
+  fontWeight: 300,
+  letterSpacing: "0.12em",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+},
+
+subtitle: {
+  fontSize: "1rem",
+  marginTop: 0,
+  marginBottom: "40px",
+  fontWeight: 300,
+  letterSpacing: "0.08em",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  textTransform: "none",
+},
   block: {
     marginBottom: "60px",
   },
