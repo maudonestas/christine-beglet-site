@@ -171,14 +171,16 @@ export default function Home() {
                 <h3 style={styles.workSectionTitle}>{category.title}</h3>
 
                 {category.type === "singleCard" ? (
-                  <div style={styles.singleCardFrame}>
+                  <div style={styles.singleCardFrameLeft}>
                     <img
                       src={category.image}
                       alt={category.title}
                       style={
-                        category.imageStyle === "portrait"
-                          ? styles.singleCardImgPortrait
-                          : styles.singleCardImgSquare
+                        category.title === "Grands formats"
+                          ? styles.singleCardImgGrand
+                          : category.title === "Formats moyens"
+                          ? styles.singleCardImgMedium
+                          : styles.singleCardImgSmall
                       }
                     />
                   </div>
@@ -466,30 +468,36 @@ const styles: Record<string, CSSProperties> = {
     gridColumn: "1 / -1",
   },
 
-  singleCardFrame: {
-    width: "100%",
-    height: "320px",
-    backgroundColor: "transparent",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    overflow: "hidden",
-  },
+  singleCardFrameLeft: {
+  width: "100%",
+  height: "360px",
+  backgroundColor: "transparent",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "flex-start",
+  overflow: "hidden",
+},
 
-  singleCardImgPortrait: {
-    width: "100%",
-    height: "100%",
-    objectFit: "contain",
-    display: "block",
-  },
+singleCardImgGrand: {
+  width: "270px",
+  height: "340px",
+  objectFit: "contain",
+  display: "block",
+},
 
-  singleCardImgSquare: {
-    width: "100%",
-    height: "100%",
-    objectFit: "contain",
-    display: "block",
-  },
+singleCardImgMedium: {
+  width: "300px",
+  height: "255px",
+  objectFit: "contain",
+  display: "block",
+},
 
+singleCardImgSmall: {
+  width: "160px",
+  height: "160px",
+  objectFit: "contain",
+  display: "block",
+},
   previewSingleFrame: {
     width: "100%",
     backgroundColor: "transparent",
