@@ -219,7 +219,7 @@ export default function Home() {
 
           {/* TRIPTYQUE */}
           <div style={styles.workCardFull}>
-            <h3 style={styles.workSectionTitle}>Triptyque</h3>
+            <h3 style={styles.workSectionTitle}>TRIPTYQUE (195x92cm)</h3>
             <div style={styles.previewSingleFrame}>
               <img
                 src="/images/triptyque.jpg"
@@ -236,7 +236,7 @@ export default function Home() {
 
           {/* PANORAMIQUE */}
           <div style={styles.workCardFull}>
-            <h3 style={styles.workSectionTitle}>Panoramique</h3>
+            <h3 style={styles.workSectionTitle}>PANORAMIQUE (450x100cm)</h3>
             <div style={styles.previewSingleFrame}>
               <img
                 src="/images/pano.jpg"
