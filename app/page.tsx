@@ -527,7 +527,7 @@ const styles: Record<string, CSSProperties> = {
 
   collageBigImageWrap: {
     width: "100%",
-    height: "560px",
+    height: "550px",
     display: "flex",
     alignItems: "center",
     justifyContent: "flex-start",
