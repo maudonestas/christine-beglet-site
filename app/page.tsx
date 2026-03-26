@@ -63,21 +63,18 @@ export default function Home() {
       href: "/oeuvres/grands-formats",
       type: "singleCard",
       image: "/images/70-1.jpg",
-      imageStyle: "portrait",
     },
     {
       title: "Formats moyens",
       href: "/oeuvres/formats-moyens",
       type: "singleCard",
       image: "/images/mal-de-mer.jpg",
-      imageStyle: "square",
     },
     {
       title: "Petits formats",
       href: "/oeuvres/petits-formats",
       type: "singleCard",
       image: "/images/20x20-1.jpg",
-      imageStyle: "square",
     },
     {
       title: "Triptyque",
@@ -95,7 +92,6 @@ export default function Home() {
 
   return (
     <main style={styles.main}>
-      {/* HEADER */}
       <Header />
 
       {/* HERO PANO */}
@@ -159,55 +155,104 @@ export default function Home() {
         <div style={styles.container}>
           <h2 style={styles.title}>Collages</h2>
 
-          <div style={styles.worksGrid}>
-            {oeuvreCategories.map((category) => (
-              <div
-                key={category.title}
-                style={{
-                  ...styles.workCardNew,
-                  ...(category.type === "single" ? styles.workCardFull : {}),
-                }}
-              >
-                <h3 style={styles.workSectionTitle}>{category.title}</h3>
+          <div style={styles.collagesMosaic}>
+            {/* GRANDS FORMATS */}
+            <div style={styles.collageBigBlock}>
+              <h3 style={styles.workSectionTitle}>Grands formats</h3>
 
-                {category.type === "singleCard" ? (
-                  <div style={styles.singleCardFrameLeft}>
-                    <img
-                      src={category.image}
-                      alt={category.title}
-                      style={
-                        category.title === "Grands formats"
-                          ? styles.singleCardImgGrand
-                          : category.title === "Formats moyens"
-                          ? styles.singleCardImgMedium
-                          : styles.singleCardImgSmall
-                      }
-                    />
-                  </div>
-                ) : (
-                  <div style={styles.previewSingleFrame}>
-                    <img
-                      src={category.image}
-                      alt={category.title}
-                      style={
-                        category.title === "Panoramique"
-                          ? styles.previewPanoImg
-                          : styles.previewSingleImg
-                      }
-                    />
-                  </div>
-                )}
+              <div style={styles.collageBigImageWrap}>
+                <img
+                  src="/images/70-1.jpg"
+                  alt="Grands formats"
+                  style={styles.collageBigImage}
+                />
+              </div>
+
+              <div style={styles.buttonRowLeft}>
+                <a href="/oeuvres/grands-formats" style={styles.button}>
+                  Voir plus
+                </a>
+              </div>
+            </div>
+
+            {/* COLONNE DROITE */}
+            <div style={styles.collageRightColumn}>
+              {/* FORMATS MOYENS */}
+              <div style={styles.collageSmallBlock}>
+                <h3 style={styles.workSectionTitle}>Formats moyens</h3>
+
+                <div style={styles.collageSmallImageWrap}>
+                  <img
+                    src="/images/mal-de-mer.jpg"
+                    alt="Formats moyens"
+                    style={styles.collageSmallImage}
+                  />
+                </div>
 
                 <div style={styles.buttonRowLeft}>
-                  <a href={category.href} style={styles.button}>
+                  <a href="/oeuvres/formats-moyens" style={styles.button}>
                     Voir plus
                   </a>
                 </div>
               </div>
-            ))}
+
+              {/* PETITS FORMATS */}
+              <div style={styles.collageSmallBlock}>
+                <h3 style={styles.workSectionTitle}>Petits formats</h3>
+
+                <div style={styles.collageSmallImageWrap}>
+                  <img
+                    src="/images/20x20-1.jpg"
+                    alt="Petits formats"
+                    style={styles.collageSmallImage}
+                  />
+                </div>
+
+                <div style={styles.buttonRowLeft}>
+                  <a href="/oeuvres/petits-formats" style={styles.button}>
+                    Voir plus
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* TRIPTYQUE */}
+          <div style={styles.workCardFull}>
+            <h3 style={styles.workSectionTitle}>TRIPTYQUE (195x92cm)</h3>
+            <div style={styles.previewSingleFrame}>
+              <img
+                src="/images/triptyque.jpg"
+                alt="Triptyque"
+                style={styles.previewSingleImg}
+              />
+            </div>
+            <div style={styles.buttonRowLeft}>
+              <a href="/oeuvres/triptyque" style={styles.button}>
+                Voir plus
+              </a>
+            </div>
+          </div>
+
+          {/* PANORAMIQUE */}
+          <div style={styles.workCardFull}>
+            <h3 style={styles.workSectionTitle}>PANORAMIQUE (450x100cm)</h3>
+            <div style={styles.previewSingleFrame}>
+              <img
+                src="/images/pano.jpg"
+                alt="Panoramique"
+                style={styles.previewPanoImg}
+              />
+            </div>
+            <div style={styles.buttonRowLeft}>
+              <a href="/oeuvres/panoramique" style={styles.button}>
+                Voir plus
+              </a>
+            </div>
           </div>
         </div>
       </section>
+  
 
       {/* ATELIER */}
       <section style={styles.sectionGray}>
@@ -466,38 +511,91 @@ const styles: Record<string, CSSProperties> = {
 
   workCardFull: {
     gridColumn: "1 / -1",
+    marginBottom: "40px",
   },
 
-  singleCardFrameLeft: {
+  collagesMosaic: {
+    display: "grid",
+    gridTemplateColumns: "1.5fr 1fr",
+    gap: "40px",
+    alignItems: "start",
+    marginBottom: "56px",
+  },
+  
+  collageBigBlock: {
+    display: "flex",
+    flexDirection: "column",
+  },
+
+  collageBigImageWrap: {
+    width: "100%",
+    height: "555px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    overflow: "hidden",
+    backgroundColor: "transparent",
+  },
+
+  collageBigImage: {
+    width: "100%",
+    height: "100%",
+    objectFit: "contain",
+    objectPosition: "left center",
+    display: "block",
+  },
+
+  collageRightColumn: {
+    display: "grid",
+    gridTemplateRows: "1fr 1fr",
+    gap: "28px",
+  },
+
+  collageSmallBlock: {
+    display: "flex",
+    flexDirection: "column",
+  },
+
+  collageSmallImageWrap: {
+    width: "100%",
+    height: "220px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    overflow: "hidden",
+    backgroundColor: "transparent",
+  },
+
+  collageSmallImage: {
+    width: "100%",
+    height: "100%",
+    objectFit: "contain",
+    objectPosition: "left center",
+    display: "block",
+  },
+  singleCardBlock: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    minHeight: "390px",
+  },
+
+  singleCardFrameUnified: {
   width: "100%",
-  height: "360px",
-  backgroundColor: "transparent",
+  height: "320px", // ← même hauteur pour les 3
   display: "flex",
   alignItems: "center",
-  justifyContent: "flex-start",
+  justifyContent: "center",
   overflow: "hidden",
 },
 
-singleCardImgGrand: {
-  width: "270px",
-  height: "340px",
+singleCardImgUnified: {
+  maxWidth: "100%",
+  maxHeight: "100%",
   objectFit: "contain",
   display: "block",
 },
 
-singleCardImgMedium: {
-  width: "300px",
-  height: "255px",
-  objectFit: "contain",
-  display: "block",
-},
-
-singleCardImgSmall: {
-  width: "160px",
-  height: "160px",
-  objectFit: "contain",
-  display: "block",
-},
   previewSingleFrame: {
     width: "100%",
     backgroundColor: "transparent",
@@ -507,16 +605,16 @@ singleCardImgSmall: {
   },
 
   previewSingleImg: {
-    width: "820px",
-    height: "220px",
+    width: "1025px",
+    height: "275px",
     objectFit: "contain",
     objectPosition: "left center",
     display: "block",
   },
 
   previewPanoImg: {
-    width: "920px",
-    height: "220px",
+    width: "1150px",
+    height: "275px",
     objectFit: "cover",
     objectPosition: "center",
     display: "block",
