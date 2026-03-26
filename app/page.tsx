@@ -517,7 +517,7 @@ const styles: Record<string, CSSProperties> = {
   gridTemplateColumns: "1.5fr 1fr",
   columnGap: "20px", // espace gauche-droite
   rowGap: "40px",    // espace vertical conservé
-}
+},
 
   collageBigBlock: {
     display: "flex",
