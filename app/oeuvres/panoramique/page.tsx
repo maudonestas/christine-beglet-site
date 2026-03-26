@@ -115,16 +115,6 @@ description: {
   textTransform: "none",
 },
 
-description: {
-  fontSize: "0.95rem",
-  marginTop: "-20px",
-  marginBottom: "40px",
-  fontWeight: 300,
-  letterSpacing: "0.05em",
-  fontFamily: '"Helvetica Neue", Arial, sans-serif',
-  color: "#666",
-},
-
   block: {
     marginBottom: "60px",
   },
