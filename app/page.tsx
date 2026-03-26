@@ -511,6 +511,7 @@ const styles: Record<string, CSSProperties> = {
 
   workCardFull: {
     gridColumn: "1 / -1",
+    marginBottom: "40px",
   },
 
   collagesMosaic: {
