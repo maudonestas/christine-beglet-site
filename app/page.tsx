@@ -512,28 +512,29 @@ const styles: Record<string, CSSProperties> = {
   workCardFull: {
     gridColumn: "1 / -1",
   },
-  collagesMosaic: {
-    display: "grid",
-    gridTemplateColumns: "1.5fr 1fr",
-    gap: "40px",
-    alignItems: "start",
-    marginBottom: "56px",
-  },
+ collagesMosaic: {
+  display: "grid",
+  gridTemplateColumns: "1.5fr 1fr",
+  gap: "40px",
+  alignItems: "stretch",
+  marginBottom: "56px",
+},
 
   collageBigBlock: {
-    display: "flex",
-    flexDirection: "column",
-  },
-
+  display: "flex",
+  flexDirection: "column",
+  height: "100%",
+},
   collageBigImageWrap: {
-    width: "100%",
-    height: "520px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-start",
-    overflow: "hidden",
-    backgroundColor: "transparent",
-  },
+  width: "100%",
+  flex: 1,
+  minHeight: 0,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "flex-start",
+  overflow: "hidden",
+  backgroundColor: "transparent",
+},
 
   collageBigImage: {
     width: "100%",
@@ -544,25 +545,29 @@ const styles: Record<string, CSSProperties> = {
   },
 
   collageRightColumn: {
-    display: "grid",
-    gridTemplateRows: "1fr 1fr",
-    gap: "28px",
-  },
+  display: "grid",
+  gridTemplateRows: "1fr 1fr",
+  gap: "28px",
+  height: "100%",
+},
 
-  collageSmallBlock: {
-    display: "flex",
-    flexDirection: "column",
-  },
+ collageSmallBlock: {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  minHeight: 0,
+},
 
-  collageSmallImageWrap: {
-    width: "100%",
-    height: "220px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-start",
-    overflow: "hidden",
-    backgroundColor: "transparent",
-  },
+ collageSmallImageWrap: {
+  width: "100%",
+  flex: 1,
+  minHeight: 0,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "flex-start",
+  overflow: "hidden",
+  backgroundColor: "transparent",
+},
 
   collageSmallImage: {
     width: "100%",
