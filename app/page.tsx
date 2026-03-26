@@ -476,22 +476,20 @@ const styles: Record<string, CSSProperties> = {
   },
 
   singleCardFrameUnified: {
-    width: "100%",
-    height: "300px",
-    backgroundColor: "transparent",
-    display: "flex",
-    alignItems: "flex-end",
-    justifyContent: "center",
-    overflow: "hidden",
-  },
+  width: "100%",
+  height: "320px", // ← même hauteur pour les 3
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  overflow: "hidden",
+},
 
-  singleCardImgUnified: {
-    width: "100%",
-    height: "100%",
-    objectFit: "contain",
-    objectPosition: "center bottom",
-    display: "block",
-  },
+singleCardImgUnified: {
+  maxWidth: "100%",
+  maxHeight: "100%",
+  objectFit: "contain",
+  display: "block",
+},
 
   previewSingleFrame: {
     width: "100%",
