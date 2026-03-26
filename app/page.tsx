@@ -512,13 +512,12 @@ const styles: Record<string, CSSProperties> = {
   workCardFull: {
     gridColumn: "1 / -1",
   },
-  collagesMosaic: {
-    display: "grid",
-    gridTemplateColumns: "1.5fr 1fr",
-    gap: "40px",
-    alignItems: "start",
-    marginBottom: "56px",
-  },
+ collagesMosaic: {
+  display: "grid",
+  gridTemplateColumns: "1.5fr 1fr",
+  columnGap: "20px", // espace gauche-droite
+  rowGap: "40px",    // espace vertical conservé
+}
 
   collageBigBlock: {
     display: "flex",
