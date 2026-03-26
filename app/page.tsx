@@ -604,16 +604,16 @@ singleCardImgUnified: {
   },
 
   previewSingleImg: {
-    width: "820px",
-    height: "220px",
+    width: "1025px",
+    height: "275px",
     objectFit: "contain",
     objectPosition: "left center",
     display: "block",
   },
 
   previewPanoImg: {
-    width: "920px",
-    height: "220px",
+    width: "1150px",
+    height: "275px",
     objectFit: "cover",
     objectPosition: "center",
     display: "block",
