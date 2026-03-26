@@ -63,21 +63,18 @@ export default function Home() {
       href: "/oeuvres/grands-formats",
       type: "singleCard",
       image: "/images/70-1.jpg",
-      imageStyle: "portrait",
     },
     {
       title: "Formats moyens",
       href: "/oeuvres/formats-moyens",
       type: "singleCard",
       image: "/images/mal-de-mer.jpg",
-      imageStyle: "square",
     },
     {
       title: "Petits formats",
       href: "/oeuvres/petits-formats",
       type: "singleCard",
       image: "/images/20x20-1.jpg",
-      imageStyle: "square",
     },
     {
       title: "Triptyque",
@@ -95,7 +92,6 @@ export default function Home() {
 
   return (
     <main style={styles.main}>
-      {/* HEADER */}
       <Header />
 
       {/* HERO PANO */}
@@ -171,38 +167,42 @@ export default function Home() {
                 <h3 style={styles.workSectionTitle}>{category.title}</h3>
 
                 {category.type === "singleCard" ? (
-                  <div style={styles.singleCardFrameLeft}>
-                    <img
-                      src={category.image}
-                      alt={category.title}
-                      style={
-                        category.title === "Grands formats"
-                          ? styles.singleCardImgGrand
-                          : category.title === "Formats moyens"
-                          ? styles.singleCardImgMedium
-                          : styles.singleCardImgSmall
-                      }
-                    />
+                  <div style={styles.singleCardBlock}>
+                    <div style={styles.singleCardFrameUnified}>
+                      <img
+                        src={category.image}
+                        alt={category.title}
+                        style={styles.singleCardImgUnified}
+                      />
+                    </div>
+
+                    <div style={styles.buttonRowLeft}>
+                      <a href={category.href} style={styles.button}>
+                        Voir plus
+                      </a>
+                    </div>
                   </div>
                 ) : (
-                  <div style={styles.previewSingleFrame}>
-                    <img
-                      src={category.image}
-                      alt={category.title}
-                      style={
-                        category.title === "Panoramique"
-                          ? styles.previewPanoImg
-                          : styles.previewSingleImg
-                      }
-                    />
-                  </div>
-                )}
+                  <>
+                    <div style={styles.previewSingleFrame}>
+                      <img
+                        src={category.image}
+                        alt={category.title}
+                        style={
+                          category.title === "Panoramique"
+                            ? styles.previewPanoImg
+                            : styles.previewSingleImg
+                        }
+                      />
+                    </div>
 
-                <div style={styles.buttonRowLeft}>
-                  <a href={category.href} style={styles.button}>
-                    Voir plus
-                  </a>
-                </div>
+                    <div style={styles.buttonRowLeft}>
+                      <a href={category.href} style={styles.button}>
+                        Voir plus
+                      </a>
+                    </div>
+                  </>
+                )}
               </div>
             ))}
           </div>
@@ -468,36 +468,31 @@ const styles: Record<string, CSSProperties> = {
     gridColumn: "1 / -1",
   },
 
-  singleCardFrameLeft: {
-  width: "100%",
-  height: "360px",
-  backgroundColor: "transparent",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "flex-start",
-  overflow: "hidden",
-},
+  singleCardBlock: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    minHeight: "390px",
+  },
 
-singleCardImgGrand: {
-  width: "270px",
-  height: "340px",
-  objectFit: "contain",
-  display: "block",
-},
+  singleCardFrameUnified: {
+    width: "100%",
+    height: "300px",
+    backgroundColor: "transparent",
+    display: "flex",
+    alignItems: "flex-end",
+    justifyContent: "center",
+    overflow: "hidden",
+  },
 
-singleCardImgMedium: {
-  width: "300px",
-  height: "255px",
-  objectFit: "contain",
-  display: "block",
-},
+  singleCardImgUnified: {
+    width: "100%",
+    height: "100%",
+    objectFit: "contain",
+    objectPosition: "center bottom",
+    display: "block",
+  },
 
-singleCardImgSmall: {
-  width: "160px",
-  height: "160px",
-  objectFit: "contain",
-  display: "block",
-},
   previewSingleFrame: {
     width: "100%",
     backgroundColor: "transparent",
