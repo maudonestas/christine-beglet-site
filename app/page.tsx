@@ -150,64 +150,108 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ŒUVRES */}
+           {/* ŒUVRES */}
       <section style={styles.sectionWhite}>
         <div style={styles.container}>
           <h2 style={styles.title}>Collages</h2>
 
-          <div style={styles.worksGrid}>
-            {oeuvreCategories.map((category) => (
-              <div
-                key={category.title}
-                style={{
-                  ...styles.workCardNew,
-                  ...(category.type === "single" ? styles.workCardFull : {}),
-                }}
-              >
-                <h3 style={styles.workSectionTitle}>{category.title}</h3>
+          <div style={styles.collagesMosaic}>
+            {/* GRANDS FORMATS */}
+            <div style={styles.collageBigBlock}>
+              <h3 style={styles.workSectionTitle}>Grands formats</h3>
 
-                {category.type === "singleCard" ? (
-                  <div style={styles.singleCardBlock}>
-                    <div style={styles.singleCardFrameUnified}>
-                      <img
-                        src={category.image}
-                        alt={category.title}
-                        style={styles.singleCardImgUnified}
-                      />
-                    </div>
-
-                    <div style={styles.buttonRowLeft}>
-                      <a href={category.href} style={styles.button}>
-                        Voir plus
-                      </a>
-                    </div>
-                  </div>
-                ) : (
-                  <>
-                    <div style={styles.previewSingleFrame}>
-                      <img
-                        src={category.image}
-                        alt={category.title}
-                        style={
-                          category.title === "Panoramique"
-                            ? styles.previewPanoImg
-                            : styles.previewSingleImg
-                        }
-                      />
-                    </div>
-
-                    <div style={styles.buttonRowLeft}>
-                      <a href={category.href} style={styles.button}>
-                        Voir plus
-                      </a>
-                    </div>
-                  </>
-                )}
+              <div style={styles.collageBigImageWrap}>
+                <img
+                  src="/images/70-1.jpg"
+                  alt="Grands formats"
+                  style={styles.collageBigImage}
+                />
               </div>
-            ))}
+
+              <div style={styles.buttonRowLeft}>
+                <a href="/oeuvres/grands-formats" style={styles.button}>
+                  Voir plus
+                </a>
+              </div>
+            </div>
+
+            {/* COLONNE DROITE */}
+            <div style={styles.collageRightColumn}>
+              {/* FORMATS MOYENS */}
+              <div style={styles.collageSmallBlock}>
+                <h3 style={styles.workSectionTitle}>Formats moyens</h3>
+
+                <div style={styles.collageSmallImageWrap}>
+                  <img
+                    src="/images/mal-de-mer.jpg"
+                    alt="Formats moyens"
+                    style={styles.collageSmallImage}
+                  />
+                </div>
+
+                <div style={styles.buttonRowLeft}>
+                  <a href="/oeuvres/formats-moyens" style={styles.button}>
+                    Voir plus
+                  </a>
+                </div>
+              </div>
+
+              {/* PETITS FORMATS */}
+              <div style={styles.collageSmallBlock}>
+                <h3 style={styles.workSectionTitle}>Petits formats</h3>
+
+                <div style={styles.collageSmallImageWrap}>
+                  <img
+                    src="/images/20x20-1.jpg"
+                    alt="Petits formats"
+                    style={styles.collageSmallImage}
+                  />
+                </div>
+
+                <div style={styles.buttonRowLeft}>
+                  <a href="/oeuvres/petits-formats" style={styles.button}>
+                    Voir plus
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* TRIPTYQUE */}
+          <div style={styles.workCardFull}>
+            <h3 style={styles.workSectionTitle}>Triptyque</h3>
+            <div style={styles.previewSingleFrame}>
+              <img
+                src="/images/triptyque.jpg"
+                alt="Triptyque"
+                style={styles.previewSingleImg}
+              />
+            </div>
+            <div style={styles.buttonRowLeft}>
+              <a href="/oeuvres/triptyque" style={styles.button}>
+                Voir plus
+              </a>
+            </div>
+          </div>
+
+          {/* PANORAMIQUE */}
+          <div style={styles.workCardFull}>
+            <h3 style={styles.workSectionTitle}>Panoramique</h3>
+            <div style={styles.previewSingleFrame}>
+              <img
+                src="/images/pano.jpg"
+                alt="Panoramique"
+                style={styles.previewPanoImg}
+              />
+            </div>
+            <div style={styles.buttonRowLeft}>
+              <a href="/oeuvres/panoramique" style={styles.button}>
+                Voir plus
+              </a>
+            </div>
           </div>
         </div>
-      </section>
+      </section>      </section>
 
       {/* ATELIER */}
       <section style={styles.sectionGray}>
