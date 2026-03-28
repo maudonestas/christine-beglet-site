@@ -178,7 +178,7 @@ export default function ExpositionsPage() {
 
       <section style={styles.section}>
         <div style={styles.container}>
-          <h1 style={styles.title}>Expositions</h1>
+          <h1 style={styles.title}>Principales Expositions</h1>
 
           <div style={styles.grid}>
             {expositions.map((expo) => (
