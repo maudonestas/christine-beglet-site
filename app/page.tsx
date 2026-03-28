@@ -546,10 +546,12 @@ const styles: Record<string, CSSProperties> = {
   },
 
   collageRightColumn: {
-    display: "grid",
-    gridTemplateRows: "1fr 1fr",
-    gap: "28px",
-  },
+  display: "grid",
+  gridTemplateRows: "1fr 1fr",
+  gap: "28px",
+  width: "85%",       // ← réduit la largeur
+  justifySelf: "start", // ← colle à gauche
+},
 
   collageSmallBlock: {
     display: "flex",
