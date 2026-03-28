@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { CSSProperties } from "react";
-
+import Link from "next/link";
 export default function Header() {
   const [galerieOpen, setGalerieOpen] = useState(false);
   const [artisteOpen, setArtisteOpen] = useState(false);
@@ -10,10 +10,12 @@ export default function Header() {
   return (
     <header style={styles.header}>
       <div style={styles.headerContent}>
-        <div>
-          <div style={styles.name}>CHRISTINE BÉGLET</div>
-          <div style={styles.subtitle}>Collage</div>
-        </div>
+       <a href="/" style={styles.logoLink}>
+  <div>
+    <div style={styles.name}>CHRISTINE BÉGLET</div>
+    <div style={styles.subtitle}>Collage</div>
+  </div>
+</a>
 
         <nav style={styles.nav}>
           <div
@@ -240,4 +242,9 @@ const styles: Record<string, CSSProperties> = {
     alignItems: "center",
     justifyContent: "center",
   },
+  logoLink: {
+  textDecoration: "none",
+  color: "inherit",
+  display: "block",
+},
 };
