@@ -514,13 +514,14 @@ const styles: Record<string, CSSProperties> = {
     marginBottom: "40px",
   },
 
-  collagesMosaic: {
-    display: "grid",
-    gridTemplateColumns: "1.5fr 1fr",
-    gap: "40px",
-    alignItems: "start",
-    marginBottom: "56px",
-  },
+collagesMosaic: {
+  display: "grid",
+  gridTemplateColumns: "1.5fr 1fr",
+  columnGap: "20px",
+  rowGap: "40px",
+  alignItems: "start",
+  marginBottom: "56px",
+},
   
   collageBigBlock: {
     display: "flex",
