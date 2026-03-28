@@ -73,7 +73,7 @@ export default function ExpositionsPage() {
   {
     title: "Festival R-CAS, Perpignan",
     date: "28–29 septembre 2019",
-    image: "/images/festival-r-cas-28&29sept-2919-perpignan.jpg",
+    image: "/images/festival-r-cas-28&29sept-2019-perpignan.jpg",
   },
   {
     title: "Rendez-vous singuliers, Le Belvédère du Rayon Vert, Cerbère",
@@ -83,7 +83,7 @@ export default function ExpositionsPage() {
   {
     title: "Galerie Artcompulsion, Montpellier",
     date: "juin 2019",
-    image: "/images/galerie-artcompulsion-juin-2019-montpelier.jpg",
+    image: "/images/galerie-artcompulsion-juin-2019-montpellier.jpg",
   },
   {
     title: "Hôtel Novotel, Toulouse",
@@ -108,7 +108,7 @@ export default function ExpositionsPage() {
   {
     title: "Les Estivales Lagorre, Seix",
     date: "14–27 août 2017",
-    image: "/images/les-estivales-lagorre-14-27aout-2017-seix.jpg",
+    image: "/images/les-estivales-lagorre-14-27aout-2017-seix .jpg",
   },
   {
     title: "Coop Art La Marge, Serviès-en-Val",
@@ -133,7 +133,7 @@ export default function ExpositionsPage() {
   {
     title: "Salon des Artistes Méridionaux, Toulouse",
     date: "2–20 décembre 2015",
-    image: "/images/salon-des-artites-meridionaux-2-20decembre2015-toulouse.jpg",
+    image: "/images/salon-des-artistes-meridionaux-2-20decembre2015-toulouse.jpg",
   },
   {
     title: "Galerie Roger Betti, Toulouse",
