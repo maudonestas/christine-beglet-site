@@ -161,7 +161,6 @@ export default function ExpositionsPage() {
     image: "/images/residence-de-creation-galerie-des-nanas-1-30aout-2012-danville-canada.jpg",
   },
 ];
-  ];
 
   const openLightbox = (image: string, title: string) => {
     setSelectedImage(image);
