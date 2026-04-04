@@ -155,8 +155,8 @@ const styles: Record<string, CSSProperties> = {
   header: {
     position: "sticky",
     top: 0,
-    backgroundColor: "#f2f2f2",
-    borderBottom: "1px solid #d8d8d8",
+    backgroundColor: "#f7f5f2",
+    borderBottom: "1px solid #e5e2dc",
     zIndex: 100,
   },
 
