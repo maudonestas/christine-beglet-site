@@ -226,59 +226,61 @@ export default function GrandsFormatsPage() {
               </button>
             )}
 
-            <div style={styles.lightboxMain}>
-              <img
-  src={currentImage.src}
-  alt={currentImage.title}
-  style={{
-    ...styles.lightboxImage,
-    cursor: "zoom-in",
-    transition: "transform 0.3s ease",
-  }}
-  onClick={(e) => {
-    e.currentTarget.style.transform =
-      e.currentTarget.style.transform === "scale(2)"
-        ? "scale(1)"
-        : "scale(2)";
-  }}
-/>
+<div style={styles.lightboxMain}>
+  <img
+    src={currentImage.src}
+    alt={currentImage.title}
+    style={{
+      ...styles.lightboxImage,
+      cursor: "zoom-in",
+      transition: "transform 0.3s ease",
+    }}
+    onClick={(e) => {
+      e.stopPropagation();
+      e.currentTarget.style.transform =
+        e.currentTarget.style.transform === "scale(2)"
+          ? "scale(1)"
+          : "scale(2)";
+    }}
+  />
+  <p style={styles.lightboxCaption}>{currentImage.title}</p>
+</div>
 
-            {activeImages.length > 1 && (
-              <button
-                type="button"
-                onClick={showNext}
-                style={{ ...styles.navButton, ...styles.rightButton }}
-                aria-label="Image suivante"
-              >
-                ›
-              </button>
-            )}
+{activeImages.length > 1 && (
+  <button
+    type="button"
+    onClick={showNext}
+    style={{ ...styles.navButton, ...styles.rightButton }}
+    aria-label="Image suivante"
+  >
+    ›
+  </button>
+)}
 
-            {activeImages.length > 1 && (
-              <div style={styles.thumbnailRow}>
-                {activeImages.map((oeuvre, index) => (
-                  <button
-                    key={oeuvre.src}
-                    type="button"
-                    onClick={() => setCurrentIndex(index)}
-                    style={{
-                      ...styles.thumbnailButton,
-                      ...(index === currentIndex
-                        ? styles.thumbnailButtonActive
-                        : {}),
-                    }}
-                    aria-label={`Voir ${oeuvre.title}`}
-                  >
-                    <img
-                      src={oeuvre.src}
-                      alt={oeuvre.title}
-                      style={styles.thumbnailImage}
-                    />
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
+{activeImages.length > 1 && (
+  <div style={styles.thumbnailRow}>
+    {activeImages.map((oeuvre, index) => (
+      <button
+        key={oeuvre.src}
+        type="button"
+        onClick={() => setCurrentIndex(index)}
+        style={{
+          ...styles.thumbnailButton,
+          ...(index === currentIndex
+            ? styles.thumbnailButtonActive
+            : {}),
+        }}
+        aria-label={`Voir ${oeuvre.title}`}
+      >
+        <img
+          src={oeuvre.src}
+          alt={oeuvre.title}
+          style={styles.thumbnailImage}
+        />
+      </button>
+    ))}
+  </div>
+)}
         </div>
       ))}
     </main>
