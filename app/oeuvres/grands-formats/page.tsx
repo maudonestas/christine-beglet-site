@@ -197,7 +197,7 @@ export default function GrandsFormatsPage() {
                   </button>
                   <p style={styles.caption}>{oeuvre.title}</p>
                 </div>
-              )}
+              ))}
             </div>
           </div>
         </div>
@@ -280,7 +280,7 @@ export default function GrandsFormatsPage() {
             )}
           </div>
         </div>
-      )}
+      ))}
     </main>
   );
 }
