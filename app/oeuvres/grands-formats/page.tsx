@@ -228,12 +228,20 @@ export default function GrandsFormatsPage() {
 
             <div style={styles.lightboxMain}>
               <img
-                src={currentImage.src}
-                alt={currentImage.title}
-                style={styles.lightboxImage}
-              />
-              <p style={styles.lightboxCaption}>{currentImage.title}</p>
-            </div>
+  src={currentImage.src}
+  alt={currentImage.title}
+  style={{
+    ...styles.lightboxImage,
+    cursor: "zoom-in",
+    transition: "transform 0.3s ease",
+  }}
+  onClick={(e) => {
+    e.currentTarget.style.transform =
+      e.currentTarget.style.transform === "scale(2)"
+        ? "scale(1)"
+        : "scale(2)";
+  }}
+/>
 
             {activeImages.length > 1 && (
               <button
