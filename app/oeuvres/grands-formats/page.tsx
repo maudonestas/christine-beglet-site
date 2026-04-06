@@ -282,7 +282,7 @@ export default function GrandsFormatsPage() {
   </div>
 )}
         </div>
-      ))}
+      )}
     </main>
   );
 }
