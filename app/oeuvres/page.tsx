@@ -272,6 +272,6 @@ previewPanoImg: {
   marginTop: "0",
   marginBottom: "48px",
   fontStyle: "italic",
-  maxWidth: "600px",
+  maxWidth: "800px",
 },
   }
