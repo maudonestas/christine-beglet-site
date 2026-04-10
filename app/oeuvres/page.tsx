@@ -8,9 +8,9 @@ export default function OeuvresPage() {
       href: "/oeuvres/grands-formats",
       type: "gridPortrait",
       images: [
-        "/images/70-1.jpg",
-        "/images/70-2.jpg",
         "/images/puzzle-neuronal.jpg",
+        "/images/entre-les-murs.jpg",
+        "/images/deambulation-betonniere.jpg",
       ],
     },
     {
@@ -18,8 +18,8 @@ export default function OeuvresPage() {
       href: "/oeuvres/formats-moyens",
       type: "grid",
       images: [
-        "/images/mal-de-mer.jpg",
-        "/images/propagation-instantanee.jpg",
+        "/images/toutotour-sur-oise.jpg",
+        "/images/il-fait-nuit.jpg",
         "/images/collateral.jpg",
       ],
     },
@@ -29,8 +29,8 @@ export default function OeuvresPage() {
       type: "grid",
       images: [
         "/images/20x20-1.jpg",
-        "/images/20x20-2.jpg",
-        "/images/35x35-immoral.jpg",
+        "/images/20x20-9.jpg",
+        "/images/20x20-8.jpg",
       ],
     },
     {
