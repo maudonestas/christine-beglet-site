@@ -97,7 +97,7 @@ const styles: Record<string, CSSProperties> = {
 },
 
 subtitle: {
-  margin: "0 0 20px 0",
+  margin: "0 0 10px 0",
   fontSize: "1.3rem",
   fontWeight: 300,
   letterSpacing: "0.08em",
@@ -106,13 +106,11 @@ subtitle: {
 },
 
 description: {
+  marginTop: "0",
+  marginBottom: "28px",
+  color: "#6f6a64",
   fontSize: "0.95rem",
-  marginTop: 0,
-  marginBottom: "40px",
-  fontWeight: 300,
-  letterSpacing: "0.05em",
-  fontFamily: '"Helvetica Neue", Arial, sans-serif',
-  color: "#666",
+  lineHeight: 1.5,
 },
   lowercase: {
   textTransform: "none",
@@ -179,7 +177,7 @@ description: {
   lineHeight: 1.6,
   color: "#4f4b46",
   marginTop: "0",
-  marginBottom: "40px", // ← IMPORTANT
+  marginBottom: "32px", // ← IMPORTANT
   fontStyle: "italic",
   maxWidth: "720px",
 },
