@@ -300,7 +300,7 @@ const styles: Record<string, CSSProperties> = {
   title: {
     fontSize: "2rem",
     marginTop: 0,
-    marginBottom: "40px",
+    marginBottom: "16px",
     fontWeight: 300,
     letterSpacing: "0.12em",
     textTransform: "uppercase",
