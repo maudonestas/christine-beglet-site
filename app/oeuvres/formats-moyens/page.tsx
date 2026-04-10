@@ -7,17 +7,21 @@ import type { CSSProperties } from "react";
 type Artwork = {
   src: string;
   title: string;
+  size: string;
 };
+
 
 export default function FormatsMoyensPage() {
   const oeuvres60x60: Artwork[] = [
     {
       src: "/images/mal-de-mer.jpg",
       title: "Mal de mer",
+      size: “60x60cm",
     },
     {
       src: "/images/propagation-instantanee.jpg",
       title: "Propagation instantanée",
+      size: “60x60cm",
     },
   ];
 
@@ -25,34 +29,42 @@ export default function FormatsMoyensPage() {
     {
       src: "/images/collateral.jpg",
       title: "Collatéral",
+      size: “50x50cm",
     },
     {
       src: "/images/colle-erre.jpg",
       title: "Colle Erre",
+      size: “50x50cm",
     },
     {
       src: "/images/colle-za.jpg",
       title: "Colle Za",
+      size: “50x50cm",
     },
     {
       src: "/images/il-fait-nuit.jpg",
       title: "Il fait nuit",
+      size: “50x50cm",
     },
     {
       src: "/images/touacou-sur-adour.jpg",
       title: "Touacou-sur-Adour",
+      size: “50x50cm",
     },
     {
       src: "/images/toutalegou-sur-seine.jpg",
       title: "Toutalégou-sur-Seine",
+      size: “50x50cm",
     },
     {
       src: "/images/toutefoi-sur-ariege.jpg",
       title: "Toutefoi-sur-Ariège",
+      size: “50x50cm",
     },
     {
       src: "/images/toutotour-sur-oise.jpg",
       title: "Toutotour-sur-Oise",
+      size: “50x50cm",
     },
   ];
 
@@ -341,13 +353,14 @@ const styles: Record<string, CSSProperties> = {
   },
 
   lightboxCaption: {
-    marginTop: "12px",
-    marginBottom: 0,
-    fontSize: "0.9rem",
+    marginTop: "16px",
+    marginBottom: "20px",
+   color: "#d6d2cd",
+    fontSize: "0.95rem",
     letterSpacing: "0.08em",
     textTransform: "uppercase",
-    color: "#fff",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    opacity: 0.8,
   },
 
   thumbs: {
