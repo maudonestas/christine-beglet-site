@@ -97,7 +97,7 @@ const styles: Record<string, CSSProperties> = {
 },
 
 subtitle: {
-  margin: "0 0 20px 0",
+  margin: "12px 0 24px 0", // ← espace au-dessus ajouté
   fontSize: "1.3rem",
   fontWeight: 300,
   letterSpacing: "0.08em",
