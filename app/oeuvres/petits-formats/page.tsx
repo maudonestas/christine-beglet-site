@@ -7,7 +7,6 @@ import type { CSSProperties } from "react";
 type Artwork = {
   src: string;
   title: string;
-  size: string;
 };
 
 export default function PetitsFormatsPage() {
