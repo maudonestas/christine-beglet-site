@@ -12,19 +12,19 @@ const articles = [
     url: "https://www.ladepeche.fr/2026/03/16/art-un-duo-feminin-habille-le-printemps-13274751.php",
     logo: "/images/presse-ladepeche-2026.jpg",
     excerpt:
-      ""Sans exposition depuis fin janvier, la galerie des Carmes ouvre sa saison 2026 avec un duo féminin réunissant Christine Béglet, collagiste toulousaine, et Sylvie Hébrard, sculptrice."",
+      "«Sans exposition depuis fin janvier, la galerie des Carmes ouvre sa saison 2026 avec un duo féminin réunissant Christine Béglet, collagiste toulousaine, et Sylvie Hébrard, sculptrice.»",
   },
     {
   media: "Le Chroniquart",
   date: "25 janvier 2016",
-  title: ""Christine Beglet, collagiste"",
+  title: "«Christine Beglet, collagiste»",
   url: "https://www.chroniquart.net/cbeglet.html",
   logo: "/images/image-chroniquart.jpg",
 },
   {
     media: "Le Progrès",
     date: "2013",
-    title: ""Christine Beglet a reçu le P’tikon d’or"",
+    title: "«Christine Beglet a reçu le P’tikon d’or»",
     image: "/images/article-leprogres-2013.jpg",
   },
   {
@@ -33,7 +33,7 @@ const articles = [
     title: "Christine Béglet, une première résidente… obsédée par les résidences !!",
     image: "/images/article-residence-des-nanas.jpg",
     excerpt:
-      ""Dès le lever du jour, l'artiste Christine Béglet, armée d'une énorme théière, descend de sa chambre du troisième vers la salle Gorilla de la galerie pour s'attaquer à une masse de magazines savamment triturés."",
+      "«Dès le lever du jour, l'artiste Christine Béglet, armée d'une énorme théière, descend de sa chambre du troisième vers la salle Gorilla de la galerie pour s'attaquer à une masse de magazines savamment triturés.»",
   },
   {
     media: "La Dépêche du Midi",
@@ -42,7 +42,7 @@ const articles = [
     url: "https://www.ladepeche.fr/article/2000/06/08/76119-une-detourneuse-retourneuse-d-images.html",
     logo: "/images/presse-ladepeche-2026.jpg",
     excerpt:
-      ""Le collage n'est pas simplement un assemblage d'images. Entre les mains de Christine Béglet, il devient œuvre d'art."",
+      "«Le collage n'est pas simplement un assemblage d'images. Entre les mains de Christine Béglet, il devient œuvre d'art.»",
   },
 ];
 
