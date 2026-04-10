@@ -16,12 +16,12 @@ export default function FormatsMoyensPage() {
     {
       src: "/images/mal-de-mer.jpg",
       title: "Mal de mer",
-      size: “60x60cm",
+      size: "60x60cm",
     },
     {
       src: "/images/propagation-instantanee.jpg",
       title: "Propagation instantanée",
-      size: “60x60cm",
+      size: "60x60cm",
     },
   ];
 
@@ -29,42 +29,42 @@ export default function FormatsMoyensPage() {
     {
       src: "/images/collateral.jpg",
       title: "Collatéral",
-      size: “50x50cm",
+      size: "50x50cm",
     },
     {
       src: "/images/colle-erre.jpg",
       title: "Colle Erre",
-      size: “50x50cm",
+      size: "50x50cm",
     },
     {
       src: "/images/colle-za.jpg",
       title: "Colle Za",
-      size: “50x50cm",
+      size: "50x50cm",
     },
     {
       src: "/images/il-fait-nuit.jpg",
       title: "Il fait nuit",
-      size: “50x50cm",
+      size: "50x50cm",
     },
     {
       src: "/images/touacou-sur-adour.jpg",
       title: "Touacou-sur-Adour",
-      size: “50x50cm",
+      size: "50x50cm",
     },
     {
       src: "/images/toutalegou-sur-seine.jpg",
       title: "Toutalégou-sur-Seine",
-      size: “50x50cm",
+      size: "50x50cm",
     },
     {
       src: "/images/toutefoi-sur-ariege.jpg",
       title: "Toutefoi-sur-Ariège",
-      size: “50x50cm",
+      size: "50x50cm",
     },
     {
       src: "/images/toutotour-sur-oise.jpg",
       title: "Toutotour-sur-Oise",
-      size: “50x50cm",
+      size: "50x50cm",
     },
   ];
 
