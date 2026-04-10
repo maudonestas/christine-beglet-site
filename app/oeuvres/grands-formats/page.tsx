@@ -312,9 +312,8 @@ const styles: Record<string, CSSProperties> = {
   },
 
   subtitle: {
-  marginTop: "0",
-  marginBottom: "24px",
-  fontSize: "1.25rem",
+  margin: "0 0 20px 0",
+  fontSize: "1.3rem",
   fontWeight: 300,
   letterSpacing: "0.08em",
   textTransform: "uppercase",
