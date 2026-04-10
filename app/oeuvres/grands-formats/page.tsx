@@ -250,7 +250,9 @@ export default function GrandsFormatsPage() {
                 alt={currentImage.title}
                 style={styles.lightboxImage}
               />
-              <p style={styles.lightboxCaption}>{currentImage.title}</p>
+              <p style={styles.lightboxCaption}>
+  {currentImage.title} — {currentImage.size}
+</p>
             </div>
 
             {activeImages.length > 1 && (
