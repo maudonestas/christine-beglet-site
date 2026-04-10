@@ -111,7 +111,9 @@ export default function FormatsMoyensPage() {
       <section style={styles.section}>
         <div style={styles.container}>
           <h1 style={styles.title}>Formats moyens</h1>
-
+<p style={styles.technique}>
+  Collages sur bois, protégés contre les UV par plusieurs couches de vernis.
+</p>
           {/* 60x60 */}
           <div style={styles.block}>
             <h2 style={styles.subtitle}>60x60cm</h2>
@@ -238,14 +240,13 @@ const styles: Record<string, CSSProperties> = {
   },
 
   subtitle: {
-    marginTop: 0,
-    marginBottom: "20px",
-    fontSize: "0.95rem",
-    fontWeight: 400,
-    letterSpacing: "0.1em",
-    fontFamily: '"Helvetica Neue", Arial, sans-serif',
-  },
-
+  margin: "0 0 20px 0",
+  fontSize: "1.3rem",
+  fontWeight: 300,
+  letterSpacing: "0.08em",
+  textTransform: "uppercase",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+},
   grid: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
@@ -373,4 +374,13 @@ const styles: Record<string, CSSProperties> = {
     width: "auto",
     objectFit: "contain",
   },
+  technique: {
+  fontSize: "0.95rem",
+  lineHeight: 1.6,
+  color: "#4f4b46",
+  marginTop: "0",
+  marginBottom: "40px",
+  fontStyle: "italic",
+  maxWidth: "720px",
+},
 };
