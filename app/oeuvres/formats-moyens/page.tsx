@@ -190,7 +190,10 @@ export default function FormatsMoyensPage() {
 
             <div style={styles.mainImageWrapper}>
               <img src={current.src} style={styles.lightboxImage} />
-              <p style={styles.lightboxCaption}>{current.title}</p>
+             <p style={styles.lightboxCaption}>
+  {current.title}
+  <span style={styles.lightboxSize}> — {current.size}</span>
+</p>
             </div>
 
             {activeImages.length > 1 && (
@@ -395,5 +398,8 @@ const styles: Record<string, CSSProperties> = {
   marginBottom: "40px",
   fontStyle: "italic",
   maxWidth: "720px",
+},
+  lightboxSize: {
+  color: "#bdb8b2",
 },
 };
