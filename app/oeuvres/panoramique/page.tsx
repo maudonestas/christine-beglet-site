@@ -19,8 +19,13 @@ export default function PanoramiquePage() {
 
       <section style={styles.section}>
         <div style={styles.container}>
-  <h1 style={styles.title}>PANORAMIQUE</h1>
-  <p style={styles.subtitle}>490x100cm</p>
+ <h1 style={styles.title}>Panoramique</h1>
+
+<p style={styles.technique}>
+  Collages sur bois, protégés contre les UV par plusieurs couches de vernis.
+</p>
+
+<p style={styles.subtitle}>490x100cm</p>
 
   <p style={styles.description}>
     Réalisé à partir de sept collages de 70x100cm
@@ -92,14 +97,12 @@ const styles: Record<string, CSSProperties> = {
 },
 
 subtitle: {
-  fontSize: "1rem",
-  marginTop: 0,
-  marginBottom: "8px",
+  margin: "0 0 20px 0",
+  fontSize: "1.3rem",
   fontWeight: 300,
   letterSpacing: "0.08em",
+  textTransform: "uppercase",
   fontFamily: '"Helvetica Neue", Arial, sans-serif',
-  textTransform: "none",
-  color: "#555",
 },
 
 description: {
@@ -171,4 +174,13 @@ description: {
     lineHeight: 1,
     zIndex: 10000,
   },
+  technique: {
+  fontSize: "0.95rem",
+  lineHeight: 1.6,
+  color: "#4f4b46",
+  marginTop: "0",
+  marginBottom: "12px",
+  fontStyle: "italic",
+  maxWidth: "720px",
+},
 };
