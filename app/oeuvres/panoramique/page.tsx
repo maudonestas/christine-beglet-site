@@ -97,7 +97,7 @@ const styles: Record<string, CSSProperties> = {
 },
 
 subtitle: {
-  margin: "12px 0 24px 0", // ← espace au-dessus ajouté
+  margin: "0 0 20px 0",
   fontSize: "1.3rem",
   fontWeight: 300,
   letterSpacing: "0.08em",
@@ -174,12 +174,12 @@ description: {
     lineHeight: 1,
     zIndex: 10000,
   },
-  technique: {
+ technique: {
   fontSize: "0.95rem",
   lineHeight: 1.6,
   color: "#4f4b46",
   marginTop: "0",
-  marginBottom: "12px",
+  marginBottom: "40px", // ← IMPORTANT
   fontStyle: "italic",
   maxWidth: "720px",
 },
