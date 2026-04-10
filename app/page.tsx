@@ -62,13 +62,13 @@ export default function Home() {
       title: "Grands formats",
       href: "/oeuvres/grands-formats",
       type: "singleCard",
-      image: "/images/70-1.jpg",
+      image: "/images/puzzle-neuronal.jpg",
     },
     {
       title: "Formats moyens",
       href: "/oeuvres/formats-moyens",
       type: "singleCard",
-      image: "/images/mal-de-mer.jpg",
+      image: "/images/toutotour-sur-oise.jpgg",
     },
     {
       title: "Petits formats",
