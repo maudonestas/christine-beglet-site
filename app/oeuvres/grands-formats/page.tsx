@@ -429,7 +429,7 @@ const styles: Record<string, CSSProperties> = {
   lightboxCaption: {
     marginTop: "16px",
     marginBottom: "20px",
-    color: "#fff",
+   color: "#d6d2cd",
     fontSize: "0.95rem",
     letterSpacing: "0.08em",
     textTransform: "uppercase",
