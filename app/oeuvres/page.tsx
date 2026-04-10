@@ -53,7 +53,7 @@ export default function OeuvresPage() {
 
       <section style={styles.sectionWhite}>
         <div style={styles.container}>
-          <h1 style={styles.title}>Œuvres</h1
+          <h1 style={styles.title}>Œuvres</h1>
           <p style={styles.technique}>
   Tous les collages sont réalisés sur bois et protégés contre les UV par plusieurs couches de vernis.
 </p>                              
