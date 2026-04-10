@@ -173,15 +173,14 @@ const styles: Record<string, CSSProperties> = {
     transition: "all 0.2s ease",
   },
 
-  workSectionTitle: {
-    margin: "0 0 18px 0",
-    fontSize: "0.95rem",
-    fontWeight: 400,
-    letterSpacing: "0.1em",
-    textTransform: "uppercase",
-    fontFamily: '"Helvetica Neue", Arial, sans-serif',
-  },
-
+ workSectionTitle: {
+  margin: "0 0 20px 0",
+  fontSize: "1.3rem",
+  fontWeight: 300,
+  letterSpacing: "0.08em",
+  textTransform: "uppercase",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+},
   worksGrid: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
@@ -266,12 +265,12 @@ previewPanoImg: {
   height: "260px",
   objectFit: "cover",
 },
-  technique: {
-  fontSize: "0.85rem",
+ technique: {
+  fontSize: "0.95rem",   // ou 1rem si tu veux plus présent
   lineHeight: 1.6,
   color: "#4f4b46",
   marginTop: "0",
-  marginBottom: "40px",
+  marginBottom: "48px",
   fontStyle: "italic",
   maxWidth: "600px",
 },
