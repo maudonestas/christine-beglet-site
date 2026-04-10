@@ -434,6 +434,7 @@ const styles: Record<string, CSSProperties> = {
     letterSpacing: "0.08em",
     textTransform: "uppercase",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    opacity: 0.8,
   },
 
   navButton: {
