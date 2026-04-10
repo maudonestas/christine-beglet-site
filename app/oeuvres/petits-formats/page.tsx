@@ -25,10 +25,10 @@ export default function PetitsFormatsPage() {
   ];
 
   const oeuvres35x35: Artwork[] = [
-    { src: "/images/35x35-immoral.jpg", title: "Immoral" },
-    { src: "/images/35x35-immobile.jpg", title: "Immobile" },
-    { src: "/images/35x35-archiduc.jpg", title: "Archiduc" },
-    { src: "/images/35x35-a-vendre-70m2.jpg", title: "À vendre 70m2" },
+    { src: "/images/35x35-immoral.jpg", title: "Immoral", size: "35x35cm" },
+    { src: "/images/35x35-immobile.jpg", title: "Immobile", size: "35x35cm" },
+    { src: "/images/35x35-archiduc.jpg", title: "Archiduc", size: "35x35cm" },
+    { src: "/images/35x35-a-vendre-70m2.jpg", title: "À vendre 70m2", size: "35x35cm" },
     { src: "/images/35X35-5.jpg", title: "35x35 5", size: "35x35cm" },
     { src: "/images/35X35-6.jpg", title: "35x35 6", size: "35x35cm" },
     { src: "/images/35X35-7.jpg", title: "35x35 7", size: "35x35cm" },
