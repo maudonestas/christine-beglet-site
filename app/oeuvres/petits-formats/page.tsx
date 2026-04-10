@@ -7,20 +7,21 @@ import type { CSSProperties } from "react";
 type Artwork = {
   src: string;
   title: string;
+  size: string;
 };
 
 export default function PetitsFormatsPage() {
   const oeuvres20x20: Artwork[] = [
-    { src: "/images/20x20-1.jpg", title: "20x20 1" },
-    { src: "/images/20x20-2.jpg", title: "20x20 2" },
-    { src: "/images/20x20-3.jpg", title: "20x20 3" },
-    { src: "/images/20x20-4.jpg", title: "20x20 4" },
-    { src: "/images/20x20-5.jpg", title: "20x20 5" },
-    { src: "/images/20x20-6.jpg", title: "20x20 6" },
-    { src: "/images/20x20-7.jpg", title: "20x20 7" },
-    { src: "/images/20x20-8.jpg", title: "20x20 8" },
-    { src: "/images/20x20-9.jpg", title: "20x20 9" },
-    { src: "/images/20x20-10.jpg", title: "20x20 10" },
+    { src: "/images/20x20-1.jpg", title: "20x20 1", size: "20x20cm" },
+    { src: "/images/20x20-2.jpg", title: "20x20 2", size: "20x20cm" },
+    { src: "/images/20x20-3.jpg", title: "20x20 3", size: "20x20cm" },
+    { src: "/images/20x20-4.jpg", title: "20x20 4", size: "20x20cm" },
+    { src: "/images/20x20-5.jpg", title: "20x20 5", size: "20x20cm" },
+    { src: "/images/20x20-6.jpg", title: "20x20 6", size: "20x20cm" },
+    { src: "/images/20x20-7.jpg", title: "20x20 7", size: "20x20cm" },
+    { src: "/images/20x20-8.jpg", title: "20x20 8", size: "20x20cm" },
+    { src: "/images/20x20-9.jpg", title: "20x20 9", size: "20x20cm" },
+    { src: "/images/20x20-10.jpg", title: "20x20 10", size: "20x20cm" },
   ];
 
   const oeuvres35x35: Artwork[] = [
@@ -28,14 +29,13 @@ export default function PetitsFormatsPage() {
     { src: "/images/35x35-immobile.jpg", title: "Immobile" },
     { src: "/images/35x35-archiduc.jpg", title: "Archiduc" },
     { src: "/images/35x35-a-vendre-70m2.jpg", title: "À vendre 70m2" },
-    { src: "/images/35X35-5.jpg", title: "35x35 5" },
-    { src: "/images/35X35-6.jpg", title: "35x35 6" },
-    { src: "/images/35X35-7.jpg", title: "35x35 7" },
-    { src: "/images/35X35-8.jpg", title: "35x35 8" },
-    { src: "/images/35X35-9.jpg", title: "35x35 9" },
-    { src: "/images/35X35-10.jpg", title: "35x35 10" },
-    { src: "/images/35X35-11.jpg", title: "35x35 11" },
-    { src: "/images/35X35-12.jpg", title: "35x35 12" },
+    { src: "/images/35X35-5.jpg", title: "35x35 5", size: "35x35cm" },
+    { src: "/images/35X35-6.jpg", title: "35x35 6", size: "35x35cm" },
+    { src: "/images/35X35-7.jpg", title: "35x35 7", size: "35x35cm" },
+    { src: "/images/35X35-8.jpg", title: "35x35 8", size: "35x35cm" },
+    { src: "/images/35X35-10.jpg", title: "35x35 10", size: "35x35cm" },
+    { src: "/images/35X35-11.jpg", title: "35x35 11", size: "35x35cm" },
+    { src: "/images/35X35-12.jpg", title: "35x35 12", size: "35x35cm" },
   ];
 
   const [activeImages, setActiveImages] = useState<Artwork[] | null>(null);
@@ -172,6 +172,9 @@ export default function PetitsFormatsPage() {
                 style={styles.lightboxImage}
               />
             </div>
+            <p style={styles.lightboxSizeOnly}>
+  {current.size}
+</p>
 
             {activeImages.length > 1 && (
               <button
@@ -378,5 +381,14 @@ const styles: Record<string, CSSProperties> = {
   marginBottom: "40px",
   fontStyle: "italic",
   maxWidth: "720px",
+},
+  lightboxSizeOnly: {
+  marginTop: "16px",
+  marginBottom: "20px",
+  color: "#bdb8b2",
+  fontSize: "0.95rem",
+  letterSpacing: "0.08em",
+  textTransform: "uppercase",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
 },
 };
