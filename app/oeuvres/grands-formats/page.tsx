@@ -7,6 +7,7 @@ import type { CSSProperties } from "react";
 type Artwork = {
   src: string;
   title: string;
+  size: string;
 };
 
 export default function GrandsFormatsPage() {
@@ -14,26 +15,32 @@ export default function GrandsFormatsPage() {
     {
       src: "/images/murs-d-histoires.jpg",
       title: "Murs d’histoires",
+      size: "70x100cm",
     },
     {
       src: "/images/deambulation-betonniere.jpg",
       title: "Déambulation bétonnière",
+      size: "70x100cm",
     },
     {
       src: "/images/pollinisation-excessive.jpg",
       title: "Pollinisation excessive",
+      size: "70x100cm",
     },
     {
       src: "/images/entre-les-murs.jpg",
       title: "Entre les murs",
+      size: "70x100cm",
     },
     {
       src: "/images/puzzle-neuronal.jpg",
       title: "Puzzle neuronal",
+      size: "70x100cm",
     },
     {
       src: "/images/les-murs-ont-des-oreilles.jpg",
       title: "Les murs ont des oreilles",
+      size: "70x100cm",
     },
   ];
 
@@ -41,18 +48,22 @@ export default function GrandsFormatsPage() {
     {
       src: "/images/azimut.jpg",
       title: "Azimut",
+      size: "90x90cm",
     },
     {
       src: "/images/favelas.jpg",
       title: "Favelas",
+      size: "90x90cm",
     },
     {
       src: "/images/nuit-d-automne.jpg",
       title: "Nuit d’automne",
+      size: "90x90cm",
     },
     {
       src: "/images/recrudescence.jpg",
       title: "Recrudescence",
+      size: "90x90cm",
     },
   ];
 
@@ -60,18 +71,22 @@ export default function GrandsFormatsPage() {
     {
       src: "/images/la-bas.jpg",
       title: "Là-bas",
+       size: "80x80cm",
     },
     {
       src: "/images/casse-tete.jpg",
       title: "Casse-tête",
+       size: "80x80cm",
     },
     {
       src: "/images/emmuree.jpg",
       title: "Emmurée",
+       size: "80x80cm",
     },
     {
       src: "/images/brouillon-de-culture.jpg",
       title: "Brouillon de culture",
+       size: "80x80cm",
     },
   ];
 
