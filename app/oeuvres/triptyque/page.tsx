@@ -19,13 +19,14 @@ export default function TriptyquePage() {
 
       <section style={styles.section}>
        <div style={styles.container}>
-  <h1 style={styles.title}>Triptyque</h1>
-
-<p style={styles.subtitle}>92x195cm</p>
+ <h1 style={styles.title}>Triptyque</h1>
 
 <p style={styles.technique}>
   Collages sur bois, protégés contre les UV par plusieurs couches de vernis.
 </p>
+
+<p style={styles.subtitle}>92x195cm</p>
+
   <div style={styles.block}>
     <div style={styles.triptyqueMain}>
       <img
@@ -160,7 +161,7 @@ subtitle: {
   lineHeight: 1.6,
   color: "#4f4b46",
   marginTop: "0",
-  marginBottom: "40px",
+  marginBottom: "12px",
   fontStyle: "italic",
   maxWidth: "720px",
 },
