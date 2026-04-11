@@ -4,7 +4,7 @@ import type { CSSProperties } from "react";
 export default function AtelierPage() {
   return (
     <main style={styles.main}>
-      <Header />
+  
 
       <section style={styles.section}>
         <div style={styles.container}>
