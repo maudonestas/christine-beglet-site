@@ -247,15 +247,14 @@ const styles: Record<string, CSSProperties> = {
   },
 
   dropdownMenu: {
-    position: "absolute",
-    top: "100%",
-    left: 0,
-    backgroundColor: "#f2f2f2",
-    border: "1px solid #d8d8d8",
-    minWidth: "220px",
-    padding: "8px 0",
-    zIndex: 200,
-  },
+  position: "absolute",
+  top: "100%",
+  left: 0,
+  backgroundColor: "#f2f2f2",
+  padding: "6px 0",
+  zIndex: 200,
+  width: "auto",
+},
 
   dropdownLink: {
     display: "block",
