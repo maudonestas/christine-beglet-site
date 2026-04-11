@@ -444,32 +444,32 @@ export default function Home() {
             </div>
           </div>
 
-          <div style={styles.workCardFull}>
-            <a href="/oeuvres/panoramique" style={styles.linkBlock}>
-              <h3 style={styles.workSectionTitle}>PANORAMIQUE (450x100cm)</h3>
-            </a>
+     <div style={styles.workCardFull}>
+  <a href="/oeuvres/panoramique" style={styles.linkBlock}>
+    <h3 style={styles.workSectionTitle}>PANORAMIQUE (450x100cm)</h3>
+  </a>
 
-            <button
-              type="button"
-              style={styles.imageButtonBlock}
-              onClick={() => openGallery(panoramiqueGallery, 0)}
-              aria-label="Ouvrir le panoramique"
-            >
-              <div style={styles.previewSingleFrame}>
-                <img
-                  src="/images/pano.jpg"
-                  alt="Panoramique"
-                  style={styles.previewPanoImg}
-                />
-              </div>
-            </button>
+  <button
+    type="button"
+    style={styles.imageButtonBlock}
+    onClick={() => setIsPanoZoomed(true)}
+    aria-label="Ouvrir le panoramique"
+  >
+    <div style={styles.previewSingleFrame}>
+      <img
+        src="/images/pano.jpg"
+        alt="Panoramique"
+        style={styles.previewPanoImg}
+      />
+    </div>
+  </button>
 
-            <div style={styles.buttonRowLeft}>
-              <a href="/oeuvres/panoramique" style={styles.button}>
-                Voir plus
-              </a>
-            </div>
-          </div>
+  <div style={styles.buttonRowLeft}>
+    <a href="/oeuvres/panoramique" style={styles.button}>
+      Voir plus
+    </a>
+  </div>
+</div>          </div>
         </div>
       </section>
 
