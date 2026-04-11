@@ -866,7 +866,7 @@ const styles: Record<string, CSSProperties> = {
   collagesMosaic: {
     display: "grid",
     gridTemplateColumns: "1.5fr 1fr",
-    gap: "40px",
+    gap: "24px",
     alignItems: "start",
     marginBottom: "56px",
   },
