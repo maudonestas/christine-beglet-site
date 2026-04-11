@@ -21,13 +21,14 @@ export default function AtelierPage() {
               <p style={styles.caption}>Les magazines</p>
             </div>
 
-            <div>
-              <img
-                src="/images/tiroirs-a-papiers.jpg"
-                alt="Les tiroirs à papiers"
-                style={styles.imageMedium}
-              />
-              <p style={styles.caption}>Les tiroirs à papiers</p>
+           <div style={styles.zoomWrapper}>
+  <img
+    src="/images/tiroirs-a-papiers.jpg"
+    alt="Les tiroirs à papiers"
+    style={styles.imageZoomed}
+  />
+</div>
+<p style={styles.caption}>Les tiroirs à papiers</p>
             </div>
           </div>
 
@@ -171,4 +172,17 @@ const styles: Record<string, CSSProperties> = {
     marginTop: "10px",
     lineHeight: 1.4,
   },
+  zoomWrapper: {
+  width: "100%",
+  height: "340px",
+  overflow: "hidden",
+},
+
+imageZoomed: {
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  transform: "scale(1.25)", // ← ajuste entre 1.2 et 1.4
+  objectPosition: "center",
+},
 };
