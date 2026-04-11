@@ -863,14 +863,13 @@ container: {
     marginBottom: "40px",
   },
 
-  collagesMosaic: {
+ collagesMosaic: {
   display: "grid",
-  gridTemplateColumns: "minmax(0, 1fr) 460px",
-  columnGap: "40px",
+  gridTemplateColumns: "1.5fr 1fr",
+  gap: "40px",
   alignItems: "start",
   marginBottom: "56px",
 },
-
   collageBigBlock: {
     display: "flex",
     flexDirection: "column",
