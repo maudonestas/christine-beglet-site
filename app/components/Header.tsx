@@ -251,10 +251,12 @@ const styles: Record<string, CSSProperties> = {
   top: "100%",
   left: 0,
   backgroundColor: "#f2f2f2",
+  border: "1px solid #d8d8d8", // ← tu remets ça
   padding: "6px 0",
   zIndex: 200,
   width: "auto",
 },
+
 
   dropdownLink: {
     display: "block",
