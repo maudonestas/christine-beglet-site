@@ -138,7 +138,7 @@ export default function GrandsFormatsPage() {
 
   return (
     <main style={styles.main}>
-      <Header />
+ 
 
       <section style={styles.section}>
         <div style={styles.container}>
