@@ -744,10 +744,10 @@ const styles: Record<string, CSSProperties> = {
     padding: "80px 24px",
   },
 
- container: {
-  maxWidth: "1100px",
+container: {
+  maxWidth: "1200px",
   margin: "0 auto",
-  padding: "0 24px",
+  padding: "0 40px",
 },
 
   text: {
@@ -864,12 +864,12 @@ const styles: Record<string, CSSProperties> = {
   },
 
   collagesMosaic: {
-    display: "grid",
-    gridTemplateColumns: "1.5fr 1fr",
-    gap: "40px",
-    alignItems: "start",
-    marginBottom: "56px",
-  },
+  display: "grid",
+  gridTemplateColumns: "minmax(0, 1fr) 460px",
+  columnGap: "40px",
+  alignItems: "start",
+  marginBottom: "56px",
+},
 
   collageBigBlock: {
     display: "flex",
@@ -895,10 +895,11 @@ const styles: Record<string, CSSProperties> = {
   },
 
   collageRightColumn: {
-    display: "grid",
-    gridTemplateRows: "1fr 1fr",
-    gap: "28px",
-  },
+  display: "grid",
+  gridTemplateRows: "auto auto",
+  rowGap: "40px",
+  width: "460px",
+},
 
   collageSmallBlock: {
     display: "flex",
