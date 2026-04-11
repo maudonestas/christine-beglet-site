@@ -87,14 +87,15 @@ const styles: Record<string, CSSProperties> = {
     margin: "0 auto",
   },
 
- title: {
-  fontSize: "2rem",
-  marginTop: 0,
-  marginBottom: "12px",
-  fontWeight: 300,
-  letterSpacing: "0.12em",
-  fontFamily: '"Helvetica Neue", Arial, sans-serif',
-},
+  title: {
+    fontSize: "2rem",
+    marginTop: 0,
+    marginBottom: "16px",
+    fontWeight: 300,
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
 
 subtitle: {
   margin: "0 0 10px 0",
