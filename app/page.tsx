@@ -433,13 +433,13 @@ const styles: Record<string, CSSProperties> = {
   },
 
   workSectionTitle: {
-    margin: "0 0 18px 0",
-    fontSize: "0.95rem",
-    fontWeight: 400,
-    letterSpacing: "0.1em",
-    textTransform: "uppercase",
-    fontFamily: '"Helvetica Neue", Arial, sans-serif',
-  },
+  margin: "0 0 20px 0",
+  fontSize: "1.3rem",
+  fontWeight: 300,
+  letterSpacing: "0.08em",
+  textTransform: "uppercase",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+},
 
   atelierImg: {
     width: "auto",
