@@ -717,10 +717,12 @@ const styles: Record<string, CSSProperties> = {
   text: {
     fontSize: "1rem",
     lineHeight: 1.7,
-    maxWidth: "680px",
+    maxWidth: "800px",
     margin: 0,
     color: "#4f4b46",
     textAlign: "justify",
+    textJustify: "inter-word",
+    hyphens: "auto",
   },
 
   title: {
