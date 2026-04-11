@@ -747,7 +747,7 @@ const styles: Record<string, CSSProperties> = {
  container: {
   maxWidth: "1100px",
   margin: "0 auto",
-  padding: "0 24px",
+  padding: "0 40px",
 },
 
   text: {
@@ -897,7 +897,7 @@ const styles: Record<string, CSSProperties> = {
   collageRightColumn: {
     display: "grid",
     gridTemplateRows: "1fr 1fr",
-    gap: "28px",
+    gap: "40px",
   },
 
   collageSmallBlock: {
