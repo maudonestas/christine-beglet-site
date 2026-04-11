@@ -901,7 +901,7 @@ collageRightColumn: {
   display: "grid",
   gridTemplateRows: "1fr 1fr",
   gap: "28px",
-  transform: "translateX(40px)",
+  transform: "translateX(60px)",
 },
 
   collageSmallBlock: {
