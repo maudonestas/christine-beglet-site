@@ -865,8 +865,8 @@ container: {
 
 collagesMosaic: {
   display: "grid",
-  gridTemplateColumns: "390px 464px",
-  columnGap: "24px",
+  gridTemplateColumns: "420px 464px",
+  columnGap: "32px",
   alignItems: "start",
   justifyContent: "start",
   marginBottom: "56px",
