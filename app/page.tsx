@@ -366,20 +366,37 @@ export default function Home() {
                   <h3 style={styles.workSectionTitle}>Formats moyens</h3>
                 </a>
 
-                <button
-                  type="button"
-                  style={styles.imageButtonBlock}
-                  onClick={() => openGallery(formatsMoyens, 0)}
-                  aria-label="Ouvrir la galerie Formats moyens"
-                >
-                  <div style={styles.collageSmallImageWrap}>
-                    <img
-                      src="/images/mal-de-mer.jpg"
-                      alt="Formats moyens"
-                      style={styles.collageSmallImage}
-                    />
-                  </div>
-                </button>
+               <div style={styles.previewDoubleRow}>
+  <button
+    type="button"
+    style={styles.previewDoubleButton}
+    onClick={() => openGallery(formatsMoyens, 0)}
+    aria-label="Ouvrir Mal de mer"
+  >
+    <div style={styles.collageSmallImageWrap}>
+      <img
+        src="/images/mal-de-mer.jpg"
+        alt="Mal de mer"
+        style={styles.collageSmallImage}
+      />
+    </div>
+  </button>
+
+  <button
+    type="button"
+    style={styles.previewDoubleButton}
+    onClick={() => openGallery(formatsMoyens, 1)}
+    aria-label="Ouvrir Propagation instantanée"
+  >
+    <div style={styles.collageSmallImageWrap}>
+      <img
+        src="/images/propagation-instantanee.jpg"
+        alt="Propagation instantanée"
+        style={styles.collageSmallImage}
+      />
+    </div>
+  </button>
+</div>
 
                 <div style={styles.buttonRowLeft}>
                   <a href="/oeuvres/formats-moyens" style={styles.button}>
@@ -393,20 +410,37 @@ export default function Home() {
                   <h3 style={styles.workSectionTitle}>Petits formats</h3>
                 </a>
 
-                <button
-                  type="button"
-                  style={styles.imageButtonBlock}
-                  onClick={() => openGallery(petitsFormats, 0)}
-                  aria-label="Ouvrir la galerie Petits formats"
-                >
-                  <div style={styles.collageSmallImageWrap}>
-                    <img
-                      src="/images/20x20-1.jpg"
-                      alt="Petits formats"
-                      style={styles.collageSmallImage}
-                    />
-                  </div>
-                </button>
+<div style={styles.previewDoubleRow}>
+  <button
+    type="button"
+    style={styles.previewDoubleButton}
+    onClick={() => openGallery(petitsFormats, 0)}
+    aria-label="Ouvrir 20x20 1"
+  >
+    <div style={styles.collageSmallImageWrap}>
+      <img
+        src="/images/20x20-1.jpg"
+        alt="20x20 1"
+        style={styles.collageSmallImage}
+      />
+    </div>
+  </button>
+
+  <button
+    type="button"
+    style={styles.previewDoubleButton}
+    onClick={() => openGallery(petitsFormats, 10)}
+    aria-label="Ouvrir Immoral"
+  >
+    <div style={styles.collageSmallImageWrap}>
+      <img
+        src="/images/35x35-immoral.jpg"
+        alt="Immoral"
+        style={styles.collageSmallImage}
+      />
+    </div>
+  </button>
+</div>
 
                 <div style={styles.buttonRowLeft}>
                   <a href="/oeuvres/petits-formats" style={styles.button}>
@@ -1085,5 +1119,18 @@ panoCloseButton: {
   cursor: "pointer",
   lineHeight: 1,
   zIndex: 10000,
+},
+  previewDoubleRow: {
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr",
+  gap: "24px",
+},
+
+previewDoubleButton: {
+  border: "none",
+  background: "transparent",
+  padding: 0,
+  cursor: "zoom-in",
+  textAlign: "left",
 },
 };
