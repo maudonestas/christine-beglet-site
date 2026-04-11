@@ -865,26 +865,29 @@ container: {
 
 collagesMosaic: {
   display: "grid",
-  gridTemplateColumns: "1fr 420px",
-  gap: "24px",
+  gridTemplateColumns: "390px 464px",
+  columnGap: "24px",
   alignItems: "start",
+  justifyContent: "start",
   marginBottom: "56px",
 },
-  
-  collageBigBlock: {
-    display: "flex",
-    flexDirection: "column",
-  },
 
-  collageBigImageWrap: {
-    width: "100%",
-    height: "555px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-start",
-    overflow: "hidden",
-    backgroundColor: "transparent",
-  },
+collageBigBlock: {
+  display: "flex",
+  flexDirection: "column",
+  width: "390px",
+},
+
+collageBigImageWrap: {
+  width: "390px",
+  height: "555px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  overflow: "hidden",
+  backgroundColor: "transparent",
+},
+
 
   collageBigImage: {
     width: "100%",
@@ -894,12 +897,11 @@ collagesMosaic: {
     display: "block",
   },
 
-  collageRightColumn: {
+collageRightColumn: {
   display: "grid",
   gridTemplateRows: "auto auto",
   rowGap: "40px",
-  width: "460px",
-},
+  width: "464px",
 
   collageSmallBlock: {
     display: "flex",
