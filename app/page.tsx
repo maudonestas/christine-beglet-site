@@ -799,11 +799,11 @@ const styles: Record<string, CSSProperties> = {
  bioText: {
   flex: 1,
   minWidth: "0",
-  maxWidth: "860px",
+  maxWidth: "560px",
 },
 
   bioImage: {
-    width: "260px",
+    width: "360px",
     height: "auto",
     objectFit: "cover",
     display: "block",
