@@ -183,7 +183,7 @@ imageZoomed: {
   width: "100%",
   height: "100%",
   objectFit: "cover",
-  transform: "scale(1.3)", // ← ajuste entre 1.2 et 1.4
+  transform: "scale(1.4)", // ← ajuste entre 1.2 et 1.4
   objectPosition: "center",
 },
 };
