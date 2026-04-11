@@ -717,7 +717,7 @@ const styles: Record<string, CSSProperties> = {
   text: {
     fontSize: "1rem",
     lineHeight: 1.7,
-    maxWidth: "800px",
+    maxWidth: "820px",
     margin: 0,
     color: "#4f4b46",
     textAlign: "justify",
