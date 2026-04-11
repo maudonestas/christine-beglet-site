@@ -789,12 +789,10 @@ const styles: Record<string, CSSProperties> = {
   },
 
   bioBlock: {
-    display: "flex",
-    gap: "20px",
-    alignItems: "flex-start",
-    flexWrap: "wrap",
-    justifyContent: "center",
-  },
+  display: "flex",
+  gap: "24px", // ← même valeur que padding container
+  alignItems: "stretch", // IMPORTANT pour hauteur égale
+},
 
  bioText: {
   flex: 1,
@@ -803,19 +801,17 @@ const styles: Record<string, CSSProperties> = {
 },
 
   bioImage: {
-    width: "360px",
-    height: "auto",
-    objectFit: "cover",
-    display: "block",
-  },
-
- bioImageWrapper: {
-  flex: "0 0 auto",
-  display: "flex",
-  justifyContent: "center",
-  paddingLeft: "40px",
+  width: "100%",
+  height: "100%", // ← clé
+  objectFit: "cover",
+  display: "block",
 },
 
+ bioImageWrapper: {
+  flex: 1,
+  display: "flex",
+},
+  
   worksGrid: {
     display: "grid",
     gridTemplateColumns: "repeat(3, 1fr)",
