@@ -717,7 +717,6 @@ const styles: Record<string, CSSProperties> = {
   text: {
     fontSize: "1rem",
     lineHeight: 1.7,
-    maxWidth: "820px",
     margin: 0,
     color: "#4f4b46",
     textAlign: "justify",
@@ -798,24 +797,25 @@ const styles: Record<string, CSSProperties> = {
     justifyContent: "center",
   },
 
-  bioText: {
-    flex: 1,
-    minWidth: "280px",
-  },
+ bioText: {
+  flex: 1,
+  minWidth: "0",
+  maxWidth: "860px",
+}
 
   bioImage: {
-    width: "300px",
+    width: "260px",
     height: "auto",
     objectFit: "cover",
     display: "block",
   },
 
-  bioImageWrapper: {
-    flex: 1,
-    display: "flex",
-    justifyContent: "center",
-    paddingLeft: "40px",
-  },
+ bioImageWrapper: {
+  flex: "0 0 auto",
+  display: "flex",
+  justifyContent: "center",
+  paddingLeft: "32px",
+},
 
   worksGrid: {
     display: "grid",
