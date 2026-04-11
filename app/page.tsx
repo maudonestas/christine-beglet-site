@@ -338,7 +338,6 @@ export default function Home() {
               <a href="/oeuvres/grands-formats" style={styles.linkBlock}>
                 <h3 style={styles.workSectionTitle}>Grands formats</h3>
               </a>
-
 <button
   type="button"
   style={styles.imageButtonBlock}
