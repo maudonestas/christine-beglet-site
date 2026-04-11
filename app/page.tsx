@@ -489,7 +489,7 @@ export default function Home() {
     onClick={() => setIsPanoZoomed(true)}
     aria-label="Ouvrir le panoramique"
   >
-    <div style={styles.previewSingleFrame}>
+   <div style={{ width: "100%" }}>
       <img
         src="/images/pano.jpg"
         alt="Panoramique"
@@ -966,14 +966,13 @@ previewSingleImg: {
   objectPosition: "left center",
   display: "block",
 },
-  previewPanoImg: {
-    width: "1150px",
-    height: "275px",
-    objectFit: "cover",
-    objectPosition: "center",
-    display: "block",
-  },
-
+previewPanoImg: {
+  width: "100%",
+  height: "auto",
+  objectFit: "contain",
+  display: "block",
+},
+  
   linkBlock: {
     textDecoration: "none",
     color: "inherit",
