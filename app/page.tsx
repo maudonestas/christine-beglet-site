@@ -796,7 +796,7 @@ container: {
 
   atelierImg: {
     width: "auto",
-    height: "340px",
+    height: "420px",
     display: "block",
   },
 
