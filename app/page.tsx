@@ -171,17 +171,12 @@ export default function Home() {
     },
   ];
 
-  const panoramiqueGallery: HomeArtwork[] = [
-    {
-      src: "/images/pano.jpg",
-      title: "Panoramique",
-      size: "450x100cm",
-    },
-  ];
 
   const [activeImages, setActiveImages] = useState<HomeArtwork[] | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
-
+  
+  const [isPanoZoomed, setIsPanoZoomed] = useState(false);
+  
   const openGallery = (images: HomeArtwork[], index: number) => {
     setActiveImages(images);
     setCurrentIndex(index);
@@ -344,20 +339,20 @@ export default function Home() {
                 <h3 style={styles.workSectionTitle}>Grands formats</h3>
               </a>
 
-              <button
-                type="button"
-                style={styles.imageButtonBlock}
-                onClick={() => openGallery(grandsFormats, 0)}
-                aria-label="Ouvrir la galerie Grands formats"
-              >
-                <div style={styles.collageBigImageWrap}>
-                  <img
-                    src="/images/70-1.jpg"
-                    alt="Grands formats"
-                    style={styles.collageBigImage}
-                  />
-                </div>
-              </button>
+<button
+  type="button"
+  style={styles.imageButtonBlock}
+  onClick={() => setIsPanoZoomed(true)}
+  aria-label="Ouvrir le panoramique"
+>
+  <div style={styles.previewSingleFrame}>
+    <img
+      src="/images/pano.jpg"
+      alt="Panoramique"
+      style={styles.previewPanoImg}
+    />
+  </div>
+</button>
 
               <div style={styles.buttonRowLeft}>
                 <a href="/oeuvres/grands-formats" style={styles.button}>
@@ -503,7 +498,29 @@ export default function Home() {
           </div>
         </div>
       </section>
+{isPanoZoomed && (
+  <div style={styles.panoLightbox} onClick={() => setIsPanoZoomed(false)}>
+    <button
+      type="button"
+      style={styles.panoCloseButton}
+      onClick={() => setIsPanoZoomed(false)}
+      aria-label="Fermer l’image"
+    >
+      ×
+    </button>
 
+    <div
+      style={styles.panoLightboxScroll}
+      onClick={(e) => e.stopPropagation()}
+    >
+      <img
+        src="/images/pano.jpg"
+        alt="Panoramique agrandi"
+        style={styles.panoLightboxImg}
+      />
+    </div>
+  </div>
+)}
       {activeImages && current && currentIndex !== null && (
         <div style={styles.overlay} onClick={closeGallery}>
           <div style={styles.lightbox} onClick={(e) => e.stopPropagation()}>
@@ -1033,4 +1050,44 @@ const styles: Record<string, CSSProperties> = {
     objectFit: "contain",
     display: "block",
   },
+  panoLightbox: {
+  position: "fixed",
+  inset: 0,
+  backgroundColor: "rgba(0, 0, 0, 0.95)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  paddingTop: "40px",
+  paddingBottom: "40px",
+  paddingLeft: "0",
+  paddingRight: "0",
+  zIndex: 9999,
+},
+
+panoLightboxScroll: {
+  maxWidth: "100%",
+  maxHeight: "100%",
+  overflowX: "auto",
+  overflowY: "hidden",
+},
+
+panoLightboxImg: {
+  display: "block",
+  width: "3200px",
+  maxWidth: "none",
+  height: "auto",
+},
+
+panoCloseButton: {
+  position: "absolute",
+  top: "20px",
+  right: "28px",
+  background: "transparent",
+  border: "none",
+  color: "#fff",
+  fontSize: "2.5rem",
+  cursor: "pointer",
+  lineHeight: 1,
+  zIndex: 10000,
+},
 };
