@@ -620,4 +620,9 @@ singleCardImgUnified: {
     objectPosition: "center",
     display: "block",
   },
+  linkBlock: {
+  textDecoration: "none",
+  color: "inherit",
+  display: "block",
+},
 };
