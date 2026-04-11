@@ -1,10 +1,208 @@
 "use client";
+
 import Header from "./components/Header";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
+
+type HomeArtwork = {
+  src: string;
+  title: string;
+  size: string;
+};
 
 export default function Home() {
   const heroScrollRef = useRef<HTMLDivElement | null>(null);
+
+  const grandsFormats: HomeArtwork[] = [
+    {
+      src: "/images/murs-d-histoires.jpg",
+      title: "Murs d’histoires",
+      size: "70x100cm",
+    },
+    {
+      src: "/images/deambulation-betonniere.jpg",
+      title: "Déambulation bétonnière",
+      size: "70x100cm",
+    },
+    {
+      src: "/images/pollinisation-excessive.jpg",
+      title: "Pollinisation excessive",
+      size: "70x100cm",
+    },
+    {
+      src: "/images/entre-les-murs.jpg",
+      title: "Entre les murs",
+      size: "70x100cm",
+    },
+    {
+      src: "/images/puzzle-neuronal.jpg",
+      title: "Puzzle neuronal",
+      size: "70x100cm",
+    },
+    {
+      src: "/images/les-murs-ont-des-oreilles.jpg",
+      title: "Les murs ont des oreilles",
+      size: "70x100cm",
+    },
+    {
+      src: "/images/azimut.jpg",
+      title: "Azimut",
+      size: "90x90cm",
+    },
+    {
+      src: "/images/favelas.jpg",
+      title: "Favelas",
+      size: "90x90cm",
+    },
+    {
+      src: "/images/nuit-d-automne.jpg",
+      title: "Nuit d’automne",
+      size: "90x90cm",
+    },
+    {
+      src: "/images/recrudescence.jpg",
+      title: "Recrudescence",
+      size: "90x90cm",
+    },
+    {
+      src: "/images/la-bas.jpg",
+      title: "Là-bas",
+      size: "80x80cm",
+    },
+    {
+      src: "/images/casse-tete.jpg",
+      title: "Casse-tête",
+      size: "80x80cm",
+    },
+    {
+      src: "/images/emmuree.jpg",
+      title: "Emmurée",
+      size: "80x80cm",
+    },
+    {
+      src: "/images/brouillon-de-culture.jpg",
+      title: "Brouillon de culture",
+      size: "80x80cm",
+    },
+  ];
+
+  const formatsMoyens: HomeArtwork[] = [
+    {
+      src: "/images/mal-de-mer.jpg",
+      title: "Mal de mer",
+      size: "60x60cm",
+    },
+    {
+      src: "/images/propagation-instantanee.jpg",
+      title: "Propagation instantanée",
+      size: "60x60cm",
+    },
+    {
+      src: "/images/collateral.jpg",
+      title: "Collatéral",
+      size: "50x50cm",
+    },
+    {
+      src: "/images/colle-erre.jpg",
+      title: "Colle Erre",
+      size: "50x50cm",
+    },
+    {
+      src: "/images/colle-za.jpg",
+      title: "Colle Za",
+      size: "50x50cm",
+    },
+    {
+      src: "/images/il-fait-nuit.jpg",
+      title: "Il fait nuit",
+      size: "50x50cm",
+    },
+    {
+      src: "/images/touacou-sur-adour.jpg",
+      title: "Touacou-sur-Adour",
+      size: "50x50cm",
+    },
+    {
+      src: "/images/toutalegou-sur-seine.jpg",
+      title: "Toutalégou-sur-Seine",
+      size: "50x50cm",
+    },
+    {
+      src: "/images/toutefoi-sur-ariege.jpg",
+      title: "Toutefoi-sur-Ariège",
+      size: "50x50cm",
+    },
+    {
+      src: "/images/toutotour-sur-oise.jpg",
+      title: "Toutotour-sur-Oise",
+      size: "50x50cm",
+    },
+  ];
+
+  const petitsFormats: HomeArtwork[] = [
+    { src: "/images/20x20-1.jpg", title: "20x20 1", size: "20x20cm" },
+    { src: "/images/20x20-2.jpg", title: "20x20 2", size: "20x20cm" },
+    { src: "/images/20x20-3.jpg", title: "20x20 3", size: "20x20cm" },
+    { src: "/images/20x20-4.jpg", title: "20x20 4", size: "20x20cm" },
+    { src: "/images/20x20-5.jpg", title: "20x20 5", size: "20x20cm" },
+    { src: "/images/20x20-6.jpg", title: "20x20 6", size: "20x20cm" },
+    { src: "/images/20x20-7.jpg", title: "20x20 7", size: "20x20cm" },
+    { src: "/images/20x20-8.jpg", title: "20x20 8", size: "20x20cm" },
+    { src: "/images/20x20-9.jpg", title: "20x20 9", size: "20x20cm" },
+    { src: "/images/20x20-10.jpg", title: "20x20 10", size: "20x20cm" },
+    { src: "/images/35x35-immoral.jpg", title: "Immoral", size: "35x35cm" },
+    { src: "/images/35x35-immobile.jpg", title: "Immobile", size: "35x35cm" },
+    { src: "/images/35x35-archiduc.jpg", title: "Archiduc", size: "35x35cm" },
+    { src: "/images/35x35-a-vendre-70m2.jpg", title: "À vendre 70m2", size: "35x35cm" },
+    { src: "/images/35X35-5.jpg", title: "35x35 5", size: "35x35cm" },
+    { src: "/images/35X35-6.jpg", title: "35x35 6", size: "35x35cm" },
+    { src: "/images/35X35-7.jpg", title: "35x35 7", size: "35x35cm" },
+    { src: "/images/35X35-8.jpg", title: "35x35 8", size: "35x35cm" },
+    { src: "/images/35X35-10.jpg", title: "35x35 10", size: "35x35cm" },
+    { src: "/images/35X35-11.jpg", title: "35x35 11", size: "35x35cm" },
+    { src: "/images/35X35-12.jpg", title: "35x35 12", size: "35x35cm" },
+  ];
+
+  const triptyqueGallery: HomeArtwork[] = [
+    {
+      src: "/images/triptyque.jpg",
+      title: "Triptyque",
+      size: "195x92cm",
+    },
+  ];
+
+  const panoramiqueGallery: HomeArtwork[] = [
+    {
+      src: "/images/pano.jpg",
+      title: "Panoramique",
+      size: "450x100cm",
+    },
+  ];
+
+  const [activeImages, setActiveImages] = useState<HomeArtwork[] | null>(null);
+  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+
+  const openGallery = (images: HomeArtwork[], index: number) => {
+    setActiveImages(images);
+    setCurrentIndex(index);
+  };
+
+  const closeGallery = () => {
+    setActiveImages(null);
+    setCurrentIndex(null);
+  };
+
+  const prev = () => {
+    if (!activeImages || currentIndex === null) return;
+    setCurrentIndex(
+      (currentIndex - 1 + activeImages.length) % activeImages.length
+    );
+  };
+
+  const next = () => {
+    if (!activeImages || currentIndex === null) return;
+    setCurrentIndex((currentIndex + 1) % activeImages.length);
+  };
 
   useEffect(() => {
     const el = heroScrollRef.current;
@@ -28,9 +226,7 @@ export default function Home() {
       if (stoppedByUser) return;
 
       const progress = Math.min((time - start) / duration, 1);
-      const eased = progress;
-
-      el.scrollLeft = maxScroll * eased;
+      el.scrollLeft = maxScroll * progress;
 
       if (progress < 1) {
         frameId = requestAnimationFrame(animate);
@@ -57,44 +253,33 @@ export default function Home() {
     };
   }, []);
 
-  const oeuvreCategories = [
-    {
-      title: "Grands formats",
-      href: "/oeuvres/grands-formats",
-      type: "singleCard",
-      image: "/images/puzzle-neuronal.jpg",
-    },
-    {
-      title: "Formats moyens",
-      href: "/oeuvres/formats-moyens",
-      type: "singleCard",
-      image: "/images/toutotour-sur-oise.jpgg",
-    },
-    {
-      title: "Petits formats",
-      href: "/oeuvres/petits-formats",
-      type: "singleCard",
-      image: "/images/20x20-1.jpg",
-    },
-    {
-      title: "Triptyque",
-      href: "/oeuvres/triptyque",
-      type: "single",
-      image: "/images/triptyque.jpg",
-    },
-    {
-      title: "Panoramique",
-      href: "/oeuvres/panoramique",
-      type: "single",
-      image: "/images/pano.jpg",
-    },
-  ];
+  useEffect(() => {
+    if (currentIndex === null) return;
+
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeGallery();
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") next();
+    };
+
+    document.addEventListener("keydown", handleKey);
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", handleKey);
+      document.body.style.overflow = "auto";
+    };
+  }, [currentIndex, activeImages]);
+
+  const current =
+    activeImages && currentIndex !== null
+      ? activeImages[currentIndex]
+      : null;
 
   return (
     <main style={styles.main}>
       <Header />
 
-      {/* HERO PANO */}
       <section style={styles.hero}>
         <div style={styles.heroWrapper}>
           <div ref={heroScrollRef} style={styles.heroScroll}>
@@ -107,7 +292,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TEXTE */}
       <section style={styles.sectionGray}>
         <div style={styles.container}>
           <div style={styles.bioBlock}>
@@ -150,25 +334,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ŒUVRES */}
       <section style={styles.sectionWhite}>
         <div style={styles.container}>
           <h2 style={styles.title}>Collages</h2>
 
           <div style={styles.collagesMosaic}>
-            {/* GRANDS FORMATS */}
             <div style={styles.collageBigBlock}>
-             <a href="/oeuvres/grands-formats" style={styles.linkBlock}>
-  <h3 style={styles.workSectionTitle}>Grands formats</h3>
+              <a href="/oeuvres/grands-formats" style={styles.linkBlock}>
+                <h3 style={styles.workSectionTitle}>Grands formats</h3>
+              </a>
 
-  <div style={styles.collageBigImageWrap}>
-    <img
-      src="/images/70-1.jpg"
-      alt="Grands formats"
-      style={styles.collageBigImage}
-    />
-  </div>
-</a>
+              <button
+                type="button"
+                style={styles.imageButtonBlock}
+                onClick={() => openGallery(grandsFormats, 0)}
+                aria-label="Ouvrir la galerie Grands formats"
+              >
+                <div style={styles.collageBigImageWrap}>
+                  <img
+                    src="/images/70-1.jpg"
+                    alt="Grands formats"
+                    style={styles.collageBigImage}
+                  />
+                </div>
+              </button>
+
               <div style={styles.buttonRowLeft}>
                 <a href="/oeuvres/grands-formats" style={styles.button}>
                   Voir plus
@@ -176,19 +366,26 @@ export default function Home() {
               </div>
             </div>
 
-            {/* COLONNE DROITE */}
             <div style={styles.collageRightColumn}>
-              {/* FORMATS MOYENS */}
               <div style={styles.collageSmallBlock}>
-                <h3 style={styles.workSectionTitle}>Formats moyens</h3>
+                <a href="/oeuvres/formats-moyens" style={styles.linkBlock}>
+                  <h3 style={styles.workSectionTitle}>Formats moyens</h3>
+                </a>
 
-                <div style={styles.collageSmallImageWrap}>
-                  <img
-                    src="/images/mal-de-mer.jpg"
-                    alt="Formats moyens"
-                    style={styles.collageSmallImage}
-                  />
-                </div>
+                <button
+                  type="button"
+                  style={styles.imageButtonBlock}
+                  onClick={() => openGallery(formatsMoyens, 0)}
+                  aria-label="Ouvrir la galerie Formats moyens"
+                >
+                  <div style={styles.collageSmallImageWrap}>
+                    <img
+                      src="/images/mal-de-mer.jpg"
+                      alt="Formats moyens"
+                      style={styles.collageSmallImage}
+                    />
+                  </div>
+                </button>
 
                 <div style={styles.buttonRowLeft}>
                   <a href="/oeuvres/formats-moyens" style={styles.button}>
@@ -197,17 +394,25 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* PETITS FORMATS */}
               <div style={styles.collageSmallBlock}>
-                <h3 style={styles.workSectionTitle}>Petits formats</h3>
+                <a href="/oeuvres/petits-formats" style={styles.linkBlock}>
+                  <h3 style={styles.workSectionTitle}>Petits formats</h3>
+                </a>
 
-                <div style={styles.collageSmallImageWrap}>
-                  <img
-                    src="/images/20x20-1.jpg"
-                    alt="Petits formats"
-                    style={styles.collageSmallImage}
-                  />
-                </div>
+                <button
+                  type="button"
+                  style={styles.imageButtonBlock}
+                  onClick={() => openGallery(petitsFormats, 0)}
+                  aria-label="Ouvrir la galerie Petits formats"
+                >
+                  <div style={styles.collageSmallImageWrap}>
+                    <img
+                      src="/images/20x20-1.jpg"
+                      alt="Petits formats"
+                      style={styles.collageSmallImage}
+                    />
+                  </div>
+                </button>
 
                 <div style={styles.buttonRowLeft}>
                   <a href="/oeuvres/petits-formats" style={styles.button}>
@@ -218,16 +423,26 @@ export default function Home() {
             </div>
           </div>
 
-          {/* TRIPTYQUE */}
           <div style={styles.workCardFull}>
-            <h3 style={styles.workSectionTitle}>TRIPTYQUE (195x92cm)</h3>
-            <div style={styles.previewSingleFrame}>
-              <img
-                src="/images/triptyque.jpg"
-                alt="Triptyque"
-                style={styles.previewSingleImg}
-              />
-            </div>
+            <a href="/oeuvres/triptyque" style={styles.linkBlock}>
+              <h3 style={styles.workSectionTitle}>TRIPTYQUE (195x92cm)</h3>
+            </a>
+
+            <button
+              type="button"
+              style={styles.imageButtonBlock}
+              onClick={() => openGallery(triptyqueGallery, 0)}
+              aria-label="Ouvrir le triptyque"
+            >
+              <div style={styles.previewSingleFrame}>
+                <img
+                  src="/images/triptyque.jpg"
+                  alt="Triptyque"
+                  style={styles.previewSingleImg}
+                />
+              </div>
+            </button>
+
             <div style={styles.buttonRowLeft}>
               <a href="/oeuvres/triptyque" style={styles.button}>
                 Voir plus
@@ -235,16 +450,26 @@ export default function Home() {
             </div>
           </div>
 
-          {/* PANORAMIQUE */}
           <div style={styles.workCardFull}>
-            <h3 style={styles.workSectionTitle}>PANORAMIQUE (450x100cm)</h3>
-            <div style={styles.previewSingleFrame}>
-              <img
-                src="/images/pano.jpg"
-                alt="Panoramique"
-                style={styles.previewPanoImg}
-              />
-            </div>
+            <a href="/oeuvres/panoramique" style={styles.linkBlock}>
+              <h3 style={styles.workSectionTitle}>PANORAMIQUE (450x100cm)</h3>
+            </a>
+
+            <button
+              type="button"
+              style={styles.imageButtonBlock}
+              onClick={() => openGallery(panoramiqueGallery, 0)}
+              aria-label="Ouvrir le panoramique"
+            >
+              <div style={styles.previewSingleFrame}>
+                <img
+                  src="/images/pano.jpg"
+                  alt="Panoramique"
+                  style={styles.previewPanoImg}
+                />
+              </div>
+            </button>
+
             <div style={styles.buttonRowLeft}>
               <a href="/oeuvres/panoramique" style={styles.button}>
                 Voir plus
@@ -253,9 +478,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-  
 
-      {/* ATELIER */}
       <section style={styles.sectionGray}>
         <div style={styles.container}>
           <h2 style={styles.title}>L’Atelier</h2>
@@ -280,6 +503,74 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {activeImages && current && currentIndex !== null && (
+        <div style={styles.overlay} onClick={closeGallery}>
+          <div style={styles.lightbox} onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              style={styles.close}
+              onClick={closeGallery}
+              aria-label="Fermer"
+            >
+              ×
+            </button>
+
+            {activeImages.length > 1 && (
+              <button
+                type="button"
+                style={{ ...styles.nav, left: "20px" }}
+                onClick={prev}
+                aria-label="Image précédente"
+              >
+                ‹
+              </button>
+            )}
+
+            <div style={styles.mainImageWrapper}>
+              <img
+                src={current.src}
+                alt={current.title}
+                style={styles.lightboxImage}
+              />
+              <p style={styles.lightboxCaption}>
+                {current.title}
+                <span style={styles.lightboxSize}> — {current.size}</span>
+              </p>
+            </div>
+
+            {activeImages.length > 1 && (
+              <button
+                type="button"
+                style={{ ...styles.nav, right: "20px" }}
+                onClick={next}
+                aria-label="Image suivante"
+              >
+                ›
+              </button>
+            )}
+
+            {activeImages.length > 1 && (
+              <div style={styles.thumbs}>
+                {activeImages.map((img, i) => (
+                  <button
+                    key={img.src}
+                    type="button"
+                    onClick={() => setCurrentIndex(i)}
+                    style={{
+                      ...styles.thumbBtn,
+                      ...(i === currentIndex ? styles.active : {}),
+                    }}
+                    aria-label={`Voir ${img.title}`}
+                  >
+                    <img src={img.src} alt={img.title} style={styles.thumbImg} />
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </main>
   );
 }
@@ -331,10 +622,20 @@ const styles: Record<string, CSSProperties> = {
   },
 
   nav: {
+    position: "absolute",
+    top: "45%",
+    width: "54px",
+    height: "54px",
+    borderRadius: "50%",
+    background: "rgba(255,255,255,0.08)",
+    border: "1px solid rgba(255,255,255,0.6)",
+    color: "#fff",
+    fontSize: "2.2rem",
+    cursor: "pointer",
     display: "flex",
-    gap: "22px",
-    flexWrap: "wrap",
     alignItems: "center",
+    justifyContent: "center",
+    transform: "translateY(-50%)",
   },
 
   navLink: {
@@ -434,13 +735,13 @@ const styles: Record<string, CSSProperties> = {
   },
 
   workSectionTitle: {
-  margin: "0 0 20px 0",
-  fontSize: "1.3rem",
-  fontWeight: 300,
-  letterSpacing: "0.08em",
-  textTransform: "uppercase",
-  fontFamily: '"Helvetica Neue", Arial, sans-serif',
-},
+    margin: "0 0 20px 0",
+    fontSize: "1.3rem",
+    fontWeight: 300,
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
 
   atelierImg: {
     width: "auto",
@@ -522,7 +823,7 @@ const styles: Record<string, CSSProperties> = {
     alignItems: "start",
     marginBottom: "56px",
   },
-  
+
   collageBigBlock: {
     display: "flex",
     flexDirection: "column",
@@ -574,6 +875,7 @@ const styles: Record<string, CSSProperties> = {
     objectPosition: "left center",
     display: "block",
   },
+
   singleCardBlock: {
     display: "flex",
     flexDirection: "column",
@@ -582,20 +884,20 @@ const styles: Record<string, CSSProperties> = {
   },
 
   singleCardFrameUnified: {
-  width: "100%",
-  height: "320px", // ← même hauteur pour les 3
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  overflow: "hidden",
-},
+    width: "100%",
+    height: "320px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    overflow: "hidden",
+  },
 
-singleCardImgUnified: {
-  maxWidth: "100%",
-  maxHeight: "100%",
-  objectFit: "contain",
-  display: "block",
-},
+  singleCardImgUnified: {
+    maxWidth: "100%",
+    maxHeight: "100%",
+    objectFit: "contain",
+    display: "block",
+  },
 
   previewSingleFrame: {
     width: "100%",
@@ -620,9 +922,115 @@ singleCardImgUnified: {
     objectPosition: "center",
     display: "block",
   },
+
   linkBlock: {
-  textDecoration: "none",
-  color: "inherit",
-  display: "block",
-},
+    textDecoration: "none",
+    color: "inherit",
+    display: "block",
+  },
+
+  imageButtonBlock: {
+    border: "none",
+    background: "transparent",
+    padding: 0,
+    cursor: "zoom-in",
+    textAlign: "left",
+  },
+
+  overlay: {
+    position: "fixed",
+    inset: 0,
+    background: "rgba(0,0,0,0.9)",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 2000,
+  },
+
+  lightbox: {
+    position: "relative",
+    width: "100%",
+    maxWidth: "1400px",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+
+  close: {
+    position: "absolute",
+    top: "10px",
+    right: "10px",
+    fontSize: "2.2rem",
+    background: "none",
+    border: "none",
+    color: "#fff",
+    cursor: "pointer",
+    zIndex: 3,
+  },
+
+  mainImageWrapper: {
+    flex: 1,
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "40px 90px 0 90px",
+    boxSizing: "border-box",
+  },
+
+  lightboxImage: {
+    maxWidth: "100%",
+    maxHeight: "78vh",
+    objectFit: "contain",
+    display: "block",
+  },
+
+  lightboxCaption: {
+    marginTop: "16px",
+    marginBottom: "20px",
+    color: "#d6d2cd",
+    fontSize: "0.95rem",
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    opacity: 0.8,
+  },
+
+  lightboxSize: {
+    color: "#bdb8b2",
+  },
+
+  thumbs: {
+    display: "flex",
+    gap: "10px",
+    overflowX: "auto",
+    paddingBottom: "24px",
+    maxWidth: "100%",
+  },
+
+  thumbBtn: {
+    border: "1px solid rgba(255,255,255,0.3)",
+    padding: "2px",
+    opacity: 0.6,
+    background: "none",
+    cursor: "pointer",
+    flex: "0 0 auto",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  active: {
+    opacity: 1,
+    border: "1px solid #fff",
+  },
+
+  thumbImg: {
+    height: "50px",
+    width: "auto",
+    objectFit: "contain",
+    display: "block",
+  },
 };
