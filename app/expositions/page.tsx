@@ -174,7 +174,7 @@ export default function ExpositionsPage() {
 
   return (
     <main style={styles.main}>
-      <Header />
+
 
       <section style={styles.section}>
         <div style={styles.container}>
