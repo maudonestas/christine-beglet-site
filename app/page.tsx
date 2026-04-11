@@ -341,14 +341,14 @@ export default function Home() {
 <button
   type="button"
   style={styles.imageButtonBlock}
-  onClick={() => setIsPanoZoomed(true)}
-  aria-label="Ouvrir le panoramique"
+  onClick={() => openGallery(grandsFormats, 0)}
+  aria-label="Ouvrir la galerie Grands formats"
 >
-  <div style={styles.previewSingleFrame}>
+  <div style={styles.collageBigImageWrap}>
     <img
-      src="/images/pano.jpg"
-      alt="Panoramique"
-      style={styles.previewPanoImg}
+      src="/images/murs-d-histoires.jpg"
+      alt="Grands formats"
+      style={styles.collageBigImage}
     />
   </div>
 </button>
@@ -463,14 +463,14 @@ export default function Home() {
       />
     </div>
   </button>
-
   <div style={styles.buttonRowLeft}>
     <a href="/oeuvres/panoramique" style={styles.button}>
       Voir plus
     </a>
   </div>
-        </div>
-      </section>
+</div>
+</div>
+</section>
 
       <section style={styles.sectionGray}>
         <div style={styles.container}>
