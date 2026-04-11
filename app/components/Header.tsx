@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import { useState } from "react";
 import type { CSSProperties } from "react";
 import Link from "next/link";
 export default function Header() {
