@@ -187,7 +187,6 @@ header: {
   borderBottom: "1px solid #d8d8d8",
   zIndex: 1000,
   transition: "transform 0.3s ease",
-    overflow: "hidden",
 },
 
 headerContent: {
