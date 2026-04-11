@@ -11,26 +11,27 @@ export default function AtelierPage() {
           <h1 style={styles.title}>L’Atelier</h1>
 
           {/* Bloc 1 */}
-          <div style={styles.twoColGrid}>
-            <div>
-              <img
-                src="/images/les-magazines.jpg"
-                alt="Les magazines"
-                style={styles.imageMedium}
-              />
-              <p style={styles.caption}>Les magazines</p>
-            </div>
+         <div style={styles.twoColGrid}>
+  <div>
+    <img
+      src="/images/les-magazines.jpg"
+      alt="Les magazines"
+      style={styles.imageMedium}
+    />
+    <p style={styles.caption}>Les magazines</p>
+  </div>
 
-           <div style={styles.zoomWrapper}>
-  <img
-    src="/images/tiroirs-a-papiers.jpg"
-    alt="Les tiroirs à papiers"
-    style={styles.imageZoomed}
-  />
+  <div>
+    <div style={styles.zoomWrapper}>
+      <img
+        src="/images/tiroirs-a-papiers.jpg"
+        alt="Les tiroirs à papiers"
+        style={styles.imageZoomed}
+      />
+    </div>
+    <p style={styles.caption}>Les tiroirs à papiers</p>
+  </div>
 </div>
-<p style={styles.caption}>Les tiroirs à papiers</p>
-            </div>
-          </div>
 
           {/* Bloc 2 */}
           <div style={styles.singleBlock}>
