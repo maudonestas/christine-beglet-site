@@ -49,7 +49,7 @@ export default function OeuvresPage() {
 
   return (
     <main style={styles.main}>
-      <Header />
+
 
       <section style={styles.sectionWhite}>
         <div style={styles.container}>

@@ -118,7 +118,7 @@ export default function FormatsMoyensPage() {
 
   return (
     <main style={styles.main}>
-      <Header />
+
 
       <section style={styles.section}>
         <div style={styles.container}>

@@ -86,7 +86,6 @@ export default function PetitsFormatsPage() {
 
   return (
     <main style={styles.main}>
-      <Header />
 
       <section style={styles.section}>
         <div style={styles.container}>

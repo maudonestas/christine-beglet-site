@@ -1,14 +1,40 @@
 "use client";
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { CSSProperties } from "react";
 import Link from "next/link";
 export default function Header() {
   const [galerieOpen, setGalerieOpen] = useState(false);
   const [artisteOpen, setArtisteOpen] = useState(false);
 
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (Math.abs(currentScrollY - lastScrollY) < 10) return;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 80) {
+  setShowHeader(false);
+} else {
+  setShowHeader(true);
+}
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <header style={styles.header}>
+   <header
+  style={{
+    ...styles.header,
+    transform: showHeader ? "translateY(0)" : "translateY(-100%)",
+  }}
+>
       <div style={styles.headerContent}>
        <a href="/" style={styles.logoLink}>
   <div>
@@ -152,31 +178,37 @@ export default function Header() {
 }
 
 const styles: Record<string, CSSProperties> = {
-  header: {
-    position: "sticky",
-    top: 0,
-    backgroundColor: "#f2f2f2",
-    borderBottom: "1px solid #d8d8d8",
-    zIndex: 100,
-  },
+header: {
+  position: "fixed",
+  top: 0,
+  left: 0,
+  width: "100%",
+  backgroundColor: "#f2f2f2",
+  borderBottom: "1px solid #d8d8d8",
+  zIndex: 1000,
+  transition: "transform 0.3s ease",
+    overflow: "hidden",
+},
 
-  headerContent: {
-    maxWidth: "100%",
-    margin: "0",
-    padding: "22px 40px",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    gap: "24px",
-    flexWrap: "wrap",
-  },
+headerContent: {
+  maxWidth: "100%",
+  margin: 0,
+  padding: "14px 40px",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  gap: "24px",
+  flexWrap: "wrap",
+
+  backgroundColor: "#f2f2f2", // 👈 AJOUT
+},
 
   name: {
-    fontSize: "2.2rem",
+    fontSize: "1.8rem",
     fontWeight: 300,
-    letterSpacing: "0.12em",
+    letterSpacing: "0.10em",
     textTransform: "uppercase",
-    lineHeight: 1,
+    lineHeight: 1.1,
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
