@@ -184,6 +184,6 @@ imageZoomed: {
   height: "100%",
   objectFit: "cover",
   transform: "scale(1.4)", // ← ajuste entre 1.2 et 1.4
-  objectPosition: "center",
+  objectPosition: "center 60%",
 },
 };
