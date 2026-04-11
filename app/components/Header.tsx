@@ -204,11 +204,11 @@ headerContent: {
 },
 
   name: {
-    fontSize: "2.2rem",
+    fontSize: "1.8rem",
     fontWeight: 300,
-    letterSpacing: "0.12em",
+    letterSpacing: "0.10em",
     textTransform: "uppercase",
-    lineHeight: 1,
+    lineHeight: 1.1,
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
