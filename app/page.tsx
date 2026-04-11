@@ -291,7 +291,7 @@ export default function Home() {
         <div style={styles.container}>
           <div style={styles.bioBlock}>
             <div style={styles.bioText}>
-              <p style={styles.text}>
+              <p style={styles.text} lang="fr">
                 Née en 1954 dans le Sud-Ouest de la France, Christine Béglet vit
                 et travaille à Toulouse. Diplômée de l’École nationale
                 supérieure des Beaux-Arts de Toulouse, elle développe depuis les
@@ -721,8 +721,9 @@ const styles: Record<string, CSSProperties> = {
   margin: 0,
   color: "#4f4b46",
   textAlign: "justify",
+  textJustify: "inter-word",
+  hyphens: "auto",
 },
-
   title: {
     fontSize: "2rem",
     marginTop: 0,
