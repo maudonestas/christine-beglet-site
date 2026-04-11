@@ -722,7 +722,7 @@ const styles: Record<string, CSSProperties> = {
     color: "#4f4b46",
     textAlign: "justify",
     textJustify: "inter-word",
-    hyphens: "auto",
+
   },
 
   title: {
