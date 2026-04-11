@@ -474,7 +474,9 @@ export default function Home() {
 
       <section style={styles.sectionGray}>
         <div style={styles.container}>
-          <h2 style={styles.title}>L’Atelier</h2>
+<a href="/atelier" style={styles.linkBlock}>
+  <h2 style={styles.title}>L’Atelier</h2>
+</a>
 
           <div style={styles.atelierGrid}>
             <img
