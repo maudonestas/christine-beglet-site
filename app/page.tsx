@@ -808,7 +808,7 @@ const styles: Record<string, CSSProperties> = {
 },
 
  bioImageWrapper: {
-  flex: 1,
+ flex: "0 0 360px",
   display: "flex",
 },
   
