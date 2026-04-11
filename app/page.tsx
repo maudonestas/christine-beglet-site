@@ -382,20 +382,20 @@ export default function Home() {
     </div>
   </button>
 
-  <button
-    type="button"
-    style={styles.previewDoubleButton}
-    onClick={() => openGallery(formatsMoyens, 1)}
-    aria-label="Ouvrir Propagation instantanée"
-  >
-    <div style={styles.collageSmallImageWrap}>
-      <img
-        src="/images/propagation-instantanee.jpg"
-        alt="Propagation instantanée"
-        style={styles.collageSmallImage}
-      />
-    </div>
-  </button>
+ <button
+  type="button"
+  style={styles.previewDoubleButton}
+  onClick={() => openGallery(formatsMoyens, 2)}
+  aria-label="Ouvrir Il fait nuit"
+>
+  <div style={styles.collageSmallImageWrap}>
+    <img
+      src="/images/il-fait-nuit.jpg"
+      alt="Il fait nuit"
+      style={styles.collageSmallImage}
+    />
+  </div>
+</button>
 </div>
 
                 <div style={styles.buttonRowLeft}>
@@ -426,20 +426,20 @@ export default function Home() {
     </div>
   </button>
 
-  <button
-    type="button"
-    style={styles.previewDoubleButton}
-    onClick={() => openGallery(petitsFormats, 10)}
-    aria-label="Ouvrir Immoral"
-  >
-    <div style={styles.collageSmallImageWrap}>
-      <img
-        src="/images/35x35-immoral.jpg"
-        alt="Immoral"
-        style={styles.collageSmallImage}
-      />
-    </div>
-  </button>
+<button
+  type="button"
+  style={styles.previewDoubleButton}
+  onClick={() => openGallery(petitsFormats, 8)}
+  aria-label="Ouvrir 20x20 9"
+>
+  <div style={styles.collageSmallImageWrap}>
+    <img
+      src="/images/20x20-9.jpg"
+      alt="20x20 9"
+      style={styles.collageSmallImage}
+    />
+  </div>
+</button>
 </div>
 
                 <div style={styles.buttonRowLeft}>
