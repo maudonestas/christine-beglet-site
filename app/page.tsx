@@ -366,20 +366,37 @@ export default function Home() {
                   <h3 style={styles.workSectionTitle}>Formats moyens</h3>
                 </a>
 
-                <button
-                  type="button"
-                  style={styles.imageButtonBlock}
-                  onClick={() => openGallery(formatsMoyens, 0)}
-                  aria-label="Ouvrir la galerie Formats moyens"
-                >
-                  <div style={styles.collageSmallImageWrap}>
-                    <img
-                      src="/images/mal-de-mer.jpg"
-                      alt="Formats moyens"
-                      style={styles.collageSmallImage}
-                    />
-                  </div>
-                </button>
+               <div style={styles.previewDoubleRow}>
+  <button
+    type="button"
+    style={styles.previewDoubleButton}
+    onClick={() => openGallery(formatsMoyens, 0)}
+    aria-label="Ouvrir Mal de mer"
+  >
+    <div style={styles.collageSmallImageWrap}>
+      <img
+        src="/images/mal-de-mer.jpg"
+        alt="Mal de mer"
+        style={styles.collageSmallImage}
+      />
+    </div>
+  </button>
+
+ <button
+  type="button"
+  style={styles.previewDoubleButton}
+  onClick={() => openGallery(formatsMoyens, 2)}
+  aria-label="Ouvrir Il fait nuit"
+>
+  <div style={styles.collageSmallImageWrap}>
+    <img
+      src="/images/il-fait-nuit.jpg"
+      alt="Il fait nuit"
+      style={styles.collageSmallImage}
+    />
+  </div>
+</button>
+</div>
 
                 <div style={styles.buttonRowLeft}>
                   <a href="/oeuvres/formats-moyens" style={styles.button}>
@@ -393,20 +410,37 @@ export default function Home() {
                   <h3 style={styles.workSectionTitle}>Petits formats</h3>
                 </a>
 
-                <button
-                  type="button"
-                  style={styles.imageButtonBlock}
-                  onClick={() => openGallery(petitsFormats, 0)}
-                  aria-label="Ouvrir la galerie Petits formats"
-                >
-                  <div style={styles.collageSmallImageWrap}>
-                    <img
-                      src="/images/20x20-1.jpg"
-                      alt="Petits formats"
-                      style={styles.collageSmallImage}
-                    />
-                  </div>
-                </button>
+<div style={styles.previewDoubleRow}>
+  <button
+    type="button"
+    style={styles.previewDoubleButton}
+    onClick={() => openGallery(petitsFormats, 0)}
+    aria-label="Ouvrir 20x20 1"
+  >
+    <div style={styles.collageSmallImageWrap}>
+      <img
+        src="/images/20x20-1.jpg"
+        alt="20x20 1"
+        style={styles.collageSmallImage}
+      />
+    </div>
+  </button>
+
+<button
+  type="button"
+  style={styles.previewDoubleButton}
+  onClick={() => openGallery(petitsFormats, 8)}
+  aria-label="Ouvrir 20x20 9"
+>
+  <div style={styles.collageSmallImageWrap}>
+    <img
+      src="/images/20x20-9.jpg"
+      alt="20x20 9"
+      style={styles.collageSmallImage}
+    />
+  </div>
+</button>
+</div>
 
                 <div style={styles.buttonRowLeft}>
                   <a href="/oeuvres/petits-formats" style={styles.button}>
@@ -455,7 +489,7 @@ export default function Home() {
     onClick={() => setIsPanoZoomed(true)}
     aria-label="Ouvrir le panoramique"
   >
-    <div style={styles.previewSingleFrame}>
+   <div style={{ width: "100%" }}>
       <img
         src="/images/pano.jpg"
         alt="Panoramique"
@@ -710,10 +744,10 @@ const styles: Record<string, CSSProperties> = {
     padding: "80px 24px",
   },
 
- container: {
-  maxWidth: "1100px",
+container: {
+  maxWidth: "1200px",
   margin: "0 auto",
-  padding: "0 24px",
+  padding: "0 40px",
 },
 
   text: {
@@ -762,7 +796,7 @@ const styles: Record<string, CSSProperties> = {
 
   atelierImg: {
     width: "auto",
-    height: "340px",
+    height: "420px",
     display: "block",
   },
 
@@ -829,28 +863,31 @@ const styles: Record<string, CSSProperties> = {
     marginBottom: "40px",
   },
 
-  collagesMosaic: {
-    display: "grid",
-    gridTemplateColumns: "1.5fr 1fr",
-    gap: "40px",
-    alignItems: "start",
-    marginBottom: "56px",
-  },
+collagesMosaic: {
+  display: "grid",
+  gridTemplateColumns: "420px 464px",
+  columnGap: "32px",
+  alignItems: "start",
+  justifyContent: "start",
+  marginBottom: "56px",
+},
 
-  collageBigBlock: {
-    display: "flex",
-    flexDirection: "column",
-  },
+collageBigBlock: {
+  display: "flex",
+  flexDirection: "column",
+  width: "390px",
+},
 
-  collageBigImageWrap: {
-    width: "100%",
-    height: "555px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-start",
-    overflow: "hidden",
-    backgroundColor: "transparent",
-  },
+collageBigImageWrap: {
+  width: "390px",
+  height: "555px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  overflow: "hidden",
+  backgroundColor: "transparent",
+},
+
 
   collageBigImage: {
     width: "100%",
@@ -860,11 +897,12 @@ const styles: Record<string, CSSProperties> = {
     display: "block",
   },
 
-  collageRightColumn: {
-    display: "grid",
-    gridTemplateRows: "1fr 1fr",
-    gap: "28px",
-  },
+collageRightColumn: {
+  display: "grid",
+  gridTemplateRows: "1fr 1fr",
+  gap: "28px",
+  transform: "translateX(100px)",
+},
 
   collageSmallBlock: {
     display: "flex",
@@ -912,30 +950,29 @@ const styles: Record<string, CSSProperties> = {
     display: "block",
   },
 
-  previewSingleFrame: {
-    width: "100%",
-    backgroundColor: "transparent",
-    display: "flex",
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
-  },
-
-  previewSingleImg: {
-    width: "1025px",
-    height: "275px",
-    objectFit: "contain",
-    objectPosition: "left center",
-    display: "block",
-  },
-
-  previewPanoImg: {
-    width: "1150px",
-    height: "275px",
-    objectFit: "cover",
-    objectPosition: "center",
-    display: "block",
-  },
-
+ previewSingleFrame: {
+  width: "100%",
+  height: "555px", // 👈 clé
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "flex-start",
+  overflow: "hidden",
+},
+  
+previewSingleImg: {
+  height: "100%",
+  width: "auto",
+  objectFit: "contain",
+  objectPosition: "left center",
+  display: "block",
+},
+previewPanoImg: {
+  width: "100%",
+  height: "auto",
+  objectFit: "contain",
+  display: "block",
+},
+  
   linkBlock: {
     textDecoration: "none",
     color: "inherit",
@@ -1085,5 +1122,18 @@ panoCloseButton: {
   cursor: "pointer",
   lineHeight: 1,
   zIndex: 10000,
+},
+  previewDoubleRow: {
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr",
+  gap: "24px",
+},
+
+previewDoubleButton: {
+  border: "none",
+  background: "transparent",
+  padding: 0,
+  cursor: "zoom-in",
+  textAlign: "left",
 },
 };
