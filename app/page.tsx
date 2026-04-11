@@ -708,21 +708,20 @@ const styles: Record<string, CSSProperties> = {
     padding: "80px 24px",
   },
 
-  container: {
-    maxWidth: "1200px",
-    margin: "0 auto",
-    textAlign: "left",
-  },
+ container: {
+  maxWidth: "1100px",
+  margin: "0 auto",
+  padding: "0 24px",
+},
 
   text: {
-    fontSize: "1rem",
-    lineHeight: 1.7,
-    margin: 0,
-    color: "#4f4b46",
-    textAlign: "justify",
-    textJustify: "inter-word",
-
-  },
+  fontSize: "1rem",
+  lineHeight: 1.7,
+  maxWidth: "560px", // ↓ réduit
+  margin: 0,
+  color: "#4f4b46",
+  textAlign: "justify",
+},
 
   title: {
     fontSize: "2rem",
@@ -814,7 +813,7 @@ const styles: Record<string, CSSProperties> = {
   flex: "0 0 auto",
   display: "flex",
   justifyContent: "center",
-  paddingLeft: "32px",
+  paddingLeft: "40px",
 },
 
   worksGrid: {
