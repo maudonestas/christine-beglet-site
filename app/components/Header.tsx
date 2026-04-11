@@ -178,24 +178,30 @@ export default function Header() {
 }
 
 const styles: Record<string, CSSProperties> = {
-  header: {
-    position: "fixed",
-top: 0,
-left: 0,
-width: "100%",
-transition: "transform 0.3s ease",
-  },
+header: {
+  position: "fixed",
+  top: 0,
+  left: 0,
+  width: "100%",
+  backgroundColor: "#f2f2f2",
+  borderBottom: "1px solid #d8d8d8",
+  zIndex: 1000,
+  transition: "transform 0.3s ease",
+    overflow: "hidden",
+},
 
-  headerContent: {
-    maxWidth: "100%",
-    margin: "0",
-    padding: "22px 40px",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    gap: "24px",
-    flexWrap: "wrap",
-  },
+headerContent: {
+  maxWidth: "100%",
+  margin: 0,
+  padding: "22px 40px",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  gap: "24px",
+  flexWrap: "wrap",
+
+  backgroundColor: "#f2f2f2", // 👈 AJOUT
+},
 
   name: {
     fontSize: "2.2rem",
