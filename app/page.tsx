@@ -899,10 +899,10 @@ collageBigImageWrap: {
 
 collageRightColumn: {
   display: "grid",
-  gridTemplateRows: "auto auto",
-  rowGap: "40px",
-  width: "464px",
-  },
+  gridTemplateRows: "1fr 1fr",
+  gap: "28px",
+  transform: "translateX(40px)",
+},
 
   collageSmallBlock: {
     display: "flex",
