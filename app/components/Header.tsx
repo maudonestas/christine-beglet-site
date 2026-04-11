@@ -3,12 +3,13 @@ import { useState, useEffect } from "react";
 import type { CSSProperties } from "react";
 import Link from "next/link";
 export default function Header() {
+
   const [galerieOpen, setGalerieOpen] = useState(false);
   const [artisteOpen, setArtisteOpen] = useState(false);
 
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-
+  const [hovered, setHovered] = useState<string | null>(null);
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -49,9 +50,17 @@ export default function Header() {
             onMouseEnter={() => setGalerieOpen(true)}
             onMouseLeave={() => setGalerieOpen(false)}
           >
-            <a href="/oeuvres" style={styles.navLink}>
-              Galerie
-            </a>
+<a
+  href="/oeuvres"
+  style={{
+    ...styles.navLink,
+    color: hovered === "galerie" ? "#000" : "#4a4a4a",
+  }}
+  onMouseEnter={() => setHovered("galerie")}
+  onMouseLeave={() => setHovered(null)}
+>
+  Galerie
+</a>
 
             {galerieOpen && (
               <div style={styles.dropdownMenu}>
@@ -83,9 +92,17 @@ export default function Header() {
             onMouseEnter={() => setArtisteOpen(true)}
             onMouseLeave={() => setArtisteOpen(false)}
           >
-            <a href="/biographie" style={styles.navLink}>
-              L'Artiste
-            </a>
+           <a
+  href="/biographie"
+  style={{
+    ...styles.navLink,
+    color: hovered === "artiste" ? "#000" : "#4a4a4a",
+  }}
+  onMouseEnter={() => setHovered("artiste")}
+  onMouseLeave={() => setHovered(null)}
+>
+  L'Artiste
+</a>
 
             {artisteOpen && (
               <div style={styles.dropdownMenu}>
