@@ -158,16 +158,17 @@ export default function Home() {
           <div style={styles.collagesMosaic}>
             {/* GRANDS FORMATS */}
             <div style={styles.collageBigBlock}>
-              <h3 style={styles.workSectionTitle}>Grands formats</h3>
+             <a href="/oeuvres/grands-formats" style={styles.linkBlock}>
+  <h3 style={styles.workSectionTitle}>Grands formats</h3>
 
-              <div style={styles.collageBigImageWrap}>
-                <img
-                  src="/images/70-1.jpg"
-                  alt="Grands formats"
-                  style={styles.collageBigImage}
-                />
-              </div>
-
+  <div style={styles.collageBigImageWrap}>
+    <img
+      src="/images/70-1.jpg"
+      alt="Grands formats"
+      style={styles.collageBigImage}
+    />
+  </div>
+</a>
               <div style={styles.buttonRowLeft}>
                 <a href="/oeuvres/grands-formats" style={styles.button}>
                   Voir plus
