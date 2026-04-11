@@ -469,7 +469,6 @@ export default function Home() {
       Voir plus
     </a>
   </div>
-</div>          </div>
         </div>
       </section>
 
