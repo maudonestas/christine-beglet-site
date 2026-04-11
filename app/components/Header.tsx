@@ -193,7 +193,7 @@ header: {
 headerContent: {
   maxWidth: "100%",
   margin: 0,
-  padding: "22px 40px",
+  padding: "14px 40px",
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
