@@ -950,22 +950,22 @@ collageRightColumn: {
     display: "block",
   },
 
-  previewSingleFrame: {
-    width: "100%",
-    backgroundColor: "transparent",
-    display: "flex",
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
-  },
-
-  previewSingleImg: {
-    width: "1025px",
-    height: "275px",
-    objectFit: "contain",
-    objectPosition: "left center",
-    display: "block",
-  },
-
+ previewSingleFrame: {
+  width: "100%",
+  height: "555px", // 👈 clé
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "flex-start",
+  overflow: "hidden",
+},
+  
+previewSingleImg: {
+  height: "100%",
+  width: "auto",
+  objectFit: "contain",
+  objectPosition: "left center",
+  display: "block",
+},
   previewPanoImg: {
     width: "1150px",
     height: "275px",
