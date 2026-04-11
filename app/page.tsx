@@ -702,7 +702,7 @@ const styles: Record<string, CSSProperties> = {
 
   sectionGray: {
     backgroundColor: "#f2f2f2",
-    padding: "24px 24px 80px 24px",
+    padding: "56px 24px 80px 24px",
   },
 
   sectionWhite: {
