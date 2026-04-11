@@ -902,6 +902,7 @@ collageRightColumn: {
   gridTemplateRows: "auto auto",
   rowGap: "40px",
   width: "464px",
+  },
 
   collageSmallBlock: {
     display: "flex",
