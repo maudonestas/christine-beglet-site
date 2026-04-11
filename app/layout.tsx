@@ -1,3 +1,5 @@
+import Header from "./components/Header";
+
 export const metadata = {
   title: "Christine Béglet",
   description: "Site officiel de Christine Béglet",
@@ -10,7 +12,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body>{children}</body>
+      <body>
+        <Header />
+        <main style={{ paddingTop: "80px" }}>
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
