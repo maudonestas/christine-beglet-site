@@ -1,5 +1,5 @@
 "use client";
-
+import { useState, useEffect } from "react";
 import { useState } from "react";
 import type { CSSProperties } from "react";
 import Link from "next/link";
@@ -7,8 +7,35 @@ export default function Header() {
   const [galerieOpen, setGalerieOpen] = useState(false);
   const [artisteOpen, setArtisteOpen] = useState(false);
 
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (Math.abs(currentScrollY - lastScrollY) < 10) return;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 80) {
+  setShowHeader(false);
+} else {
+  setShowHeader(true);
+}
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <header style={styles.header}>
+   <header
+  style={{
+    ...styles.header,
+    transform: showHeader ? "translateY(0)" : "translateY(-100%)",
+  }}
+>
       <div style={styles.headerContent}>
        <a href="/" style={styles.logoLink}>
   <div>
@@ -153,11 +180,11 @@ export default function Header() {
 
 const styles: Record<string, CSSProperties> = {
   header: {
-    position: "sticky",
-    top: 0,
-    backgroundColor: "#f2f2f2",
-    borderBottom: "1px solid #d8d8d8",
-    zIndex: 100,
+    position: "fixed",
+top: 0,
+left: 0,
+width: "100%",
+transition: "transform 0.3s ease",
   },
 
   headerContent: {
