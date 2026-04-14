@@ -254,7 +254,7 @@ const styles: Record<string, CSSProperties> = {
     top: 0,
     left: 0,
     width: "100%",
-    backgroundColor: "#f2f2f2",
+    backgroundColor: "#f7f5f2",
     borderBottom: "1px solid #d8d8d8",
     zIndex: 1000,
     transition: "transform 0.3s ease",
