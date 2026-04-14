@@ -12,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body style={{ margin: 0, backgroundColor: "#f5f3ef" }}>
+      <body style={{ margin: 0, backgroundColor: "#faf9f7" }}>
         <Header />
         <main style={{ paddingTop: "80px" }}>
           {children}
