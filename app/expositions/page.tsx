@@ -25,11 +25,6 @@ export default function ExpositionsPage() {
     image: "/images/les-essarts.jpg",
   },
   {
-    title: "#5 Biennale Hors les Normes, Lyon",
-    date: "27 septembre — 10 octobre 2023",
-    image: "/images/biennale-hors-les-normes-27sept-10oct-2023-lyon.jpg",
-  },
-  {
     title: "L’Art Caché, Albas",
     date: "9–10 juillet 2022",
     image: "/images/l-art-cache.jpg",
@@ -153,6 +148,11 @@ export default function ExpositionsPage() {
     title: "Galerie des Nanas, Danville",
     date: "20 août — 12 septembre 2014",
     image: "/images/galerie-des-nanas-20aout-12sept-2014-danville-canada.jpg",
+  },
+  {
+    title: "#5 Biennale Hors les Normes, Lyon",
+    date: "27 septembre — 10 octobre 2013",
+    image: "/images/biennale-hors-les-normes-27sept-10oct-2023-lyon.jpg",
   },
   {
     title: "Résidence de création, Galerie des Nanas, Danville",
