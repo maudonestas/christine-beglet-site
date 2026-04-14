@@ -54,9 +54,9 @@ export default function Header() {
             onMouseEnter={() => setGalerieOpen(true)}
             onMouseLeave={() => setGalerieOpen(false)}
           >
-            <a href="/oeuvres" style={styles.navLink}>
-              Galerie
-            </a>
+           <span style={styles.navLink}>
+  Galerie
+</span>
 
             {galerieOpen && (
               <div style={styles.dropdownMenu}>
