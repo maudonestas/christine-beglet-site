@@ -255,7 +255,7 @@ const styles: Record<string, CSSProperties> = {
     left: 0,
     width: "100%",
      backgroundColor: "#faf9f7",
-    borderBottom: "1px solid #d8d8d8",
+    borderBottom: "1px solid rgba(0,0,0,0.06)",
     zIndex: 1000,
     transition: "transform 0.3s ease",
   },
@@ -319,7 +319,7 @@ const styles: Record<string, CSSProperties> = {
   top: "100%",
   left: 0,
   backgroundColor: "#faf9f7",
-  border: "1px solid #d8d8d8", // ← tu remets ça
+  border: "1px solid rgba(0,0,0,0.08)",
   padding: "6px 0",
   zIndex: 200,
   width: "auto",
