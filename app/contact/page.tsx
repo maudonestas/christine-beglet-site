@@ -76,13 +76,13 @@ const styles: { [key: string]: CSSProperties } = {
     minHeight: "100vh",
   },
 
-  section: {
-  padding: "72px 0 120px",
+ section: {
+  padding: "90px 24px 120px",
 },
 
-  container: {
-  width: "100%",
-  margin: 0,
+ container: {
+  maxWidth: "1200px",
+  margin: "0 auto",
 },
   
   title: {
