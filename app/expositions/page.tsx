@@ -25,6 +25,11 @@ export default function ExpositionsPage() {
     image: "/images/les-essarts.jpg",
   },
   {
+    title: "#5 Biennale Hors les Normes, Lyon",
+    date: "27 septembre — 10 octobre 2023",
+    image: "/images/biennale-hors-les-normes-27sept-10oct-2023-lyon.jpg",
+  },
+  {
     title: "L’Art Caché, Albas",
     date: "9–10 juillet 2022",
     image: "/images/l-art-cache.jpg",
@@ -150,13 +155,202 @@ export default function ExpositionsPage() {
     image: "/images/galerie-des-nanas-20aout-12sept-2014-danville-canada.jpg",
   },
   {
-    title: "#5 Biennale Hors les Normes, Lyon",
-    date: "27 septembre — 10 octobre 2013",
-    image: "/images/biennale-hors-les-normes-27sept-10oct-2023-lyon.jpg",
-  },
-  {
     title: "Résidence de création, Galerie des Nanas, Danville",
     date: "1–30 août 2012",
     image: "/images/residence-de-creation-galerie-des-nanas-1-30aout-2012-danville-canada.jpg",
   },
 ];
+
+  const openLightbox = (image: string, title: string) => {
+    setSelectedImage(image);
+    setSelectedTitle(title);
+  };
+
+  const closeLightbox = () => {
+    setSelectedImage(null);
+    setSelectedTitle("");
+  };
+
+  return (
+    <main style={styles.main}>
+
+
+      <section style={styles.section}>
+        <div style={styles.container}>
+          <h1 style={styles.title}>Principales Expositions</h1>
+
+          <div style={styles.grid}>
+            {expositions.map((expo) => (
+              <article key={expo.title} style={styles.card}>
+                <button
+                  type="button"
+                  onClick={() => openLightbox(expo.image, expo.title)}
+                  style={styles.imageButton}
+                >
+                  <div style={styles.imageWrapper}>
+                    <img src={expo.image} alt={expo.title} style={styles.image} />
+                  </div>
+                </button>
+
+                <h3 style={styles.cardTitle}>{expo.title}</h3>
+                <p style={styles.cardDate}>{expo.date}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {selectedImage && (
+        <div style={styles.lightboxOverlay} onClick={closeLightbox}>
+          <button
+            type="button"
+            onClick={closeLightbox}
+            style={styles.closeButton}
+            aria-label="Fermer l’image agrandie"
+          >
+            ×
+          </button>
+
+          <div
+            style={styles.lightboxContent}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={selectedImage}
+              alt={selectedTitle}
+              style={styles.lightboxImage}
+            />
+          </div>
+        </div>
+      )}
+    </main>
+  );
+}
+
+const styles: Record<string, CSSProperties> = {
+  main: {
+    fontFamily: "Arial, Helvetica, sans-serif",
+    backgroundColor: "#f7f5f2",
+    color: "#1f1f1f",
+    minHeight: "100vh",
+  },
+
+  section: {
+    padding: "80px 24px",
+  },
+
+  container: {
+    maxWidth: "1200px",
+    margin: "0 auto",
+  },
+
+  title: {
+    fontSize: "2rem",
+    marginTop: 0,
+    marginBottom: "48px",
+    fontWeight: 300,
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
+  grid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(4, 1fr)",
+    gap: "34px 24px",
+    alignItems: "start",
+  },
+
+  card: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start",
+  },
+
+  cardTitle: {
+    marginTop: "16px",
+    marginBottom: "6px",
+    fontSize: "0.82rem",
+    fontWeight: 400,
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    lineHeight: 1.45,
+  },
+
+  cardDate: {
+    margin: "0 0 14px 0",
+    fontSize: "0.88rem",
+    lineHeight: 1.5,
+    color: "#4a4a4a",
+  },
+
+  imageButton: {
+    border: "none",
+    background: "none",
+    padding: 0,
+    margin: 0,
+    cursor: "pointer",
+    width: "100%",
+    display: "block",
+  },
+
+  imageWrapper: {
+    width: "100%",
+    height: "320px",
+    display: "flex",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    backgroundColor: "#f7f5f2",
+    overflow: "hidden",
+  },
+
+  image: {
+    maxWidth: "100%",
+    maxHeight: "100%",
+    width: "auto",
+    height: "auto",
+    display: "block",
+    objectFit: "contain",
+  },
+
+  lightboxOverlay: {
+    position: "fixed",
+    inset: 0,
+    backgroundColor: "rgba(0, 0, 0, 0.82)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "24px",
+    zIndex: 9999,
+  },
+
+  lightboxContent: {
+    maxWidth: "90vw",
+    maxHeight: "90vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  lightboxImage: {
+    maxWidth: "90vw",
+    maxHeight: "90vh",
+    width: "auto",
+    height: "auto",
+    display: "block",
+    objectFit: "contain",
+  },
+
+  closeButton: {
+    position: "absolute",
+    top: "18px",
+    right: "24px",
+    border: "none",
+    background: "none",
+    color: "#ffffff",
+    fontSize: "40px",
+    lineHeight: 1,
+    cursor: "pointer",
+  },
+};
