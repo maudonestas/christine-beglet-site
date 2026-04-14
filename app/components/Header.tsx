@@ -254,7 +254,7 @@ const styles: Record<string, CSSProperties> = {
     top: 0,
     left: 0,
     width: "100%",
-    backgroundColor: "#f7f5f2",
+     backgroundColor: "#faf9f7",
     borderBottom: "1px solid #d8d8d8",
     zIndex: 1000,
     transition: "transform 0.3s ease",
@@ -269,7 +269,7 @@ const styles: Record<string, CSSProperties> = {
     alignItems: "center",
     gap: "24px",
     flexWrap: "wrap",
-    backgroundColor: "#f7f5f2",
+    backgroundColor: "#faf9f7",
   },
 
   name: {
@@ -318,7 +318,7 @@ const styles: Record<string, CSSProperties> = {
   position: "absolute",
   top: "100%",
   left: 0,
-  backgroundColor: "#f7f5f2",
+  backgroundColor: "#faf9f7",
   border: "1px solid #d8d8d8", // ← tu remets ça
   padding: "6px 0",
   zIndex: 200,
