@@ -269,7 +269,7 @@ const styles: Record<string, CSSProperties> = {
     alignItems: "center",
     gap: "24px",
     flexWrap: "wrap",
-    backgroundColor: "#f2f2f2",
+    backgroundColor: "#f7f5f2",
   },
 
   name: {
@@ -318,7 +318,7 @@ const styles: Record<string, CSSProperties> = {
   position: "absolute",
   top: "100%",
   left: 0,
-  backgroundColor: "#f2f2f2",
+  backgroundColor: "#f7f5f2",
   border: "1px solid #d8d8d8", // ← tu remets ça
   padding: "6px 0",
   zIndex: 200,
