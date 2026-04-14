@@ -77,12 +77,12 @@ const styles: { [key: string]: CSSProperties } = {
   },
 
   section: {
-    padding: "90px 24px 120px",
-  },
+  padding: "72px 0 120px",
+},
 
   container: {
-  maxWidth: "1200px",
-  margin: "0 auto",
+  width: "100%",
+  margin: 0,
 },
   
   title: {
@@ -118,7 +118,7 @@ email: {
     maxWidth: "430px",
   },
 
-  rrow: {
+  row: {
   display: "grid",
   gridTemplateColumns: "1fr 1fr",
   gap: "14px",
