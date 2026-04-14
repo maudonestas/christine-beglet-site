@@ -126,12 +126,23 @@ const styles: Record<string, CSSProperties> = {
   },
 
   hero: {
+    position: "sticky",
+    top: 0,
+    height: "100vh",
     width: "100%",
     backgroundColor: "#f2f2f2",
-    padding: "0",
+    overflow: "hidden",
+  },
+
+  heroWrapper: {
+    position: "relative",
+    height: "100%",
+    width: "100%",
   },
 
   heroScroll: {
+    height: "100%",
+    width: "100%",
     overflowX: "auto",
     overflowY: "hidden",
     WebkitOverflowScrolling: "touch",
@@ -140,16 +151,14 @@ const styles: Record<string, CSSProperties> = {
 
   heroImgScrollable: {
     display: "block",
-    height: "70vh",
+    height: "100%",
     width: "auto",
     minWidth: "1400px",
   },
 
-  heroWrapper: {
-    position: "relative",
-  },
-
   sectionGray: {
+    position: "relative",
+    zIndex: 1,
     backgroundColor: "#f2f2f2",
     padding: "56px 24px 80px 24px",
   },
