@@ -72,7 +72,6 @@ const styles: { [key: string]: CSSProperties } = {
   main: {
     fontFamily: "Arial, Helvetica, sans-serif",
     color: "#1f1f1f",
-    backgroundColor: "#f6f3ee",
     minHeight: "100vh",
   },
 
