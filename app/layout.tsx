@@ -91,18 +91,21 @@ export default function RootLayout({
     stroke="#3f3a36"
     strokeWidth="2"
   />
+
   <path
-    d="M6.8 8.8h10.4c.55 0 1 .45 1 1v4.4c0 .55-.45 1-1 1H6.8c-.55 0-1-.45-1-1V9.8c0-.55.45-1 1-1Z"
-    stroke="#3f3a36"
-    strokeWidth="1.8"
-    fill="none"
-  />
-  <path
-    d="M6.4 9.6 12 13.2l5.6-3.6"
+    d="M16.5 12.2c0 2.3-1.2 3.8-3.1 3.8-1.2 0-2-.6-2-1.7 0-1.3 1-2.2 2.4-2.2h1.2v-.3c0-1.2-.7-1.8-1.9-1.8-1 0-1.8.4-2.2 1.2"
     stroke="#3f3a36"
     strokeWidth="1.8"
     strokeLinecap="round"
-    strokeLinejoin="round"
+    fill="none"
+  />
+
+  <circle
+    cx="12"
+    cy="12"
+    r="5.5"
+    stroke="#3f3a36"
+    strokeWidth="1.6"
     fill="none"
   />
 </svg>
