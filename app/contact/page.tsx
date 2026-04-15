@@ -8,74 +8,26 @@ export default function ContactPage() {
         <div style={styles.container}>
           <h1 style={styles.title}>Contact</h1>
 
-          <div style={styles.contactGrid}>
-            <div style={styles.topBlock}>
-              <p style={styles.intro}>
-                Pour toute question ou demande d’acquisition, d’exposition ou de
-                collaboration, vous pouvez me contacter directement par email ou
-                via le formulaire.
-              </p>
+          <div style={styles.contactBlock}>
+            <p style={styles.intro}>
+              Pour toute question ou demande d’acquisition, d’exposition ou de
+              collaboration, vous pouvez me contacter directement par email.
+            </p>
 
-              <p style={styles.contactLine}>
-                Email :{" "}
-                <a href="mailto:c.beglet@free.fr" style={styles.email}>
-                  c.beglet@free.fr
-                </a>
-              </p>
+            <div style={styles.contactDetails}>
+              <a href="mailto:c.beglet@free.fr" style={styles.primaryContact}>
+                c.beglet@free.fr
+              </a>
 
-              <p style={styles.contactLine}>
-                Instagram :{" "}
-                <a
-                  href="https://www.instagram.com/christine.beglet/"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={styles.email}
-                >
-                  @christine.beglet
-                </a>
-              </p>
+              <a
+                href="https://www.instagram.com/christine.beglet/"
+                target="_blank"
+                rel="noreferrer"
+                style={styles.secondaryContact}
+              >
+                Instagram — @christine.beglet
+              </a>
             </div>
-
-            <form style={styles.form}>
-              <div style={styles.row}>
-                <div style={styles.fieldGroup}>
-                  <label htmlFor="prenom" style={styles.label}>
-                    Prénom
-                  </label>
-                  <input id="prenom" name="prenom" type="text" style={styles.input} />
-                </div>
-
-                <div style={styles.fieldGroup}>
-                  <label htmlFor="nom" style={styles.label}>
-                    Nom
-                  </label>
-                  <input id="nom" name="nom" type="text" style={styles.input} />
-                </div>
-              </div>
-
-              <div style={styles.fieldGroup}>
-                <label htmlFor="email" style={styles.label}>
-                  E-mail
-                </label>
-                <input id="email" name="email" type="email" style={styles.input} />
-              </div>
-
-              <div style={styles.fieldGroup}>
-                <label htmlFor="message" style={styles.label}>
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={7}
-                  style={styles.textarea}
-                />
-              </div>
-
-              <button type="submit" style={styles.button}>
-                Envoyer
-              </button>
-            </form>
           </div>
         </div>
       </section>
@@ -109,98 +61,34 @@ const styles: { [key: string]: CSSProperties } = {
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
-  contactGrid: {
-  display: "grid",
-  gridTemplateColumns: "560px 380px",
-  gap: "48px",
-  alignItems: "start",
-},
-
-  topBlock: {
-  width: "100%",
-},
+  contactBlock: {
+    maxWidth: "560px",
+  },
 
   intro: {
     fontSize: "1rem",
     lineHeight: 1.7,
-    maxWidth: "560px",
-    margin: "0 0 20px 0",
     color: "#4f4b46",
+    margin: "0 0 28px 0",
     textAlign: "justify",
     textJustify: "inter-word",
   },
 
-  contactLine: {
-    fontSize: "1rem",
-    lineHeight: 1.7,
-    color: "#4f4b46",
-    margin: "0 0 6px 0",
+  contactDetails: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "10px",
   },
 
-  email: {
-    color: "#4f4b46",
+  primaryContact: {
+    fontSize: "1.2rem",
+    color: "#1f1f1f",
     textDecoration: "none",
   },
 
-form: {
-  width: "100%",
-},
-  
-  row: {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: "14px",
-    marginBottom: "12px",
-  },
-
-  fieldGroup: {
-    display: "flex",
-    flexDirection: "column",
-    marginBottom: "12px",
-  },
-
-  label: {
-    fontSize: "0.82rem",
-    textTransform: "uppercase",
-    letterSpacing: "0.08em",
-    marginBottom: "6px",
-    color: "#5f5a52",
-  },
-
-  input: {
-    width: "100%",
-    padding: "8px 10px",
+  secondaryContact: {
     fontSize: "0.95rem",
-    color: "#1f1f1f",
-    backgroundColor: "transparent",
-    border: "1px solid #cfc7bb",
-    outline: "none",
-    boxSizing: "border-box",
-    height: "40px",
-  },
-
-  textarea: {
-    width: "100%",
-    padding: "10px",
-    fontSize: "0.95rem",
-    color: "#1f1f1f",
-    backgroundColor: "transparent",
-    border: "1px solid #cfc7bb",
-    outline: "none",
-    resize: "vertical",
-    boxSizing: "border-box",
-    minHeight: "140px",
-  },
-
-  button: {
-    display: "inline-block",
-    padding: "8px 18px",
-    fontSize: "0.82rem",
-    letterSpacing: "0.08em",
-    textTransform: "uppercase",
-    color: "#1f1f1f",
-    backgroundColor: "transparent",
-    border: "1px solid #1f1f1f",
-    cursor: "pointer",
+    color: "#6b665f",
+    textDecoration: "none",
   },
 };
