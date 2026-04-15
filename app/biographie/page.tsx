@@ -87,7 +87,6 @@ export default function BiographiePage() {
 const styles: Record<string, CSSProperties> = {
   main: {
     fontFamily: "Arial, Helvetica, sans-serif",
-    backgroundColor: "#f7f5f2",
     color: "#1f1f1f",
     minHeight: "100vh",
   },
