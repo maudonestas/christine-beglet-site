@@ -28,10 +28,10 @@ export default function RootLayout({
 
               {/* EMAIL */}
               <a href="mailto:c.beglet@free.fr" style={styles.icon} aria-label="Email">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <rect x="3" y="5" width="18" height="14" rx="2" stroke="#000" strokeWidth="2"/>
-                  <path d="M3 7l9 6 9-6" stroke="#000" strokeWidth="2"/>
-                </svg>
+               <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+  <rect x="3" y="5" width="18" height="14" rx="2" stroke="#EA4335" strokeWidth="2"/>
+  <path d="M3 7l9 6 9-6" stroke="#EA4335" strokeWidth="2"/>
+</svg>
               </a>
 
               {/* INSTAGRAM */}
@@ -44,8 +44,8 @@ export default function RootLayout({
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
+                  width="22"
+                  height="22"
                   viewBox="0 0 24 24"
                   fill="none"
                 >
@@ -72,8 +72,8 @@ export default function RootLayout({
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
+                  width="22"
+                  height="22"
                   viewBox="0 0 24 24"
                   fill="none"
                 >
