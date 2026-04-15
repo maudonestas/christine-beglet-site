@@ -81,34 +81,9 @@ export default function RootLayout({
               
               {/* EMAIL */}
               <a href="mailto:c.beglet@free.fr" style={styles.icon} aria-label="Email">
-             <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-  <rect
-    x="2"
-    y="2"
-    width="20"
-    height="20"
-    rx="5"
-    stroke="#3f3a36"
-    strokeWidth="2"
-  />
-
-  <path
-    d="M16.5 12.2c0 2.3-1.2 3.8-3.1 3.8-1.2 0-2-.6-2-1.7 0-1.3 1-2.2 2.4-2.2h1.2v-.3c0-1.2-.7-1.8-1.9-1.8-1 0-1.8.4-2.2 1.2"
-    stroke="#3f3a36"
-    strokeWidth="1.8"
-    strokeLinecap="round"
-    fill="none"
-  />
-
-  <circle
-    cx="12"
-    cy="12"
-    r="5.5"
-    stroke="#3f3a36"
-    strokeWidth="1.6"
-    fill="none"
-  />
-</svg>
+             <a href="mailto:c.beglet@free.fr" style={styles.iconLink}>
+  <span style={styles.atSymbol}>@</span>
+</a>
               </a>
             </div>
 
@@ -150,4 +125,11 @@ const styles = {
     justifyContent: "center",
     textDecoration: "none",
   },
+  atSymbol: {
+  fontSize: "22px",
+  color: "#3f3a36",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+},
 };
