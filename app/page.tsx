@@ -120,7 +120,6 @@ export default function Home() {
 const styles: Record<string, CSSProperties> = {
   main: {
     fontFamily: "Arial, Helvetica, sans-serif",
-    backgroundColor: "#f7f5f2",
     color: "#1f1f1f",
     minHeight: "100vh",
   },
@@ -159,7 +158,6 @@ const styles: Record<string, CSSProperties> = {
   sectionGray: {
     position: "relative",
     zIndex: 1,
-    backgroundColor: "#f2f2f2",
     padding: "56px 24px 80px 24px",
   },
 
