@@ -16,10 +16,24 @@ export default function ContactPage() {
               collaboration, vous pouvez me contacter directement par email ou
               via le formulaire ci-dessous.
             </p>
+<p style={styles.contactLine}>
+  Email :{" "}
+  <a href="mailto:c.beglet@free.fr" style={styles.email}>
+    c.beglet@free.fr
+  </a>
+</p>
 
-            <a href="mailto:c.beglet@free.fr" style={styles.email}>
-              c.beglet@free.fr
-            </a>
+<p style={styles.contactLine}>
+  Instagram :{" "}
+  <a
+    href="https://www.instagram.com/christine.beglet/"
+    target="_blank"
+    rel="noreferrer"
+    style={styles.email}
+  >
+    @christine.beglet
+  </a>
+</p>
           </div>
 
           <form style={styles.form}>
@@ -173,5 +187,11 @@ fieldGroup: {
   backgroundColor: "transparent",
   border: "1px solid #1f1f1f",
   cursor: "pointer",
+},
+  contactLine: {
+  fontSize: "1.1rem",
+  lineHeight: 1.9,
+  color: "#4f4b46",
+  margin: "0 0 6px 0",
 },
 };
