@@ -83,7 +83,6 @@ export default function RootLayout({
             <a href="mailto:c.beglet@free.fr" style={styles.icon} aria-label="Email">
   <span style={styles.atSymbol}>@</span>
 </a>
-              </a>
             </div>
 
             <div style={styles.line} />
