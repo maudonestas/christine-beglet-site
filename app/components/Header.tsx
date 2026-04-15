@@ -257,7 +257,7 @@ const styles: Record<string, CSSProperties> = {
      backgroundColor: "#faf9f7",
     borderBottom: "1px solid rgba(0,0,0,0.035)",
     zIndex: 1000,
-    transition: "transform 0.3s ease",
+    transition: "transform 0.5s ease",
   },
 
   headerContent: {
