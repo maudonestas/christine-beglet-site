@@ -14,7 +14,7 @@ export default function Home() {
     const maxScroll = el.scrollWidth - el.clientWidth;
     if (maxScroll <= 0) return;
 
-    const duration = 22000;
+const duration = 40000;
     const start = performance.now();
 
     let frameId = 0;
