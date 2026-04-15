@@ -13,7 +13,7 @@ export default function ContactPage() {
               <p style={styles.intro}>
                 Pour toute question ou demande d’acquisition, d’exposition ou de
                 collaboration, vous pouvez me contacter directement par email ou
-                via le formulaire ci-dessous.
+                via le formulaire.
               </p>
 
               <p style={styles.contactLine}>
@@ -110,15 +110,15 @@ const styles: { [key: string]: CSSProperties } = {
   },
 
   contactGrid: {
-    display: "grid",
-    gridTemplateColumns: "1fr 420px",
-    gap: "60px",
-    alignItems: "start",
-  },
+  display: "grid",
+  gridTemplateColumns: "560px 380px",
+  gap: "48px",
+  alignItems: "start",
+},
 
   topBlock: {
-    maxWidth: "560px",
-  },
+  width: "100%",
+},
 
   intro: {
     fontSize: "1rem",
@@ -142,10 +142,11 @@ const styles: { [key: string]: CSSProperties } = {
     textDecoration: "none",
   },
 
-  form: {
-    maxWidth: "420px",
-  },
-
+form: {
+  width: "100%",
+  marginTop: "78px",
+},
+  
   row: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
