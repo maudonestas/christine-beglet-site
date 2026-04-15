@@ -80,12 +80,14 @@ export default function RootLayout({
 
               
               {/* EMAIL */}
-           <a href="mailto:c.beglet@free.fr" style={styles.icon} aria-label="Email">
+<a href="mailto:c.beglet@free.fr" style={styles.icon} aria-label="Email">
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-    <circle
-      cx="12"
-      cy="12"
-      r="10"
+    <rect
+      x="2"
+      y="2"
+      width="20"
+      height="20"
+      rx="5"
       stroke="#3f3a36"
       strokeWidth="1.5"
     />
