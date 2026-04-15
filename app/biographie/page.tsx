@@ -132,10 +132,11 @@ const styles: Record<string, CSSProperties> = {
 subtitle: {
   fontSize: "1rem",
   fontWeight: 300,
-  marginTop: "24px",
+  marginTop: "32px",
   marginBottom: "16px",
   letterSpacing: "0.12em",
   textTransform: "uppercase",
   fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  color: "#1f1f1f", // ← plus foncé
 },
 };
