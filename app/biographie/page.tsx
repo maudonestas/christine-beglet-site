@@ -129,13 +129,13 @@ const styles: Record<string, CSSProperties> = {
     textAlign: "justify",
   },
 
-  subtitle: {
-    fontSize: "1.2rem",
-    fontWeight: 400,
-    marginTop: 0,
-    marginBottom: "14px",
-    letterSpacing: "0.08em",
-    textTransform: "uppercase",
-    fontFamily: '"Helvetica Neue", Arial, sans-serif',
-  },
+subtitle: {
+  fontSize: "1rem",
+  fontWeight: 300,
+  marginTop: "24px",
+  marginBottom: "16px",
+  letterSpacing: "0.12em",
+  textTransform: "uppercase",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+},
 };
