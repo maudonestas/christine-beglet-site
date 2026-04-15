@@ -90,16 +90,16 @@ export default function RootLayout({
       strokeWidth="1.5"
     />
     <rect
-      x="7"
-      y="9"
-      width="10"
-      height="6"
+      x="6.5"
+      y="8.5"
+      width="11"
+      height="7"
       fill="none"
       stroke="#3f3a36"
       strokeWidth="1.5"
     />
     <path
-      d="M7 9l5 3.5L17 9"
+      d="M6.5 8.5l5.5 4 5.5-4"
       fill="none"
       stroke="#3f3a36"
       strokeWidth="1.5"
