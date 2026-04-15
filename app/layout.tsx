@@ -86,8 +86,8 @@ export default function RootLayout({
       cx="12"
       cy="12"
       r="10"
-      stroke="#1f1f1f"
-      strokeWidth="2"
+      stroke="#3f3a36"
+      strokeWidth="1.5"
     />
     <rect
       x="7"
@@ -95,14 +95,14 @@ export default function RootLayout({
       width="10"
       height="6"
       fill="none"
-      stroke="#1f1f1f"
-      strokeWidth="2"
+      stroke="#3f3a36"
+      strokeWidth="1.5"
     />
     <path
       d="M7 9l5 3.5L17 9"
       fill="none"
-      stroke="#1f1f1f"
-      strokeWidth="2"
+      stroke="#3f3a36"
+      strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
