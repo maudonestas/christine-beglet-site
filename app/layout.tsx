@@ -26,13 +26,6 @@ export default function RootLayout({
 
             <div style={styles.icons}>
 
-              {/* EMAIL */}
-              <a href="mailto:c.beglet@free.fr" style={styles.icon} aria-label="Email">
-               <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-  <rect x="3" y="5" width="18" height="14" rx="2" stroke="#EA4335" strokeWidth="2"/>
-  <path d="M3 7l9 6 9-6" stroke="#EA4335" strokeWidth="2"/>
-</svg>
-              </a>
 
               {/* INSTAGRAM */}
               <a
@@ -85,6 +78,23 @@ export default function RootLayout({
                 </svg>
               </a>
 
+              
+              {/* EMAIL */}
+              <a href="mailto:c.beglet@free.fr" style={styles.icon} aria-label="Email">
+              <svg width="22" height="22" viewBox="0 0 24 24">
+  <defs>
+    <linearGradient id="mailGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stopColor="#4facfe" />
+      <stop offset="100%" stopColor="#00c6ff" />
+    </linearGradient>
+  </defs>
+
+  <circle cx="12" cy="12" r="10" fill="url(#mailGradient)" />
+
+  <rect x="6" y="8" width="12" height="8" rx="1.5" fill="white" />
+  <path d="M6 9l6 4 6-4" stroke="#00aaff" strokeWidth="1.5" fill="none" />
+</svg>
+              </a>
             </div>
 
             <div style={styles.line} />
