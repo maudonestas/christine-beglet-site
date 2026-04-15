@@ -74,8 +74,7 @@ const styles: { [key: string]: CSSProperties } = {
     lineHeight: 1.7,
     color: "#4f4b46",
     margin: "0 0 22px 0",
-    textAlign: "justify",
-    textJustify: "inter-word",
+    textAlign: "left",
   },
 
   contactLine: {
