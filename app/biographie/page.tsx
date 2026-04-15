@@ -4,21 +4,19 @@ import type { CSSProperties } from "react";
 export default function BiographiePage() {
   return (
     <main style={styles.main}>
-
+      <Header />
 
       <section style={styles.section}>
         <div style={styles.container}>
           <h1 style={styles.title}>Biographie</h1>
 
-          <div style={styles.textBlock}>
-            <div style={styles.floatImageWrapper}>
-              <img
-                src="/images/portrait2.jpg"
-                alt="Christine Béglet"
-                style={styles.floatImage}
-              />
-            </div>
+          <img
+            src="/images/portrait.jpg"
+            alt="Christine Béglet"
+            style={styles.topImage}
+          />
 
+          <div style={styles.textBlock}>
             <p style={styles.text}>
               Née en 1954 dans le Sud-Ouest de la France, Christine Béglet vit et travaille à Toulouse. Diplômée de l’École nationale supérieure des Beaux-Arts de Toulouse, elle développe depuis les années 1990 un travail singulier autour du collage.
             </p>
@@ -74,8 +72,9 @@ export default function BiographiePage() {
             <p style={styles.text}>
               À l’inverse du phénomène observé dans les Nymphéas de Monet, la vision panoramique, d’abord abstraite, se révèle figurative lorsqu’on s’en approche : fragments de maisons, gratte-ciels, châteaux, bâtiments d’« anarchitecture ».
             </p>
+
             <p style={styles.text}>
-            Ses œuvres ont été présentées dans de nombreuses expositions en France et à l’international, notamment au Canada et en Chine, dans des galeries, salons et institutions culturelles.
+              Ses œuvres ont été présentées dans de nombreuses expositions en France et à l’international, notamment au Canada et en Chine, dans des galeries, salons et institutions culturelles.
             </p>
           </div>
         </div>
@@ -110,21 +109,15 @@ const styles: Record<string, CSSProperties> = {
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
-  floatImageWrapper: {
-    float: "left",
-    width: "240px",
-    margin: "18px 32px 20px 0",
-  },
-
-  floatImage: {
-    width: "105%",
+  topImage: {
+    width: "100%",
     height: "auto",
     display: "block",
+    marginBottom: "32px",
   },
 
   textBlock: {
     marginBottom: "28px",
-    overflow: "hidden",
   },
 
   text: {
