@@ -158,7 +158,7 @@ const styles: Record<string, CSSProperties> = {
   sectionGray: {
     position: "relative",
     zIndex: 1,
-    backgroundColor: "#faf9f7"
+    backgroundColor: "#faf9f7",
     padding: "56px 24px 80px 24px",
   },
 
