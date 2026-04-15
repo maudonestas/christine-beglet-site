@@ -144,7 +144,6 @@ const styles: { [key: string]: CSSProperties } = {
 
 form: {
   width: "100%",
-  marginTop: "78px",
 },
   
   row: {
