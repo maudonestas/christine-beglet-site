@@ -81,18 +81,27 @@ export default function RootLayout({
               
               {/* EMAIL */}
               <a href="mailto:c.beglet@free.fr" style={styles.icon} aria-label="Email">
-              <svg width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <linearGradient id="mailGradient" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stopColor="#4facfe" />
-      <stop offset="100%" stopColor="#00c6ff" />
-    </linearGradient>
-  </defs>
+             <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+  <rect
+    x="2"
+    y="2"
+    width="20"
+    height="20"
+    rx="5"
+    fill="#4fa3f7"
+  />
 
-  <circle cx="12" cy="12" r="10" fill="url(#mailGradient)" />
+  <path
+    d="M6.5 9h11a1 1 0 011 1v4a1 1 0 01-1 1h-11a1 1 0 01-1-1v-4a1 1 0 011-1z"
+    fill="white"
+  />
 
-  <rect x="6" y="8" width="12" height="8" rx="1.5" fill="white" />
-  <path d="M6 9l6 4 6-4" stroke="#00aaff" strokeWidth="1.5" fill="none" />
+  <path
+    d="M6.5 10l5.5 3.8L17.5 10"
+    stroke="#4fa3f7"
+    strokeWidth="1.5"
+    fill="none"
+  />
 </svg>
               </a>
             </div>
