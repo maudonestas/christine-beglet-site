@@ -14,20 +14,24 @@ export default function ContactPage() {
               collaboration, vous pouvez me contacter directement par email.
             </p>
 
-            <div style={styles.contactDetails}>
-              <a href="mailto:c.beglet@free.fr" style={styles.primaryContact}>
+            <p style={styles.contactLine}>
+              Email :{" "}
+              <a href="mailto:c.beglet@free.fr" style={styles.contactLink}>
                 c.beglet@free.fr
               </a>
+            </p>
 
+            <p style={styles.contactLine}>
+              Instagram :{" "}
               <a
                 href="https://www.instagram.com/christine.beglet/"
                 target="_blank"
                 rel="noreferrer"
-                style={styles.secondaryContact}
+                style={styles.contactLink}
               >
-                Instagram — @christine.beglet
+                @christine.beglet
               </a>
-            </div>
+            </p>
           </div>
         </div>
       </section>
@@ -69,26 +73,20 @@ const styles: { [key: string]: CSSProperties } = {
     fontSize: "1rem",
     lineHeight: 1.7,
     color: "#4f4b46",
-    margin: "0 0 28px 0",
+    margin: "0 0 22px 0",
     textAlign: "justify",
     textJustify: "inter-word",
   },
 
-  contactDetails: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "10px",
+  contactLine: {
+    fontSize: "1rem",
+    lineHeight: 1.7,
+    color: "#4f4b46",
+    margin: "0 0 6px 0",
   },
 
-  primaryContact: {
-    fontSize: "1.2rem",
-    color: "#1f1f1f",
-    textDecoration: "none",
-  },
-
-  secondaryContact: {
-    fontSize: "0.95rem",
-    color: "#6b665f",
+  contactLink: {
+    color: "#4f4b46",
     textDecoration: "none",
   },
 };
