@@ -25,48 +25,78 @@ export default function FormatsMoyensPage() {
     },
   ];
 
-  const oeuvres50x50: Artwork[] = [
+const oeuvres50x50: Artwork[] = [
+  {
+    src: "/images/collateral.jpg",
+    title: "Collatéral",
+    size: "50x50cm",
+  },
+  {
+    src: "/images/colle-erre.jpg",
+    title: "Colle Erre",
+    size: "50x50cm",
+  },
+  {
+    src: "/images/colle-za.jpg",
+    title: "Colle Za",
+    size: "50x50cm",
+  },
+  {
+    src: "/images/il-fait-nuit.jpg",
+    title: "Il fait nuit",
+    size: "50x50cm",
+  },
+  {
+    src: "/images/touacou-sur-adour.jpg",
+    title: "Toutacou-sur-Adour",
+    size: "50x50cm",
+  },
+  {
+    src: "/images/toutalegou-sur-seine.jpg",
+    title: "Toutalégou-sur-Seine",
+    size: "50x50cm",
+  },
+  {
+    src: "/images/toutefoi-sur-ariege.jpg",
+    title: "Toutefoi-sur-Ariège",
+    size: "50x50cm",
+  },
+  {
+    src: "/images/toutotour-sur-oise.jpg",
+    title: "Toutotour-sur-Oise",
+    size: "50x50cm",
+  },
+  {
+    src: "/images/50x50-surimpression.jpg",
+    title: "Surimpression",
+    size: "50x50cm",
+  },
+  {
+    src: "/images/50x50-toudetravers-sur-rhone.jpg",
+    title: "Toudetravers-sur-Rhône",
+    size: "50x50cm",
+  },
+  {
+    src: "/images/50x50-toutotan-sur-marne.jpg",
+    title: "Toutotan-sur-Marne",
+    size: "50x50cm",
+  },
     {
-      src: "/images/collateral.jpg",
-      title: "Collatéral",
-      size: "50x50cm",
-    },
-    {
-      src: "/images/colle-erre.jpg",
-      title: "Colle Erre",
-      size: "50x50cm",
-    },
-    {
-      src: "/images/colle-za.jpg",
-      title: "Colle Za",
-      size: "50x50cm",
-    },
-    {
-      src: "/images/il-fait-nuit.jpg",
-      title: "Il fait nuit",
-      size: "50x50cm",
-    },
-    {
-      src: "/images/touacou-sur-adour.jpg",
-      title: "Touacou-sur-Adour",
-      size: "50x50cm",
-    },
-    {
-      src: "/images/toutalegou-sur-seine.jpg",
-      title: "Toutalégou-sur-Seine",
-      size: "50x50cm",
-    },
-    {
-      src: "/images/toutefoi-sur-ariege.jpg",
-      title: "Toutefoi-sur-Ariège",
-      size: "50x50cm",
-    },
-    {
-      src: "/images/toutotour-sur-oise.jpg",
-      title: "Toutotour-sur-Oise",
-      size: "50x50cm",
-    },
-  ];
+    src: "/images/50x50-1.jpg",
+    title: "",
+    size: "50x50cm",
+  },
+  {
+    src: "/images/50x50-2.jpg",
+    title: "",
+    size: "50x50cm",
+  },
+  {
+    src: "/images/50x50-3.jpg",
+    title: "",
+    size: "50x50cm",
+  },
+];
 
   const [activeImages, setActiveImages] = useState<Artwork[] | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
