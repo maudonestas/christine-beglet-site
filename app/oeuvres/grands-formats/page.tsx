@@ -42,6 +42,26 @@ export default function GrandsFormatsPage() {
       title: "Les murs ont des oreilles",
       size: "70x100cm",
     },
+    {
+  src: "/images/70x100-a-la-porte-du-jardin.jpg",
+  title: "À la porte du jardin",
+  size: "70x100cm",
+},
+{
+  src: "/images/70x100-chaos-organise.jpg",
+  title: "Chaos organisé",
+  size: "70x100cm",
+},
+{
+  src: "/images/70x100-complot-immobilier.jpg",
+  title: "Complot immobilier",
+  size: "70x100cm",
+},
+{
+  src: "/images/70x100-contamination-urbaine.jpg",
+  title: "Contamination urbaine",
+  size: "70x100cm",
+},
   ];
 
   const oeuvres90x90: Artwork[] = [
