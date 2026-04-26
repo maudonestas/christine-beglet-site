@@ -17,11 +17,31 @@ export default function GrandsFormatsPage() {
       title: "Murs d’histoires",
       size: "70x100cm",
     },
+     {
+      src: "/images/les-murs-ont-des-oreilles.jpg",
+      title: "Les murs ont des oreilles",
+      size: "70x100cm",
+    },
+    {
+  src: "/images/70x100-complot-immobilier.jpg",
+  title: "Complot immobilier",
+  size: "70x100cm",
+},
     {
       src: "/images/deambulation-betonniere.jpg",
       title: "Déambulation bétonnière",
       size: "70x100cm",
     },
+       {
+      src: "/images/puzzle-neuronal.jpg",
+      title: "Puzzle neuronal",
+      size: "70x100cm",
+    },
+    {
+  src: "/images/70x100-chaos-organise.jpg",
+  title: "Chaos organisé",
+  size: "70x100cm",
+},
     {
       src: "/images/pollinisation-excessive.jpg",
       title: "Pollinisation excessive",
@@ -32,29 +52,10 @@ export default function GrandsFormatsPage() {
       title: "Entre les murs",
       size: "70x100cm",
     },
-    {
-      src: "/images/puzzle-neuronal.jpg",
-      title: "Puzzle neuronal",
-      size: "70x100cm",
-    },
-    {
-      src: "/images/les-murs-ont-des-oreilles.jpg",
-      title: "Les murs ont des oreilles",
-      size: "70x100cm",
-    },
+   
     {
   src: "/images/70x100-a-la-porte-du-jardin.jpg",
   title: "À la porte du jardin",
-  size: "70x100cm",
-},
-{
-  src: "/images/70x100-chaos-organise.jpg",
-  title: "Chaos organisé",
-  size: "70x100cm",
-},
-{
-  src: "/images/70x100-complot-immobilier.jpg",
-  title: "Complot immobilier",
   size: "70x100cm",
 },
 {
@@ -76,13 +77,13 @@ export default function GrandsFormatsPage() {
       size: "90x90cm",
     },
     {
-      src: "/images/nuit-d-automne.jpg",
-      title: "Nuit d’automne",
-      size: "90x90cm",
-    },
-    {
       src: "/images/recrudescence.jpg",
       title: "Recrudescence",
+      size: "90x90cm",
+    },
+        {
+      src: "/images/nuit-d-automne.jpg",
+      title: "Nuit d’automne",
       size: "90x90cm",
     },
   ];
@@ -94,11 +95,6 @@ export default function GrandsFormatsPage() {
        size: "80x80cm",
     },
     {
-      src: "/images/casse-tete.jpg",
-      title: "Casse-tête",
-       size: "80x80cm",
-    },
-    {
       src: "/images/emmuree.jpg",
       title: "Emmurée",
        size: "80x80cm",
@@ -106,6 +102,11 @@ export default function GrandsFormatsPage() {
     {
       src: "/images/brouillon-de-culture.jpg",
       title: "Brouillon de culture",
+       size: "80x80cm",
+    },
+        {
+      src: "/images/casse-tete.jpg",
+      title: "Casse-tête",
        size: "80x80cm",
     },
   ];
