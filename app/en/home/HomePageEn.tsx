@@ -80,9 +80,9 @@ export default function Home() {
                 the 1990s a distinctive body of work centered on collage.
                 <br />
                 <br />
-                The smallest fragment, the tiniest piece of paper—houses,
+                The smallest fragment, the tiniest piece of paper-houses,
                 buildings cut out by the hundreds, fragmented and broken
-                apart—become the touches of color, the pigments of her palette
+                apart-become the touches of color, the pigments of her palette
                 with which she composes her work. She does not structure her
                 compositions in advance; from the chaos of accumulated images,
                 everything unfolds rapidly in a kind of frenzy. Harmony emerges
@@ -94,7 +94,7 @@ export default function Home() {
                 chaos and harmony, fragmentation and unity, between the
                 insignificant and the essential. She reconstructs her reality
                 from small fragments, from seemingly trivial elements, where the
-                least one can do is say nothing—simply let it be seen, allowing
+                least one can do is say nothing-simply let it be seen, allowing
                 for a unique resonance with others.
                 <br />
               </p>
