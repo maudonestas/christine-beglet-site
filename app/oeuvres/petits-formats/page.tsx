@@ -39,6 +39,9 @@ export default function PetitsFormatsPage() {
     { src: "/images/35x35-immobile.jpg", title: "Immobile", size: "35x35cm" },
     { src: "/images/35x35-archiduc.jpg", title: "Archiduc", size: "35x35cm" },
     { src: "/images/35x35-a-vendre-70m2.jpg", title: "À vendre 70m2", size: "35x35cm" },
+    { src: "/images/35x35-bleu-nuit.jpg", title: "Bleu nuit", size: "35x35cm" },
+{ src: "/images/35x35-immolation.jpg", title: "Immolation", size: "35x35cm" },
+{ src: "/images/35x35-la-terre-est-plate.jpg", title: "La terre est plate", size: "35x35cm" },
     { src: "/images/35X35-5.jpg", title: "35x35 5", size: "35x35cm" },
     { src: "/images/35X35-6.jpg", title: "35x35 6", size: "35x35cm" },
     { src: "/images/35X35-7.jpg", title: "35x35 7", size: "35x35cm" },
@@ -46,6 +49,13 @@ export default function PetitsFormatsPage() {
     { src: "/images/35X35-10.jpg", title: "35x35 10", size: "35x35cm" },
     { src: "/images/35X35-11.jpg", title: "35x35 11", size: "35x35cm" },
     { src: "/images/35X35-12.jpg", title: "35x35 12", size: "35x35cm" },
+    { src: "/images/35x35-13.jpg", title: "35x35 13", size: "35x35cm" },
+{ src: "/images/35x35-14.jpg", title: "35x35 14", size: "35x35cm" },
+{ src: "/images/35x35-15.jpg", title: "35x35 15", size: "35x35cm" },
+{ src: "/images/35x35-16.jpg", title: "35x35 16", size: "35x35cm" },
+{ src: "/images/35x35-17.jpg", title: "35x35 17", size: "35x35cm" },
+{ src: "/images/35x35-18.jpg", title: "35x35 18", size: "35x35cm" },
+{ src: "/images/35x35-19.jpg", title: "35x35 19", size: "35x35cm" },
   ];
 
   const [activeImages, setActiveImages] = useState<Artwork[] | null>(null);
