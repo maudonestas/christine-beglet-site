@@ -10,7 +10,6 @@ type Artwork = {
   size: string;
 };
 
-
 export default function FormatsMoyensPage() {
   const oeuvres60x60: Artwork[] = [
     {
@@ -25,78 +24,78 @@ export default function FormatsMoyensPage() {
     },
   ];
 
-const oeuvres50x50: Artwork[] = [
-  {
-    src: "/images/collateral.jpg",
-    title: "Collatéral",
-    size: "50x50cm",
-  },
-  {
-    src: "/images/colle-erre.jpg",
-    title: "Colle Erre",
-    size: "50x50cm",
-  },
-  {
-    src: "/images/colle-za.jpg",
-    title: "Colle Za",
-    size: "50x50cm",
-  },
-  {
-    src: "/images/il-fait-nuit.jpg",
-    title: "Il fait nuit",
-    size: "50x50cm",
-  },
-  {
-    src: "/images/touacou-sur-adour.jpg",
-    title: "Toutacou-sur-Adour",
-    size: "50x50cm",
-  },
-  {
-    src: "/images/toutalegou-sur-seine.jpg",
-    title: "Toutalégou-sur-Seine",
-    size: "50x50cm",
-  },
-  {
-    src: "/images/toutefoi-sur-ariege.jpg",
-    title: "Toutefoi-sur-Ariège",
-    size: "50x50cm",
-  },
-  {
-    src: "/images/toutotour-sur-oise.jpg",
-    title: "Toutotour-sur-Oise",
-    size: "50x50cm",
-  },
-  {
-    src: "/images/50x50-surimpression.jpg",
-    title: "Surimpression",
-    size: "50x50cm",
-  },
-  {
-    src: "/images/50x50-toudetravers-sur-rhone.jpg",
-    title: "Toudetravers-sur-Rhône",
-    size: "50x50cm",
-  },
-  {
-    src: "/images/50x50-toutotan-sur-marne.jpg",
-    title: "Toutotan-sur-Marne",
-    size: "50x50cm",
-  },
+  const oeuvres50x50: Artwork[] = [
     {
-    src: "/images/50x50-1.jpg",
-    title: "",
-    size: "50x50cm",
-  },
-  {
-    src: "/images/50x50-2.jpg",
-    title: "",
-    size: "50x50cm",
-  },
-  {
-    src: "/images/50x50-3.jpg",
-    title: "",
-    size: "50x50cm",
-  },
-];
+      src: "/images/collateral.jpg",
+      title: "Collatéral",
+      size: "50x50cm",
+    },
+    {
+      src: "/images/colle-erre.jpg",
+      title: "Colle Erre",
+      size: "50x50cm",
+    },
+    {
+      src: "/images/colle-za.jpg",
+      title: "Colle Za",
+      size: "50x50cm",
+    },
+    {
+      src: "/images/il-fait-nuit.jpg",
+      title: "Il fait nuit",
+      size: "50x50cm",
+    },
+    {
+      src: "/images/touacou-sur-adour.jpg",
+      title: "Toutacou-sur-Adour",
+      size: "50x50cm",
+    },
+    {
+      src: "/images/toutalegou-sur-seine.jpg",
+      title: "Toutalégou-sur-Seine",
+      size: "50x50cm",
+    },
+    {
+      src: "/images/toutefoi-sur-ariege.jpg",
+      title: "Toutefoi-sur-Ariège",
+      size: "50x50cm",
+    },
+    {
+      src: "/images/toutotour-sur-oise.jpg",
+      title: "Toutotour-sur-Oise",
+      size: "50x50cm",
+    },
+    {
+      src: "/images/50x50-surimpression.jpg",
+      title: "Surimpression",
+      size: "50x50cm",
+    },
+    {
+      src: "/images/50x50-toudetravers-sur-rhone.jpg",
+      title: "Toudetravers-sur-Rhône",
+      size: "50x50cm",
+    },
+    {
+      src: "/images/50x50-toutotan-sur-marne.jpg",
+      title: "Toutotan-sur-Marne",
+      size: "50x50cm",
+    },
+    {
+      src: "/images/50x50-1.jpg",
+      title: "",
+      size: "50x50cm",
+    },
+    {
+      src: "/images/50x50-2.jpg",
+      title: "",
+      size: "50x50cm",
+    },
+    {
+      src: "/images/50x50-3.jpg",
+      title: "",
+      size: "50x50cm",
+    },
+  ];
 
   const [activeImages, setActiveImages] = useState<Artwork[] | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
@@ -142,21 +141,19 @@ const oeuvres50x50: Artwork[] = [
   }, [currentIndex]);
 
   const current =
-    activeImages && currentIndex !== null
-      ? activeImages[currentIndex]
-      : null;
+    activeImages && currentIndex !== null ? activeImages[currentIndex] : null;
 
   return (
     <main style={styles.main}>
-
-
       <section style={styles.section}>
         <div style={styles.container}>
           <h1 style={styles.title}>Formats moyens</h1>
-<p style={styles.technique}>
-  Collages sur bois, protégés contre les UV par plusieurs couches de vernis.
-</p>
-          {/* 60x60 */}
+
+          <p style={styles.technique}>
+            Collages sur bois, protégés contre les UV par plusieurs couches de
+            vernis.
+          </p>
+
           <div style={styles.block}>
             <h2 style={styles.subtitle}>60x60cm</h2>
 
@@ -164,8 +161,10 @@ const oeuvres50x50: Artwork[] = [
               {oeuvres60x60.map((oeuvre, index) => (
                 <div key={index} style={styles.card}>
                   <button
+                    type="button"
                     style={styles.imageButton}
                     onClick={() => openGallery(oeuvres60x60, index)}
+                    aria-label={`Agrandir ${oeuvre.title}`}
                   >
                     <img
                       src={oeuvre.src}
@@ -173,13 +172,13 @@ const oeuvres50x50: Artwork[] = [
                       style={styles.image}
                     />
                   </button>
+
                   <p style={styles.caption}>{oeuvre.title}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* 50x50 */}
           <div style={styles.block}>
             <h2 style={styles.subtitle}>50x50cm</h2>
 
@@ -187,15 +186,18 @@ const oeuvres50x50: Artwork[] = [
               {oeuvres50x50.map((oeuvre, index) => (
                 <div key={index} style={styles.card}>
                   <button
+                    type="button"
                     style={styles.imageButton}
                     onClick={() => openGallery(oeuvres50x50, index)}
+                    aria-label={`Agrandir ${oeuvre.title || oeuvre.size}`}
                   >
                     <img
                       src={oeuvre.src}
-                      alt={oeuvre.title}
+                      alt={oeuvre.title || oeuvre.size}
                       style={styles.image}
                     />
                   </button>
+
                   <p style={styles.caption}>{oeuvre.title}</p>
                 </div>
               ))}
@@ -204,48 +206,55 @@ const oeuvres50x50: Artwork[] = [
         </div>
       </section>
 
-      {/* LIGHTBOX */}
       {activeImages && current && currentIndex !== null && (
         <div style={styles.overlay} onClick={closeGallery}>
           <div style={styles.lightbox} onClick={(e) => e.stopPropagation()}>
-            <button style={styles.close} onClick={closeGallery}>
+            <button
+              type="button"
+              style={styles.close}
+              onClick={closeGallery}
+              aria-label="Fermer"
+            >
               ×
             </button>
 
             {activeImages.length > 1 && (
-              <button style={{ ...styles.nav, left: 0 }} onClick={prev}>
+              <button
+                type="button"
+                style={{ ...styles.nav, left: 0 }}
+                onClick={prev}
+                aria-label="Image précédente"
+              >
                 ‹
               </button>
             )}
 
             <div style={styles.mainImageWrapper}>
-              <img src={current.src} style={styles.lightboxImage} />
-             <p style={styles.lightboxCaption}>
-  {current.title}
-  <span style={styles.lightboxSize}> — {current.size}</span>
-</p>
+              <img
+                src={current.src}
+                alt={current.title || current.size}
+                style={styles.lightboxImage}
+              />
+
+              <p style={styles.lightboxCaption}>
+                {current.title && <>{current.title}</>}
+                {current.title && (
+                  <span style={styles.lightboxSize}> — {current.size}</span>
+                )}
+                {!current.title && <span>{current.size}</span>}
+              </p>
             </div>
 
             {activeImages.length > 1 && (
-              <button style={{ ...styles.nav, right: 0 }} onClick={next}>
+              <button
+                type="button"
+                style={{ ...styles.nav, right: 0 }}
+                onClick={next}
+                aria-label="Image suivante"
+              >
                 ›
               </button>
             )}
-
-            <div style={styles.thumbs}>
-              {activeImages.map((img, i) => (
-                <button
-                  key={img.src}
-                  onClick={() => setCurrentIndex(i)}
-                  style={{
-                    ...styles.thumbBtn,
-                    ...(i === currentIndex ? styles.active : {}),
-                  }}
-                >
-                  <img src={img.src} style={styles.thumbImg} />
-                </button>
-              ))}
-            </div>
           </div>
         </div>
       )}
@@ -279,22 +288,33 @@ const styles: Record<string, CSSProperties> = {
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
+  technique: {
+    fontSize: "0.95rem",
+    lineHeight: 1.6,
+    color: "#4f4b46",
+    marginTop: "0",
+    marginBottom: "40px",
+    fontStyle: "italic",
+    maxWidth: "720px",
+  },
+
   block: {
     marginBottom: "60px",
   },
 
   subtitle: {
-  margin: "0 0 20px 0",
-  fontSize: "1.3rem",
-  fontWeight: 300,
-  letterSpacing: "0.08em",
-  textTransform: "uppercase",
-  fontFamily: '"Helvetica Neue", Arial, sans-serif',
-},
+    margin: "0 0 20px 0",
+    fontSize: "1.3rem",
+    fontWeight: 300,
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
   grid: {
     display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: "40px",
+    gridTemplateColumns: "repeat(3, 1fr)",
+    gap: "28px",
   },
 
   card: {
@@ -334,6 +354,7 @@ const styles: Record<string, CSSProperties> = {
     justifyContent: "center",
     alignItems: "center",
     zIndex: 2000,
+    padding: "32px",
   },
 
   lightbox: {
@@ -344,6 +365,7 @@ const styles: Record<string, CSSProperties> = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    justifyContent: "center",
   },
 
   close: {
@@ -355,6 +377,7 @@ const styles: Record<string, CSSProperties> = {
     border: "none",
     color: "#fff",
     cursor: "pointer",
+    zIndex: 3,
   },
 
   nav: {
@@ -368,6 +391,7 @@ const styles: Record<string, CSSProperties> = {
     color: "#fff",
     fontSize: "2rem",
     cursor: "pointer",
+    zIndex: 2,
   },
 
   mainImageWrapper: {
@@ -376,18 +400,23 @@ const styles: Record<string, CSSProperties> = {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    width: "100%",
+    minHeight: 0,
   },
 
   lightboxImage: {
     maxWidth: "100%",
-    maxHeight: "78vh",
+    maxHeight: "88vh",
+    width: "auto",
+    height: "auto",
     objectFit: "contain",
+    display: "block",
   },
 
   lightboxCaption: {
-    marginTop: "16px",
-    marginBottom: "20px",
-   color: "#d6d2cd",
+    marginTop: "12px",
+    marginBottom: 0,
+    color: "#d6d2cd",
     fontSize: "0.95rem",
     letterSpacing: "0.08em",
     textTransform: "uppercase",
@@ -395,40 +424,7 @@ const styles: Record<string, CSSProperties> = {
     opacity: 0.8,
   },
 
-  thumbs: {
-    display: "flex",
-    gap: "10px",
-    overflowX: "auto",
-  },
-
-  thumbBtn: {
-    border: "1px solid rgba(255,255,255,0.3)",
-    padding: "2px",
-    opacity: 0.6,
-    background: "none",
-    cursor: "pointer",
-  },
-
-  active: {
-    opacity: 1,
-    border: "1px solid #fff",
-  },
-
-  thumbImg: {
-    height: "50px",
-    width: "auto",
-    objectFit: "contain",
-  },
-  technique: {
-  fontSize: "0.95rem",
-  lineHeight: 1.6,
-  color: "#4f4b46",
-  marginTop: "0",
-  marginBottom: "40px",
-  fontStyle: "italic",
-  maxWidth: "720px",
-},
   lightboxSize: {
-  color: "#bdb8b2",
-},
+    color: "#bdb8b2",
+  },
 };
