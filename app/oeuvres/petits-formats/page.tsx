@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { CSSProperties } from "react";
 
 type Artwork = {
@@ -57,23 +57,62 @@ export default function PetitsFormatsPage() {
     { src: "/images/35x35-19.jpg", title: "35x35 19", size: "35x35cm" },
   ];
 
-  const [zoomedArtwork, setZoomedArtwork] = useState<Artwork | null>(null);
+  const [activeMagnifier, setActiveMagnifier] = useState<string | null>(null);
+  const [lensPosition, setLensPosition] = useState({ x: 50, y: 50 });
 
-  useEffect(() => {
-    if (!zoomedArtwork) return;
+  const handleMouseMove = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    src: string
+  ) => {
+    if (activeMagnifier !== src) return;
 
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setZoomedArtwork(null);
-    };
+    const rect = e.currentTarget.getBoundingClientRect();
 
-    document.addEventListener("keydown", handleKey);
-    document.body.style.overflow = "hidden";
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
 
-    return () => {
-      document.removeEventListener("keydown", handleKey);
-      document.body.style.overflow = "auto";
-    };
-  }, [zoomedArtwork]);
+    setLensPosition({ x, y });
+  };
+
+  const renderGrid = (oeuvres: Artwork[]) => (
+    <div style={styles.grid}>
+      {oeuvres.map((oeuvre, index) => {
+        const isActive = activeMagnifier === oeuvre.src;
+
+        return (
+          <div key={index} style={styles.item}>
+            <button
+              type="button"
+              style={{
+                ...styles.imageButton,
+                cursor: isActive ? "none" : "zoom-in",
+              }}
+              onClick={() =>
+                setActiveMagnifier(isActive ? null : oeuvre.src)
+              }
+              onMouseMove={(e) => handleMouseMove(e, oeuvre.src)}
+              onMouseLeave={() => setActiveMagnifier(null)}
+              aria-label={`Zoomer sur ${oeuvre.title}`}
+            >
+              <img src={oeuvre.src} alt={oeuvre.title} style={styles.image} />
+
+              {isActive && (
+                <div
+                  style={{
+                    ...styles.lens,
+                    left: `${lensPosition.x}%`,
+                    top: `${lensPosition.y}%`,
+                    backgroundImage: `url(${oeuvre.src})`,
+                    backgroundPosition: `${lensPosition.x}% ${lensPosition.y}%`,
+                  }}
+                />
+              )}
+            </button>
+          </div>
+        );
+      })}
+    </div>
+  );
 
   return (
     <main style={styles.main}>
@@ -87,57 +126,15 @@ export default function PetitsFormatsPage() {
 
           <div style={styles.block}>
             <h2 style={styles.subtitle}>20x20cm</h2>
-
-            <div style={styles.grid}>
-              {oeuvres20x20.map((oeuvre, index) => (
-                <div key={index} style={styles.item}>
-                  <button
-                    type="button"
-                    style={styles.imageButton}
-                    onClick={() => setZoomedArtwork(oeuvre)}
-                    aria-label={`Agrandir ${oeuvre.title}`}
-                  >
-                    <img src={oeuvre.src} alt={oeuvre.title} style={styles.image} />
-                  </button>
-                </div>
-              ))}
-            </div>
+            {renderGrid(oeuvres20x20)}
           </div>
 
           <div style={styles.block}>
             <h2 style={styles.subtitle}>35x35cm</h2>
-
-            <div style={styles.grid}>
-              {oeuvres35x35.map((oeuvre, index) => (
-                <div key={index} style={styles.item}>
-                  <button
-                    type="button"
-                    style={styles.imageButton}
-                    onClick={() => setZoomedArtwork(oeuvre)}
-                    aria-label={`Agrandir ${oeuvre.title}`}
-                  >
-                    <img src={oeuvre.src} alt={oeuvre.title} style={styles.image} />
-                  </button>
-                </div>
-              ))}
-            </div>
+            {renderGrid(oeuvres35x35)}
           </div>
         </div>
       </section>
-
-      {zoomedArtwork && (
-        <div style={styles.zoomOverlay} onClick={() => setZoomedArtwork(null)}>
-          <div style={styles.zoomContent}>
-            <img
-              src={zoomedArtwork.src}
-              alt={zoomedArtwork.title}
-              style={styles.zoomImage}
-            />
-
-            <p style={styles.zoomSize}>{zoomedArtwork.size}</p>
-          </div>
-        </div>
-      )}
     </main>
   );
 }
@@ -202,11 +199,12 @@ const styles: Record<string, CSSProperties> = {
   },
 
   imageButton: {
+    position: "relative",
+    overflow: "hidden",
     border: "none",
     background: "transparent",
     padding: 0,
     margin: 0,
-    cursor: "zoom-in",
     width: "100%",
     display: "block",
   },
@@ -217,42 +215,16 @@ const styles: Record<string, CSSProperties> = {
     display: "block",
   },
 
-  zoomOverlay: {
-    position: "fixed",
-    inset: 0,
-    background: "rgba(0,0,0,0.88)",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    zIndex: 3000,
-    cursor: "zoom-out",
-    padding: "32px",
-  },
-
-  zoomContent: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    maxWidth: "100%",
-    maxHeight: "100%",
-    animation: "zoomIn 0.22s ease forwards",
-  },
-
-  zoomImage: {
-    maxWidth: "90vw",
-    maxHeight: "82vh",
-    objectFit: "contain",
-    display: "block",
-  },
-
-  zoomSize: {
-    marginTop: "16px",
-    marginBottom: 0,
-    color: "#bdb8b2",
-    fontSize: "0.95rem",
-    letterSpacing: "0.08em",
-    textTransform: "uppercase",
-    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  lens: {
+    position: "absolute",
+    width: "150px",
+    height: "150px",
+    borderRadius: "50%",
+    transform: "translate(-50%, -50%)",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "260%",
+    border: "1px solid rgba(255,255,255,0.9)",
+    boxShadow: "0 8px 24px rgba(0,0,0,0.35)",
+    pointerEvents: "none",
   },
 };
