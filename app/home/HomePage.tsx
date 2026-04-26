@@ -1,6 +1,5 @@
 "use client";
 
-import Header from "./components/Header";
 import { useEffect, useRef } from "react";
 import type { CSSProperties } from "react";
 
@@ -58,7 +57,6 @@ const duration = 40000;
 
   return (
     <main style={styles.main}>
-      <Header />
 
       <section style={styles.hero}>
         <div style={styles.heroWrapper}>
