@@ -74,7 +74,7 @@ export default function Home() {
           <div style={styles.bioBlock}>
             <div style={styles.bioText}>
               <p style={styles.text}>
-                Born in 1954 in the southwest of France, Christine Béglet lives
+                TEST ANGLAIS Born in 1954 in the southwest of France, Christine Béglet lives
                 and works in Toulouse. A graduate of the École nationale
                 supérieure des Beaux-Arts de Toulouse, she has developed since
                 the 1990s a distinctive body of work centered on collage.
