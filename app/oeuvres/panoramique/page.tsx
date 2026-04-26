@@ -179,9 +179,9 @@ description: {
   fontStyle: "italic",
   maxWidth: "720px",
 },
-      panoFull: {
-  width: "100vw",
-  marginLeft: "calc(50% - 50vw)",
+     panoFull: {
+  width: "calc(100% - 48px)", // 24px de chaque côté (comme ton padding section)
+  margin: "0 auto",
 },
 
 panoFullImg: {
