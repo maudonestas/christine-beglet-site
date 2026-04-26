@@ -21,17 +21,6 @@ export default function ContactPage() {
               </a>
             </p>
 
-            <p style={styles.contactLine}>
-              Instagram :{" "}
-              <a
-                href="https://www.instagram.com/christine.beglet/"
-                target="_blank"
-                rel="noreferrer"
-                style={styles.contactLink}
-              >
-                @christine.beglet
-              </a>
-            </p>
           </div>
         </div>
       </section>
