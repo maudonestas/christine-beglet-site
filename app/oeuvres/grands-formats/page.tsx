@@ -356,11 +356,11 @@ const styles: Record<string, CSSProperties> = {
   fontFamily: '"Helvetica Neue", Arial, sans-serif',
 },
 
-  grid: {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: "40px",
-  },
+grid: {
+  display: "grid",
+  gridTemplateColumns: "repeat(3, 1fr)",
+  gap: "28px",
+},
 
   card: {
     display: "flex",
