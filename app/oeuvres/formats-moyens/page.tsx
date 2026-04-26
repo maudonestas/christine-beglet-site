@@ -31,11 +31,6 @@ export default function FormatsMoyensPage() {
       size: "50x50cm",
     },
     {
-      src: "/images/colle-erre.jpg",
-      title: "Colle Erre",
-      size: "50x50cm",
-    },
-    {
       src: "/images/colle-za.jpg",
       title: "Colle Za",
       size: "50x50cm",
@@ -93,6 +88,11 @@ export default function FormatsMoyensPage() {
     {
       src: "/images/50x50-3.jpg",
       title: "",
+      size: "50x50cm",
+    },
+        {
+      src: "/images/colle-erre.jpg",
+      title: "Colle Erre",
       size: "50x50cm",
     },
   ];
