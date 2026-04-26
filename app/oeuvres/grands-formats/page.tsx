@@ -285,31 +285,6 @@ export default function GrandsFormatsPage() {
                 ›
               </button>
             )}
-
-            {activeImages.length > 1 && (
-              <div style={styles.thumbnailRow}>
-                {activeImages.map((oeuvre, index) => (
-                  <button
-                    key={oeuvre.src}
-                    type="button"
-                    onClick={() => setCurrentIndex(index)}
-                    style={{
-                      ...styles.thumbnailButton,
-                      ...(index === currentIndex
-                        ? styles.thumbnailButtonActive
-                        : {}),
-                    }}
-                    aria-label={`Voir ${oeuvre.title}`}
-                  >
-                    <img
-                      src={oeuvre.src}
-                      alt={oeuvre.title}
-                      style={styles.thumbnailImage}
-                    />
-                  </button>
-                ))}
-              </div>
-            )}
           </div>
         </div>
       )}
@@ -356,11 +331,11 @@ const styles: Record<string, CSSProperties> = {
   fontFamily: '"Helvetica Neue", Arial, sans-serif',
 },
 
-  grid: {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: "40px",
-  },
+grid: {
+  display: "grid",
+  gridTemplateColumns: "repeat(3, 1fr)",
+  gap: "28px",
+},
 
   card: {
     display: "flex",
@@ -436,18 +411,15 @@ const styles: Record<string, CSSProperties> = {
   flex: 1,
   minHeight: 0,
 },
-  lightboxImage: {
+lightboxImage: {
   maxWidth: "100%",
-  maxHeight: "78vh",
-  width: "auto",
-  height: "auto",
+  maxHeight: "88vh",
   objectFit: "contain",
-  display: "block",
 },
 
   lightboxCaption: {
-    marginTop: "16px",
-    marginBottom: "20px",
+  marginTop: "12px",
+  marginBottom: "0",
    color: "#d6d2cd",
     fontSize: "0.95rem",
     letterSpacing: "0.08em",
@@ -482,37 +454,6 @@ const styles: Record<string, CSSProperties> = {
     right: "0",
   },
 
-  thumbnailRow: {
-  display: "flex",
-  gap: "10px",
-  overflowX: "auto",
-  maxWidth: "100%",
-  paddingTop: "6px",
-  paddingBottom: "2px",
-},
-  thumbnailButton: {
-  border: "1px solid rgba(255,255,255,0.25)",
-  background: "transparent",
-  padding: "2px",
-  cursor: "pointer",
-  opacity: 0.6,
-  flex: "0 0 auto",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-},
-
-  thumbnailButtonActive: {
-    border: "1px solid #fff",
-    opacity: 1,
-  },
-
-  thumbnailImage: {
-  display: "block",
-  height: "45px",
-  width: "auto",
-  objectFit: "contain",
-},
   technique: {
   fontSize: "0.95rem",
   lineHeight: 1.6,
