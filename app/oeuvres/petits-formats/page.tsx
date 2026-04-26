@@ -22,6 +22,16 @@ export default function PetitsFormatsPage() {
     { src: "/images/20x20-8.jpg", title: "20x20 8", size: "20x20cm" },
     { src: "/images/20x20-9.jpg", title: "20x20 9", size: "20x20cm" },
     { src: "/images/20x20-10.jpg", title: "20x20 10", size: "20x20cm" },
+     { src: "/images/20x20-11.jpg", title: "20x20 11", size: "20x20cm" },
+  { src: "/images/20x20-12.jpg", title: "20x20 12", size: "20x20cm" },
+  { src: "/images/20x20-13.jpg", title: "20x20 13", size: "20x20cm" },
+  { src: "/images/20x20-14.jpg", title: "20x20 14", size: "20x20cm" },
+  { src: "/images/20x20-15.jpg", title: "20x20 15", size: "20x20cm" },
+  { src: "/images/20x20-16.jpg", title: "20x20 16", size: "20x20cm" },
+  { src: "/images/20x20-17.jpg", title: "20x20 17", size: "20x20cm" },
+  { src: "/images/20x20-18.jpg", title: "20x20 18", size: "20x20cm" },
+  { src: "/images/20x20-19.jpg", title: "20x20 19", size: "20x20cm" },
+  { src: "/images/20x20-20.jpg", title: "20x20 20", size: "20x20cm" },
   ];
 
   const oeuvres35x35: Artwork[] = [
