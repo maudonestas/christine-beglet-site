@@ -17,11 +17,6 @@ export default function GrandsFormatsPage() {
       title: "Murs d’histoires",
       size: "70x100cm",
     },
-     {
-      src: "/images/les-murs-ont-des-oreilles.jpg",
-      title: "Les murs ont des oreilles",
-      size: "70x100cm",
-    },
     {
   src: "/images/70x100-complot-immobilier.jpg",
   title: "Complot immobilier",
@@ -32,11 +27,7 @@ export default function GrandsFormatsPage() {
       title: "Déambulation bétonnière",
       size: "70x100cm",
     },
-       {
-      src: "/images/puzzle-neuronal.jpg",
-      title: "Puzzle neuronal",
-      size: "70x100cm",
-    },
+
     {
   src: "/images/70x100-chaos-organise.jpg",
   title: "Chaos organisé",
@@ -47,11 +38,7 @@ export default function GrandsFormatsPage() {
       title: "Pollinisation excessive",
       size: "70x100cm",
     },
-    {
-      src: "/images/entre-les-murs.jpg",
-      title: "Entre les murs",
-      size: "70x100cm",
-    },
+
    
     {
   src: "/images/70x100-a-la-porte-du-jardin.jpg",
@@ -63,6 +50,21 @@ export default function GrandsFormatsPage() {
   title: "Contamination urbaine",
   size: "70x100cm",
 },
+    {
+      src: "/images/les-murs-ont-des-oreilles.jpg",
+      title: "Les murs ont des oreilles",
+      size: "70x100cm",
+    },
+        {
+      src: "/images/entre-les-murs.jpg",
+      title: "Entre les murs",
+      size: "70x100cm",
+    },
+           {
+      src: "/images/puzzle-neuronal.jpg",
+      title: "Puzzle neuronal",
+      size: "70x100cm",
+    },
   ];
 
   const oeuvres90x90: Artwork[] = [
