@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { CSSProperties } from "react";
 
 type Artwork = {
@@ -57,60 +57,70 @@ export default function PetitsFormatsPage() {
     { src: "/images/35x35-19.jpg", title: "35x35 19", size: "35x35cm" },
   ];
 
-  const [activeMagnifier, setActiveMagnifier] = useState<string | null>(null);
-  const [lensPosition, setLensPosition] = useState({ x: 50, y: 50 });
+  const [activeImages, setActiveImages] = useState<Artwork[] | null>(null);
+  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
-  const handleMouseMove = (
-    e: React.MouseEvent<HTMLButtonElement>,
-    src: string
-  ) => {
-    if (activeMagnifier !== src) return;
-
-    const rect = e.currentTarget.getBoundingClientRect();
-
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-
-    setLensPosition({ x, y });
+  const openGallery = (images: Artwork[], index: number) => {
+    setActiveImages(images);
+    setCurrentIndex(index);
   };
+
+  const closeGallery = () => {
+    setActiveImages(null);
+    setCurrentIndex(null);
+  };
+
+  const prev = () => {
+    if (!activeImages || currentIndex === null) return;
+    setCurrentIndex(
+      (currentIndex - 1 + activeImages.length) % activeImages.length
+    );
+  };
+
+  const next = () => {
+    if (!activeImages || currentIndex === null) return;
+    setCurrentIndex((currentIndex + 1) % activeImages.length);
+  };
+
+  useEffect(() => {
+    if (currentIndex === null) return;
+
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeGallery();
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") next();
+    };
+
+    document.addEventListener("keydown", handleKey);
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", handleKey);
+      document.body.style.overflow = "auto";
+    };
+  }, [currentIndex]);
+
+  const current =
+    activeImages && currentIndex !== null ? activeImages[currentIndex] : null;
 
   const renderGrid = (oeuvres: Artwork[]) => (
     <div style={styles.grid}>
-      {oeuvres.map((oeuvre, index) => {
-        const isActive = activeMagnifier === oeuvre.src;
-
-        return (
-          <div key={index} style={styles.item}>
-            <button
-              type="button"
-              style={{
-                ...styles.imageButton,
-                cursor: isActive ? "none" : "zoom-in",
-              }}
-              onClick={() =>
-                setActiveMagnifier(isActive ? null : oeuvre.src)
-              }
-              onMouseMove={(e) => handleMouseMove(e, oeuvre.src)}
-              onMouseLeave={() => setActiveMagnifier(null)}
-              aria-label={`Zoomer sur ${oeuvre.title}`}
-            >
-              <img src={oeuvre.src} alt={oeuvre.title} style={styles.image} />
-
-              {isActive && (
-                <div
-                  style={{
-                    ...styles.lens,
-                    left: `${lensPosition.x}%`,
-                    top: `${lensPosition.y}%`,
-                    backgroundImage: `url(${oeuvre.src})`,
-                    backgroundPosition: `${lensPosition.x}% ${lensPosition.y}%`,
-                  }}
-                />
-              )}
-            </button>
-          </div>
-        );
-      })}
+      {oeuvres.map((oeuvre, index) => (
+        <div key={index} style={styles.item}>
+          <button
+            type="button"
+            style={styles.imageButton}
+            onClick={() => openGallery(oeuvres, index)}
+            aria-label={`Agrandir ${oeuvre.title || oeuvre.size}`}
+          >
+            <img
+              src={oeuvre.src}
+              alt={oeuvre.title || oeuvre.size}
+              style={styles.image}
+            />
+          </button>
+        </div>
+      ))}
     </div>
   );
 
@@ -135,6 +145,59 @@ export default function PetitsFormatsPage() {
           </div>
         </div>
       </section>
+
+      {activeImages && current && currentIndex !== null && (
+        <div style={styles.overlay} onClick={closeGallery}>
+          <div style={styles.lightbox} onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              style={styles.close}
+              onClick={closeGallery}
+              aria-label="Fermer"
+            >
+              ×
+            </button>
+
+            {activeImages.length > 1 && (
+              <button
+                type="button"
+                style={{ ...styles.nav, left: 0 }}
+                onClick={prev}
+                aria-label="Image précédente"
+              >
+                ‹
+              </button>
+            )}
+
+            <div style={styles.mainImageWrapper}>
+              <img
+                src={current.src}
+                alt={current.title || current.size}
+                style={styles.lightboxImage}
+              />
+
+              <p style={styles.lightboxCaption}>
+                {current.title && <>{current.title}</>}
+                {current.title && (
+                  <span style={styles.lightboxSize}> — {current.size}</span>
+                )}
+                {!current.title && <span>{current.size}</span>}
+              </p>
+            </div>
+
+            {activeImages.length > 1 && (
+              <button
+                type="button"
+                style={{ ...styles.nav, right: 0 }}
+                onClick={next}
+                aria-label="Image suivante"
+              >
+                ›
+              </button>
+            )}
+          </div>
+        </div>
+      )}
     </main>
   );
 }
@@ -199,14 +262,13 @@ const styles: Record<string, CSSProperties> = {
   },
 
   imageButton: {
-    position: "relative",
-    overflow: "hidden",
     border: "none",
     background: "transparent",
     padding: 0,
     margin: 0,
     width: "100%",
     display: "block",
+    cursor: "zoom-in",
   },
 
   image: {
@@ -215,16 +277,85 @@ const styles: Record<string, CSSProperties> = {
     display: "block",
   },
 
-  lens: {
+  overlay: {
+    position: "fixed",
+    inset: 0,
+    background: "rgba(0,0,0,0.9)",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 2000,
+    padding: "32px",
+  },
+
+  lightbox: {
+    position: "relative",
+    width: "100%",
+    maxWidth: "1400px",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  close: {
     position: "absolute",
-    width: "150px",
-    height: "150px",
+    top: 0,
+    right: 0,
+    fontSize: "2rem",
+    background: "none",
+    border: "none",
+    color: "#fff",
+    cursor: "pointer",
+    zIndex: 3,
+  },
+
+  nav: {
+    position: "absolute",
+    top: "45%",
+    width: "50px",
+    height: "50px",
     borderRadius: "50%",
-    transform: "translate(-50%, -50%)",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "260%",
-    border: "1px solid rgba(255,255,255,0.9)",
-    boxShadow: "0 8px 24px rgba(0,0,0,0.35)",
-    pointerEvents: "none",
+    background: "rgba(255,255,255,0.1)",
+    border: "none",
+    color: "#fff",
+    fontSize: "2rem",
+    cursor: "pointer",
+    zIndex: 2,
+  },
+
+  mainImageWrapper: {
+    flex: 1,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    minHeight: 0,
+  },
+
+  lightboxImage: {
+    maxWidth: "100%",
+    maxHeight: "88vh",
+    width: "auto",
+    height: "auto",
+    objectFit: "contain",
+    display: "block",
+  },
+
+  lightboxCaption: {
+    marginTop: "12px",
+    marginBottom: 0,
+    color: "#d6d2cd",
+    fontSize: "0.95rem",
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    opacity: 0.8,
+  },
+
+  lightboxSize: {
+    color: "#bdb8b2",
   },
 };
