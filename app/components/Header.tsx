@@ -1,10 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import type { CSSProperties } from "react";
-import Link from "next/link";
 
 export default function Header() {
+  const pathname = usePathname();
+  const isEn = pathname.startsWith("/en");
+
   const [galerieOpen, setGalerieOpen] = useState(false);
   const [artisteOpen, setArtisteOpen] = useState(false);
 
@@ -40,7 +43,7 @@ export default function Header() {
       }}
     >
       <div style={styles.headerContent}>
-        <a href="/" style={styles.logoLink}>
+        <a href={isEn ? "/en" : "/"} style={styles.logoLink}>
           <div>
             <div style={styles.name}>CHRISTINE BÉGLET</div>
             <div style={styles.subtitle}>Collage</div>
@@ -48,20 +51,18 @@ export default function Header() {
         </a>
 
         <nav style={styles.nav}>
-          {/* GALERIE */}
+          {/* GALERIE / WORKS */}
           <div
             style={styles.dropdown}
             onMouseEnter={() => setGalerieOpen(true)}
             onMouseLeave={() => setGalerieOpen(false)}
           >
-           <span style={styles.navLink}>
-  Galerie
-</span>
+            <span style={styles.navLink}>{isEn ? "Works" : "Galerie"}</span>
 
             {galerieOpen && (
               <div style={styles.dropdownMenu}>
                 <a
-                  href="/oeuvres/grands-formats"
+                  href={isEn ? "/en/works/large-formats" : "/oeuvres/grands-formats"}
                   style={{
                     ...styles.dropdownLink,
                     color: hovered === "gf" ? "#000" : "#4a4a4a",
@@ -69,11 +70,11 @@ export default function Header() {
                   onMouseEnter={() => setHovered("gf")}
                   onMouseLeave={() => setHovered(null)}
                 >
-                  Grands formats
+                  {isEn ? "Large formats" : "Grands formats"}
                 </a>
 
                 <a
-                  href="/oeuvres/formats-moyens"
+                  href={isEn ? "/en/works/medium-formats" : "/oeuvres/formats-moyens"}
                   style={{
                     ...styles.dropdownLink,
                     color: hovered === "mf" ? "#000" : "#4a4a4a",
@@ -81,11 +82,11 @@ export default function Header() {
                   onMouseEnter={() => setHovered("mf")}
                   onMouseLeave={() => setHovered(null)}
                 >
-                  Moyens formats
+                  {isEn ? "Medium formats" : "Moyens formats"}
                 </a>
 
                 <a
-                  href="/oeuvres/petits-formats"
+                  href={isEn ? "/en/works/small-formats" : "/oeuvres/petits-formats"}
                   style={{
                     ...styles.dropdownLink,
                     color: hovered === "pf" ? "#000" : "#4a4a4a",
@@ -93,11 +94,11 @@ export default function Header() {
                   onMouseEnter={() => setHovered("pf")}
                   onMouseLeave={() => setHovered(null)}
                 >
-                  Petits formats
+                  {isEn ? "Small formats" : "Petits formats"}
                 </a>
 
                 <a
-                  href="/oeuvres/triptyque"
+                  href={isEn ? "/en/works/triptych" : "/oeuvres/triptyque"}
                   style={{
                     ...styles.dropdownLink,
                     color: hovered === "triptyque" ? "#000" : "#4a4a4a",
@@ -105,11 +106,11 @@ export default function Header() {
                   onMouseEnter={() => setHovered("triptyque")}
                   onMouseLeave={() => setHovered(null)}
                 >
-                  Triptyque
+                  {isEn ? "Triptych" : "Triptyque"}
                 </a>
 
                 <a
-                  href="/oeuvres/panoramique"
+                  href={isEn ? "/en/works/panoramic" : "/oeuvres/panoramique"}
                   style={{
                     ...styles.dropdownLink,
                     color: hovered === "pano" ? "#000" : "#4a4a4a",
@@ -117,30 +118,28 @@ export default function Header() {
                   onMouseEnter={() => setHovered("pano")}
                   onMouseLeave={() => setHovered(null)}
                 >
-                  Panoramique
+                  {isEn ? "Panoramic" : "Panoramique"}
                 </a>
               </div>
             )}
           </div>
 
-          {/* EXPOS */}
-          <a href="/expositions" style={styles.navLink}>
-            Expositions
+          <a href={isEn ? "/en/exhibitions" : "/expositions"} style={styles.navLink}>
+            {isEn ? "Exhibitions" : "Expositions"}
           </a>
 
-          {/* ARTISTE */}
+          {/* ARTISTE / THE ARTIST */}
           <div
             style={styles.dropdown}
             onMouseEnter={() => setArtisteOpen(true)}
             onMouseLeave={() => setArtisteOpen(false)}
           >
-           <span style={styles.navLink}>
-  L'Artiste
-</span>
+            <span style={styles.navLink}>{isEn ? "The Artist" : "L'Artiste"}</span>
+
             {artisteOpen && (
               <div style={styles.dropdownMenu}>
                 <a
-                  href="/biographie"
+                  href={isEn ? "/en/biography" : "/biographie"}
                   style={{
                     ...styles.dropdownLink,
                     color: hovered === "bio" ? "#000" : "#4a4a4a",
@@ -148,11 +147,11 @@ export default function Header() {
                   onMouseEnter={() => setHovered("bio")}
                   onMouseLeave={() => setHovered(null)}
                 >
-                  Biographie
+                  {isEn ? "Biography" : "Biographie"}
                 </a>
 
                 <a
-                  href="/presse"
+                  href={isEn ? "/en/press" : "/presse"}
                   style={{
                     ...styles.dropdownLink,
                     color: hovered === "presse" ? "#000" : "#4a4a4a",
@@ -160,87 +159,74 @@ export default function Header() {
                   onMouseEnter={() => setHovered("presse")}
                   onMouseLeave={() => setHovered(null)}
                 >
-                  On en parle
+                  {isEn ? "Press" : "On en parle"}
                 </a>
               </div>
             )}
           </div>
 
-          <a href="/atelier" style={styles.navLink}>
-            L'Atelier
+          <a href={isEn ? "/en/studio" : "/atelier"} style={styles.navLink}>
+            {isEn ? "Studio" : "L'Atelier"}
           </a>
 
-          <a href="/contact" style={styles.navLink}>
+          <a href={isEn ? "/en/contact" : "/contact"} style={styles.navLink}>
             Contact
           </a>
-          <div style={styles.socials}>
-  {/* INSTAGRAM */}
-  <a
-    href="https://www.instagram.com/christine.beglet/"
-    target="_blank"
-    rel="noreferrer"
-    style={styles.instagramLink}
-    aria-label="Instagram"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="22"
-      height="22"
-      viewBox="0 0 24 24"
-      fill="none"
-    >
-      <rect
-        x="2"
-        y="2"
-        width="20"
-        height="20"
-        rx="5"
-        stroke="url(#ig)"
-        strokeWidth="2"
-      />
-      <circle cx="12" cy="12" r="4" stroke="url(#ig)" strokeWidth="2" />
-      <circle cx="17.5" cy="6.5" r="1" fill="url(#ig)" />
-      <defs>
-        <linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#f58529" />
-          <stop offset="50%" stopColor="#dd2a7b" />
-          <stop offset="100%" stopColor="#515bd4" />
-        </linearGradient>
-      </defs>
-    </svg>
-  </a>
 
-  {/* FACEBOOK */}
-  <a
-    href="https://www.facebook.com/christine.beglet"
-    target="_blank"
-    rel="noreferrer"
-    style={styles.instagramLink}
-    aria-label="Facebook"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="22"
-      height="22"
-      viewBox="0 0 24 24"
-      fill="none"
-    >
-      <rect
-        x="2"
-        y="2"
-        width="20"
-        height="20"
-        rx="5"
-        stroke="#1877F2"
-        strokeWidth="2"
-      />
-      <path
-        d="M13.2 20V12.9H15.6L16 10.2H13.2V8.5C13.2 7.7 13.5 7.1 14.6 7.1H16.1V4.7C15.8 4.7 14.9 4.6 13.8 4.6C11.5 4.6 10 6 10 8.6V10.2H7.8V12.9H10V20H13.2Z"
-        fill="#1877F2"
-      />
-    </svg>
-  </a>
-</div>
+          <div style={styles.socials}>
+            <a
+              href="https://www.instagram.com/christine.beglet/"
+              target="_blank"
+              rel="noreferrer"
+              style={styles.instagramLink}
+              aria-label="Instagram"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" stroke="url(#ig)" strokeWidth="2" />
+                <circle cx="12" cy="12" r="4" stroke="url(#ig)" strokeWidth="2" />
+                <circle cx="17.5" cy="6.5" r="1" fill="url(#ig)" />
+                <defs>
+                  <linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#f58529" />
+                    <stop offset="50%" stopColor="#dd2a7b" />
+                    <stop offset="100%" stopColor="#515bd4" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </a>
+
+            <a
+              href="https://www.facebook.com/christine.beglet"
+              target="_blank"
+              rel="noreferrer"
+              style={styles.instagramLink}
+              aria-label="Facebook"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" stroke="#1877F2" strokeWidth="2" />
+                <path
+                  d="M13.2 20V12.9H15.6L16 10.2H13.2V8.5C13.2 7.7 13.5 7.1 14.6 7.1H16.1V4.7C15.8 4.7 14.9 4.6 13.8 4.6C11.5 4.6 10 6 10 8.6V10.2H7.8V12.9H10V20H13.2Z"
+                  fill="#1877F2"
+                />
+              </svg>
+            </a>
+
+            <a href={isEn ? "/" : "/en"} style={styles.flagLink} aria-label={isEn ? "Version française" : "English version"}>
+              {isEn ? "FR" : "EN"}
+            </a>
+          </div>
         </nav>
       </div>
     </header>
@@ -253,7 +239,7 @@ const styles: Record<string, CSSProperties> = {
     top: 0,
     left: 0,
     width: "100%",
-     backgroundColor: "#faf9f7",
+    backgroundColor: "#faf9f7",
     borderBottom: "1px solid rgba(0,0,0,0.035)",
     zIndex: 1000,
     transition: "transform 0.5s ease",
@@ -315,16 +301,15 @@ const styles: Record<string, CSSProperties> = {
   },
 
   dropdownMenu: {
-  position: "absolute",
-  top: "100%",
-  left: 0,
-  backgroundColor: "#faf9f7",
-  border: "1px solid rgba(0,0,0,0.04)",
-  padding: "6px 0",
-  zIndex: 200,
-  width: "auto",
-},
-
+    position: "absolute",
+    top: "100%",
+    left: 0,
+    backgroundColor: "#faf9f7",
+    border: "1px solid rgba(0,0,0,0.04)",
+    padding: "6px 0",
+    zIndex: 200,
+    width: "auto",
+  },
 
   dropdownLink: {
     display: "block",
@@ -343,10 +328,26 @@ const styles: Record<string, CSSProperties> = {
     color: "inherit",
     display: "block",
   },
+
   socials: {
-  display: "flex",
-  alignItems: "center",
-  gap: "12px",
-  marginLeft: "12px",
-},
+    display: "flex",
+    alignItems: "center",
+    gap: "12px",
+    marginLeft: "12px",
+  },
+
+  instagramLink: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  flagLink: {
+    textDecoration: "none",
+    color: "#4a4a4a",
+    fontSize: "0.8rem",
+    fontWeight: 300,
+    letterSpacing: "0.08em",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
 };
