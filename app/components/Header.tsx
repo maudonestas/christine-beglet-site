@@ -134,10 +134,9 @@ export default function Header() {
             onMouseEnter={() => setArtisteOpen(true)}
             onMouseLeave={() => setArtisteOpen(false)}
           >
-            <a href="/biographie" style={styles.navLink}>
-              L'Artiste
-            </a>
-
+           <span style={styles.navLink}>
+  L'Artiste
+</span>
             {artisteOpen && (
               <div style={styles.dropdownMenu}>
                 <a
@@ -312,6 +311,7 @@ const styles: Record<string, CSSProperties> = {
     letterSpacing: "0.12em",
     textTransform: "uppercase",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    cursor: "default",
   },
 
   dropdownMenu: {
