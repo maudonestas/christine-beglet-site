@@ -18,21 +18,28 @@ export default function PanoramiquePage() {
 
 
       <section style={styles.section}>
-        <div style={styles.container}>
- <h1 style={styles.title}>Panoramique</h1>
+<div style={styles.container}>
+  <h1 style={styles.title}>Panoramique</h1>
 
-<p style={styles.technique}>
-  Collages sur bois, protégés contre les UV par plusieurs couches de vernis.
-</p>
+  <p style={styles.technique}>
+    Collages sur bois, protégés contre les UV par plusieurs couches de vernis.
+  </p>
 
-<p style={styles.subtitle}>490x100cm</p>
+  <p style={styles.subtitle}>490x100cm</p>
 
   <p style={styles.description}>
     Réalisé à partir de sept collages de 70x100cm
   </p>
+</div>
 
-  <div style={styles.block}>
-    <div style={styles.panoMain}>
+<div style={styles.panoFull}>
+  <img
+    src={panoramique.main.src}
+    alt="Panoramique (490x100cm)"
+    style={styles.panoFullImg}
+    onClick={() => setIsZoomed(true)}
+  />
+</div>
       <img
         src={panoramique.main.src}
         alt="Panoramique (490x100cm)"
@@ -180,5 +187,16 @@ description: {
   marginBottom: "32px", // ← IMPORTANT
   fontStyle: "italic",
   maxWidth: "720px",
+},
+      panoFull: {
+  width: "100vw",
+  marginLeft: "calc(50% - 50vw)",
+},
+
+panoFullImg: {
+  width: "100%",
+  height: "auto",
+  display: "block",
+  cursor: "zoom-in",
 },
 };
