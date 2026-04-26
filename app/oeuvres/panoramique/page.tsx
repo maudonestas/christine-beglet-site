@@ -40,15 +40,6 @@ export default function PanoramiquePage() {
     onClick={() => setIsZoomed(true)}
   />
 </div>
-      <img
-        src={panoramique.main.src}
-        alt="Panoramique (490x100cm)"
-        style={styles.panoMainImg}
-        onClick={() => setIsZoomed(true)}
-      />
-    </div>
-  </div>
-</div>
       </section>
 
       {isZoomed && (
