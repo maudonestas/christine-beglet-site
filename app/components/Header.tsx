@@ -145,3 +145,117 @@ export default function Header() {
     </header>
   );
 }
+const styles: Record<string, CSSProperties> = {
+  header: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    width: "100%",
+    backgroundColor: "#faf9f7",
+    borderBottom: "1px solid rgba(0,0,0,0.035)",
+    zIndex: 1000,
+    transition: "transform 0.5s ease",
+  },
+
+  headerContent: {
+    maxWidth: "100%",
+    margin: 0,
+    padding: "14px 40px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: "24px",
+    flexWrap: "wrap",
+    backgroundColor: "#faf9f7",
+  },
+
+  name: {
+    fontSize: "1.8rem",
+    fontWeight: 300,
+    letterSpacing: "0.10em",
+    textTransform: "uppercase",
+    lineHeight: 1.1,
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
+  subtitle: {
+    marginTop: "8px",
+    fontSize: "0.9rem",
+    color: "#6a6a6a",
+    fontWeight: 300,
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
+  nav: {
+    display: "flex",
+    gap: "22px",
+    flexWrap: "wrap",
+    alignItems: "center",
+  },
+
+  dropdown: {
+    position: "relative",
+    display: "flex",
+    alignItems: "center",
+  },
+
+  navLink: {
+    textDecoration: "none",
+    color: "#4a4a4a",
+    fontSize: "0.95rem",
+    fontWeight: 300,
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    cursor: "default",
+  },
+
+  dropdownMenu: {
+    position: "absolute",
+    top: "100%",
+    left: 0,
+    backgroundColor: "#faf9f7",
+    border: "1px solid rgba(0,0,0,0.04)",
+    padding: "6px 0",
+    zIndex: 200,
+  },
+
+  dropdownLink: {
+    display: "block",
+    padding: "8px 16px",
+    textDecoration: "none",
+    color: "#4a4a4a",
+    fontSize: "0.9rem",
+    fontWeight: 300,
+    letterSpacing: "0.04em",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    whiteSpace: "nowrap",
+  },
+
+  logoLink: {
+    textDecoration: "none",
+    color: "inherit",
+    display: "block",
+  },
+
+  socials: {
+    display: "flex",
+    alignItems: "center",
+    gap: "12px",
+    marginLeft: "12px",
+  },
+
+  instagramLink: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  flagLink: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+};
