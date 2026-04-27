@@ -224,7 +224,7 @@ export default function Header() {
             </a>
 
             <a href={isEn ? "/" : "/en"} style={styles.flagLink} aria-label={isEn ? "Version française" : "English version"}>
-              {isEn ? "FR" : "EN"}
+              {isEn ? "🇫🇷" : "🇬🇧"}
             </a>
           </div>
         </nav>
