@@ -51,6 +51,7 @@ export default function Header() {
         </a>
 
         <nav style={styles.nav}>
+          {/* GALERIE */}
           <div
             style={styles.dropdown}
             onMouseEnter={() => setGalerieOpen(true)}
@@ -83,6 +84,7 @@ export default function Header() {
             {isEn ? "Exhibitions" : "Expositions"}
           </a>
 
+          {/* ARTISTE */}
           <div
             style={styles.dropdown}
             onMouseEnter={() => setArtisteOpen(true)}
@@ -111,31 +113,66 @@ export default function Header() {
           </a>
 
           <div style={styles.socials}>
-            {/* Instagram + Facebook inchangés */}
+            {/* INSTAGRAM */}
+            <a
+              href="https://www.instagram.com/christine.beglet/"
+              target="_blank"
+              rel="noreferrer"
+              style={styles.instagramLink}
+              aria-label="Instagram"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <rect x="2" y="2" width="20" height="20" rx="5" stroke="url(#ig)" strokeWidth="2" />
+                <circle cx="12" cy="12" r="4" stroke="url(#ig)" strokeWidth="2" />
+                <circle cx="17.5" cy="6.5" r="1" fill="url(#ig)" />
+                <defs>
+                  <linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#f58529" />
+                    <stop offset="50%" stopColor="#dd2a7b" />
+                    <stop offset="100%" stopColor="#515bd4" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </a>
 
-            {/* 🔥 FLAG SVG */}
+            {/* FACEBOOK */}
+            <a
+              href="https://www.facebook.com/christine.beglet"
+              target="_blank"
+              rel="noreferrer"
+              style={styles.instagramLink}
+              aria-label="Facebook"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <rect x="2" y="2" width="20" height="20" rx="5" stroke="#1877F2" strokeWidth="2" />
+                <path
+                  d="M13.2 20V12.9H15.6L16 10.2H13.2V8.5C13.2 7.7 13.5 7.1 14.6 7.1H16.1V4.7C15.8 4.7 14.9 4.6 13.8 4.6C11.5 4.6 10 6 10 8.6V10.2H7.8V12.9H10V20H13.2Z"
+                  fill="#1877F2"
+                />
+              </svg>
+            </a>
+
+            {/* FLAG */}
             <a
               href={isEn ? "/" : "/en"}
               style={styles.flagLink}
               aria-label={isEn ? "Version française" : "English version"}
             >
               {isEn ? (
-                // 🇫🇷 FR
                 <svg width="22" height="22" viewBox="0 0 24 24">
                   <rect x="2" y="2" width="20" height="20" rx="5" fill="#fff" />
-                  <rect x="2" y="2" width="6.7" height="20" fill="#0055A4" />
-                  <rect x="15.3" y="2" width="6.7" height="20" fill="#EF4135" />
+                  <rect x="2" y="2" width="6.66" height="20" fill="#0055A4" />
+                  <rect x="15.34" y="2" width="6.66" height="20" fill="#EF4135" />
                 </svg>
               ) : (
-                // 🇬🇧 UK
                 <svg width="22" height="22" viewBox="0 0 24 24">
                   <rect x="2" y="2" width="20" height="20" rx="5" fill="#012169" />
-                  <path d="M2 2l20 20M22 2L2 22" stroke="white" strokeWidth="3" />
-                  <path d="M2 2l20 20M22 2L2 22" stroke="#C8102E" strokeWidth="1.5" />
-                  <rect x="10" y="2" width="4" height="20" fill="white" />
-                  <rect x="2" y="10" width="20" height="4" fill="white" />
-                  <rect x="10.8" y="2" width="2.4" height="20" fill="#C8102E" />
-                  <rect x="2" y="10.8" width="20" height="2.4" fill="#C8102E" />
+                  <path d="M2 2L22 22M22 2L2 22" stroke="#fff" strokeWidth="2" />
+                  <path d="M2 2L22 22M22 2L2 22" stroke="#C8102E" strokeWidth="1" />
+                  <rect x="9" y="2" width="6" height="20" fill="#fff" />
+                  <rect x="2" y="9" width="20" height="6" fill="#fff" />
+                  <rect x="10.5" y="2" width="3" height="20" fill="#C8102E" />
+                  <rect x="2" y="10.5" width="20" height="3" fill="#C8102E" />
                 </svg>
               )}
             </a>
@@ -145,6 +182,7 @@ export default function Header() {
     </header>
   );
 }
+
 const styles: Record<string, CSSProperties> = {
   header: {
     position: "fixed",
