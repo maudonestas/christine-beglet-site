@@ -1,8 +1,17 @@
 import Header from "./components/Header";
 
 export const metadata = {
-  title: "Christine Béglet",
-  description: "Site officiel de Christine Béglet",
+  title: {
+    default: "Christine Béglet",
+    template: "%s | Christine Béglet",
+  },
+  description: "Collages",
+  alternates: {
+    languages: {
+      "fr-FR": "/",
+      "en-US": "/en",
+    },
+  },
 };
 
 export default function RootLayout({
