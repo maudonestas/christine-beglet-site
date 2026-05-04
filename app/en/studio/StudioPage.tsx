@@ -1,1 +1,186 @@
+import type { CSSProperties } from "react";
+
+export default function AtelierPage() {
+  return (
+    <main style={styles.main}>
+      <section style={styles.section}>
+        <div style={styles.container}>
+          <h1 style={styles.title}>Studio</h1>
+
+          {/* Bloc 1 */}
+          <div style={styles.twoColGrid}>
+            <div>
+              <img
+                src="/images/les-magazines.jpg"
+                alt="Magazines"
+                style={styles.imageMedium}
+              />
+              <p style={styles.caption}>Magazines</p>
+            </div>
+
+            <div>
+              <div style={styles.zoomWrapper}>
+                <img
+                  src="/images/tiroirs-a-papiers.jpg"
+                  alt="Paper drawers"
+                  style={styles.imageZoomed}
+                />
+              </div>
+              <p style={styles.caption}>Paper drawers</p>
+            </div>
+          </div>
+
+          {/* Bloc 2 */}
+          <div style={styles.singleBlock}>
+            <img
+              src="/images/decoupes-pas-colles.jpg"
+              alt="Cut, not glued"
+              style={styles.imageWide}
+            />
+            <p style={styles.caption}>Cut, not glued</p>
+          </div>
+
+          {/* Bloc 3 */}
+          <div style={styles.processGrid}>
+            <div>
+              <img
+                src="/images/dessus-dessous.jpg"
+                alt="Top, bottom"
+                style={styles.imageSmall}
+              />
+              <p style={styles.caption}>Top, bottom</p>
+            </div>
+
+            <div>
+              <img
+                src="/images/ca-colle.jpg"
+                alt="Gluing"
+                style={styles.imageLarge}
+              />
+              <p style={styles.caption}>Gluing</p>
+            </div>
+          </div>
+
+          {/* Bloc 4 */}
+          <div style={styles.singleBlockEnd}>
+            <img
+              src="/images/bien-ranges.jpg"
+              alt="Well organized"
+              style={styles.imageEnd}
+            />
+            <p style={styles.caption}>Well organized</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+const styles: Record<string, CSSProperties> = {
+  main: {
+    fontFamily: "Arial, Helvetica, sans-serif",
+    color: "#1f1f1f",
+    minHeight: "100vh",
+  },
+
+  section: {
+  padding: "80px 24px",
+},
+
+  container: {
+    maxWidth: "1200px",
+    margin: "0 auto",
+  },
+
+  title: {
+  fontSize: "2rem",
+  marginTop: 0,
+  marginBottom: "40px",
+  fontWeight: 300,
+  letterSpacing: "0.12em",
+  textTransform: "uppercase",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+},
+
+  twoColGrid: {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gap: "20px",
+    marginBottom: "56px",
+    alignItems: "start",
+  },
+
+  singleBlock: {
+    marginBottom: "56px",
+  },
+
+  processGrid: {
+    display: "grid",
+    gridTemplateColumns: "40% 60%",
+    gap: "20px",
+    marginBottom: "72px",
+    alignItems: "start",
+  },
+
+  singleBlockEnd: {
+    maxWidth: "760px",
+    margin: "0 auto",
+  },
+
+  imageMedium: {
+    width: "100%",
+    height: "340px",
+    objectFit: "cover",
+    objectPosition: "center 40%",
+    display: "block",
+  },
+
+  imageWide: {
+    width: "100%",
+    height: "420px",
+    objectFit: "cover",
+    display: "block",
+  },
+
+  imageSmall: {
+  width: "100%",
+  height: "400px",
+  objectFit: "cover",
+  objectPosition: "center 35%",
+  display: "block",
+},
+  imageLarge: {
+    width: "100%",
+    height: "400px",
+    objectFit: "cover",
+    display: "block",
+  },
+
+  imageEnd: {
+    width: "100%",
+    height: "360px",
+    objectFit: "cover",
+    display: "block",
+  },
+
+  caption: {
+    fontSize: "0.9rem",
+    color: "#4f4b46",
+    marginTop: "10px",
+    lineHeight: 1.4,
+  },
+  zoomWrapper: {
+  width: "100%",
+  height: "340px",
+  overflow: "hidden",
+},
+
+imageZoomed: {
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  transform: "scale(1.4)", // ← ajuste entre 1.2 et 1.4
+  objectPosition: "center 60%",
+},
+};
 
