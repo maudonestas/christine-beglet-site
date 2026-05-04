@@ -96,39 +96,58 @@ export default function Home() {
             </p>
           </div>
 
-          <div style={styles.mobileLinksBlock}>
-            <a href="/oeuvres/grands-formats" style={styles.mobileWorkLink}>
-              Grands formats
+          <div style={styles.mobileWorksBlock}>
+            <h2 style={styles.mobileWorksTitle}>Œuvres</h2>
+
+            <a href="/oeuvres/grands-formats" style={styles.mobileWorkCard}>
+              <img
+                src="/images/puzzle-neuronal.jpg"
+                alt="Grands formats"
+                style={styles.mobileWorkImage}
+              />
+              <span style={styles.mobileWorkTitle}>Grands formats</span>
             </a>
 
-            <a href="/oeuvres/formats-moyens" style={styles.mobileWorkLink}>
-              Formats moyens
+            <a href="/oeuvres/formats-moyens" style={styles.mobileWorkCard}>
+              <img
+                src="/images/toutotour-sur-oise.jpg"
+                alt="Formats moyens"
+                style={styles.mobileWorkImage}
+              />
+              <span style={styles.mobileWorkTitle}>Formats moyens</span>
             </a>
 
-            <a href="/oeuvres/petits-formats" style={styles.mobileWorkLink}>
-              Petits formats
+            <a href="/oeuvres/petits-formats" style={styles.mobileWorkCard}>
+              <img
+                src="/images/20x20-1.jpg"
+                alt="Petits formats"
+                style={styles.mobileWorkImage}
+              />
+              <span style={styles.mobileWorkTitle}>Petits formats</span>
             </a>
 
-            <a href="/oeuvres/triptyque" style={styles.mobileWorkLink}>
-              Triptyque
+            <a href="/oeuvres/triptyque" style={styles.mobileWorkCard}>
+              <img
+                src="/images/triptyque-195x92.jpg"
+                alt="Triptyque"
+                style={styles.mobileWorkImage}
+              />
+              <span style={styles.mobileWorkTitle}>Triptyque</span>
             </a>
 
-            <a href="/oeuvres/panoramique" style={styles.mobileWorkLink}>
-              Panoramique
+            <a href="/oeuvres/panoramique" style={styles.mobileWorkCard}>
+              <img
+                src="/images/pano.jpg"
+                alt="Panoramique"
+                style={styles.mobileWorkImage}
+              />
+              <span style={styles.mobileWorkTitle}>Panoramique</span>
             </a>
           </div>
 
-          <div style={styles.mobileAtelierBlock}>
-            <img
-              src="/images/atelier-portrait.jpg"
-              alt="Christine Béglet dans son atelier"
-              style={styles.mobileAtelierImage}
-            />
-
-            <a href="/biographie" style={styles.mobileSecondaryLink}>
-              Découvrir l’artiste
-            </a>
-          </div>
+          <a href="/biographie" style={styles.mobileArtistLink}>
+            Découvrir l’artiste
+          </a>
         </section>
       </main>
     );
@@ -294,7 +313,7 @@ const styles: Record<string, CSSProperties> = {
 
   mobileSection: {
     backgroundColor: "#faf9f7",
-    padding: "42px 24px 64px",
+    padding: "42px 20px 68px",
   },
 
   mobileIntro: {
@@ -311,44 +330,55 @@ const styles: Record<string, CSSProperties> = {
     textAlign: "left",
   },
 
-  mobileLinksBlock: {
+  mobileWorksBlock: {
     maxWidth: "420px",
-    margin: "38px auto 48px",
+    margin: "42px auto 0",
     display: "flex",
     flexDirection: "column",
-    gap: "14px",
+    gap: "22px",
   },
 
-  mobileWorkLink: {
-    display: "block",
-    textDecoration: "none",
-    color: "#1f1f1f",
-    border: "1px solid rgba(0,0,0,0.12)",
-    padding: "17px 18px",
-    fontSize: "0.95rem",
+  mobileWorksTitle: {
+    margin: "0 0 4px",
+    fontSize: "1.25rem",
     fontWeight: 300,
-    letterSpacing: "0.10em",
+    letterSpacing: "0.12em",
     textTransform: "uppercase",
     textAlign: "center",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
-    backgroundColor: "#faf9f7",
+    color: "#1f1f1f",
   },
 
-  mobileAtelierBlock: {
-    maxWidth: "420px",
-    margin: "0 auto",
+  mobileWorkCard: {
+    display: "block",
+    textDecoration: "none",
+    color: "#1f1f1f",
   },
 
-  mobileAtelierImage: {
+  mobileWorkImage: {
     width: "100%",
-    height: "auto",
-    display: "block",
+    height: "230px",
     objectFit: "cover",
+    display: "block",
+    backgroundColor: "#f2f2f2",
   },
 
-  mobileSecondaryLink: {
+  mobileWorkTitle: {
     display: "block",
-    marginTop: "22px",
+    marginTop: "10px",
+    fontSize: "0.86rem",
+    fontWeight: 300,
+    letterSpacing: "0.11em",
+    textTransform: "uppercase",
+    textAlign: "center",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    color: "#4f4b46",
+  },
+
+  mobileArtistLink: {
+    display: "block",
+    maxWidth: "420px",
+    margin: "44px auto 0",
     textDecoration: "none",
     color: "#4f4b46",
     fontSize: "0.85rem",
