@@ -1,6 +1,5 @@
-
-import BiographiePage from "../../biographie/BiographiePage";
+import BiographyPage from "./BiographyPage";
 
 export default function Page() {
-  return <BiographiePage />;
+  return <BiographyPage />;
 }
