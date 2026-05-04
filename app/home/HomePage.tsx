@@ -355,25 +355,25 @@ const styles: Record<string, CSSProperties> = {
     color: "#1f1f1f",
   },
 
-  mobileWorkImage: {
-    width: "100%",
-    height: "230px",
-    objectFit: "cover",
-    display: "block",
-    backgroundColor: "#f2f2f2",
+mobileWorkImage: {
+  width: "100%",
+  height: "auto",
+  objectFit: "contain",
+  display: "block",
+  backgroundColor: "#f2f2f2",
   },
 
-  mobileWorkTitle: {
-    display: "block",
-    marginTop: "10px",
-    fontSize: "0.86rem",
-    fontWeight: 300,
-    letterSpacing: "0.11em",
-    textTransform: "uppercase",
-    textAlign: "center",
-    fontFamily: '"Helvetica Neue", Arial, sans-serif',
-    color: "#4f4b46",
-  },
+mobileWorkTitle: {
+  display: "block",
+  marginTop: "12px",
+  fontSize: "0.86rem",
+  fontWeight: 300,
+  letterSpacing: "0.11em",
+  textTransform: "uppercase",
+  textAlign: "center",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  color: "#4f4b46",
+},
 
   mobileArtistLink: {
     display: "block",
