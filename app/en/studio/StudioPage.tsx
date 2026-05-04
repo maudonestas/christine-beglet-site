@@ -45,19 +45,19 @@ export default function AtelierPage() {
             <div>
               <img
                 src="/images/dessus-dessous.jpg"
-                alt="Top, bottom"
+                alt="Above, below"
                 style={styles.imageSmall}
               />
-              <p style={styles.caption}>Top, bottom</p>
+              <p style={styles.caption}>Above, below</p>
             </div>
 
             <div>
               <img
                 src="/images/ca-colle.jpg"
-                alt="Gluing"
+                alt="In progress"
                 style={styles.imageLarge}
               />
-              <p style={styles.caption}>Gluing</p>
+              <p style={styles.caption}>In progress</p>
             </div>
           </div>
 
