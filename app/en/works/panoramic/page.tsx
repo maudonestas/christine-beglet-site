@@ -1,5 +1,5 @@
-import PanoramiquePage from "../../../oeuvres/panoramique/PanoramiquePage";
+import PanoramicPage from "./PanoramicPage";
 
 export default function Page() {
-  return <PanoramiquePage />;
+  return <PanoramicPage />;
 }
