@@ -23,7 +23,7 @@ export default function BiographyPage() {
             </p>
 
             <p style={styles.text}>
-              Later, during adolescence, an important encounter took place: Monet’s Water Lilies exhibition. The painting oscillates between figuration and abstraction depending on the viewing distance — a perception that would have a lasting influence on her approach.
+              Later, during adolescence, an important encounter took place: Monet’s Water Lilies exhibition. The painting oscillates between figuration and abstraction depending on the viewing distance - a perception that would have a lasting influence on her approach.
             </p>
 
             <p style={styles.text}>
@@ -35,7 +35,7 @@ export default function BiographyPage() {
             </p>
 
             <p style={styles.text}>
-              Back in mainland France in 1993, while studying anthropology in Paris, she met Arno Stern, educator and creator of the “Closlieu”. This encounter led her to train in leading expression workshops at Art Cru ADEC in Bordeaux, where she discovered collage — a medium she immediately adopted, creating her first paper works.
+              Back in mainland France in 1993, while studying anthropology in Paris, she met Arno Stern, educator and creator of the “Closlieu”. This encounter led her to train in leading expression workshops at Art Cru ADEC in Bordeaux, where she discovered collage - a medium she immediately adopted, creating her first paper works.
             </p>
 
             <p style={styles.text}>
@@ -51,7 +51,7 @@ export default function BiographyPage() {
             </p>
 
             <p style={styles.text}>
-              Hundreds of cut, fragmented images become color strokes — the pixels of her palette — with which she composes her works, which she calls her “favelas”.
+              Hundreds of cut, fragmented images become color strokes - the pixels of her palette - with which she composes her works, which she calls her “favelas”.
             </p>
 
             <p style={styles.text}>
