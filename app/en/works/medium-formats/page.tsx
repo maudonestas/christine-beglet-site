@@ -1,5 +1,5 @@
-import FormatsMoyensPage from "../../../oeuvres/formats-moyens/FormatsMoyensPage";
+import MediumFormatsPage from "./MediumFormatsPage";
 
 export default function Page() {
-  return <FormatsMoyensPage />;
+  return <MediumFormatsPage />;
 }
