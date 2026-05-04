@@ -1,5 +1,5 @@
-import AtelierPage from "../../atelier/AtelierPage";
+import StudioPage from "./StudioPage";
 
 export default function Page() {
-  return <AtelierPage />;
+  return <StudioPage />;
 }
