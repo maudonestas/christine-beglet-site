@@ -1,5 +1,5 @@
-import GrandsFormatsPage from "../../../oeuvres/grands-formats/GrandsFormatsPage";
+import LargeFormatsPage from "./LargeFormatsPage";
 
 export default function Page() {
-  return <GrandsFormatsPage />;
+  return <LargeFormatsPage />;
 }
