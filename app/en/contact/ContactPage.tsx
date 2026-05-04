@@ -9,7 +9,7 @@ export default function ContactPage() {
 
           <div style={styles.contactBlock}>
             <p style={styles.intro}>
-              For any inquiry regarding acquisition, exhibitions, or collaborations, you can contact me directly by email.
+              For inquiries regarding acquisitions, exhibitions or collaborations, please contact me directly by email.
             </p>
 
             <p style={styles.contactLine}>
