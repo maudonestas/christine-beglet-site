@@ -1,5 +1,5 @@
-import TriptyquePage from "../../../oeuvres/triptyque/TriptyquePage";
+import TriptychPage from "./TriptychPage";
 
 export default function Page() {
-  return <TriptyquePage />;
+  return <TriptychPage />;
 }
