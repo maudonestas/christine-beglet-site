@@ -1,5 +1,5 @@
-import PetitsFormatsPage from "../../../oeuvres/petits-formats/PetitsFormatsPage";
+import SmallFormatsPage from "./SmallFormatsPage";
 
 export default function Page() {
-  return <PetitsFormatsPage />;
+  return <SmallFormatsPage />;
 }
