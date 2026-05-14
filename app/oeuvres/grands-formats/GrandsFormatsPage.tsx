@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 
 type Artwork = {
@@ -86,52 +86,55 @@ export default function GrandsFormatsPage() {
     },
   ];
 
-const oeuvres80x80: Artwork[] = [
-  {
-    src: "/images/la-bas.jpg",
-    title: "Là-bas",
-    size: "80x80cm",
-  },
-  {
-    src: "/images/emmuree.jpg",
-    title: "Emmurée",
-    size: "80x80cm",
-  },
-  {
-    src: "/images/brouillon-de-culture.jpg",
-    title: "Brouillon de culture",
-    size: "80x80cm",
-  },
-  {
-    src: "/images/casse-tete.jpg",
-    title: "Casse-tête",
-    size: "80x80cm",
-  },
-  {
-    src: "/images/80x80-architectonique.jpg",
-    title: "Architectonique",
-    size: "80x80cm",
-  },
-  {
-    src: "/images/80x80-blues.jpg",
-    title: "Blues",
-    size: "80x80cm",
-  },
-  {
-    src: "/images/80x80-murmures.jpg",
-    title: "Murmures",
-    size: "80x80cm",
-  },
-  {
-    src: "/images/80x80-seule-sur-l-asphalte.jpg",
-    title: "Seule sur l’asphalte",
-    size: "80x80cm",
-  },
-];
+  const oeuvres80x80: Artwork[] = [
+    {
+      src: "/images/la-bas.jpg",
+      title: "Là-bas",
+      size: "80x80cm",
+    },
+    {
+      src: "/images/emmuree.jpg",
+      title: "Emmurée",
+      size: "80x80cm",
+    },
+    {
+      src: "/images/brouillon-de-culture.jpg",
+      title: "Brouillon de culture",
+      size: "80x80cm",
+    },
+    {
+      src: "/images/casse-tete.jpg",
+      title: "Casse-tête",
+      size: "80x80cm",
+    },
+    {
+      src: "/images/80x80-architectonique.jpg",
+      title: "Architectonique",
+      size: "80x80cm",
+    },
+    {
+      src: "/images/80x80-blues.jpg",
+      title: "Blues",
+      size: "80x80cm",
+    },
+    {
+      src: "/images/80x80-murmures.jpg",
+      title: "Murmures",
+      size: "80x80cm",
+    },
+    {
+      src: "/images/80x80-seule-sur-l-asphalte.jpg",
+      title: "Seule sur l’asphalte",
+      size: "80x80cm",
+    },
+  ];
 
   const [activeImages, setActiveImages] = useState<Artwork[] | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -164,6 +167,33 @@ const oeuvres80x80: Artwork[] = [
   const showNext = () => {
     if (!activeImages || currentIndex === null) return;
     setCurrentIndex((currentIndex + 1) % activeImages.length);
+  };
+
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    touchStartX.current = event.touches[0].clientX;
+    touchEndX.current = null;
+  };
+
+  const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
+    touchEndX.current = event.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return;
+
+    const distance = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50;
+
+    if (distance > minSwipeDistance) {
+      showNext();
+    }
+
+    if (distance < -minSwipeDistance) {
+      showPrev();
+    }
+
+    touchStartX.current = null;
+    touchEndX.current = null;
   };
 
   useEffect(() => {
@@ -318,7 +348,12 @@ const oeuvres80x80: Artwork[] = [
               </button>
             )}
 
-            <div style={styles.lightboxMain}>
+            <div
+              style={styles.lightboxMain}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
               <img
                 src={currentImage.src}
                 alt={currentImage.title}
@@ -363,14 +398,25 @@ const styles: Record<string, CSSProperties> = {
   },
 
   title: {
-  fontSize: "1.55rem",
-  marginTop: 0,
-  marginBottom: "16px",
-  fontWeight: 300,
-  letterSpacing: "0.12em",
-  textTransform: "uppercase",
-  fontFamily: '"Helvetica Neue", Arial, sans-serif',
-},
+    fontSize: "1.55rem",
+    marginTop: 0,
+    marginBottom: "16px",
+    fontWeight: 300,
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
+  technique: {
+    fontSize: "0.95rem",
+    lineHeight: 1.6,
+    color: "#4f4b46",
+    marginTop: "0",
+    marginBottom: "40px",
+    fontStyle: "italic",
+    maxWidth: "720px",
+  },
+
   block: {
     marginBottom: "70px",
   },
@@ -420,18 +466,8 @@ const styles: Record<string, CSSProperties> = {
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
-  technique: {
-    fontSize: "0.95rem",
-    lineHeight: 1.6,
-    color: "#4f4b46",
-    marginTop: "0",
-    marginBottom: "40px",
-    fontStyle: "italic",
-    maxWidth: "720px",
-  },
-
   mobileSection: {
-  padding: "42px 12px 70px",
+    padding: "42px 12px 70px",
   },
 
   mobileContainer: {
@@ -440,13 +476,13 @@ const styles: Record<string, CSSProperties> = {
   },
 
   mobileTitle: {
-  fontSize: "1.25rem",
-  margin: "0 6px 14px",
-  fontWeight: 300,
-  letterSpacing: "0.12em",
-  textTransform: "uppercase",
-  fontFamily: '"Helvetica Neue", Arial, sans-serif',
-},
+    fontSize: "1.25rem",
+    margin: "0 6px 14px",
+    fontWeight: 300,
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
 
   mobileTechnique: {
     fontSize: "0.95rem",
@@ -482,42 +518,40 @@ const styles: Record<string, CSSProperties> = {
     display: "block",
   },
 
-mobileCaption: {
-  margin: "12px 0 0",
-  fontSize: "0.9rem",
-  letterSpacing: "0.08em",
-  textTransform: "uppercase",
-  color: "#444",
-  fontFamily: '"Helvetica Neue", Arial, sans-serif',
-  textAlign: "center",
-},
+  mobileCaption: {
+    margin: "12px 0 0",
+    fontSize: "0.9rem",
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    color: "#444",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    textAlign: "center",
+  },
 
   lightboxOverlay: {
     position: "fixed",
     inset: 0,
-    backgroundColor: "rgba(0, 0, 0, 0.9)",
+    backgroundColor: "rgba(0, 0, 0, 0.92)",
     zIndex: 2000,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    padding: "32px",
+    padding: 0,
   },
 
   lightboxContent: {
     position: "relative",
     width: "100%",
-    maxWidth: "1400px",
     height: "100%",
     display: "flex",
-    flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
   },
 
   closeButton: {
     position: "absolute",
-    top: "-8px",
-    right: "0",
+    top: "20px",
+    right: "28px",
     border: "none",
     background: "transparent",
     color: "#fff",
@@ -532,20 +566,24 @@ mobileCaption: {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    width: "100%",
-    flex: 1,
+    width: "calc(100% - 160px)",
+    height: "100%",
     minHeight: 0,
+    margin: "0 auto",
   },
 
   lightboxImage: {
     maxWidth: "100%",
-    maxHeight: "88vh",
+    maxHeight: "86vh",
+    width: "auto",
+    height: "auto",
     objectFit: "contain",
+    display: "block",
   },
 
   lightboxCaption: {
     marginTop: "12px",
-    marginBottom: "0",
+    marginBottom: 0,
     color: "#d6d2cd",
     fontSize: "0.95rem",
     letterSpacing: "0.08em",
@@ -556,15 +594,15 @@ mobileCaption: {
 
   navButton: {
     position: "absolute",
-    top: "42%",
+    top: "50%",
     transform: "translateY(-50%)",
     border: "none",
-    background: "rgba(255, 255, 255, 0.12)",
+    background: "rgba(255, 255, 255, 0.1)",
     color: "#fff",
-    width: "52px",
-    height: "52px",
+    width: "54px",
+    height: "54px",
     borderRadius: "999px",
-    fontSize: "2rem",
+    fontSize: "2.4rem",
     cursor: "pointer",
     display: "flex",
     alignItems: "center",
@@ -573,10 +611,10 @@ mobileCaption: {
   },
 
   leftButton: {
-    left: "0",
+    left: "28px",
   },
 
   rightButton: {
-    right: "0",
+    right: "28px",
   },
 };
