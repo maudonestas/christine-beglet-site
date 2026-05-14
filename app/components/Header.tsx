@@ -86,25 +86,25 @@ export default function Header() {
         >
           <a href={isEn ? "/en" : "/"} style={styles.logoLink}>
             <div>
-              <div
-                style={{
-                  ...styles.name,
-                  fontSize: isMobile ? "1.18rem" : "1.8rem",
-                  letterSpacing: isMobile ? "0.08em" : "0.10em",
-                }}
-              >
-                CHRISTINE BÉGLET
-              </div>
+<div
+  style={{
+    ...styles.name,
+    fontSize: isMobile ? "1.35rem" : "1.8rem",
+    letterSpacing: isMobile ? "0.07em" : "0.10em",
+  }}
+>
+  CHRISTINE BÉGLET
+</div>
 
-              <div
-                style={{
-                  ...styles.subtitle,
-                  fontSize: isMobile ? "0.72rem" : "0.9rem",
-                  marginTop: isMobile ? "6px" : "8px",
-                }}
-              >
-                Collage
-              </div>
+<div
+  style={{
+    ...styles.subtitle,
+    fontSize: isMobile ? "0.82rem" : "0.9rem",
+    marginTop: isMobile ? "6px" : "8px",
+  }}
+>
+  Collage
+</div>
             </div>
           </a>
 
