@@ -14,12 +14,12 @@ export default function MediumFormatsPage() {
     {
       src: "/images/mal-de-mer.jpg",
       title: "Mal de mer",
-      size: "60 × 60 cm",
+      size: "60x60cm",
     },
     {
       src: "/images/propagation-instantanee.jpg",
       title: "Propagation instantanée",
-      size: "60 × 60 cm",
+      size: "60x60cm",
     },
   ];
 
@@ -27,77 +27,89 @@ export default function MediumFormatsPage() {
     {
       src: "/images/collateral.jpg",
       title: "Collatéral",
-      size: "50 × 50 cm",
+      size: "50x50cm",
     },
     {
       src: "/images/colle-za.jpg",
       title: "Colle Za",
-      size: "50 × 50 cm",
+      size: "50x50cm",
     },
     {
       src: "/images/il-fait-nuit.jpg",
       title: "Il fait nuit",
-      size: "50 × 50 cm",
+      size: "50x50cm",
     },
     {
       src: "/images/touacou-sur-adour.jpg",
       title: "Toutacou-sur-Adour",
-      size: "50 × 50 cm",
+      size: "50x50cm",
     },
     {
       src: "/images/toutalegou-sur-seine.jpg",
       title: "Toutalégou-sur-Seine",
-      size: "50 × 50 cm",
+      size: "50x50cm",
     },
     {
       src: "/images/toutefoi-sur-ariege.jpg",
       title: "Toutefoi-sur-Ariège",
-      size: "50 × 50 cm",
+      size: "50x50cm",
     },
     {
       src: "/images/toutotour-sur-oise.jpg",
       title: "Toutotour-sur-Oise",
-      size: "50 × 50 cm",
+      size: "50x50cm",
     },
     {
       src: "/images/50x50-surimpression.jpg",
       title: "Surimpression",
-      size: "50 × 50 cm",
+      size: "50x50cm",
     },
     {
       src: "/images/50x50-toudetravers-sur-rhone.jpg",
       title: "Toudetravers-sur-Rhône",
-      size: "50 × 50 cm",
+      size: "50x50cm",
     },
     {
       src: "/images/50x50-toutotan-sur-marne.jpg",
       title: "Toutotan-sur-Marne",
-      size: "50 × 50 cm",
+      size: "50x50cm",
     },
     {
       src: "/images/50x50-1.jpg",
       title: "",
-      size: "50 × 50 cm",
+      size: "50x50cm",
     },
     {
       src: "/images/50x50-2.jpg",
       title: "",
-      size: "50 × 50 cm",
+      size: "50x50cm",
     },
     {
       src: "/images/50x50-3.jpg",
       title: "",
-      size: "50 × 50 cm",
+      size: "50x50cm",
     },
     {
       src: "/images/colle-erre.jpg",
       title: "Colle Erre",
-      size: "50 × 50 cm",
+      size: "50x50cm",
     },
   ];
 
   const [activeImages, setActiveImages] = useState<Artwork[] | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const openGallery = (images: Artwork[], index: number) => {
     setActiveImages(images);
@@ -111,7 +123,9 @@ export default function MediumFormatsPage() {
 
   const prev = () => {
     if (!activeImages || currentIndex === null) return;
-    setCurrentIndex((currentIndex - 1 + activeImages.length) % activeImages.length);
+    setCurrentIndex(
+      (currentIndex - 1 + activeImages.length) % activeImages.length
+    );
   };
 
   const next = () => {
@@ -142,49 +156,74 @@ export default function MediumFormatsPage() {
 
   return (
     <main style={styles.main}>
-      <section style={styles.section}>
-        <div style={styles.container}>
-          <h1 style={styles.title}>Medium formats</h1>
+      <section style={isMobile ? styles.mobileSection : styles.section}>
+        <div style={isMobile ? styles.mobileContainer : styles.container}>
+          <h1 style={isMobile ? styles.mobileTitle : styles.title}>
+            Medium formats
+          </h1>
 
-          <p style={styles.technique}>
-            Collages on wood, protected from UV light with several layers of varnish.
+          <p style={isMobile ? styles.mobileTechnique : styles.technique}>
+            Collages on wood, protected from UV light with several layers of
+            varnish.
           </p>
 
           <div style={styles.block}>
-            <h2 style={styles.subtitle}>60 × 60 cm</h2>
+            <h2 style={isMobile ? styles.mobileSubtitle : styles.subtitle}>
+              60x60cm
+            </h2>
 
-            <div style={styles.grid}>
+            <div style={isMobile ? styles.mobileGrid : styles.grid}>
               {oeuvres60x60.map((oeuvre, index) => (
                 <div key={index} style={styles.card}>
                   <button
                     type="button"
-                    style={styles.imageButton}
+                    style={
+                      isMobile ? styles.mobileImageButton : styles.imageButton
+                    }
                     onClick={() => openGallery(oeuvres60x60, index)}
                     aria-label={`Enlarge ${oeuvre.title}`}
                   >
-                    <img src={oeuvre.src} alt={oeuvre.title} style={styles.image} />
+                    <img
+                      src={oeuvre.src}
+                      alt={oeuvre.title}
+                      style={styles.image}
+                    />
                   </button>
-                  <p style={styles.caption}>{oeuvre.title}</p>
+
+                  <p style={isMobile ? styles.mobileCaption : styles.caption}>
+                    {oeuvre.title}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
 
           <div style={styles.block}>
-            <h2 style={styles.subtitle}>50 × 50 cm</h2>
+            <h2 style={isMobile ? styles.mobileSubtitle : styles.subtitle}>
+              50x50cm
+            </h2>
 
-            <div style={styles.grid}>
+            <div style={isMobile ? styles.mobileGrid : styles.grid}>
               {oeuvres50x50.map((oeuvre, index) => (
                 <div key={index} style={styles.card}>
                   <button
                     type="button"
-                    style={styles.imageButton}
+                    style={
+                      isMobile ? styles.mobileImageButton : styles.imageButton
+                    }
                     onClick={() => openGallery(oeuvres50x50, index)}
                     aria-label={`Enlarge ${oeuvre.title || oeuvre.size}`}
                   >
-                    <img src={oeuvre.src} alt={oeuvre.title || oeuvre.size} style={styles.image} />
+                    <img
+                      src={oeuvre.src}
+                      alt={oeuvre.title || oeuvre.size}
+                      style={styles.image}
+                    />
                   </button>
-                  <p style={styles.caption}>{oeuvre.title}</p>
+
+                  <p style={isMobile ? styles.mobileCaption : styles.caption}>
+                    {oeuvre.title}
+                  </p>
                 </div>
               ))}
             </div>
@@ -265,7 +304,7 @@ const styles: Record<string, CSSProperties> = {
   },
 
   title: {
-    fontSize: "2rem",
+    fontSize: "1.55rem",
     marginTop: 0,
     marginBottom: "16px",
     fontWeight: 300,
@@ -330,6 +369,67 @@ const styles: Record<string, CSSProperties> = {
     textTransform: "uppercase",
     color: "#444",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
+  mobileSection: {
+    padding: "42px 12px 70px",
+  },
+
+  mobileContainer: {
+    maxWidth: "100%",
+    margin: "0 auto",
+  },
+
+  mobileTitle: {
+    fontSize: "1.25rem",
+    margin: "0 6px 14px",
+    fontWeight: 300,
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
+  mobileTechnique: {
+    fontSize: "0.95rem",
+    lineHeight: 1.6,
+    color: "#4f4b46",
+    margin: "0 6px 40px",
+    fontStyle: "italic",
+  },
+
+  mobileSubtitle: {
+    margin: "0 6px 20px",
+    fontSize: "1.3rem",
+    fontWeight: 300,
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
+  mobileGrid: {
+    display: "grid",
+    gridTemplateColumns: "1fr",
+    gap: "34px",
+  },
+
+  mobileImageButton: {
+    width: "100%",
+    border: "none",
+    background: "transparent",
+    padding: 0,
+    cursor: "zoom-in",
+    textAlign: "left",
+    display: "block",
+  },
+
+  mobileCaption: {
+    margin: "12px 0 0",
+    fontSize: "0.9rem",
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    color: "#444",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    textAlign: "center",
   },
 
   overlay: {
