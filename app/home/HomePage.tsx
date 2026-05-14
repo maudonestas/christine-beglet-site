@@ -142,9 +142,7 @@ export default function Home() {
 
           </div>
 
-          <a href="/biographie" style={styles.mobileArtistLink}>
-            Découvrir l’artiste
-          </a>
+         
         </section>
       </main>
     );
@@ -372,17 +370,4 @@ mobileWorkTitle: {
   color: "#4f4b46",
 },
 
-  mobileArtistLink: {
-  display: "block",
-  maxWidth: "420px",
-  margin: "54px auto 0",
-  textDecoration: "none",
-  color: "#4f4b46",
-  fontSize: "1.25rem",
-  fontWeight: 300,
-  letterSpacing: "0.12em",
-  textTransform: "uppercase",
-  textAlign: "center",
-  fontFamily: '"Helvetica Neue", Arial, sans-serif',
-},
 };
