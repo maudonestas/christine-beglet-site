@@ -125,6 +125,75 @@ const styles: Record<string, CSSProperties> = {
     lineHeight: 1.5,
   },
 
+  lowercase: {
+    textTransform: "none",
+  },
+
+  block: {
+    marginBottom: "60px",
+  },
+
+  panoMain: {
+    display: "flex",
+    flexDirection: "column",
+  },
+
+  panoMainImg: {
+    width: "100%",
+    height: "auto",
+    display: "block",
+    cursor: "zoom-in",
+  },
+
+  lightbox: {
+    position: "fixed",
+    inset: 0,
+    backgroundColor: "rgba(0, 0, 0, 0.95)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingTop: "40px",
+    paddingBottom: "40px",
+    paddingLeft: "0",
+    paddingRight: "0",
+    zIndex: 9999,
+  },
+
+  lightboxScroll: {
+    maxWidth: "100%",
+    maxHeight: "100%",
+    overflowX: "auto",
+    overflowY: "hidden",
+    WebkitOverflowScrolling: "touch",
+  },
+
+  lightboxImg: {
+    display: "block",
+    width: "3200px",
+    maxWidth: "none",
+    height: "auto",
+  },
+
+  mobileLightboxImg: {
+    display: "block",
+    height: "70vh",
+    width: "auto",
+    maxWidth: "none",
+  },
+
+  closeButton: {
+    position: "absolute",
+    top: "20px",
+    right: "28px",
+    background: "transparent",
+    border: "none",
+    color: "#fff",
+    fontSize: "2.5rem",
+    cursor: "pointer",
+    lineHeight: 1,
+    zIndex: 10000,
+  },
+
   technique: {
     fontSize: "0.95rem",
     lineHeight: 1.6,
@@ -206,54 +275,5 @@ const styles: Record<string, CSSProperties> = {
     width: "auto",
     maxWidth: "none",
     cursor: "zoom-in",
-  },
-
-  lightbox: {
-    position: "fixed",
-    inset: 0,
-    backgroundColor: "rgba(0, 0, 0, 0.95)",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    paddingTop: "40px",
-    paddingBottom: "40px",
-    paddingLeft: "0",
-    paddingRight: "0",
-    zIndex: 9999,
-  },
-
-  lightboxScroll: {
-    maxWidth: "100%",
-    maxHeight: "100%",
-    overflowX: "auto",
-    overflowY: "hidden",
-    WebkitOverflowScrolling: "touch",
-  },
-
-  lightboxImg: {
-    display: "block",
-    width: "3200px",
-    maxWidth: "none",
-    height: "auto",
-  },
-
-  mobileLightboxImg: {
-    display: "block",
-    height: "70vh",
-    width: "auto",
-    maxWidth: "none",
-  },
-
-  closeButton: {
-    position: "absolute",
-    top: "20px",
-    right: "28px",
-    background: "transparent",
-    border: "none",
-    color: "#fff",
-    fontSize: "2.5rem",
-    cursor: "pointer",
-    lineHeight: 1,
-    zIndex: 10000,
   },
 };
