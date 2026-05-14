@@ -89,7 +89,7 @@ export default function Header() {
 <div
   style={{
     ...styles.name,
-    fontSize: isMobile ? "1.55rem" : "1.8rem",
+    fontSize: isMobile ? "1.55rem" : "2rem",
     letterSpacing: isMobile ? "0.06em" : "0.10em",
   }}
 >
@@ -99,7 +99,7 @@ export default function Header() {
 <div
   style={{
     ...styles.subtitle,
-    fontSize: isMobile ? "0.9rem" : "0.9rem",
+    fontSize: isMobile ? "0.9rem" : "1rem",
     marginTop: isMobile ? "7px" : "8px",
   }}
 >
@@ -620,7 +620,7 @@ const styles: Record<string, CSSProperties> = {
   navLink: {
     textDecoration: "none",
     color: "#4a4a4a",
-    fontSize: "0.95rem",
+    fontSize: "1rem",
     fontWeight: 300,
     letterSpacing: "0.12em",
     textTransform: "uppercase",
