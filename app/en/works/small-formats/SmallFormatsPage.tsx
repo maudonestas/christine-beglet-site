@@ -11,54 +11,74 @@ type Artwork = {
 
 export default function SmallFormatsPage() {
   const oeuvres20x20: Artwork[] = [
-    { src: "/images/20x20-1.jpg", title: "1", size: "20 × 20 cm" },
-    { src: "/images/20x20-2.jpg", title: "2", size: "20 × 20 cm" },
-    { src: "/images/20x20-3.jpg", title: "3", size: "20 × 20 cm" },
-    { src: "/images/20x20-4.jpg", title: "4", size: "20 × 20 cm" },
-    { src: "/images/20x20-5.jpg", title: "5", size: "20 × 20 cm" },
-    { src: "/images/20x20-6.jpg", title: "6", size: "20 × 20 cm" },
-    { src: "/images/20x20-7.jpg", title: "7", size: "20 × 20 cm" },
-    { src: "/images/20x20-8.jpg", title: "8", size: "20 × 20 cm" },
-    { src: "/images/20x20-9.jpg", title: "9", size: "20 × 20 cm" },
-    { src: "/images/20x20-10.jpg", title: "10", size: "20 × 20 cm" },
-    { src: "/images/20x20-11.jpg", title: "11", size: "20 × 20 cm" },
-    { src: "/images/20x20-12.jpg", title: "12", size: "20 × 20 cm" },
-    { src: "/images/20x20-13.jpg", title: "13", size: "20 × 20 cm" },
-    { src: "/images/20x20-14.jpg", title: "14", size: "20 × 20 cm" },
-    { src: "/images/20x20-15.jpg", title: "15", size: "20 × 20 cm" },
-    { src: "/images/20x20-16.jpg", title: "16", size: "20 × 20 cm" },
-    { src: "/images/20x20-17.jpg", title: "17", size: "20 × 20 cm" },
-    { src: "/images/20x20-18.jpg", title: "18", size: "20 × 20 cm" },
-    { src: "/images/20x20-19.jpg", title: "19", size: "20 × 20 cm" },
-    { src: "/images/20x20-20.jpg", title: "20", size: "20 × 20 cm" },
+    { src: "/images/20x20-1.jpg", title: "1", size: "20x20cm" },
+    { src: "/images/20x20-2.jpg", title: "2", size: "20x20cm" },
+    { src: "/images/20x20-3.jpg", title: "3", size: "20x20cm" },
+    { src: "/images/20x20-4.jpg", title: "4", size: "20x20cm" },
+    { src: "/images/20x20-5.jpg", title: "5", size: "20x20cm" },
+    { src: "/images/20x20-6.jpg", title: "6", size: "20x20cm" },
+    { src: "/images/20x20-7.jpg", title: "7", size: "20x20cm" },
+    { src: "/images/20x20-8.jpg", title: "8", size: "20x20cm" },
+    { src: "/images/20x20-9.jpg", title: "9", size: "20x20cm" },
+    { src: "/images/20x20-10.jpg", title: "10", size: "20x20cm" },
+    { src: "/images/20x20-11.jpg", title: "11", size: "20x20cm" },
+    { src: "/images/20x20-12.jpg", title: "12", size: "20x20cm" },
+    { src: "/images/20x20-13.jpg", title: "13", size: "20x20cm" },
+    { src: "/images/20x20-14.jpg", title: "14", size: "20x20cm" },
+    { src: "/images/20x20-15.jpg", title: "15", size: "20x20cm" },
+    { src: "/images/20x20-16.jpg", title: "16", size: "20x20cm" },
+    { src: "/images/20x20-17.jpg", title: "17", size: "20x20cm" },
+    { src: "/images/20x20-18.jpg", title: "18", size: "20x20cm" },
+    { src: "/images/20x20-19.jpg", title: "19", size: "20x20cm" },
+    { src: "/images/20x20-20.jpg", title: "20", size: "20x20cm" },
   ];
 
   const oeuvres35x35: Artwork[] = [
-    { src: "/images/35x35-immoral.jpg", title: "Immoral", size: "35 × 35 cm" },
-    { src: "/images/35x35-immobile.jpg", title: "Immobile", size: "35 × 35 cm" },
-    { src: "/images/35x35-archiduc.jpg", title: "Archiduc", size: "35 × 35 cm" },
-    { src: "/images/35x35-a-vendre-70m2.jpg", title: "À vendre 70m2", size: "35 × 35 cm" },
-    { src: "/images/35x35-bleu-nuit.jpg", title: "Bleu nuit", size: "35 × 35 cm" },
-    { src: "/images/35x35-immolation.jpg", title: "Immolation", size: "35 × 35 cm" },
-    { src: "/images/35x35-la-terre-est-plate.jpg", title: "La terre est plate", size: "35 × 35 cm" },
-    { src: "/images/35X35-5.jpg", title: "5", size: "35 × 35 cm" },
-    { src: "/images/35X35-6.jpg", title: "6", size: "35 × 35 cm" },
-    { src: "/images/35X35-7.jpg", title: "7", size: "35 × 35 cm" },
-    { src: "/images/35X35-8.jpg", title: "8", size: "35 × 35 cm" },
-    { src: "/images/35X35-10.jpg", title: "10", size: "35 × 35 cm" },
-    { src: "/images/35X35-11.jpg", title: "11", size: "35 × 35 cm" },
-    { src: "/images/35X35-12.jpg", title: "12", size: "35 × 35 cm" },
-    { src: "/images/35x35-13.jpg", title: "13", size: "35 × 35 cm" },
-    { src: "/images/35x35-14.jpg", title: "14", size: "35 × 35 cm" },
-    { src: "/images/35x35-15.jpg", title: "15", size: "35 × 35 cm" },
-    { src: "/images/35x35-16.jpg", title: "16", size: "35 × 35 cm" },
-    { src: "/images/35x35-17.jpg", title: "7", size: "35 × 35 cm" },
-    { src: "/images/35x35-18.jpg", title: "18", size: "35 × 35 cm" },
-    { src: "/images/35x35-19.jpg", title: "19", size: "35 × 35 cm" },
+    { src: "/images/35x35-immoral.jpg", title: "Immoral", size: "35x35cm" },
+    { src: "/images/35x35-immobile.jpg", title: "Immobile", size: "35x35cm" },
+    { src: "/images/35x35-archiduc.jpg", title: "Archiduc", size: "35x35cm" },
+    {
+      src: "/images/35x35-a-vendre-70m2.jpg",
+      title: "À vendre 70m2",
+      size: "35x35cm",
+    },
+    { src: "/images/35x35-bleu-nuit.jpg", title: "Bleu nuit", size: "35x35cm" },
+    { src: "/images/35x35-immolation.jpg", title: "Immolation", size: "35x35cm" },
+    {
+      src: "/images/35x35-la-terre-est-plate.jpg",
+      title: "La terre est plate",
+      size: "35x35cm",
+    },
+    { src: "/images/35X35-5.jpg", title: "5", size: "35x35cm" },
+    { src: "/images/35X35-6.jpg", title: "6", size: "35x35cm" },
+    { src: "/images/35X35-7.jpg", title: "7", size: "35x35cm" },
+    { src: "/images/35X35-8.jpg", title: "8", size: "35x35cm" },
+    { src: "/images/35X35-10.jpg", title: "10", size: "35x35cm" },
+    { src: "/images/35X35-11.jpg", title: "11", size: "35x35cm" },
+    { src: "/images/35X35-12.jpg", title: "12", size: "35x35cm" },
+    { src: "/images/35x35-13.jpg", title: "13", size: "35x35cm" },
+    { src: "/images/35x35-14.jpg", title: "14", size: "35x35cm" },
+    { src: "/images/35x35-15.jpg", title: "15", size: "35x35cm" },
+    { src: "/images/35x35-16.jpg", title: "16", size: "35x35cm" },
+    { src: "/images/35x35-17.jpg", title: "7", size: "35x35cm" },
+    { src: "/images/35x35-18.jpg", title: "18", size: "35x35cm" },
+    { src: "/images/35x35-19.jpg", title: "19", size: "35x35cm" },
   ];
 
   const [activeImages, setActiveImages] = useState<Artwork[] | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const openGallery = (images: Artwork[], index: number) => {
     setActiveImages(images);
@@ -72,7 +92,9 @@ export default function SmallFormatsPage() {
 
   const prev = () => {
     if (!activeImages || currentIndex === null) return;
-    setCurrentIndex((currentIndex - 1 + activeImages.length) % activeImages.length);
+    setCurrentIndex(
+      (currentIndex - 1 + activeImages.length) % activeImages.length
+    );
   };
 
   const next = () => {
@@ -102,12 +124,12 @@ export default function SmallFormatsPage() {
     activeImages && currentIndex !== null ? activeImages[currentIndex] : null;
 
   const renderGrid = (oeuvres: Artwork[]) => (
-    <div style={styles.grid}>
+    <div style={isMobile ? styles.mobileGrid : styles.grid}>
       {oeuvres.map((oeuvre, index) => (
         <div key={index} style={styles.item}>
           <button
             type="button"
-            style={styles.imageButton}
+            style={isMobile ? styles.mobileImageButton : styles.imageButton}
             onClick={() => openGallery(oeuvres, index)}
             aria-label={`Enlarge ${oeuvre.title || oeuvre.size}`}
           >
@@ -117,6 +139,10 @@ export default function SmallFormatsPage() {
               style={styles.image}
             />
           </button>
+
+          {isMobile && (
+            <p style={styles.mobileCaption}>{oeuvre.title || oeuvre.size}</p>
+          )}
         </div>
       ))}
     </div>
@@ -124,21 +150,28 @@ export default function SmallFormatsPage() {
 
   return (
     <main style={styles.main}>
-      <section style={styles.section}>
-        <div style={styles.container}>
-          <h1 style={styles.title}>Small formats</h1>
+      <section style={isMobile ? styles.mobileSection : styles.section}>
+        <div style={isMobile ? styles.mobileContainer : styles.container}>
+          <h1 style={isMobile ? styles.mobileTitle : styles.title}>
+            Small formats
+          </h1>
 
-          <p style={styles.technique}>
-            Collages on wood, protected from UV light with several layers of varnish.
+          <p style={isMobile ? styles.mobileTechnique : styles.technique}>
+            Collages on wood, protected from UV light with several layers of
+            varnish.
           </p>
 
           <div style={styles.block}>
-            <h2 style={styles.subtitle}>20 × 20 cm</h2>
+            <h2 style={isMobile ? styles.mobileSubtitle : styles.subtitle}>
+              20x20cm
+            </h2>
             {renderGrid(oeuvres20x20)}
           </div>
 
           <div style={styles.block}>
-            <h2 style={styles.subtitle}>35 × 35 cm</h2>
+            <h2 style={isMobile ? styles.mobileSubtitle : styles.subtitle}>
+              35x35cm
+            </h2>
             {renderGrid(oeuvres35x35)}
           </div>
         </div>
@@ -147,27 +180,49 @@ export default function SmallFormatsPage() {
       {activeImages && current && currentIndex !== null && (
         <div style={styles.overlay} onClick={closeGallery}>
           <div style={styles.lightbox} onClick={(e) => e.stopPropagation()}>
-            <button type="button" style={styles.close} onClick={closeGallery} aria-label="Close">
+            <button
+              type="button"
+              style={styles.close}
+              onClick={closeGallery}
+              aria-label="Close"
+            >
               ×
             </button>
 
             {activeImages.length > 1 && (
-              <button type="button" style={{ ...styles.nav, left: 0 }} onClick={prev} aria-label="Previous image">
+              <button
+                type="button"
+                style={{ ...styles.nav, left: 0 }}
+                onClick={prev}
+                aria-label="Previous image"
+              >
                 ‹
               </button>
             )}
 
             <div style={styles.mainImageWrapper}>
-              <img src={current.src} alt={current.title || current.size} style={styles.lightboxImage} />
+              <img
+                src={current.src}
+                alt={current.title || current.size}
+                style={styles.lightboxImage}
+              />
+
               <p style={styles.lightboxCaption}>
                 {current.title && <>{current.title}</>}
-                {current.title && <span style={styles.lightboxSize}> — {current.size}</span>}
+                {current.title && (
+                  <span style={styles.lightboxSize}> — {current.size}</span>
+                )}
                 {!current.title && <span>{current.size}</span>}
               </p>
             </div>
 
             {activeImages.length > 1 && (
-              <button type="button" style={{ ...styles.nav, right: 0 }} onClick={next} aria-label="Next image">
+              <button
+                type="button"
+                style={{ ...styles.nav, right: 0 }}
+                onClick={next}
+                aria-label="Next image"
+              >
                 ›
               </button>
             )}
@@ -195,7 +250,7 @@ const styles: Record<string, CSSProperties> = {
   },
 
   title: {
-    fontSize: "2rem",
+    fontSize: "1.55rem",
     marginTop: 0,
     marginBottom: "16px",
     fontWeight: 300,
@@ -251,6 +306,68 @@ const styles: Record<string, CSSProperties> = {
     width: "100%",
     height: "auto",
     display: "block",
+  },
+
+  mobileSection: {
+    padding: "42px 12px 70px",
+  },
+
+  mobileContainer: {
+    maxWidth: "100%",
+    margin: "0 auto",
+  },
+
+  mobileTitle: {
+    fontSize: "1.25rem",
+    margin: "0 6px 14px",
+    fontWeight: 300,
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
+  mobileTechnique: {
+    fontSize: "0.95rem",
+    lineHeight: 1.6,
+    color: "#4f4b46",
+    margin: "0 6px 40px",
+    fontStyle: "italic",
+  },
+
+  mobileSubtitle: {
+    margin: "0 6px 20px",
+    fontSize: "1.3rem",
+    fontWeight: 300,
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
+  mobileGrid: {
+    display: "grid",
+    gridTemplateColumns: "1fr",
+    gap: "34px",
+  },
+
+  mobileImageButton: {
+    width: "100%",
+    border: "none",
+    background: "transparent",
+    padding: 0,
+    margin: 0,
+    cursor: "zoom-in",
+    textAlign: "left",
+    display: "block",
+  },
+
+  mobileCaption: {
+    margin: "12px 0 0",
+    fontSize: "0.9rem",
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    color: "#444",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    textAlign: "center",
   },
 
   overlay: {
