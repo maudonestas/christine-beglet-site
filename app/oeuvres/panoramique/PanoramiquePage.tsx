@@ -1,10 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { CSSProperties } from "react";
 
 export default function PanoramiquePage() {
   const [isZoomed, setIsZoomed] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const panoramique = {
     main: {
@@ -14,31 +26,34 @@ export default function PanoramiquePage() {
 
   return (
     <main style={styles.main}>
+      <section style={isMobile ? styles.mobileSection : styles.section}>
+        <div style={isMobile ? styles.mobileContainer : styles.container}>
+          <h1 style={isMobile ? styles.mobileTitle : styles.title}>
+            Panoramique
+          </h1>
 
+          <p style={isMobile ? styles.mobileTechnique : styles.technique}>
+            Collages sur bois, protégés contre les UV par plusieurs couches de
+            vernis.
+          </p>
 
-      <section style={styles.section}>
-<div style={styles.container}>
-  <h1 style={styles.title}>Panoramique</h1>
+          <p style={isMobile ? styles.mobileSubtitle : styles.subtitle}>
+            490x100cm
+          </p>
 
-  <p style={styles.technique}>
-    Collages sur bois, protégés contre les UV par plusieurs couches de vernis.
-  </p>
+          <p style={isMobile ? styles.mobileDescription : styles.description}>
+            Réalisé à partir de sept collages de 70x100cm
+          </p>
+        </div>
 
-  <p style={styles.subtitle}>490x100cm</p>
-
-  <p style={styles.description}>
-    Réalisé à partir de sept collages de 70x100cm
-  </p>
-</div>
-
-<div style={styles.panoFull}>
-  <img
-    src={panoramique.main.src}
-    alt="Panoramique (490x100cm)"
-    style={styles.panoFullImg}
-    onClick={() => setIsZoomed(true)}
-  />
-</div>
+        <div style={isMobile ? styles.mobilePanoFull : styles.panoFull}>
+          <img
+            src={panoramique.main.src}
+            alt="Panoramique (490x100cm)"
+            style={isMobile ? styles.mobilePanoFullImg : styles.panoFullImg}
+            onClick={() => setIsZoomed(true)}
+          />
+        </div>
       </section>
 
       {isZoomed && (
@@ -57,8 +72,8 @@ export default function PanoramiquePage() {
           >
             <img
               src={panoramique.main.src}
-              alt="Panoramique (35×150) agrandi"
-              style={styles.lightboxImg}
+              alt="Panoramique (490x100cm) agrandi"
+              style={isMobile ? styles.mobileLightboxImg : styles.lightboxImg}
             />
           </div>
         </div>
@@ -79,12 +94,12 @@ const styles: Record<string, CSSProperties> = {
   },
 
   container: {
-    maxWidth: "1200px",
+    width: "calc(100% - 48px)",
     margin: "0 auto",
   },
 
   title: {
-    fontSize: "2rem",
+    fontSize: "1.55rem",
     marginTop: 0,
     marginBottom: "16px",
     fontWeight: 300,
@@ -93,69 +108,141 @@ const styles: Record<string, CSSProperties> = {
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
-subtitle: {
-  margin: "0 0 10px 0",
-  fontSize: "1.3rem",
-  fontWeight: 300,
-  letterSpacing: "0.08em",
-  textTransform: "uppercase",
-  fontFamily: '"Helvetica Neue", Arial, sans-serif',
-},
-
-description: {
-  marginTop: "0",
-  marginBottom: "28px",
-  color: "#6f6a64",
-  fontSize: "0.95rem",
-  lineHeight: 1.5,
-},
-  lowercase: {
-  textTransform: "none",
-},
-
-  block: {
-    marginBottom: "60px",
+  subtitle: {
+    margin: "0 0 10px 0",
+    fontSize: "1.3rem",
+    fontWeight: 300,
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
-  panoMain: {
-    display: "flex",
-    flexDirection: "column",
+  description: {
+    marginTop: "0",
+    marginBottom: "28px",
+    color: "#6f6a64",
+    fontSize: "0.95rem",
+    lineHeight: 1.5,
   },
 
-  panoMainImg: {
+  technique: {
+    fontSize: "0.95rem",
+    lineHeight: 1.6,
+    color: "#4f4b46",
+    marginTop: "0",
+    marginBottom: "32px",
+    fontStyle: "italic",
+    maxWidth: "720px",
+  },
+
+  panoFull: {
+    width: "calc(100% - 48px)",
+    margin: "0 auto",
+  },
+
+  panoFullImg: {
     width: "100%",
     height: "auto",
     display: "block",
     cursor: "zoom-in",
   },
 
- lightbox: {
-  position: "fixed",
-  inset: 0,
-  backgroundColor: "rgba(0, 0, 0, 0.95)",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  paddingTop: "40px",
-  paddingBottom: "40px",
-  paddingLeft: "0",
-  paddingRight: "0",
-  zIndex: 9999,
-},
-  
-  lightboxScroll: {
-  maxWidth: "100%",
-  maxHeight: "100%",
-  overflowX: "auto",
-  overflowY: "hidden",
-},
+  mobileSection: {
+    padding: "42px 12px 70px",
+  },
 
- lightboxImg: {
-  display: "block",
-  width: "3200px", // augmente ici
-  maxWidth: "none",
-  height: "auto",
-},
+  mobileContainer: {
+    width: "100%",
+    margin: "0 auto",
+  },
+
+  mobileTitle: {
+    fontSize: "1.25rem",
+    marginTop: 0,
+    marginBottom: "14px",
+    fontWeight: 300,
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
+  mobileTechnique: {
+    fontSize: "0.95rem",
+    lineHeight: 1.6,
+    color: "#4f4b46",
+    marginTop: "0",
+    marginBottom: "30px",
+    fontStyle: "italic",
+  },
+
+  mobileSubtitle: {
+    margin: "0 0 10px 0",
+    fontSize: "1.2rem",
+    fontWeight: 300,
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
+  mobileDescription: {
+    marginTop: "0",
+    marginBottom: "28px",
+    color: "#6f6a64",
+    fontSize: "0.95rem",
+    lineHeight: 1.5,
+  },
+
+  mobilePanoFull: {
+    width: "100%",
+    margin: "0 auto",
+    overflowX: "auto",
+    overflowY: "hidden",
+    WebkitOverflowScrolling: "touch",
+  },
+
+  mobilePanoFullImg: {
+    display: "block",
+    height: "260px",
+    width: "auto",
+    maxWidth: "none",
+    cursor: "zoom-in",
+  },
+
+  lightbox: {
+    position: "fixed",
+    inset: 0,
+    backgroundColor: "rgba(0, 0, 0, 0.95)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingTop: "40px",
+    paddingBottom: "40px",
+    paddingLeft: "0",
+    paddingRight: "0",
+    zIndex: 9999,
+  },
+
+  lightboxScroll: {
+    maxWidth: "100%",
+    maxHeight: "100%",
+    overflowX: "auto",
+    overflowY: "hidden",
+    WebkitOverflowScrolling: "touch",
+  },
+
+  lightboxImg: {
+    display: "block",
+    width: "3200px",
+    maxWidth: "none",
+    height: "auto",
+  },
+
+  mobileLightboxImg: {
+    display: "block",
+    height: "70vh",
+    width: "auto",
+    maxWidth: "none",
+  },
 
   closeButton: {
     position: "absolute",
@@ -169,24 +256,4 @@ description: {
     lineHeight: 1,
     zIndex: 10000,
   },
- technique: {
-  fontSize: "0.95rem",
-  lineHeight: 1.6,
-  color: "#4f4b46",
-  marginTop: "0",
-  marginBottom: "32px", // ← IMPORTANT
-  fontStyle: "italic",
-  maxWidth: "720px",
-},
-     panoFull: {
-  width: "calc(100% - 48px)", // 24px de chaque côté (comme ton padding section)
-  margin: "0 auto",
-},
-
-panoFullImg: {
-  width: "100%",
-  height: "auto",
-  display: "block",
-  cursor: "zoom-in",
-},
 };
