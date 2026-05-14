@@ -24,6 +24,8 @@ export default function TriptyquePage() {
     },
   };
 
+  const panels = [0, 1, 2];
+
   return (
     <main style={styles.main}>
       <section style={isMobile ? styles.mobileSection : styles.section}>
@@ -42,22 +44,33 @@ export default function TriptyquePage() {
           </p>
 
           <div style={styles.block}>
-            <div
-              style={
-                isMobile ? styles.mobileTriptyqueMain : styles.triptyqueMain
-              }
-            >
-              <img
-                src={triptyque.main.src}
-                alt="Triptyque (92x195cm)"
-                style={
-                  isMobile
-                    ? styles.mobileTriptyqueMainImg
-                    : styles.triptyqueMainImg
-                }
-                onClick={() => setIsZoomed(true)}
-              />
-            </div>
+            {isMobile ? (
+              <div style={styles.mobilePanelsScroll}>
+                {panels.map((panel) => (
+                  <button
+                    key={panel}
+                    type="button"
+                    style={{
+                      ...styles.mobilePanelButton,
+                      backgroundImage: `url(${triptyque.main.src})`,
+                      backgroundSize: "300% 100%",
+                      backgroundPosition: `${panel * 50}% center`,
+                    }}
+                    onClick={() => setIsZoomed(true)}
+                    aria-label={`Agrandir le panneau ${panel + 1} du triptyque`}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div style={styles.triptyqueMain}>
+                <img
+                  src={triptyque.main.src}
+                  alt="Triptyque (92x195cm)"
+                  style={styles.triptyqueMainImg}
+                  onClick={() => setIsZoomed(true)}
+                />
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -184,19 +197,26 @@ const styles: Record<string, CSSProperties> = {
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
-  mobileTriptyqueMain: {
-    width: "100%",
+  mobilePanelsScroll: {
+    display: "flex",
     overflowX: "auto",
     overflowY: "hidden",
+    scrollSnapType: "x mandatory",
     WebkitOverflowScrolling: "touch",
+    gap: "18px",
+    paddingBottom: "8px",
   },
 
-  mobileTriptyqueMainImg: {
-    display: "block",
-    height: "340px",
-    width: "auto",
-    maxWidth: "none",
+  mobilePanelButton: {
+    flex: "0 0 100%",
+    aspectRatio: "65 / 92",
+    border: "none",
+    padding: 0,
+    margin: 0,
+    backgroundRepeat: "no-repeat",
+    backgroundColor: "#f2f2f2",
     cursor: "zoom-in",
+    scrollSnapAlign: "center",
   },
 
   lightbox: {
