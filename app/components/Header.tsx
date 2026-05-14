@@ -89,8 +89,8 @@ export default function Header() {
 <div
   style={{
     ...styles.name,
-    fontSize: isMobile ? "1.35rem" : "1.8rem",
-    letterSpacing: isMobile ? "0.07em" : "0.10em",
+    fontSize: isMobile ? "1.55rem" : "1.8rem",
+    letterSpacing: isMobile ? "0.06em" : "0.10em",
   }}
 >
   CHRISTINE BÉGLET
@@ -99,8 +99,8 @@ export default function Header() {
 <div
   style={{
     ...styles.subtitle,
-    fontSize: isMobile ? "0.82rem" : "0.9rem",
-    marginTop: isMobile ? "6px" : "8px",
+    fontSize: isMobile ? "0.9rem" : "0.9rem",
+    marginTop: isMobile ? "7px" : "8px",
   }}
 >
   Collage
