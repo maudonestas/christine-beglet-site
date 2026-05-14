@@ -24,11 +24,15 @@ export default function RootLayout({
       <body style={{ margin: 0, backgroundColor: "#faf9f7" }}>
         <Header />
 
-        <main style={{ paddingTop: "80px" }}>{children}</main>
+        <main style={{ paddingTop: "80px" }}>
+          {children}
+        </main>
 
         <footer style={styles.footer}>
           <div style={styles.footerContent}>
-            <div style={styles.icons}>
+            <div style={styles.line} className="footer-line" />
+
+            <div style={styles.icons} className="footer-icons">
               {/* INSTAGRAM */}
               <a
                 href="https://www.instagram.com/christine.beglet/"
@@ -39,8 +43,8 @@ export default function RootLayout({
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="34"
-                  height="34"
+                  width="22"
+                  height="22"
                   viewBox="0 0 24 24"
                   fill="none"
                 >
@@ -87,8 +91,8 @@ export default function RootLayout({
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="34"
-                  height="34"
+                  width="22"
+                  height="22"
                   viewBox="0 0 24 24"
                   fill="none"
                 >
@@ -114,7 +118,7 @@ export default function RootLayout({
                 style={styles.icon}
                 aria-label="Email"
               >
-                <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                   <rect
                     x="2"
                     y="2"
@@ -144,7 +148,31 @@ export default function RootLayout({
                 </svg>
               </a>
             </div>
+
+            <div style={styles.line} className="footer-line" />
           </div>
+
+          <style>{`
+            @media (max-width: 768px) {
+              .footer-line {
+                display: none;
+              }
+
+              .footer-icons {
+                gap: 34px !important;
+              }
+
+              .footer-icons a {
+                width: 44px;
+                height: 44px;
+              }
+
+              .footer-icons svg {
+                width: 34px;
+                height: 34px;
+              }
+            }
+          `}</style>
         </footer>
       </body>
     </html>
@@ -153,26 +181,28 @@ export default function RootLayout({
 
 const styles = {
   footer: {
-    padding: "42px 0 52px",
-    backgroundColor: "#faf9f7",
+    padding: "40px 0",
   },
 
   footerContent: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    gap: "24px",
+  },
+
+  line: {
+    height: "1px",
+    width: "120px",
+    backgroundColor: "rgba(0,0,0,0.08)",
   },
 
   icons: {
     display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: "34px",
+    gap: "18px",
   },
 
   icon: {
-    width: "44px",
-    height: "44px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
