@@ -18,20 +18,11 @@ export default function TriptyquePage() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const triptyque = [
-    {
-      src: "/images/92x65-triptyque-1.jpg",
-      alt: "Triptyque panneau 1",
+  const triptyque = {
+    main: {
+      src: "/images/triptyque-195x92.jpg",
     },
-    {
-      src: "/images/92x65-triptyque-2.jpg",
-      alt: "Triptyque panneau 2",
-    },
-    {
-      src: "/images/92x65-triptyque-3.jpg",
-      alt: "Triptyque panneau 3",
-    },
-  ];
+  };
 
   return (
     <main style={styles.main}>
@@ -53,32 +44,19 @@ export default function TriptyquePage() {
           <div style={styles.block}>
             <div
               style={
-                isMobile
-                  ? styles.mobileTriptyqueScroll
-                  : styles.triptyqueWrapper
+                isMobile ? styles.mobileTriptyqueMain : styles.triptyqueMain
               }
             >
-              <div
+              <img
+                src={triptyque.main.src}
+                alt="Triptyque (92x195cm)"
                 style={
                   isMobile
-                    ? styles.mobileTriptyqueMain
-                    : styles.triptyqueMain
+                    ? styles.mobileTriptyqueMainImg
+                    : styles.triptyqueMainImg
                 }
                 onClick={() => setIsZoomed(true)}
-              >
-                {triptyque.map((image, index) => (
-                  <img
-                    key={index}
-                    src={image.src}
-                    alt={image.alt}
-                    style={
-                      isMobile
-                        ? styles.mobileTriptyqueImg
-                        : styles.triptyqueMainImg
-                    }
-                  />
-                ))}
-              </div>
+              />
             </div>
           </div>
         </div>
@@ -98,26 +76,11 @@ export default function TriptyquePage() {
             style={styles.lightboxScroll}
             onClick={(e) => e.stopPropagation()}
           >
-            <div
-              style={
-                isMobile
-                  ? styles.mobileLightboxTriptyque
-                  : styles.lightboxTriptyque
-              }
-            >
-              {triptyque.map((image, index) => (
-                <img
-                  key={index}
-                  src={image.src}
-                  alt={image.alt}
-                  style={
-                    isMobile
-                      ? styles.mobileLightboxImg
-                      : styles.lightboxImg
-                  }
-                />
-              ))}
-            </div>
+            <img
+              src={triptyque.main.src}
+              alt="Triptyque 92x195cm agrandi"
+              style={isMobile ? styles.mobileLightboxImg : styles.lightboxImg}
+            />
           </div>
         </div>
       )}
@@ -174,22 +137,16 @@ const styles: Record<string, CSSProperties> = {
     marginBottom: "60px",
   },
 
-  triptyqueWrapper: {
-    width: "100%",
-  },
-
   triptyqueMain: {
-    display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
-    gap: "0",
-    width: "100%",
-    cursor: "zoom-in",
+    display: "flex",
+    flexDirection: "column",
   },
 
   triptyqueMainImg: {
     width: "100%",
     height: "auto",
     display: "block",
+    cursor: "zoom-in",
   },
 
   mobileSection: {
@@ -227,25 +184,19 @@ const styles: Record<string, CSSProperties> = {
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
-  mobileTriptyqueScroll: {
+  mobileTriptyqueMain: {
     width: "100%",
     overflowX: "auto",
     overflowY: "hidden",
     WebkitOverflowScrolling: "touch",
   },
 
-  mobileTriptyqueMain: {
-    display: "flex",
-    gap: "0",
-    width: "max-content",
-    cursor: "zoom-in",
-  },
-
-  mobileTriptyqueImg: {
+  mobileTriptyqueMainImg: {
     display: "block",
     height: "340px",
     width: "auto",
     maxWidth: "none",
+    cursor: "zoom-in",
   },
 
   lightbox: {
@@ -270,30 +221,16 @@ const styles: Record<string, CSSProperties> = {
     WebkitOverflowScrolling: "touch",
   },
 
-  lightboxTriptyque: {
-    display: "flex",
-    gap: "0",
-    height: "85vh",
-    width: "max-content",
-  },
-
   lightboxImg: {
     display: "block",
-    height: "100%",
+    height: "85vh",
     width: "auto",
     maxWidth: "none",
   },
 
-  mobileLightboxTriptyque: {
-    display: "flex",
-    gap: "0",
-    height: "70vh",
-    width: "max-content",
-  },
-
   mobileLightboxImg: {
     display: "block",
-    height: "100%",
+    height: "70vh",
     width: "auto",
     maxWidth: "none",
   },
