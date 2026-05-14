@@ -412,7 +412,7 @@ const styles: Record<string, CSSProperties> = {
   },
 
   mobileSection: {
-    padding: "42px 0 70px",
+  padding: "42px 12px 70px",
   },
 
   mobileContainer: {
@@ -463,14 +463,15 @@ const styles: Record<string, CSSProperties> = {
     display: "block",
   },
 
-  mobileCaption: {
-    margin: "10px 18px 0",
-    fontSize: "0.9rem",
-    letterSpacing: "0.08em",
-    textTransform: "uppercase",
-    color: "#444",
-    fontFamily: '"Helvetica Neue", Arial, sans-serif',
-  },
+mobileCaption: {
+  margin: "12px 0 0",
+  fontSize: "0.9rem",
+  letterSpacing: "0.08em",
+  textTransform: "uppercase",
+  color: "#444",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  textAlign: "center",
+},
 
   lightboxOverlay: {
     position: "fixed",
