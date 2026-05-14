@@ -140,23 +140,7 @@ export default function Home() {
               <span style={styles.mobileWorkTitle}>Petits formats</span>
             </a>
 
-            <a href="/oeuvres/triptyque" style={styles.mobileWorkCard}>
-              <img
-                src="/images/triptyque-195x92.jpg"
-                alt="Triptyque"
-                style={styles.mobileWorkImage}
-              />
-              <span style={styles.mobileWorkTitle}>Triptyque</span>
-            </a>
-
-            <a href="/oeuvres/panoramique" style={styles.mobileWorkCard}>
-              <img
-                src="/images/pano.jpg"
-                alt="Panoramique"
-                style={styles.mobileWorkImage}
-              />
-              <span style={styles.mobileWorkTitle}>Panoramique</span>
-            </a>
+              </a>
           </div>
 
           <a href="/biographie" style={styles.mobileArtistLink}>
