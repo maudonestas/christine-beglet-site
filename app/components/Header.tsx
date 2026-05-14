@@ -15,6 +15,7 @@ export default function Header() {
   const [mobileGalerieOpen, setMobileGalerieOpen] = useState(false);
   const [mobileArtisteOpen, setMobileArtisteOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
 
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -25,6 +26,8 @@ export default function Header() {
     };
 
     checkMobile();
+    setHasMounted(true);
+
     window.addEventListener("resize", checkMobile);
 
     return () => window.removeEventListener("resize", checkMobile);
@@ -67,6 +70,10 @@ export default function Header() {
     setMobileGalerieOpen(false);
     setMobileArtisteOpen(false);
   };
+
+  if (!hasMounted) {
+    return null;
+  }
 
   return (
     <>
@@ -565,24 +572,24 @@ export default function Header() {
         </div>
       )}
 
-<style>{`
-  .desktop-nav-link:hover {
-    color: #111 !important;
-    border-bottom-color: rgba(0, 0, 0, 0.45) !important;
-  }
+      <style>{`
+        .desktop-nav-link:hover {
+          color: #111 !important;
+          border-bottom-color: rgba(0, 0, 0, 0.45) !important;
+        }
 
-  @keyframes dropdownFade {
-    from {
-      opacity: 0;
-      transform: translateY(-6px);
-    }
+        @keyframes dropdownFade {
+          from {
+            opacity: 0;
+            transform: translateY(-6px);
+          }
 
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-`}</style>
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </>
   );
 }
@@ -662,18 +669,18 @@ const styles: Record<string, CSSProperties> = {
     transition: "color 0.25s ease, border-color 0.25s ease",
   },
 
-dropdownMenu: {
-  position: "absolute",
-  top: "100%",
-  left: 0,
-  backgroundColor: "#faf9f7",
-  border: "1px solid rgba(0,0,0,0.04)",
-  padding: "8px 0",
-  zIndex: 200,
-  opacity: 1,
-  transform: "translateY(0)",
-  animation: "dropdownFade 0.22s ease forwards",
-},
+  dropdownMenu: {
+    position: "absolute",
+    top: "100%",
+    left: 0,
+    backgroundColor: "#faf9f7",
+    border: "1px solid rgba(0,0,0,0.04)",
+    padding: "8px 0",
+    zIndex: 200,
+    opacity: 1,
+    transform: "translateY(0)",
+    animation: "dropdownFade 0.22s ease forwards",
+  },
 
   dropdownLink: {
     display: "block",
