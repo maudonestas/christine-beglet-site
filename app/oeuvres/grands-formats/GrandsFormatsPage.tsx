@@ -87,7 +87,47 @@ export default function GrandsFormatsPage() {
   ];
 
 const oeuvres80x80: Artwork[] = [
-  ];
+  {
+    src: "/images/la-bas.jpg",
+    title: "Là-bas",
+    size: "80x80cm",
+  },
+  {
+    src: "/images/emmuree.jpg",
+    title: "Emmurée",
+    size: "80x80cm",
+  },
+  {
+    src: "/images/brouillon-de-culture.jpg",
+    title: "Brouillon de culture",
+    size: "80x80cm",
+  },
+  {
+    src: "/images/casse-tete.jpg",
+    title: "Casse-tête",
+    size: "80x80cm",
+  },
+  {
+    src: "/images/80x80-architectonique.jpg",
+    title: "Architectonique",
+    size: "80x80cm",
+  },
+  {
+    src: "/images/80x80-blues.jpg",
+    title: "Blues",
+    size: "80x80cm",
+  },
+  {
+    src: "/images/80x80-murmures.jpg",
+    title: "Murmures",
+    size: "80x80cm",
+  },
+  {
+    src: "/images/80x80-seul-sur-l-asphalte.jpg",
+    title: "Seul sur l’asphalte",
+    size: "80x80cm",
+  },
+];
 
   const [activeImages, setActiveImages] = useState<Artwork[] | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
