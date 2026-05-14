@@ -195,7 +195,7 @@ mobileTriptyqueMainImg: {
   width: "auto",
   maxWidth: "none",
   cursor: "zoom-in",
-},},
+},
 
   lightbox: {
     position: "fixed",
