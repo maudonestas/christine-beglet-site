@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import type { CSSProperties } from "react";
 
 type Artwork = {
@@ -133,9 +133,6 @@ export default function GrandsFormatsPage() {
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
 
-  const touchStartX = useRef<number | null>(null);
-  const touchEndX = useRef<number | null>(null);
-
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -167,33 +164,6 @@ export default function GrandsFormatsPage() {
   const showNext = () => {
     if (!activeImages || currentIndex === null) return;
     setCurrentIndex((currentIndex + 1) % activeImages.length);
-  };
-
-  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
-    touchStartX.current = event.touches[0].clientX;
-    touchEndX.current = null;
-  };
-
-  const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
-    touchEndX.current = event.touches[0].clientX;
-  };
-
-  const handleTouchEnd = () => {
-    if (touchStartX.current === null || touchEndX.current === null) return;
-
-    const distance = touchStartX.current - touchEndX.current;
-    const minSwipeDistance = 50;
-
-    if (distance > minSwipeDistance) {
-      showNext();
-    }
-
-    if (distance < -minSwipeDistance) {
-      showPrev();
-    }
-
-    touchStartX.current = null;
-    touchEndX.current = null;
   };
 
   useEffect(() => {
@@ -348,12 +318,7 @@ export default function GrandsFormatsPage() {
               </button>
             )}
 
-            <div
-              style={styles.lightboxMain}
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
-            >
+            <div style={styles.lightboxMain}>
               <img
                 src={currentImage.src}
                 alt={currentImage.title}
@@ -531,27 +496,29 @@ const styles: Record<string, CSSProperties> = {
   lightboxOverlay: {
     position: "fixed",
     inset: 0,
-    backgroundColor: "rgba(0, 0, 0, 0.92)",
+    backgroundColor: "rgba(0, 0, 0, 0.9)",
     zIndex: 2000,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    padding: 0,
+    padding: "32px",
   },
 
   lightboxContent: {
     position: "relative",
     width: "100%",
+    maxWidth: "1400px",
     height: "100%",
     display: "flex",
+    flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
   },
 
   closeButton: {
     position: "absolute",
-    top: "20px",
-    right: "28px",
+    top: "-8px",
+    right: "0",
     border: "none",
     background: "transparent",
     color: "#fff",
@@ -566,24 +533,20 @@ const styles: Record<string, CSSProperties> = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    width: "calc(100% - 160px)",
-    height: "100%",
+    width: "100%",
+    flex: 1,
     minHeight: 0,
-    margin: "0 auto",
   },
 
   lightboxImage: {
     maxWidth: "100%",
-    maxHeight: "86vh",
-    width: "auto",
-    height: "auto",
+    maxHeight: "88vh",
     objectFit: "contain",
-    display: "block",
   },
 
   lightboxCaption: {
     marginTop: "12px",
-    marginBottom: 0,
+    marginBottom: "0",
     color: "#d6d2cd",
     fontSize: "0.95rem",
     letterSpacing: "0.08em",
@@ -594,15 +557,15 @@ const styles: Record<string, CSSProperties> = {
 
   navButton: {
     position: "absolute",
-    top: "50%",
+    top: "42%",
     transform: "translateY(-50%)",
     border: "none",
-    background: "rgba(255, 255, 255, 0.1)",
+    background: "rgba(255, 255, 255, 0.12)",
     color: "#fff",
-    width: "54px",
-    height: "54px",
+    width: "52px",
+    height: "52px",
     borderRadius: "999px",
-    fontSize: "2.4rem",
+    fontSize: "2rem",
     cursor: "pointer",
     display: "flex",
     alignItems: "center",
@@ -611,10 +574,10 @@ const styles: Record<string, CSSProperties> = {
   },
 
   leftButton: {
-    left: "28px",
+    left: "0",
   },
 
   rightButton: {
-    right: "28px",
+    right: "0",
   },
 };
