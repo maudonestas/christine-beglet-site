@@ -83,18 +83,32 @@ export default function Home() {
         </section>
 
         <section style={styles.mobileSection}>
-          <div style={styles.mobileIntro}>
-            <p style={styles.mobileText}>
-              Christine Béglet compose ses collages à partir de fragments
-              d’images découpés, accumulés puis réassemblés.
-            </p>
-
-            <p style={styles.mobileText}>
-              De loin, les œuvres apparaissent comme des champs de couleurs.
-              De près, elles révèlent des architectures, des villes imaginaires,
-              des mondes fragmentés.
-            </p>
-          </div>
+<div style={styles.mobileIntro}>
+  <p style={styles.mobileText}>
+    Née en 1954 dans le Sud-Ouest de la France, Christine Béglet vit
+    et travaille à Toulouse. Diplômée de l’École nationale
+    supérieure des Beaux-Arts de Toulouse, elle développe depuis les
+    années 1990 un travail singulier autour du collage.
+    <br />
+    <br />
+    Le moindre fragment, le moindre petit bout de papier, maisons,
+    bâtiments découpés par centaines, fragmentés, morcelés, vont
+    devenir les touches de couleur, les pigments de sa palette avec
+    lesquels elle compose son collage. Elle ne structure pas au
+    préalable son tableau, du chaos de ses images accumulées tout
+    s’enchaîne rapidement dans une sorte de frénésie, l’harmonie
+    s’impose, elle se laisse guider par la couleur, en simple metteur
+    en scène d’un monde parallèle.
+    <br />
+    <br />
+    Ses collages sont des histoires silencieuses à la recherche d’un
+    équilibre entre chaos et harmonie, morcèlement et unité, entre
+    l’insignifiant et l’essentiel. Elle recompose sa réalité à partir
+    de petits bouts, de petits riens où la moindre des choses serait
+    de ne rien en dire, juste laisser voir pour une communication
+    vers les autres dans un écho singulier.
+  </p>
+</div>
 
           <div style={styles.mobileWorksBlock}>
             <h2 style={styles.mobileWorksTitle}>Œuvres</h2>
