@@ -89,7 +89,7 @@ export default function FormatsMoyensPage() {
       title: "",
       size: "50x50cm",
     },
-        {
+    {
       src: "/images/colle-erre.jpg",
       title: "Colle Erre",
       size: "50x50cm",
@@ -98,6 +98,18 @@ export default function FormatsMoyensPage() {
 
   const [activeImages, setActiveImages] = useState<Artwork[] | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const openGallery = (images: Artwork[], index: number) => {
     setActiveImages(images);
@@ -144,24 +156,30 @@ export default function FormatsMoyensPage() {
 
   return (
     <main style={styles.main}>
-      <section style={styles.section}>
-        <div style={styles.container}>
-          <h1 style={styles.title}>Formats moyens</h1>
+      <section style={isMobile ? styles.mobileSection : styles.section}>
+        <div style={isMobile ? styles.mobileContainer : styles.container}>
+          <h1 style={isMobile ? styles.mobileTitle : styles.title}>
+            Formats moyens
+          </h1>
 
-          <p style={styles.technique}>
+          <p style={isMobile ? styles.mobileTechnique : styles.technique}>
             Collages sur bois, protégés contre les UV par plusieurs couches de
             vernis.
           </p>
 
           <div style={styles.block}>
-            <h2 style={styles.subtitle}>60x60cm</h2>
+            <h2 style={isMobile ? styles.mobileSubtitle : styles.subtitle}>
+              60x60cm
+            </h2>
 
-            <div style={styles.grid}>
+            <div style={isMobile ? styles.mobileGrid : styles.grid}>
               {oeuvres60x60.map((oeuvre, index) => (
                 <div key={index} style={styles.card}>
                   <button
                     type="button"
-                    style={styles.imageButton}
+                    style={
+                      isMobile ? styles.mobileImageButton : styles.imageButton
+                    }
                     onClick={() => openGallery(oeuvres60x60, index)}
                     aria-label={`Agrandir ${oeuvre.title}`}
                   >
@@ -172,21 +190,27 @@ export default function FormatsMoyensPage() {
                     />
                   </button>
 
-                  <p style={styles.caption}>{oeuvre.title}</p>
+                  <p style={isMobile ? styles.mobileCaption : styles.caption}>
+                    {oeuvre.title}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
 
           <div style={styles.block}>
-            <h2 style={styles.subtitle}>50x50cm</h2>
+            <h2 style={isMobile ? styles.mobileSubtitle : styles.subtitle}>
+              50x50cm
+            </h2>
 
-            <div style={styles.grid}>
+            <div style={isMobile ? styles.mobileGrid : styles.grid}>
               {oeuvres50x50.map((oeuvre, index) => (
                 <div key={index} style={styles.card}>
                   <button
                     type="button"
-                    style={styles.imageButton}
+                    style={
+                      isMobile ? styles.mobileImageButton : styles.imageButton
+                    }
                     onClick={() => openGallery(oeuvres50x50, index)}
                     aria-label={`Agrandir ${oeuvre.title || oeuvre.size}`}
                   >
@@ -197,7 +221,9 @@ export default function FormatsMoyensPage() {
                     />
                   </button>
 
-                  <p style={styles.caption}>{oeuvre.title}</p>
+                  <p style={isMobile ? styles.mobileCaption : styles.caption}>
+                    {oeuvre.title}
+                  </p>
                 </div>
               ))}
             </div>
@@ -343,6 +369,67 @@ const styles: Record<string, CSSProperties> = {
     textTransform: "uppercase",
     color: "#444",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
+  mobileSection: {
+    padding: "42px 12px 70px",
+  },
+
+  mobileContainer: {
+    maxWidth: "100%",
+    margin: "0 auto",
+  },
+
+  mobileTitle: {
+    fontSize: "1.25rem",
+    margin: "0 6px 14px",
+    fontWeight: 300,
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
+  mobileTechnique: {
+    fontSize: "0.95rem",
+    lineHeight: 1.6,
+    color: "#4f4b46",
+    margin: "0 6px 40px",
+    fontStyle: "italic",
+  },
+
+  mobileSubtitle: {
+    margin: "0 6px 20px",
+    fontSize: "1.3rem",
+    fontWeight: 300,
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
+  mobileGrid: {
+    display: "grid",
+    gridTemplateColumns: "1fr",
+    gap: "34px",
+  },
+
+  mobileImageButton: {
+    width: "100%",
+    border: "none",
+    background: "transparent",
+    padding: 0,
+    cursor: "zoom-in",
+    textAlign: "left",
+    display: "block",
+  },
+
+  mobileCaption: {
+    margin: "12px 0 0",
+    fontSize: "0.9rem",
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    color: "#444",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    textAlign: "center",
   },
 
   overlay: {
