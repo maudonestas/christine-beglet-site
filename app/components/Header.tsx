@@ -117,7 +117,7 @@ export default function Header() {
               onMouseLeave={() => setGalerieOpen(false)}
             >
               <span className="desktop-nav-link" style={styles.navLink}>
-                {isEn ? "Works" : "Galerie"}
+                {isEn ? "Gallery" : "Galerie"}
               </span>
 
               {galerieOpen && (
@@ -410,7 +410,7 @@ export default function Header() {
                 style={styles.mobileDropdownButton}
                 onClick={() => setMobileGalerieOpen(!mobileGalerieOpen)}
               >
-                <span>{isEn ? "Works" : "Galerie"}</span>
+                <span>{isEn ? "Gallery" : "Galerie"}</span>
                 <span style={styles.mobileChevron}>
                   {mobileGalerieOpen ? "−" : "+"}
                 </span>
