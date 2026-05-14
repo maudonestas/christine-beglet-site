@@ -86,25 +86,25 @@ export default function Header() {
         >
           <a href={isEn ? "/en" : "/"} style={styles.logoLink}>
             <div>
-<div
-  style={{
-    ...styles.name,
-    fontSize: isMobile ? "1.55rem" : "2rem",
-    letterSpacing: isMobile ? "0.06em" : "0.10em",
-  }}
->
-  CHRISTINE BÉGLET
-</div>
+              <div
+                style={{
+                  ...styles.name,
+                  fontSize: isMobile ? "1.55rem" : "2rem",
+                  letterSpacing: isMobile ? "0.06em" : "0.10em",
+                }}
+              >
+                CHRISTINE BÉGLET
+              </div>
 
-<div
-  style={{
-    ...styles.subtitle,
-    fontSize: isMobile ? "0.9rem" : "1rem",
-    marginTop: isMobile ? "7px" : "8px",
-  }}
->
-  Collage
-</div>
+              <div
+                style={{
+                  ...styles.subtitle,
+                  fontSize: isMobile ? "0.9rem" : "1rem",
+                  marginTop: isMobile ? "7px" : "8px",
+                }}
+              >
+                Collage
+              </div>
             </div>
           </a>
 
@@ -116,7 +116,9 @@ export default function Header() {
               onMouseEnter={() => setGalerieOpen(true)}
               onMouseLeave={() => setGalerieOpen(false)}
             >
-              <span style={styles.navLink}>{isEn ? "Works" : "Galerie"}</span>
+              <span className="desktop-nav-link" style={styles.navLink}>
+                {isEn ? "Works" : "Galerie"}
+              </span>
 
               {galerieOpen && (
                 <div style={styles.dropdownMenu}>
@@ -176,6 +178,7 @@ export default function Header() {
 
             <a
               href={isEn ? "/en/exhibitions" : "/expositions"}
+              className="desktop-nav-link"
               style={styles.navLink}
             >
               {isEn ? "Exhibitions" : "Expositions"}
@@ -187,7 +190,7 @@ export default function Header() {
               onMouseEnter={() => setArtisteOpen(true)}
               onMouseLeave={() => setArtisteOpen(false)}
             >
-              <span style={styles.navLink}>
+              <span className="desktop-nav-link" style={styles.navLink}>
                 {isEn ? "The Artist" : "L'Artiste"}
               </span>
 
@@ -210,11 +213,19 @@ export default function Header() {
               )}
             </div>
 
-            <a href={isEn ? "/en/studio" : "/atelier"} style={styles.navLink}>
+            <a
+              href={isEn ? "/en/studio" : "/atelier"}
+              className="desktop-nav-link"
+              style={styles.navLink}
+            >
               {isEn ? "Studio" : "L'Atelier"}
             </a>
 
-            <a href={isEn ? "/en/contact" : "/contact"} style={styles.navLink}>
+            <a
+              href={isEn ? "/en/contact" : "/contact"}
+              className="desktop-nav-link"
+              style={styles.navLink}
+            >
               Contact
             </a>
 
@@ -553,6 +564,13 @@ export default function Header() {
           </nav>
         </div>
       )}
+
+      <style>{`
+        .desktop-nav-link:hover {
+          color: #111 !important;
+          border-bottom-color: rgba(0, 0, 0, 0.45) !important;
+        }
+      `}</style>
     </>
   );
 }
@@ -625,7 +643,11 @@ const styles: Record<string, CSSProperties> = {
     letterSpacing: "0.12em",
     textTransform: "uppercase",
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
-    cursor: "default",
+    cursor: "pointer",
+    position: "relative",
+    paddingBottom: "5px",
+    borderBottom: "1px solid transparent",
+    transition: "color 0.25s ease, border-color 0.25s ease",
   },
 
   dropdownMenu: {
