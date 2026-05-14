@@ -59,11 +59,6 @@ export default function ExpositionsPage() {
     image: "/images/atelier-contempora.jpg",
   },
   {
-    title: "Galerie 21, Toulouse",
-    date: "décembre 2019",
-    image: "/images/Galerie21.jpg",
-  },
-  {
     title: "Galerie La Mosaïque, Saint-Jean",
     date: "29 novembre — 21 décembre 2019",
     image: "/images/galerie-la-mosaique-29nov-21dec-2019-saint-jean.jpg",
@@ -134,7 +129,7 @@ export default function ExpositionsPage() {
     image: "/images/salon-des-artistes-meridionaux-2-20decembre2015-toulouse.jpg",
   },
   {
-    title: "ACPT, Foire d’art contemporain pour tous, Montréal",
+    title: "ACPT, Foire d’art contemporain pour tous, Montréal, Canada",
     date: "2015",
     image: "/images/ACPT-foire-dart-contemporain-pour-tous-2015-montreal-canada.jpg",
   },
@@ -144,7 +139,7 @@ export default function ExpositionsPage() {
     image: "/images/galerie-roger-betti-7avril-2mai-2015-toulouse.jpg",
   },
   {
-    title: "Galerie des Nanas, Danville",
+    title: "Galerie des Nanas, Danville, Canada",
     date: "20 août — 12 septembre 2014",
     image: "/images/galerie-des-nanas-20aout-12sept-2014-danville-canada.jpg",
   },
@@ -154,7 +149,7 @@ export default function ExpositionsPage() {
     image: "/images/biennale-hors-les-normes-27sept-10oct-2023-lyon.jpg",
   },
   {
-    title: "Résidence de création, Galerie des Nanas, Danville",
+    title: "Résidence de création, Galerie des Nanas, Danville, Canada",
     date: "1–30 août 2012",
     image: "/images/residence-de-creation-galerie-des-nanas-1-30aout-2012-danville-canada.jpg",
   },
