@@ -111,7 +111,7 @@ export default function Home() {
           </div>
 
           <div style={styles.mobileWorksBlock}>
-            <h2 style={styles.mobileWorksTitle}>Œuvres</h2>
+            <h2 style={styles.mobileWorksTitle}>Collages</h2>
 
             <a href="/oeuvres/grands-formats" style={styles.mobileWorkCard}>
               <img
