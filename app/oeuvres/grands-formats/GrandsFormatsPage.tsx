@@ -421,24 +421,24 @@ const styles: Record<string, CSSProperties> = {
   },
 
   mobileTitle: {
-    fontSize: "1.25rem",
-    margin: "0 18px 14px",
-    fontWeight: 300,
-    letterSpacing: "0.12em",
-    textTransform: "uppercase",
-    fontFamily: '"Helvetica Neue", Arial, sans-serif',
-  },
+  fontSize: "1.25rem",
+  margin: "0 6px 14px",
+  fontWeight: 300,
+  letterSpacing: "0.12em",
+  textTransform: "uppercase",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+},
 
   mobileTechnique: {
     fontSize: "0.95rem",
     lineHeight: 1.6,
     color: "#4f4b46",
-    margin: "0 18px 40px",
+    margin: "0 6px 40px",
     fontStyle: "italic",
   },
 
   mobileSubtitle: {
-    margin: "0 18px 20px",
+    margin: "0 6px 20px",
     fontSize: "1.3rem",
     fontWeight: 300,
     letterSpacing: "0.08em",
