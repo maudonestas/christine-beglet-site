@@ -359,12 +359,12 @@ const styles: Record<string, CSSProperties> = {
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
-  mobileGrid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(2, 1fr)",
-    gap: "30px 14px",
-    alignItems: "start",
-  },
+mobileGrid: {
+  display: "grid",
+  gridTemplateColumns: "1fr",
+  gap: "42px",
+  alignItems: "start",
+},
 
   mobileCard: {
     display: "flex",
