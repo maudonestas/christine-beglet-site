@@ -1,74 +1,109 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import type { CSSProperties } from "react";
 
 export default function AtelierPage() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <main style={styles.main}>
-      <section style={styles.section}>
-        <div style={styles.container}>
-          <h1 style={styles.title}>Studio</h1>
+      <section style={isMobile ? styles.mobileSection : styles.section}>
+        <div style={isMobile ? styles.mobileContainer : styles.container}>
+          <h1 style={isMobile ? styles.mobileTitle : styles.title}>Studio</h1>
 
-          {/* Bloc 1 */}
-          <div style={styles.twoColGrid}>
+          <div style={isMobile ? styles.mobileGrid : styles.twoColGrid}>
             <div>
               <img
                 src="/images/les-magazines.jpg"
                 alt="Magazines"
-                style={styles.imageMedium}
+                style={isMobile ? styles.mobileImage : styles.imageMedium}
               />
-              <p style={styles.caption}>Magazines</p>
+              <p style={isMobile ? styles.mobileCaption : styles.caption}>
+                Magazines
+              </p>
             </div>
 
             <div>
-              <div style={styles.zoomWrapper}>
+              {isMobile ? (
                 <img
                   src="/images/tiroirs-a-papiers.jpg"
                   alt="Paper drawers"
-                  style={styles.imageZoomed}
+                  style={styles.mobileImage}
                 />
-              </div>
-              <p style={styles.caption}>Paper drawers</p>
+              ) : (
+                <div style={styles.zoomWrapper}>
+                  <img
+                    src="/images/tiroirs-a-papiers.jpg"
+                    alt="Paper drawers"
+                    style={styles.imageZoomed}
+                  />
+                </div>
+              )}
+
+              <p style={isMobile ? styles.mobileCaption : styles.caption}>
+                Paper drawers
+              </p>
             </div>
           </div>
 
-          {/* Bloc 2 */}
-          <div style={styles.singleBlock}>
+          <div style={isMobile ? styles.mobileSingleBlock : styles.singleBlock}>
             <img
               src="/images/decoupes-pas-colles.jpg"
               alt="Cut, not glued"
-              style={styles.imageWide}
+              style={isMobile ? styles.mobileImage : styles.imageWide}
             />
-            <p style={styles.caption}>Cut, not glued</p>
+            <p style={isMobile ? styles.mobileCaption : styles.caption}>
+              Cut, not glued
+            </p>
           </div>
 
-          {/* Bloc 3 */}
-          <div style={styles.processGrid}>
+          <div style={isMobile ? styles.mobileGrid : styles.processGrid}>
             <div>
               <img
                 src="/images/dessus-dessous.jpg"
                 alt="Above, below"
-                style={styles.imageSmall}
+                style={isMobile ? styles.mobileImage : styles.imageSmall}
               />
-              <p style={styles.caption}>Above, below</p>
+              <p style={isMobile ? styles.mobileCaption : styles.caption}>
+                Above, below
+              </p>
             </div>
 
             <div>
               <img
                 src="/images/ca-colle.jpg"
                 alt="In progress"
-                style={styles.imageLarge}
+                style={isMobile ? styles.mobileImage : styles.imageLarge}
               />
-              <p style={styles.caption}>In progress</p>
+              <p style={isMobile ? styles.mobileCaption : styles.caption}>
+                In progress
+              </p>
             </div>
           </div>
 
-          {/* Bloc 4 */}
-          <div style={styles.singleBlockEnd}>
+          <div
+            style={isMobile ? styles.mobileSingleBlockEnd : styles.singleBlockEnd}
+          >
             <img
               src="/images/bien-ranges.jpg"
               alt="Well organized"
-              style={styles.imageEnd}
+              style={isMobile ? styles.mobileImage : styles.imageEnd}
             />
-            <p style={styles.caption}>Well organized</p>
+            <p style={isMobile ? styles.mobileCaption : styles.caption}>
+              Well organized
+            </p>
           </div>
         </div>
       </section>
@@ -84,8 +119,8 @@ const styles: Record<string, CSSProperties> = {
   },
 
   section: {
-  padding: "80px 24px",
-},
+    padding: "80px 24px",
+  },
 
   container: {
     maxWidth: "1200px",
@@ -93,14 +128,14 @@ const styles: Record<string, CSSProperties> = {
   },
 
   title: {
-  fontSize: "2rem",
-  marginTop: 0,
-  marginBottom: "40px",
-  fontWeight: 300,
-  letterSpacing: "0.12em",
-  textTransform: "uppercase",
-  fontFamily: '"Helvetica Neue", Arial, sans-serif',
-},
+    fontSize: "1.55rem",
+    marginTop: 0,
+    marginBottom: "40px",
+    fontWeight: 300,
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
 
   twoColGrid: {
     display: "grid",
@@ -143,12 +178,13 @@ const styles: Record<string, CSSProperties> = {
   },
 
   imageSmall: {
-  width: "100%",
-  height: "400px",
-  objectFit: "cover",
-  objectPosition: "center 35%",
-  display: "block",
-},
+    width: "100%",
+    height: "400px",
+    objectFit: "cover",
+    objectPosition: "center 35%",
+    display: "block",
+  },
+
   imageLarge: {
     width: "100%",
     height: "400px",
@@ -169,18 +205,68 @@ const styles: Record<string, CSSProperties> = {
     marginTop: "10px",
     lineHeight: 1.4,
   },
+
   zoomWrapper: {
-  width: "100%",
-  height: "340px",
-  overflow: "hidden",
-},
+    width: "100%",
+    height: "340px",
+    overflow: "hidden",
+  },
 
-imageZoomed: {
-  width: "100%",
-  height: "100%",
-  objectFit: "cover",
-  transform: "scale(1.4)", // ← ajuste entre 1.2 et 1.4
-  objectPosition: "center 60%",
-},
+  imageZoomed: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    transform: "scale(1.4)",
+    objectPosition: "center 60%",
+  },
+
+  mobileSection: {
+    padding: "42px 12px 70px",
+  },
+
+  mobileContainer: {
+    maxWidth: "100%",
+    margin: "0 auto",
+  },
+
+  mobileTitle: {
+    fontSize: "1.25rem",
+    margin: "0 6px 34px",
+    fontWeight: 300,
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
+  mobileGrid: {
+    display: "grid",
+    gridTemplateColumns: "1fr",
+    gap: "34px",
+    marginBottom: "34px",
+    alignItems: "start",
+  },
+
+  mobileSingleBlock: {
+    marginBottom: "34px",
+  },
+
+  mobileSingleBlockEnd: {
+    margin: "0",
+  },
+
+  mobileImage: {
+    width: "100%",
+    height: "auto",
+    objectFit: "contain",
+    display: "block",
+  },
+
+  mobileCaption: {
+    margin: "12px 0 0",
+    fontSize: "0.9rem",
+    letterSpacing: "0.08em",
+    color: "#444",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    textAlign: "center",
+  },
 };
-
