@@ -17,49 +17,46 @@ export default function GrandsFormatsPage() {
       size: "70x100cm",
     },
     {
-  src: "/images/70x100-complot-immobilier.jpg",
-  title: "Complot immobilier",
-  size: "70x100cm",
-},
+      src: "/images/70x100-complot-immobilier.jpg",
+      title: "Complot immobilier",
+      size: "70x100cm",
+    },
     {
       src: "/images/deambulation-betonniere.jpg",
       title: "Déambulation bétonnière",
       size: "70x100cm",
     },
-
     {
-  src: "/images/70x100-chaos-organise.jpg",
-  title: "Chaos organisé",
-  size: "70x100cm",
-},
+      src: "/images/70x100-chaos-organise.jpg",
+      title: "Chaos organisé",
+      size: "70x100cm",
+    },
     {
       src: "/images/pollinisation-excessive.jpg",
       title: "Pollinisation excessive",
       size: "70x100cm",
     },
-
-   
     {
-  src: "/images/70x100-a-la-porte-du-jardin.jpg",
-  title: "À la porte du jardin",
-  size: "70x100cm",
-},
-{
-  src: "/images/70x100-contamination-urbaine.jpg",
-  title: "Contamination urbaine",
-  size: "70x100cm",
-},
+      src: "/images/70x100-a-la-porte-du-jardin.jpg",
+      title: "À la porte du jardin",
+      size: "70x100cm",
+    },
+    {
+      src: "/images/70x100-contamination-urbaine.jpg",
+      title: "Contamination urbaine",
+      size: "70x100cm",
+    },
     {
       src: "/images/les-murs-ont-des-oreilles.jpg",
       title: "Les murs ont des oreilles",
       size: "70x100cm",
     },
-        {
+    {
       src: "/images/entre-les-murs.jpg",
       title: "Entre les murs",
       size: "70x100cm",
     },
-           {
+    {
       src: "/images/puzzle-neuronal.jpg",
       title: "Puzzle neuronal",
       size: "70x100cm",
@@ -82,7 +79,7 @@ export default function GrandsFormatsPage() {
       title: "Recrudescence",
       size: "90x90cm",
     },
-        {
+    {
       src: "/images/nuit-d-automne.jpg",
       title: "Nuit d’automne",
       size: "90x90cm",
@@ -93,27 +90,39 @@ export default function GrandsFormatsPage() {
     {
       src: "/images/la-bas.jpg",
       title: "Là-bas",
-       size: "80x80cm",
+      size: "80x80cm",
     },
     {
       src: "/images/emmuree.jpg",
       title: "Emmurée",
-       size: "80x80cm",
+      size: "80x80cm",
     },
     {
       src: "/images/brouillon-de-culture.jpg",
       title: "Brouillon de culture",
-       size: "80x80cm",
+      size: "80x80cm",
     },
-        {
+    {
       src: "/images/casse-tete.jpg",
       title: "Casse-tête",
-       size: "80x80cm",
+      size: "80x80cm",
     },
   ];
 
   const [activeImages, setActiveImages] = useState<Artwork[] | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const openGallery = (images: Artwork[], index: number) => {
     setActiveImages(images);
@@ -160,24 +169,30 @@ export default function GrandsFormatsPage() {
 
   return (
     <main style={styles.main}>
- 
+      <section style={isMobile ? styles.mobileSection : styles.section}>
+        <div style={isMobile ? styles.mobileContainer : styles.container}>
+          <h1 style={isMobile ? styles.mobileTitle : styles.title}>
+            Grands formats
+          </h1>
 
-      <section style={styles.section}>
-        <div style={styles.container}>
-          <h1 style={styles.title}>Grands formats</h1>
-          <p style={styles.technique}>
-  Collages sur bois, protégés contre les UV par plusieurs couches de vernis.
-</p>
+          <p style={isMobile ? styles.mobileTechnique : styles.technique}>
+            Collages sur bois, protégés contre les UV par plusieurs couches de
+            vernis.
+          </p>
 
           <div style={styles.block}>
-            <h2 style={styles.subtitle}>70x100cm</h2>
+            <h2 style={isMobile ? styles.mobileSubtitle : styles.subtitle}>
+              70x100cm
+            </h2>
 
-            <div style={styles.grid}>
+            <div style={isMobile ? styles.mobileGrid : styles.grid}>
               {oeuvres70x100.map((oeuvre, index) => (
                 <div key={index} style={styles.card}>
                   <button
                     type="button"
-                    style={styles.imageButton}
+                    style={
+                      isMobile ? styles.mobileImageButton : styles.imageButton
+                    }
                     onClick={() => openGallery(oeuvres70x100, index)}
                     aria-label={`Agrandir ${oeuvre.title}`}
                   >
@@ -187,21 +202,27 @@ export default function GrandsFormatsPage() {
                       style={styles.image}
                     />
                   </button>
-                  <p style={styles.caption}>{oeuvre.title}</p>
+                  <p style={isMobile ? styles.mobileCaption : styles.caption}>
+                    {oeuvre.title}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
 
           <div style={styles.block}>
-            <h2 style={styles.subtitle}>90x90cm</h2>
+            <h2 style={isMobile ? styles.mobileSubtitle : styles.subtitle}>
+              90x90cm
+            </h2>
 
-            <div style={styles.grid}>
+            <div style={isMobile ? styles.mobileGrid : styles.grid}>
               {oeuvres90x90.map((oeuvre, index) => (
                 <div key={index} style={styles.card}>
                   <button
                     type="button"
-                    style={styles.imageButton}
+                    style={
+                      isMobile ? styles.mobileImageButton : styles.imageButton
+                    }
                     onClick={() => openGallery(oeuvres90x90, index)}
                     aria-label={`Agrandir ${oeuvre.title}`}
                   >
@@ -211,21 +232,27 @@ export default function GrandsFormatsPage() {
                       style={styles.image}
                     />
                   </button>
-                  <p style={styles.caption}>{oeuvre.title}</p>
+                  <p style={isMobile ? styles.mobileCaption : styles.caption}>
+                    {oeuvre.title}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
 
           <div style={styles.block}>
-            <h2 style={styles.subtitle}>80x80cm</h2>
+            <h2 style={isMobile ? styles.mobileSubtitle : styles.subtitle}>
+              80x80cm
+            </h2>
 
-            <div style={styles.grid}>
+            <div style={isMobile ? styles.mobileGrid : styles.grid}>
               {oeuvres80x80.map((oeuvre, index) => (
                 <div key={index} style={styles.card}>
                   <button
                     type="button"
-                    style={styles.imageButton}
+                    style={
+                      isMobile ? styles.mobileImageButton : styles.imageButton
+                    }
                     onClick={() => openGallery(oeuvres80x80, index)}
                     aria-label={`Agrandir ${oeuvre.title}`}
                   >
@@ -235,7 +262,9 @@ export default function GrandsFormatsPage() {
                       style={styles.image}
                     />
                   </button>
-                  <p style={styles.caption}>{oeuvre.title}</p>
+                  <p style={isMobile ? styles.mobileCaption : styles.caption}>
+                    {oeuvre.title}
+                  </p>
                 </div>
               ))}
             </div>
@@ -245,7 +274,10 @@ export default function GrandsFormatsPage() {
 
       {activeImages && currentImage && currentIndex !== null && (
         <div style={styles.lightboxOverlay} onClick={closeGallery}>
-          <div style={styles.lightboxContent} onClick={(e) => e.stopPropagation()}>
+          <div
+            style={styles.lightboxContent}
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               type="button"
               onClick={closeGallery}
@@ -273,8 +305,8 @@ export default function GrandsFormatsPage() {
                 style={styles.lightboxImage}
               />
               <p style={styles.lightboxCaption}>
-  {currentImage.title} — {currentImage.size}
-</p>
+                {currentImage.title} — {currentImage.size}
+              </p>
             </div>
 
             {activeImages.length > 1 && (
@@ -325,19 +357,19 @@ const styles: Record<string, CSSProperties> = {
   },
 
   subtitle: {
-  margin: "0 0 20px 0",
-  fontSize: "1.3rem",
-  fontWeight: 300,
-  letterSpacing: "0.08em",
-  textTransform: "uppercase",
-  fontFamily: '"Helvetica Neue", Arial, sans-serif',
-},
+    margin: "0 0 20px 0",
+    fontSize: "1.3rem",
+    fontWeight: 300,
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
 
-grid: {
-  display: "grid",
-  gridTemplateColumns: "repeat(3, 1fr)",
-  gap: "28px",
-},
+  grid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)",
+    gap: "28px",
+  },
 
   card: {
     display: "flex",
@@ -369,6 +401,77 @@ grid: {
     fontFamily: '"Helvetica Neue", Arial, sans-serif',
   },
 
+  technique: {
+    fontSize: "0.95rem",
+    lineHeight: 1.6,
+    color: "#4f4b46",
+    marginTop: "0",
+    marginBottom: "40px",
+    fontStyle: "italic",
+    maxWidth: "720px",
+  },
+
+  mobileSection: {
+    padding: "42px 0 70px",
+  },
+
+  mobileContainer: {
+    maxWidth: "100%",
+    margin: "0 auto",
+  },
+
+  mobileTitle: {
+    fontSize: "1.25rem",
+    margin: "0 18px 14px",
+    fontWeight: 300,
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
+  mobileTechnique: {
+    fontSize: "0.95rem",
+    lineHeight: 1.6,
+    color: "#4f4b46",
+    margin: "0 18px 40px",
+    fontStyle: "italic",
+  },
+
+  mobileSubtitle: {
+    margin: "0 18px 20px",
+    fontSize: "1.3rem",
+    fontWeight: 300,
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
+  mobileGrid: {
+    display: "grid",
+    gridTemplateColumns: "1fr",
+    gap: "34px",
+  },
+
+  mobileImageButton: {
+    width: "100%",
+    border: "none",
+    background: "transparent",
+    padding: 0,
+    margin: 0,
+    cursor: "zoom-in",
+    textAlign: "left",
+    display: "block",
+  },
+
+  mobileCaption: {
+    margin: "10px 18px 0",
+    fontSize: "0.9rem",
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    color: "#444",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  },
+
   lightboxOverlay: {
     position: "fixed",
     inset: 0,
@@ -381,15 +484,15 @@ grid: {
   },
 
   lightboxContent: {
-  position: "relative",
-  width: "100%",
-  maxWidth: "1400px",
-  height: "100%",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
-},
+    position: "relative",
+    width: "100%",
+    maxWidth: "1400px",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  },
 
   closeButton: {
     position: "absolute",
@@ -405,24 +508,25 @@ grid: {
   },
 
   lightboxMain: {
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
-  width: "100%",
-  flex: 1,
-  minHeight: 0,
-},
-lightboxImage: {
-  maxWidth: "100%",
-  maxHeight: "88vh",
-  objectFit: "contain",
-},
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+    flex: 1,
+    minHeight: 0,
+  },
+
+  lightboxImage: {
+    maxWidth: "100%",
+    maxHeight: "88vh",
+    objectFit: "contain",
+  },
 
   lightboxCaption: {
-  marginTop: "12px",
-  marginBottom: "0",
-   color: "#d6d2cd",
+    marginTop: "12px",
+    marginBottom: "0",
+    color: "#d6d2cd",
     fontSize: "0.95rem",
     letterSpacing: "0.08em",
     textTransform: "uppercase",
@@ -455,14 +559,4 @@ lightboxImage: {
   rightButton: {
     right: "0",
   },
-
-  technique: {
-  fontSize: "0.95rem",
-  lineHeight: 1.6,
-  color: "#4f4b46",
-  marginTop: "0",
-  marginBottom: "40px",
-  fontStyle: "italic",
-  maxWidth: "720px",
-},
 };
