@@ -140,7 +140,6 @@ export default function Home() {
               <span style={styles.mobileWorkTitle}>Petits formats</span>
             </a>
 
-              </a>
           </div>
 
           <a href="/biographie" style={styles.mobileArtistLink}>
