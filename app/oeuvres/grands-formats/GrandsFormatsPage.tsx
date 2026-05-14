@@ -363,15 +363,14 @@ const styles: Record<string, CSSProperties> = {
   },
 
   title: {
-    fontSize: "2rem",
-    marginTop: 0,
-    marginBottom: "16px",
-    fontWeight: 300,
-    letterSpacing: "0.12em",
-    textTransform: "uppercase",
-    fontFamily: '"Helvetica Neue", Arial, sans-serif',
-  },
-
+  fontSize: "1.55rem",
+  marginTop: 0,
+  marginBottom: "16px",
+  fontWeight: 300,
+  letterSpacing: "0.12em",
+  textTransform: "uppercase",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+},
   block: {
     marginBottom: "70px",
   },
