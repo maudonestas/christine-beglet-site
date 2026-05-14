@@ -271,7 +271,7 @@ const styles: Record<string, CSSProperties> = {
 
   mobilePanoFullImg: {
     display: "block",
-    height: "260px",
+    height: "340px",
     width: "auto",
     maxWidth: "none",
     cursor: "zoom-in",
