@@ -75,7 +75,7 @@ export default function Home() {
             <div ref={heroScrollRef} style={styles.heroScroll}>
               <img
                 src="/images/pano.jpg"
-                alt="Collage panoramique de Christine Béglet"
+                alt="Panoramic collage by Christine Béglet"
                 style={styles.mobileHeroImgScrollable}
               />
             </div>
@@ -83,66 +83,63 @@ export default function Home() {
         </section>
 
         <section style={styles.mobileSection}>
-<div style={styles.mobileIntro}>
-  <p style={styles.mobileText}>
-    Née en 1954 dans le Sud-Ouest de la France, Christine Béglet vit
-    et travaille à Toulouse. Diplômée de l’École nationale
-    supérieure des Beaux-Arts de Toulouse, elle développe depuis les
-    années 1990 un travail singulier autour du collage.
-    <br />
-    <br />
-    Le moindre fragment, le moindre petit bout de papier, maisons,
-    bâtiments découpés par centaines, fragmentés, morcelés, vont
-    devenir les touches de couleur, les pigments de sa palette avec
-    lesquels elle compose son collage. Elle ne structure pas au
-    préalable son tableau, du chaos de ses images accumulées tout
-    s’enchaîne rapidement dans une sorte de frénésie, l’harmonie
-    s’impose, elle se laisse guider par la couleur, en simple metteur
-    en scène d’un monde parallèle.
-    <br />
-    <br />
-    Ses collages sont des histoires silencieuses à la recherche d’un
-    équilibre entre chaos et harmonie, morcèlement et unité, entre
-    l’insignifiant et l’essentiel. Elle recompose sa réalité à partir
-    de petits bouts, de petits riens où la moindre des choses serait
-    de ne rien en dire, juste laisser voir pour une communication
-    vers les autres dans un écho singulier.
-  </p>
-</div>
-
-          <div style={styles.mobileWorksBlock}>
-            <h2 style={styles.mobileWorksTitle}>Œuvres</h2>
-
-            <a href="/oeuvres/grands-formats" style={styles.mobileWorkCard}>
-              <img
-                src="/images/puzzle-neuronal.jpg"
-                alt="Grands formats"
-                style={styles.mobileWorkImage}
-              />
-              <span style={styles.mobileWorkTitle}>Grands formats</span>
-            </a>
-
-            <a href="/oeuvres/formats-moyens" style={styles.mobileWorkCard}>
-              <img
-                src="/images/toutotour-sur-oise.jpg"
-                alt="Formats moyens"
-                style={styles.mobileWorkImage}
-              />
-              <span style={styles.mobileWorkTitle}>Formats moyens</span>
-            </a>
-
-            <a href="/oeuvres/petits-formats" style={styles.mobileWorkCard}>
-              <img
-                src="/images/20x20-1.jpg"
-                alt="Petits formats"
-                style={styles.mobileWorkImage}
-              />
-              <span style={styles.mobileWorkTitle}>Petits formats</span>
-            </a>
-
+          <div style={styles.mobileIntro}>
+            <p style={styles.mobileText}>
+              Born in 1954 in the southwest of France, Christine Béglet lives
+              and works in Toulouse. A graduate of the École nationale
+              supérieure des Beaux-Arts de Toulouse, she has developed since
+              the 1990s a distinctive body of work centered on collage.
+              <br />
+              <br />
+              The smallest fragment, the tiniest piece of paper — houses,
+              buildings cut out by the hundreds, fragmented and broken apart —
+              become the touches of color, the pigments of her palette with
+              which she composes her work. She does not structure her
+              compositions in advance; from the chaos of accumulated images,
+              everything unfolds rapidly in a kind of frenzy. Harmony emerges
+              on its own, as she lets herself be guided by color, acting simply
+              as the director of a parallel world.
+              <br />
+              <br />
+              Her collages are silent narratives seeking a balance between
+              chaos and harmony, fragmentation and unity, between the
+              insignificant and the essential. She reconstructs her reality from
+              small fragments, from seemingly trivial elements, where the least
+              one can do is say nothing — simply let it be seen, allowing for a
+              unique resonance with others.
+            </p>
           </div>
 
-         
+          <div style={styles.mobileWorksBlock}>
+            <h2 style={styles.mobileWorksTitle}>Works</h2>
+
+            <a href="/en/works/large-formats" style={styles.mobileWorkCard}>
+              <img
+                src="/images/puzzle-neuronal.jpg"
+                alt="Large formats"
+                style={styles.mobileWorkImage}
+              />
+              <span style={styles.mobileWorkTitle}>Large formats</span>
+            </a>
+
+            <a href="/en/works/medium-formats" style={styles.mobileWorkCard}>
+              <img
+                src="/images/toutotour-sur-oise.jpg"
+                alt="Medium formats"
+                style={styles.mobileWorkImage}
+              />
+              <span style={styles.mobileWorkTitle}>Medium formats</span>
+            </a>
+
+            <a href="/en/works/small-formats" style={styles.mobileWorkCard}>
+              <img
+                src="/images/20x20-1.jpg"
+                alt="Small formats"
+                style={styles.mobileWorkImage}
+              />
+              <span style={styles.mobileWorkTitle}>Small formats</span>
+            </a>
+          </div>
         </section>
       </main>
     );
@@ -155,7 +152,7 @@ export default function Home() {
           <div ref={heroScrollRef} style={styles.heroScroll}>
             <img
               src="/images/pano.jpg"
-              alt="Collage panoramique de Christine Béglet"
+              alt="Panoramic collage by Christine Béglet"
               style={styles.heroImgScrollable}
             />
           </div>
@@ -167,28 +164,28 @@ export default function Home() {
           <div style={styles.bioBlock}>
             <div style={styles.bioText}>
               <p style={styles.text}>
-                Née en 1954 dans le Sud-Ouest de la France, Christine Béglet vit
-                et travaille à Toulouse. Diplômée de l’École nationale
-                supérieure des Beaux-Arts de Toulouse, elle développe depuis les
-                années 1990 un travail singulier autour du collage.
+                Born in 1954 in the southwest of France, Christine Béglet lives
+                and works in Toulouse. A graduate of the École nationale
+                supérieure des Beaux-Arts de Toulouse, she has developed since
+                the 1990s a distinctive body of work centered on collage.
                 <br />
                 <br />
-                Le moindre fragment, le moindre petit bout de papier, maisons,
-                bâtiments découpés par centaines, fragmentés, morcelés, vont
-                devenir les touches de couleur, les pigments de sa palette avec
-                lesquels elle compose son collage. Elle ne structure pas au
-                préalable son tableau, du chaos de ses images accumulées tout
-                s’enchaîne rapidement dans une sorte de frénésie, l’harmonie
-                s’impose, elle se laisse guider par la couleur, en simple metteur
-                en scène d’un monde parallèle.
+                The smallest fragment, the tiniest piece of paper — houses,
+                buildings cut out by the hundreds, fragmented and broken apart —
+                become the touches of color, the pigments of her palette with
+                which she composes her work. She does not structure her
+                compositions in advance; from the chaos of accumulated images,
+                everything unfolds rapidly in a kind of frenzy. Harmony emerges
+                on its own, as she lets herself be guided by color, acting simply
+                as the director of a parallel world.
                 <br />
                 <br />
-                Ses collages sont des histoires silencieuses à la recherche d’un
-                équilibre entre chaos et harmonie, morcèlement et unité, entre
-                l’insignifiant et l’essentiel. Elle recompose sa réalité à partir
-                de petits bouts, de petits riens où la moindre des choses serait
-                de ne rien en dire, juste laisser voir pour une communication
-                vers les autres dans un écho singulier.
+                Her collages are silent narratives seeking a balance between
+                chaos and harmony, fragmentation and unity, between the
+                insignificant and the essential. She reconstructs her reality
+                from small fragments, from seemingly trivial elements, where the
+                least one can do is say nothing — simply let it be seen, allowing
+                for a unique resonance with others.
                 <br />
               </p>
             </div>
@@ -196,7 +193,7 @@ export default function Home() {
             <div style={styles.bioImageWrapper}>
               <img
                 src="/images/atelier-portrait.jpg"
-                alt="Christine Béglet dans son atelier"
+                alt="Christine Béglet in her studio"
                 style={styles.bioImage}
               />
             </div>
@@ -317,10 +314,10 @@ const styles: Record<string, CSSProperties> = {
   },
 
   mobileText: {
-    margin: "0 0 18px",
+    margin: 0,
     color: "#4f4b46",
-    fontSize: "1rem",
-    lineHeight: 1.65,
+    fontSize: "0.96rem",
+    lineHeight: 1.75,
     fontWeight: 300,
     textAlign: "left",
   },
@@ -350,24 +347,23 @@ const styles: Record<string, CSSProperties> = {
     color: "#1f1f1f",
   },
 
-mobileWorkImage: {
-  width: "100%",
-  height: "auto",
-  objectFit: "contain",
-  display: "block",
-  backgroundColor: "#f2f2f2",
+  mobileWorkImage: {
+    width: "100%",
+    height: "auto",
+    objectFit: "contain",
+    display: "block",
+    backgroundColor: "#f2f2f2",
   },
 
-mobileWorkTitle: {
-  display: "block",
-  marginTop: "12px",
-  fontSize: "0.86rem",
-  fontWeight: 300,
-  letterSpacing: "0.11em",
-  textTransform: "uppercase",
-  textAlign: "center",
-  fontFamily: '"Helvetica Neue", Arial, sans-serif',
-  color: "#4f4b46",
-},
-
+  mobileWorkTitle: {
+    display: "block",
+    marginTop: "12px",
+    fontSize: "0.86rem",
+    fontWeight: 300,
+    letterSpacing: "0.11em",
+    textTransform: "uppercase",
+    textAlign: "center",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    color: "#4f4b46",
+  },
 };
