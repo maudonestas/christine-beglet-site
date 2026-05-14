@@ -565,12 +565,24 @@ export default function Header() {
         </div>
       )}
 
-      <style>{`
-        .desktop-nav-link:hover {
-          color: #111 !important;
-          border-bottom-color: rgba(0, 0, 0, 0.45) !important;
-        }
-      `}</style>
+<style>{`
+  .desktop-nav-link:hover {
+    color: #111 !important;
+    border-bottom-color: rgba(0, 0, 0, 0.45) !important;
+  }
+
+  @keyframes dropdownFade {
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`}</style>
     </>
   );
 }
@@ -650,15 +662,18 @@ const styles: Record<string, CSSProperties> = {
     transition: "color 0.25s ease, border-color 0.25s ease",
   },
 
-  dropdownMenu: {
-    position: "absolute",
-    top: "100%",
-    left: 0,
-    backgroundColor: "#faf9f7",
-    border: "1px solid rgba(0,0,0,0.04)",
-    padding: "6px 0",
-    zIndex: 200,
-  },
+dropdownMenu: {
+  position: "absolute",
+  top: "100%",
+  left: 0,
+  backgroundColor: "#faf9f7",
+  border: "1px solid rgba(0,0,0,0.04)",
+  padding: "8px 0",
+  zIndex: 200,
+  opacity: 1,
+  transform: "translateY(0)",
+  animation: "dropdownFade 0.22s ease forwards",
+},
 
   dropdownLink: {
     display: "block",
