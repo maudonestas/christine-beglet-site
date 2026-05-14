@@ -86,27 +86,7 @@ export default function GrandsFormatsPage() {
     },
   ];
 
-  const oeuvres80x80: Artwork[] = [
-    {
-      src: "/images/la-bas.jpg",
-      title: "Là-bas",
-      size: "80x80cm",
-    },
-    {
-      src: "/images/emmuree.jpg",
-      title: "Emmurée",
-      size: "80x80cm",
-    },
-    {
-      src: "/images/brouillon-de-culture.jpg",
-      title: "Brouillon de culture",
-      size: "80x80cm",
-    },
-    {
-      src: "/images/casse-tete.jpg",
-      title: "Casse-tête",
-      size: "80x80cm",
-    },
+const oeuvres80x80: Artwork[] = [
   ];
 
   const [activeImages, setActiveImages] = useState<Artwork[] | null>(null);
