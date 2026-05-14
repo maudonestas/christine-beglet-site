@@ -123,8 +123,8 @@ const oeuvres80x80: Artwork[] = [
     size: "80x80cm",
   },
   {
-    src: "/images/80x80-seul-sur-l-asphalte.jpg",
-    title: "Seul sur l’asphalte",
+    src: "/images/80x80-seule-sur-l-asphalte.jpg",
+    title: "Seule sur l’asphalte",
     size: "80x80cm",
   },
 ];
