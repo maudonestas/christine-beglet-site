@@ -1,10 +1,22 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 
 export default function Home() {
   const heroScrollRef = useRef<HTMLDivElement | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     const el = heroScrollRef.current;
@@ -53,7 +65,85 @@ export default function Home() {
       el.removeEventListener("touchstart", stopAutoScroll);
       el.removeEventListener("pointerdown", stopAutoScroll);
     };
-  }, []);
+  }, [isMobile]);
+
+  if (isMobile) {
+    return (
+      <main style={styles.main}>
+        <section style={styles.mobileHero}>
+          <div style={styles.heroWrapper}>
+            <div ref={heroScrollRef} style={styles.heroScroll}>
+              <img
+                src="/images/pano.jpg"
+                alt="Panoramic collage by Christine Béglet"
+                style={styles.mobileHeroImgScrollable}
+              />
+            </div>
+          </div>
+        </section>
+
+        <section style={styles.mobileSection}>
+          <div style={styles.mobileIntro}>
+            <p style={styles.mobileText}>
+              Born in 1954 in the southwest of France, Christine Béglet lives
+              and works in Toulouse. A graduate of the École nationale
+              supérieure des Beaux-Arts de Toulouse, she has developed since
+              the 1990s a distinctive body of work centered on collage.
+              <br />
+              <br />
+              The smallest fragment, the tiniest piece of paper — houses,
+              buildings cut out by the hundreds, fragmented and broken apart —
+              become the touches of color, the pigments of her palette with
+              which she composes her work. She does not structure her
+              compositions in advance; from the chaos of accumulated images,
+              everything unfolds rapidly in a kind of frenzy. Harmony emerges
+              on its own, as she lets herself be guided by color, acting simply
+              as the director of a parallel world.
+              <br />
+              <br />
+              Her collages are silent narratives seeking a balance between
+              chaos and harmony, fragmentation and unity, between the
+              insignificant and the essential. She reconstructs her reality from
+              small fragments, from seemingly trivial elements, where the least
+              one can do is say nothing — simply let it be seen, allowing for a
+              unique resonance with others.
+            </p>
+          </div>
+
+          <div style={styles.mobileWorksBlock}>
+            <h2 style={styles.mobileWorksTitle}>Works</h2>
+
+            <a href="/en/works/large-formats" style={styles.mobileWorkCard}>
+              <img
+                src="/images/puzzle-neuronal.jpg"
+                alt="Large formats"
+                style={styles.mobileWorkImage}
+              />
+              <span style={styles.mobileWorkTitle}>Large formats</span>
+            </a>
+
+            <a href="/en/works/medium-formats" style={styles.mobileWorkCard}>
+              <img
+                src="/images/toutotour-sur-oise.jpg"
+                alt="Medium formats"
+                style={styles.mobileWorkImage}
+              />
+              <span style={styles.mobileWorkTitle}>Medium formats</span>
+            </a>
+
+            <a href="/en/works/small-formats" style={styles.mobileWorkCard}>
+              <img
+                src="/images/20x20-1.jpg"
+                alt="Small formats"
+                style={styles.mobileWorkImage}
+              />
+              <span style={styles.mobileWorkTitle}>Small formats</span>
+            </a>
+          </div>
+        </section>
+      </main>
+    );
+  }
 
   return (
     <main style={styles.main}>
@@ -80,10 +170,10 @@ export default function Home() {
                 the 1990s a distinctive body of work centered on collage.
                 <br />
                 <br />
-                The smallest fragment, the tiniest piece of paper-houses,
-                buildings cut out by the hundreds, fragmented and broken
-                apart-become the touches of color, the pigments of her palette
-                with which she composes her work. She does not structure her
+                The smallest fragment, the tiniest piece of paper — houses,
+                buildings cut out by the hundreds, fragmented and broken apart —
+                become the touches of color, the pigments of her palette with
+                which she composes her work. She does not structure her
                 compositions in advance; from the chaos of accumulated images,
                 everything unfolds rapidly in a kind of frenzy. Harmony emerges
                 on its own, as she lets herself be guided by color, acting simply
@@ -94,7 +184,7 @@ export default function Home() {
                 chaos and harmony, fragmentation and unity, between the
                 insignificant and the essential. She reconstructs her reality
                 from small fragments, from seemingly trivial elements, where the
-                least one can do is say nothing-simply let it be seen, allowing
+                least one can do is say nothing — simply let it be seen, allowing
                 for a unique resonance with others.
                 <br />
               </p>
@@ -196,5 +286,84 @@ const styles: Record<string, CSSProperties> = {
   bioImageWrapper: {
     flex: "0 0 360px",
     display: "flex",
+  },
+
+  mobileHero: {
+    position: "relative",
+    height: "58vh",
+    width: "100%",
+    backgroundColor: "#f2f2f2",
+    overflow: "hidden",
+  },
+
+  mobileHeroImgScrollable: {
+    display: "block",
+    height: "100%",
+    width: "auto",
+    minWidth: "1150px",
+  },
+
+  mobileSection: {
+    backgroundColor: "#faf9f7",
+    padding: "42px 20px 68px",
+  },
+
+  mobileIntro: {
+    maxWidth: "420px",
+    margin: "0 auto",
+  },
+
+  mobileText: {
+    margin: "0 0 18px",
+    color: "#4f4b46",
+    fontSize: "1rem",
+    lineHeight: 1.65,
+    fontWeight: 300,
+    textAlign: "left",
+  },
+
+  mobileWorksBlock: {
+    maxWidth: "420px",
+    margin: "42px auto 0",
+    display: "flex",
+    flexDirection: "column",
+    gap: "22px",
+  },
+
+  mobileWorksTitle: {
+    margin: "0 0 4px",
+    fontSize: "1.25rem",
+    fontWeight: 300,
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    textAlign: "center",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    color: "#1f1f1f",
+  },
+
+  mobileWorkCard: {
+    display: "block",
+    textDecoration: "none",
+    color: "#1f1f1f",
+  },
+
+  mobileWorkImage: {
+    width: "100%",
+    height: "auto",
+    objectFit: "contain",
+    display: "block",
+    backgroundColor: "#f2f2f2",
+  },
+
+  mobileWorkTitle: {
+    display: "block",
+    marginTop: "12px",
+    fontSize: "0.86rem",
+    fontWeight: 300,
+    letterSpacing: "0.11em",
+    textTransform: "uppercase",
+    textAlign: "center",
+    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    color: "#4f4b46",
   },
 };
