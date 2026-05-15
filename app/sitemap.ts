@@ -10,38 +10,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
+
+    // Version française
     {
-      url: `${baseUrl}/galerie`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/galerie/grands-formats`,
+      url: `${baseUrl}/oeuvres/grands-formats`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/galerie/moyens-formats`,
+      url: `${baseUrl}/oeuvres/formats-moyens`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/galerie/petits-formats`,
+      url: `${baseUrl}/oeuvres/petits-formats`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/galerie/triptyque`,
+      url: `${baseUrl}/oeuvres/triptyque`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/galerie/panoramique`,
+      url: `${baseUrl}/oeuvres/panoramique`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
@@ -59,7 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/on-en-parle`,
+      url: `${baseUrl}/presse`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.6,
