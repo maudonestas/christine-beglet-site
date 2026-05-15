@@ -81,12 +81,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/en/home`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/en/works/large-formats`,
       lastModified: new Date(),
       changeFrequency: "monthly",
