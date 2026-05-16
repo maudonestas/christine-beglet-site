@@ -6,7 +6,8 @@ export const metadata = {
     default: "Christine Béglet",
     template: "%s | Christine Béglet",
   },
-  description: "Collages",
+  description:
+    "Site officiel de Christine Béglet, artiste collagiste. Collages sur bois, œuvres, expositions, atelier et parcours artistique.",
   alternates: {
     languages: {
       "fr-FR": "/",
