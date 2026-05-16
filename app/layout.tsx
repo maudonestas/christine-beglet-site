@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   title: {
@@ -24,9 +25,7 @@ export default function RootLayout({
       <body style={{ margin: 0, backgroundColor: "#faf9f7" }}>
         <Header />
 
-        <main style={{ paddingTop: "80px" }}>
-          {children}
-        </main>
+        <main style={{ paddingTop: "80px" }}>{children}</main>
 
         <footer style={styles.footer}>
           <div style={styles.footerContent}>
@@ -174,6 +173,8 @@ export default function RootLayout({
             }
           `}</style>
         </footer>
+
+        <Analytics />
       </body>
     </html>
   );
