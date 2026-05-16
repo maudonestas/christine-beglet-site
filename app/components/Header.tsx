@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 import type { CSSProperties } from "react";
 
 export default function Header() {
@@ -32,6 +33,16 @@ export default function Header() {
 
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
+
+  useEffect(() => {
+    setShowHeader(true);
+    setGalerieOpen(false);
+    setArtisteOpen(false);
+    setMobileMenuOpen(false);
+    setMobileGalerieOpen(false);
+    setMobileArtisteOpen(false);
+    setLastScrollY(window.scrollY);
+  }, [pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -91,7 +102,7 @@ export default function Header() {
             flexWrap: isMobile ? "nowrap" : "wrap",
           }}
         >
-          <a href={isEn ? "/en" : "/"} style={styles.logoLink}>
+          <Link href={isEn ? "/en" : "/"} style={styles.logoLink}>
             <div>
               <div
                 style={{
@@ -113,7 +124,7 @@ export default function Header() {
                 Collage
               </div>
             </div>
-          </a>
+          </Link>
 
           {/* DESKTOP NAV */}
           <nav style={isMobile ? styles.navHidden : styles.nav}>
@@ -129,7 +140,7 @@ export default function Header() {
 
               {galerieOpen && (
                 <div style={styles.dropdownMenu}>
-                  <a
+                  <Link
                     href={
                       isEn
                         ? "/en/works/large-formats"
@@ -138,9 +149,9 @@ export default function Header() {
                     style={styles.dropdownLink}
                   >
                     {isEn ? "Large formats" : "Grands formats"}
-                  </a>
+                  </Link>
 
-                  <a
+                  <Link
                     href={
                       isEn
                         ? "/en/works/medium-formats"
@@ -149,9 +160,9 @@ export default function Header() {
                     style={styles.dropdownLink}
                   >
                     {isEn ? "Medium formats" : "Moyens formats"}
-                  </a>
+                  </Link>
 
-                  <a
+                  <Link
                     href={
                       isEn
                         ? "/en/works/small-formats"
@@ -160,16 +171,16 @@ export default function Header() {
                     style={styles.dropdownLink}
                   >
                     {isEn ? "Small formats" : "Petits formats"}
-                  </a>
+                  </Link>
 
-                  <a
+                  <Link
                     href={isEn ? "/en/works/triptych" : "/oeuvres/triptyque"}
                     style={styles.dropdownLink}
                   >
                     {isEn ? "Triptych" : "Triptyque"}
-                  </a>
+                  </Link>
 
-                  <a
+                  <Link
                     href={
                       isEn
                         ? "/en/works/panoramic"
@@ -178,18 +189,18 @@ export default function Header() {
                     style={styles.dropdownLink}
                   >
                     {isEn ? "Panoramic" : "Panoramique"}
-                  </a>
+                  </Link>
                 </div>
               )}
             </div>
 
-            <a
+            <Link
               href={isEn ? "/en/exhibitions" : "/expositions"}
               className="desktop-nav-link"
               style={styles.navLink}
             >
               {isEn ? "Exhibitions" : "Expositions"}
-            </a>
+            </Link>
 
             {/* ARTISTE */}
             <div
@@ -203,38 +214,38 @@ export default function Header() {
 
               {artisteOpen && (
                 <div style={styles.dropdownMenu}>
-                  <a
+                  <Link
                     href={isEn ? "/en/biography" : "/biographie"}
                     style={styles.dropdownLink}
                   >
                     {isEn ? "Biography" : "Biographie"}
-                  </a>
+                  </Link>
 
-                  <a
+                  <Link
                     href={isEn ? "/en/press" : "/presse"}
                     style={styles.dropdownLink}
                   >
                     {isEn ? "Press" : "On en parle"}
-                  </a>
+                  </Link>
                 </div>
               )}
             </div>
 
-            <a
+            <Link
               href={isEn ? "/en/studio" : "/atelier"}
               className="desktop-nav-link"
               style={styles.navLink}
             >
               {isEn ? "Studio" : "L'Atelier"}
-            </a>
+            </Link>
 
-            <a
+            <Link
               href={isEn ? "/en/contact" : "/contact"}
               className="desktop-nav-link"
               style={styles.navLink}
             >
               Contact
-            </a>
+            </Link>
 
             <div style={styles.socials}>
               {/* INSTAGRAM */}
@@ -311,7 +322,7 @@ export default function Header() {
               </a>
 
               {/* FLAG */}
-              <a
+              <Link
                 href={isEn ? "/" : "/en"}
                 style={styles.flagLink}
                 aria-label={isEn ? "Version française" : "English version"}
@@ -369,7 +380,7 @@ export default function Header() {
                     />
                   </svg>
                 )}
-              </a>
+              </Link>
             </div>
           </nav>
 
@@ -403,13 +414,13 @@ export default function Header() {
           </button>
 
           <nav style={styles.mobileNav}>
-            <a
+            <Link
               href={isEn ? "/en" : "/"}
               style={styles.mobileMainLink}
               onClick={closeMobileMenu}
             >
               {isEn ? "Home" : "Accueil"}
-            </a>
+            </Link>
 
             <div style={styles.mobileDropdownBlock}>
               <button
@@ -425,7 +436,7 @@ export default function Header() {
 
               {mobileGalerieOpen && (
                 <div style={styles.mobileSubmenu}>
-                  <a
+                  <Link
                     href={
                       isEn
                         ? "/en/works/large-formats"
@@ -435,9 +446,9 @@ export default function Header() {
                     onClick={closeMobileMenu}
                   >
                     {isEn ? "Large formats" : "Grands formats"}
-                  </a>
+                  </Link>
 
-                  <a
+                  <Link
                     href={
                       isEn
                         ? "/en/works/medium-formats"
@@ -447,9 +458,9 @@ export default function Header() {
                     onClick={closeMobileMenu}
                   >
                     {isEn ? "Medium formats" : "Moyens formats"}
-                  </a>
+                  </Link>
 
-                  <a
+                  <Link
                     href={
                       isEn
                         ? "/en/works/small-formats"
@@ -459,17 +470,17 @@ export default function Header() {
                     onClick={closeMobileMenu}
                   >
                     {isEn ? "Small formats" : "Petits formats"}
-                  </a>
+                  </Link>
 
-                  <a
+                  <Link
                     href={isEn ? "/en/works/triptych" : "/oeuvres/triptyque"}
                     style={styles.mobileSubLink}
                     onClick={closeMobileMenu}
                   >
                     {isEn ? "Triptych" : "Triptyque"}
-                  </a>
+                  </Link>
 
-                  <a
+                  <Link
                     href={
                       isEn
                         ? "/en/works/panoramic"
@@ -479,18 +490,18 @@ export default function Header() {
                     onClick={closeMobileMenu}
                   >
                     {isEn ? "Panoramic" : "Panoramique"}
-                  </a>
+                  </Link>
                 </div>
               )}
             </div>
 
-            <a
+            <Link
               href={isEn ? "/en/exhibitions" : "/expositions"}
               style={styles.mobileMainLink}
               onClick={closeMobileMenu}
             >
               {isEn ? "Exhibitions" : "Expositions"}
-            </a>
+            </Link>
 
             <div style={styles.mobileDropdownBlock}>
               <button
@@ -506,40 +517,40 @@ export default function Header() {
 
               {mobileArtisteOpen && (
                 <div style={styles.mobileSubmenu}>
-                  <a
+                  <Link
                     href={isEn ? "/en/biography" : "/biographie"}
                     style={styles.mobileSubLink}
                     onClick={closeMobileMenu}
                   >
                     {isEn ? "Biography" : "Biographie"}
-                  </a>
+                  </Link>
 
-                  <a
+                  <Link
                     href={isEn ? "/en/press" : "/presse"}
                     style={styles.mobileSubLink}
                     onClick={closeMobileMenu}
                   >
                     {isEn ? "Press" : "On en parle"}
-                  </a>
+                  </Link>
                 </div>
               )}
             </div>
 
-            <a
+            <Link
               href={isEn ? "/en/studio" : "/atelier"}
               style={styles.mobileMainLink}
               onClick={closeMobileMenu}
             >
               {isEn ? "Studio" : "L'Atelier"}
-            </a>
+            </Link>
 
-            <a
+            <Link
               href={isEn ? "/en/contact" : "/contact"}
               style={styles.mobileMainLink}
               onClick={closeMobileMenu}
             >
               Contact
-            </a>
+            </Link>
 
             <div style={styles.mobileBottomLinks}>
               <a
@@ -560,13 +571,13 @@ export default function Header() {
                 Facebook
               </a>
 
-              <a
+              <Link
                 href={isEn ? "/" : "/en"}
                 style={styles.mobileSmallLink}
                 onClick={closeMobileMenu}
               >
                 {isEn ? "FR" : "EN"}
-              </a>
+              </Link>
             </div>
           </nav>
         </div>
