@@ -8,8 +8,8 @@ export const metadata = {
   },
   description:
     "Site officiel de Christine Béglet, artiste collagiste. Collages sur bois, œuvres, expositions, atelier et parcours artistique.",
- icons: {
-  icon: "/favicon.png",
+icons: {
+  icon: "/favicon-round.png",
 },
   alternates: {
     languages: {
