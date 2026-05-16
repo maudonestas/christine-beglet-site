@@ -20,6 +20,11 @@ export default function ExhibitionsPage() {
   }, []);
 
   const expositions = [
+        {
+      title: "Les Singuliers, Carla Bayle, Ariège",
+      date: "23 mai — 25 mars 2026",
+      image: "/images/les-singuliers-2026.JPG",
+    },
     {
       title: "L’Espace d’art Contemporain, Les Carmes – Pamiers",
       date: "7 mars — 28 mars 2026",
