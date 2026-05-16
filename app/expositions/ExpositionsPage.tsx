@@ -22,7 +22,7 @@ export default function ExpositionsPage() {
   const expositions = [
     {
       title: "Les Singuliers, Carla Bayle, Ariège",
-      date: "23 mai — 25 mars 2026",
+      date: "23 mai — 25 mai 2026",
       image: "/images/les-singuliers-2026.JPG",
     },
     {
